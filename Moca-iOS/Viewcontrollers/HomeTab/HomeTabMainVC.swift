@@ -31,14 +31,21 @@ class HomeTabMainVC: UIViewController {
 
 extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // moca picks
         if indexPath.row == 0 {
-            
+            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as! HomeMocaPicksCell
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as! HomeConceptCell
+            return cell
+        } else {
+            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as! HomeRankingCell
+            return cell
         }
     }
-    
     
 }

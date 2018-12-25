@@ -1,5 +1,5 @@
 //
-//  MocaPicksCell.swift
+//  CenceptCell.swift
 //  Moca-iOS
 //
 //  Created by 박세은 on 2018. 12. 25..
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MocaPicksCell: UITableViewCell {
+class HomeConceptCell: UITableViewCell {
 
-    @IBOutlet weak var mocaPickCollectionView: UICollectionView!
+    @IBOutlet weak var conceptListCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,19 +18,19 @@ class MocaPicksCell: UITableViewCell {
     }
     
     private func setUpCollectionView() {
-        self.mocaPickCollectionView.delegate = self
-        self.mocaPickCollectionView.dataSource = self
+        self.conceptListCollectionView.delegate = self
+        self.conceptListCollectionView.dataSource = self
     }
-
 }
 
-extension MocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeConceptCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = conceptListCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeConceptListCell", for: indexPath) as! HomeConceptListCell
+        return cell
     }
     
     
