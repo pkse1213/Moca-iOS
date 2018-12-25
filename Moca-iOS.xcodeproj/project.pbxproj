@@ -24,6 +24,8 @@
 		CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09021D259CB004796F7 /* HomeConceptCell.swift */; };
 		CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */; };
 		CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */; };
+		CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */; };
+		CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		CB32A09021D259CB004796F7 /* HomeConceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConceptCell.swift; sourceTree = "<group>"; };
 		CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingCell.swift; sourceTree = "<group>"; };
 		CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListCell.swift; sourceTree = "<group>"; };
+		CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabMainVC.swift; sourceTree = "<group>"; };
+		CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCell.swift; sourceTree = "<group>"; };
 		F276F3C77C6C9645A0274CB4 /* Pods-Moca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,7 @@
 		CB08316621D0E4CE000F5D67 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				CB32A09821D2A281004796F7 /* CommunityTab */,
 				CB32A08921D24CCA004796F7 /* HomeTab */,
 			);
 			path = Viewcontrollers;
@@ -150,6 +155,7 @@
 		CB32A08521D24C8F004796F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB32A09921D2A2B9004796F7 /* CommunityTabMain */,
 				CB32A08821D24CBA004796F7 /* HomeTabMain */,
 			);
 			path = Views;
@@ -174,6 +180,22 @@
 				CB08315521D0E4B0000F5D67 /* HomeTabMainVC.swift */,
 			);
 			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		CB32A09821D2A281004796F7 /* CommunityTab */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */,
+			);
+			path = CommunityTab;
+			sourceTree = "<group>";
+		};
+		CB32A09921D2A2B9004796F7 /* CommunityTabMain */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */,
+			);
+			path = CommunityTabMain;
 			sourceTree = "<group>";
 		};
 		F22DC76F8604CE1CC745F438 /* Pods */ = {
@@ -316,7 +338,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
+				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
+				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
 				CB32A08F21D259B8004796F7 /* HomeConceptListCell.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
