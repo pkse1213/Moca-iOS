@@ -657,13 +657,64 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmd-i8-ydi">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FTR-z6-3aL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="aZN-1f-ge7"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="50" id="Ivx-AZ-I5P">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ivx-AZ-I5P" id="NgD-Y9-ZHZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV6-4J-npR">
+                                                            <rect key="frame" x="27" y="18.333333333333332" width="32" height="13.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonYellowcircle" translatesAutoresizingMaskIntoConstraints="NO" id="xgF-N4-tZu">
+                                                            <rect key="frame" x="321" y="13" width="24" height="24"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="OV6-4J-npR" secondAttribute="bottom" constant="7.3300000000000001" id="BjW-Km-73g"/>
+                                                        <constraint firstItem="xgF-N4-tZu" firstAttribute="centerY" secondItem="NgD-Y9-ZHZ" secondAttribute="centerY" id="Oe3-zL-sHx"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="xgF-N4-tZu" secondAttribute="trailing" constant="15" id="YzR-Tr-CpT"/>
+                                                        <constraint firstItem="OV6-4J-npR" firstAttribute="leading" secondItem="NgD-Y9-ZHZ" secondAttribute="leading" constant="27" id="l9j-g6-qre"/>
+                                                        <constraint firstItem="OV6-4J-npR" firstAttribute="top" secondItem="NgD-Y9-ZHZ" secondAttribute="topMargin" constant="7.3300000000000001" id="mJV-bk-vpW"/>
+                                                        <constraint firstItem="OV6-4J-npR" firstAttribute="centerY" secondItem="NgD-Y9-ZHZ" secondAttribute="centerY" id="yNQ-xQ-MAb"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.29719606164383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="FTR-z6-3aL" firstAttribute="top" secondItem="Bmd-i8-ydi" secondAttribute="top" id="GlK-uc-Rvc"/>
+                                    <constraint firstItem="FTR-z6-3aL" firstAttribute="leading" secondItem="Bmd-i8-ydi" secondAttribute="leading" id="Ti7-oq-MYa"/>
+                                    <constraint firstAttribute="trailing" secondItem="FTR-z6-3aL" secondAttribute="trailing" id="m0L-Su-qFw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b7E-P6-97G" firstAttribute="leading" secondItem="ZNp-9i-tiW" secondAttribute="leading" id="40Y-Rg-ZKg"/>
                             <constraint firstItem="ZNp-9i-tiW" firstAttribute="trailing" secondItem="b7E-P6-97G" secondAttribute="trailing" id="NRJ-8c-EqY"/>
+                            <constraint firstItem="Bmd-i8-ydi" firstAttribute="top" secondItem="ZNp-9i-tiW" secondAttribute="top" id="Sbs-Pc-GlJ"/>
                             <constraint firstItem="ZNp-9i-tiW" firstAttribute="bottom" secondItem="b7E-P6-97G" secondAttribute="bottom" id="VKu-4F-5ar"/>
+                            <constraint firstItem="ZNp-9i-tiW" firstAttribute="trailing" secondItem="Bmd-i8-ydi" secondAttribute="trailing" id="bMS-kL-kWc"/>
                             <constraint firstItem="b7E-P6-97G" firstAttribute="top" secondItem="ZNp-9i-tiW" secondAttribute="top" id="et3-of-8Nr"/>
+                            <constraint firstItem="Bmd-i8-ydi" firstAttribute="leading" secondItem="ZNp-9i-tiW" secondAttribute="leading" id="fTq-JB-t5d"/>
+                            <constraint firstItem="ZNp-9i-tiW" firstAttribute="bottom" secondItem="Bmd-i8-ydi" secondAttribute="bottom" id="wbk-Ki-e7S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
                     </view>
@@ -718,6 +769,7 @@
         <image name="commonCommentWhite" width="15" height="13"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartWhite" width="15" height="13"/>
+        <image name="commonYellowcircle" width="24" height="24"/>
         <image name="communityFollowlistSearch" width="22" height="22"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
