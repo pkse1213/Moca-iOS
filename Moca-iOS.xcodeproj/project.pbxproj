@@ -9,10 +9,16 @@
 /* Begin PBXBuildFile section */
 		8517728C6C50F34105911A84 /* Pods_Moca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */; };
 		CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08315321D0E4B0000F5D67 /* AppDelegate.swift */; };
-		CB08315621D0E4B0000F5D67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08315521D0E4B0000F5D67 /* ViewController.swift */; };
-		CB08315921D0E4B0000F5D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08315721D0E4B0000F5D67 /* Main.storyboard */; };
+		CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08315521D0E4B0000F5D67 /* HomeTabMainVC.swift */; };
+		CB08315921D0E4B0000F5D67 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08315721D0E4B0000F5D67 /* MainTab.storyboard */; };
 		CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB08315A21D0E4B1000F5D67 /* Assets.xcassets */; };
 		CB08315E21D0E4B1000F5D67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */; };
+		CB32A07B21D23E45004796F7 /* NanumSquareLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB32A07A21D23E45004796F7 /* NanumSquareLight.ttf */; };
+		CB32A07F21D23E56004796F7 /* NanumBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB32A07C21D23E56004796F7 /* NanumBold.ttf */; };
+		CB32A08021D23E56004796F7 /* NanumSquareExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB32A07D21D23E56004796F7 /* NanumSquareExtraBold.ttf */; };
+		CB32A08121D23E56004796F7 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB32A07E21D23E56004796F7 /* NanumSquareRegular.ttf */; };
+		CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08321D249A1004796F7 /* UIView+Extension.swift */; };
+		CB32A08721D24CB7004796F7 /* MocaPicksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08621D24CB7004796F7 /* MocaPicksCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +26,17 @@
 		A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moca_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB08315021D0E4B0000F5D67 /* Moca-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moca-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB08315321D0E4B0000F5D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB08315521D0E4B0000F5D67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CB08315821D0E4B0000F5D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB08315521D0E4B0000F5D67 /* HomeTabMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabMainVC.swift; sourceTree = "<group>"; };
+		CB08315821D0E4B0000F5D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTab.storyboard; sourceTree = "<group>"; };
 		CB08315A21D0E4B1000F5D67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB08315D21D0E4B1000F5D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB08315F21D0E4B1000F5D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB32A07A21D23E45004796F7 /* NanumSquareLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareLight.ttf; sourceTree = "<group>"; };
+		CB32A07C21D23E56004796F7 /* NanumBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBold.ttf; sourceTree = "<group>"; };
+		CB32A07D21D23E56004796F7 /* NanumSquareExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareExtraBold.ttf; sourceTree = "<group>"; };
+		CB32A07E21D23E56004796F7 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
+		CB32A08321D249A1004796F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CB32A08621D24CB7004796F7 /* MocaPicksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCell.swift; sourceTree = "<group>"; };
 		F276F3C77C6C9645A0274CB4 /* Pods-Moca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +81,9 @@
 		CB08315221D0E4B0000F5D67 /* Moca-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CB32A08521D24C8F004796F7 /* Views */,
 				CB08316621D0E4CE000F5D67 /* Viewcontrollers */,
+				CB32A08221D2497D004796F7 /* Utils */,
 				CB08316521D0E4C5000F5D67 /* Storyboards */,
 				CB08316721D0E4DF000F5D67 /* Supporting File */,
 			);
@@ -79,7 +93,7 @@
 		CB08316521D0E4C5000F5D67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CB08315721D0E4B0000F5D67 /* Main.storyboard */,
+				CB08315721D0E4B0000F5D67 /* MainTab.storyboard */,
 				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -88,7 +102,7 @@
 		CB08316621D0E4CE000F5D67 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				CB08315521D0E4B0000F5D67 /* ViewController.swift */,
+				CB32A08921D24CCA004796F7 /* HomeTab */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -96,11 +110,55 @@
 		CB08316721D0E4DF000F5D67 /* Supporting File */ = {
 			isa = PBXGroup;
 			children = (
+				CB32A07121D23D13004796F7 /* Fonts */,
 				CB08315A21D0E4B1000F5D67 /* Assets.xcassets */,
 				CB08315F21D0E4B1000F5D67 /* Info.plist */,
 				CB08315321D0E4B0000F5D67 /* AppDelegate.swift */,
 			);
 			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		CB32A07121D23D13004796F7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A07C21D23E56004796F7 /* NanumBold.ttf */,
+				CB32A07D21D23E56004796F7 /* NanumSquareExtraBold.ttf */,
+				CB32A07E21D23E56004796F7 /* NanumSquareRegular.ttf */,
+				CB32A07A21D23E45004796F7 /* NanumSquareLight.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CB32A08221D2497D004796F7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A08321D249A1004796F7 /* UIView+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CB32A08521D24C8F004796F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A08821D24CBA004796F7 /* HomeTab */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB32A08821D24CBA004796F7 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A08621D24CB7004796F7 /* MocaPicksCell.swift */,
+			);
+			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		CB32A08921D24CCA004796F7 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				CB08315521D0E4B0000F5D67 /* HomeTabMainVC.swift */,
+			);
+			path = HomeTab;
 			sourceTree = "<group>";
 		};
 		F22DC76F8604CE1CC745F438 /* Pods */ = {
@@ -172,9 +230,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB32A07F21D23E56004796F7 /* NanumBold.ttf in Resources */,
+				CB32A08021D23E56004796F7 /* NanumSquareExtraBold.ttf in Resources */,
+				CB32A07B21D23E45004796F7 /* NanumSquareLight.ttf in Resources */,
+				CB32A08121D23E56004796F7 /* NanumSquareRegular.ttf in Resources */,
 				CB08315E21D0E4B1000F5D67 /* LaunchScreen.storyboard in Resources */,
 				CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */,
-				CB08315921D0E4B0000F5D67 /* Main.storyboard in Resources */,
+				CB08315921D0E4B0000F5D67 /* MainTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB08315621D0E4B0000F5D67 /* ViewController.swift in Sources */,
+				CB32A08721D24CB7004796F7 /* MocaPicksCell.swift in Sources */,
+				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
+				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,12 +310,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CB08315721D0E4B0000F5D67 /* Main.storyboard */ = {
+		CB08315721D0E4B0000F5D67 /* MainTab.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CB08315821D0E4B0000F5D67 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainTab.storyboard;
 			sourceTree = "<group>";
 		};
 		CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */ = {
@@ -387,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "/Users/parkseeun/Moca-iOS/Moca-iOS/Supporting File/Info.plist";
+				INFOPLIST_FILE = "Moca-iOS/Supporting File/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -405,7 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "/Users/parkseeun/Moca-iOS/Moca-iOS/Supporting File/Info.plist";
+				INFOPLIST_FILE = "Moca-iOS/Supporting File/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
