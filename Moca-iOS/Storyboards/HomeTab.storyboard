@@ -165,16 +165,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pAw-vj-VSA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pAw-vj-VSA">
                                 <rect key="frame" x="26" y="44" width="349" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="280" id="Eoh-Py-Ock">
-                                        <rect key="frame" x="0.0" y="28" width="349" height="280"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="282" id="Eoh-Py-Ock">
+                                        <rect key="frame" x="0.0" y="28" width="349" height="282"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eoh-Py-Ock" id="lfr-Xy-T8D">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="279.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="282"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-Hd-MGi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="220"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="tY0-Hd-MGi" secondAttribute="height" multiplier="349:220" id="Ddx-6b-2gT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="biD-lx-WnA">
+                                                    <rect key="frame" x="269" y="241" width="59" height="11"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="1gV-4I-ySv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-0P-7J7">
+                                                            <rect key="frame" x="12" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="9rN-fR-Lvq">
+                                                            <rect key="frame" x="24" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="a48-5N-Cr3">
+                                                            <rect key="frame" x="36" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarGray" translatesAutoresizingMaskIntoConstraints="NO" id="3Bq-BA-R3S">
+                                                            <rect key="frame" x="48" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YCU-It-SKX">
+                                                    <rect key="frame" x="12" y="230" width="79.333333333333329" height="33"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lys-1v-BiI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="15.666666666666666"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="wwi-bf-hpO">
+                                                            <rect key="frame" x="0.0" y="19.666666666666657" width="79.333333333333329" height="13.333333333333336"/>
+                                                            <subviews>
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icCommunityLocation" translatesAutoresizingMaskIntoConstraints="NO" id="obe-u8-a4p">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="13.333333333333334"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1De-6c-msB">
+                                                                    <rect key="frame" x="19.000000000000004" y="0.0" width="60.333333333333343" height="13.333333333333334"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonScrapWhiteLine" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-2v-1yv">
+                                                    <rect key="frame" x="299" y="7" width="36" height="36"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="tY0-Hd-MGi" secondAttribute="trailing" id="2Z9-wT-nfZ"/>
+                                                <constraint firstItem="YCU-It-SKX" firstAttribute="top" secondItem="tY0-Hd-MGi" secondAttribute="bottom" constant="10" id="J93-I2-Dfw"/>
+                                                <constraint firstItem="biD-lx-WnA" firstAttribute="centerY" secondItem="YCU-It-SKX" secondAttribute="centerY" id="RiZ-Sr-ccB"/>
+                                                <constraint firstAttribute="bottom" secondItem="YCU-It-SKX" secondAttribute="bottom" constant="18.670000000000002" id="Sdf-yr-Oyf"/>
+                                                <constraint firstItem="ESV-2v-1yv" firstAttribute="trailing" secondItem="tY0-Hd-MGi" secondAttribute="trailing" constant="-14" id="SyB-Gh-vgz"/>
+                                                <constraint firstItem="tY0-Hd-MGi" firstAttribute="top" secondItem="lfr-Xy-T8D" secondAttribute="top" id="YA7-y3-fKW"/>
+                                                <constraint firstItem="tY0-Hd-MGi" firstAttribute="leading" secondItem="lfr-Xy-T8D" secondAttribute="leading" id="bmb-bL-qc1"/>
+                                                <constraint firstItem="ESV-2v-1yv" firstAttribute="top" secondItem="tY0-Hd-MGi" secondAttribute="top" constant="7" id="byL-Ra-KHV"/>
+                                                <constraint firstAttribute="trailing" secondItem="biD-lx-WnA" secondAttribute="trailing" constant="21" id="kv7-YF-b79"/>
+                                                <constraint firstItem="YCU-It-SKX" firstAttribute="leading" secondItem="lfr-Xy-T8D" secondAttribute="leading" constant="12" id="oLR-Oi-P0m"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -196,6 +264,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="commonScrapWhiteLine" width="36" height="36"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="icCommunityLocation" width="12" height="13"/>
