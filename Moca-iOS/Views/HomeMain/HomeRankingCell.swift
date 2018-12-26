@@ -11,6 +11,7 @@ import UIKit
 class HomeRankingCell: UITableViewCell {
 
     @IBOutlet weak var rankTableView: UITableView!
+    @IBOutlet weak var moreBtnImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

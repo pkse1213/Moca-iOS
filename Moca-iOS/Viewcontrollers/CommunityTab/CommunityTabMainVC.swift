@@ -11,6 +11,8 @@ import UIKit
 class CommunityTabMainVC: UIViewController {
 
     @IBOutlet weak var communityTableView: UITableView!
+    @IBOutlet weak var profileBackgroundView: UIView!
+    @IBOutlet weak var profileSquareView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,9 @@ class CommunityTabMainVC: UIViewController {
     private func setUpView() {
         communityTableView.delegate = self
         communityTableView.dataSource = self
+        
+        profileSquareView.applyRadius(radius: 3)
+        profileSquareView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     }
 
 }
@@ -33,6 +38,5 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         let cell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as! CommunityFeedCell
         return cell
     }
-    
     
 }
