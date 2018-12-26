@@ -21,6 +21,8 @@
 		CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9C21D3F0C800636DFE /* ReviewWrittingCell.swift */; };
 		CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9E21D3F0D800636DFE /* ReviewPlusImageCell.swift */; };
 		CB25ACA121D3F10800636DFE /* CommunityReviewWrittingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA021D3F10800636DFE /* CommunityReviewWrittingVC.swift */; };
+		CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */; };
+		CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */; };
 		CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08321D249A1004796F7 /* UIView+Extension.swift */; };
 		CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */; };
 		CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */; };
@@ -59,6 +61,8 @@
 		CB25AC9C21D3F0C800636DFE /* ReviewWrittingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWrittingCell.swift; sourceTree = "<group>"; };
 		CB25AC9E21D3F0D800636DFE /* ReviewPlusImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPlusImageCell.swift; sourceTree = "<group>"; };
 		CB25ACA021D3F10800636DFE /* CommunityReviewWrittingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewWrittingVC.swift; sourceTree = "<group>"; };
+		CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksListVC.swift; sourceTree = "<group>"; };
+		CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksListCell.swift; sourceTree = "<group>"; };
 		CB32A08321D249A1004796F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCell.swift; sourceTree = "<group>"; };
 		CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCafeListCell.swift; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 			path = ContentWrite;
 			sourceTree = "<group>";
 		};
+		CB25ACA421D3FE2100636DFE /* MocaPicks */ = {
+			isa = PBXGroup;
+			children = (
+				CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */,
+			);
+			path = MocaPicks;
+			sourceTree = "<group>";
+		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +215,7 @@
 			children = (
 				CB8DDB8921D3C26E001D8191 /* Main */,
 				CB8DDB6E21D33777001D8191 /* Ranking */,
+				CB25ACA421D3FE2100636DFE /* MocaPicks */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 			children = (
 				CB08315521D0E4B0000F5D67 /* HomeTabMainVC.swift */,
 				CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */,
+				CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -426,6 +440,7 @@
 				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
 				CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */,
 				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
+				CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */,
 				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */,
@@ -435,6 +450,7 @@
 				CB32A08F21D259B8004796F7 /* HomeConceptListCell.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
+				CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
