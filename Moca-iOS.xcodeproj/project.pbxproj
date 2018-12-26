@@ -16,6 +16,8 @@
 		CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */; };
 		CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */; };
 		CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */; };
+		CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9321D3DB5200636DFE /* CommunityFollowVC.swift */; };
+		CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */; };
 		CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08321D249A1004796F7 /* UIView+Extension.swift */; };
 		CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */; };
 		CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */; };
@@ -49,6 +51,8 @@
 		CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentImageCell.swift; sourceTree = "<group>"; };
 		CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentCell.swift; sourceTree = "<group>"; };
 		CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCommentCell.swift; sourceTree = "<group>"; };
+		CB25AC9321D3DB5200636DFE /* CommunityFollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowVC.swift; sourceTree = "<group>"; };
+		CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollwCell.swift; sourceTree = "<group>"; };
 		CB32A08321D249A1004796F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCell.swift; sourceTree = "<group>"; };
 		CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCafeListCell.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			children = (
 				CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */,
 				CB8DDB8721D3C1C8001D8191 /* CommunityContentVC.swift */,
+				CB25AC9321D3DB5200636DFE /* CommunityFollowVC.swift */,
 			);
 			path = CommunityTab;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */,
 				CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */,
 				CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */,
+				CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */,
 			);
 			path = ContentDetail;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
+				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
 				CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */,
 				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
@@ -412,6 +419,7 @@
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
+				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
