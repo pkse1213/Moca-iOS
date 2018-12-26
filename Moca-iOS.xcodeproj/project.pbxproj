@@ -13,6 +13,9 @@
 		CB08315921D0E4B0000F5D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08315721D0E4B0000F5D67 /* Main.storyboard */; };
 		CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB08315A21D0E4B1000F5D67 /* Assets.xcassets */; };
 		CB08315E21D0E4B1000F5D67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */; };
+		CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */; };
+		CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */; };
+		CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */; };
 		CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08321D249A1004796F7 /* UIView+Extension.swift */; };
 		CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */; };
 		CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */; };
@@ -30,6 +33,7 @@
 		CB8DDB8421D3A885001D8191 /* NanumBarunGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB8021D3A885001D8191 /* NanumBarunGothicBold.ttf */; };
 		CB8DDB8521D3A885001D8191 /* NanumBarunGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB8121D3A885001D8191 /* NanumBarunGothic.ttf */; };
 		CB8DDB8621D3A885001D8191 /* NanumBarunGothicUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB8221D3A885001D8191 /* NanumBarunGothicUltraLight.ttf */; };
+		CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB8721D3C1C8001D8191 /* CommunityContentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,9 @@
 		CB08315A21D0E4B1000F5D67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB08315D21D0E4B1000F5D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB08315F21D0E4B1000F5D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentImageCell.swift; sourceTree = "<group>"; };
+		CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentCell.swift; sourceTree = "<group>"; };
+		CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCommentCell.swift; sourceTree = "<group>"; };
 		CB32A08321D249A1004796F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCell.swift; sourceTree = "<group>"; };
 		CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCafeListCell.swift; sourceTree = "<group>"; };
@@ -59,6 +66,7 @@
 		CB8DDB8021D3A885001D8191 /* NanumBarunGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.ttf; sourceTree = "<group>"; };
 		CB8DDB8121D3A885001D8191 /* NanumBarunGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.ttf; sourceTree = "<group>"; };
 		CB8DDB8221D3A885001D8191 /* NanumBarunGothicUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.ttf; sourceTree = "<group>"; };
+		CB8DDB8721D3C1C8001D8191 /* CommunityContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentVC.swift; sourceTree = "<group>"; };
 		F276F3C77C6C9645A0274CB4 /* Pods-Moca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,24 +173,19 @@
 		CB32A08521D24C8F004796F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB32A09921D2A2B9004796F7 /* CommunityTabMain */,
-				CB32A08821D24CBA004796F7 /* HomeMain */,
-				CB8DDB6E21D33777001D8191 /* Ranking */,
+				CB32A09921D2A2B9004796F7 /* CommunityTab */,
+				CB32A08821D24CBA004796F7 /* HomeTab */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CB32A08821D24CBA004796F7 /* HomeMain */ = {
+		CB32A08821D24CBA004796F7 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */,
-				CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */,
-				CB32A08E21D259B8004796F7 /* HomeConceptListCell.swift */,
-				CB32A09021D259CB004796F7 /* HomeConceptCell.swift */,
-				CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */,
-				CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */,
+				CB8DDB8921D3C26E001D8191 /* Main */,
+				CB8DDB6E21D33777001D8191 /* Ranking */,
 			);
-			path = HomeMain;
+			path = HomeTab;
 			sourceTree = "<group>";
 		};
 		CB32A08921D24CCA004796F7 /* HomeTab */ = {
@@ -198,16 +201,18 @@
 			isa = PBXGroup;
 			children = (
 				CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */,
+				CB8DDB8721D3C1C8001D8191 /* CommunityContentVC.swift */,
 			);
 			path = CommunityTab;
 			sourceTree = "<group>";
 		};
-		CB32A09921D2A2B9004796F7 /* CommunityTabMain */ = {
+		CB32A09921D2A2B9004796F7 /* CommunityTab */ = {
 			isa = PBXGroup;
 			children = (
-				CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */,
+				CB8DDB8A21D3C2A2001D8191 /* Main */,
+				CB8DDB8B21D3C2B4001D8191 /* ContentDetail */,
 			);
-			path = CommunityTabMain;
+			path = CommunityTab;
 			sourceTree = "<group>";
 		};
 		CB8DDB6E21D33777001D8191 /* Ranking */ = {
@@ -216,6 +221,37 @@
 				CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */,
 			);
 			path = Ranking;
+			sourceTree = "<group>";
+		};
+		CB8DDB8921D3C26E001D8191 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */,
+				CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */,
+				CB32A08E21D259B8004796F7 /* HomeConceptListCell.swift */,
+				CB32A09021D259CB004796F7 /* HomeConceptCell.swift */,
+				CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */,
+				CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CB8DDB8A21D3C2A2001D8191 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CB8DDB8B21D3C2B4001D8191 /* ContentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */,
+				CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */,
+				CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */,
+			);
+			path = ContentDetail;
 			sourceTree = "<group>";
 		};
 		F22DC76F8604CE1CC745F438 /* Pods */ = {
@@ -360,8 +396,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
+				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
 				CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */,
+				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
+				CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */,
 				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
+				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
 				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
