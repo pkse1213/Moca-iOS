@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothicUltraLight.ttf">
+            <string>NanumBarunGothicUltraLight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home Tab MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -116,8 +121,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="컨셉별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjb-Eh-DJn">
-                                                    <rect key="frame" x="26" y="12" width="52" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <rect key="frame" x="25.999999999999996" y="12" width="45.666666666666657" height="24"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicUltraLight" family="NanumBarunGothic" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -364,7 +369,7 @@
                                         <rect key="frame" x="0.0" y="783" width="375" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F51-aM-jm6" id="hGA-G1-Wvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-Cl-9m1">
