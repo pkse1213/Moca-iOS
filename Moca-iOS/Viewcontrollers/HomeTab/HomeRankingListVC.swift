@@ -12,11 +12,16 @@ class HomeRankingListVC: UIViewController {
 
     @IBOutlet weak var rankingCollectionView: UICollectionView!
     var unit: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
     private func setUpCollectionView() {
         self.rankingCollectionView.delegate = self
         self.rankingCollectionView.dataSource = self
@@ -24,7 +29,6 @@ class HomeRankingListVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         unit = (self.rankingCollectionView.frame.width/2-3)/175
-        print(unit)
     }
 }
 
