@@ -29,7 +29,10 @@ extension ReviewWrittingCell: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "ReviewPlusImageCell", for: indexPath) as! ReviewPlusImageCell
+        var cell = UICollectionViewCell()
+        if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "ReviewPlusImageCell", for: indexPath) as? ReviewPlusImageCell {
+            cell = imageCell
+        }
         return cell
     }
     

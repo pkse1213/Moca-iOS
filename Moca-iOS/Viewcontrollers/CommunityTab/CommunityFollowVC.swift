@@ -30,7 +30,10 @@ extension CommunityFollowVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = followTableView.dequeueReusableCell(withIdentifier: "CommunityFollwCell") as! CommunityFollwCell
+        var cell = UITableViewCell()
+        if let followCell = followTableView.dequeueReusableCell(withIdentifier: "CommunityFollwCell") as? CommunityFollwCell {
+            cell = followCell
+        }
         
         return cell
     }

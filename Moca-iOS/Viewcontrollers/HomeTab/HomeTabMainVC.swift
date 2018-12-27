@@ -23,6 +23,7 @@ class HomeTabMainVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
+    
     private func setUpView() {
         searchBarView.applyRadius(radius: 5)
         searchBarView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1))
@@ -47,18 +48,25 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // moca picks
+        var cell = UITableViewCell()
         if indexPath.row == 0 {
-            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as! HomeMocaPicksCell
-            return cell
+            if let mocaPicksCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as? HomeMocaPicksCell {
+                cell = mocaPicksCell
+            }
+            
         } else if indexPath.row == 1 {
-            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as! HomeConceptCell
-            return cell
+            if let conceptCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as? HomeConceptCell {
+                cell = conceptCell
+            }
+            
         } else {
-            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as! HomeRankingCell
-            let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
-            cell.moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
-            return cell
+            if let rankingCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as? HomeRankingCell {
+                let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
+                rankingCell.moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+                cell = rankingCell
+            }
         }
+        return cell
     }
     
 }
