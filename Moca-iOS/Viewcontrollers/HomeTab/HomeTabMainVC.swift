@@ -29,8 +29,9 @@ class HomeTabMainVC: UIViewController {
     }
     
     @objc func moreAction(_:UIImageView) {
-        let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeRankingListVC") as! HomeRankingListVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeRankingListVC") as? HomeRankingListVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func setUpTableView() {

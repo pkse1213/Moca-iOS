@@ -49,6 +49,9 @@
 		CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */; };
 		CBF2FC2F21D4B5EC00DFC50A /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2B21D4B5EC00DFC50A /* NanumGothicBold.ttf */; };
 		CBF2FC3021D4B5EC00DFC50A /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2C21D4B5EC00DFC50A /* NanumGothicExtraBold.otf */; };
+		CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */; };
+		CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */; };
+		CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +100,9 @@
 		CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
 		CBF2FC2B21D4B5EC00DFC50A /* NanumGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.ttf; sourceTree = "<group>"; };
 		CBF2FC2C21D4B5EC00DFC50A /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
+		CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksBaristaCell.swift; sourceTree = "<group>"; };
+		CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluationCell.swift; sourceTree = "<group>"; };
+		CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksAllEvaluationCell.swift; sourceTree = "<group>"; };
 		F276F3C77C6C9645A0274CB4 /* Pods-Moca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */,
+				CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */,
+				CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */,
+				CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */,
 			);
 			path = MocaPicks;
 			sourceTree = "<group>";
@@ -465,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
@@ -482,6 +492,7 @@
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
 				7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */,
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
+				CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */,
 				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
@@ -494,6 +505,7 @@
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
+				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
 				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
 			);

@@ -37,20 +37,48 @@ class MocaPicksCafeVC: UIViewController {
 }
 
 extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-        
+        if section == 1 {
+            return 3
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        var cell = UITableViewCell()
+        if indexPath.section == 0 {
+            if let headerCell = baristaTableView.dequeueReusableCell(withIdentifier: "BaristaHeaderCell") {
+                cell = headerCell
+            }
+        } else if indexPath.section == 1 {
+            if let baristaCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksBaristaCell") as? MocaPicksBaristaCell {
+                cell = baristaCell
+            }
+        } else if indexPath.section == 2 {
+            if let evaluationCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksEvaluationCell") as? MocaPicksEvaluationCell {
+                cell = evaluationCell
+            }
+        } else if indexPath.section == 3 {
+            if let allEvaluationCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksAllEvaluationCell") as? MocaPicksAllEvaluationCell {
+                cell = allEvaluationCell
+            }
+        }
         
         return cell
     }
     
 }
 
-extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width
+        return CGSize(width: width , height: 228*width/375)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
