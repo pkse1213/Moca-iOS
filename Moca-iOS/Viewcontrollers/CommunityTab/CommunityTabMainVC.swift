@@ -35,7 +35,10 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as! CommunityFeedCell
+        var cell = UITableViewCell()
+        if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+            cell = feedCell
+        }
         return cell
     }
     

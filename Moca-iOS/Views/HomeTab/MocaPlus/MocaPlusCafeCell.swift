@@ -37,8 +37,10 @@ extension MocaPlusCafeCell : UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cafeMenuImageCollectionView.dequeueReusableCell(withReuseIdentifier: "MocaPlusCafeImageCell", for: indexPath) as! MocaPlusCafeImageCell
-        
+        var cell = UICollectionViewCell()
+        if let imageCell = cafeMenuImageCollectionView.dequeueReusableCell(withReuseIdentifier: "MocaPlusCafeImageCell", for: indexPath) as? MocaPlusCafeImageCell {
+            cell = imageCell
+        }
         return cell
     }
     

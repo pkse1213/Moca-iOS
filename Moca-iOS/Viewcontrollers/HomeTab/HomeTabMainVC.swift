@@ -48,18 +48,25 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // moca picks
+        var cell = UITableViewCell()
         if indexPath.row == 0 {
-            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as! HomeMocaPicksCell
-            return cell
+            if let mocaPicksCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as? HomeMocaPicksCell {
+                cell = mocaPicksCell
+            }
+            
         } else if indexPath.row == 1 {
-            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as! HomeConceptCell
-            return cell
+            if let conceptCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as? HomeConceptCell {
+                cell = conceptCell
+            }
+            
         } else {
-            let cell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as! HomeRankingCell
-            let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
-            cell.moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
-            return cell
+            if let rankingCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as? HomeRankingCell {
+                let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
+                rankingCell.moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+                cell = rankingCell
+            }
         }
+        return cell
     }
     
 }

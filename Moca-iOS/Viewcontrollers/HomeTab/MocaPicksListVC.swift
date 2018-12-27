@@ -30,7 +30,10 @@ extension MocaPicksListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mocaPicksTableView.dequeueReusableCell(withIdentifier: "MocaPicksListCell") as! MocaPicksListCell
+        var cell = UITableViewCell()
+        if let mocaPicksCell = mocaPicksTableView.dequeueReusableCell(withIdentifier: "MocaPicksListCell") as? MocaPicksListCell {
+            cell = mocaPicksCell
+        }
         return cell
         
     }

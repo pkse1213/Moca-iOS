@@ -71,7 +71,10 @@ extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as! CommunityContentImageCell
+        var cell = UICollectionViewCell()
+        if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
+            cell = imageCell
+        }
         return cell
     }
     
@@ -90,13 +93,19 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
         if indexPath.section == 0 {
-            let cell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityContentCell") as! CommunityContentCell
-            return cell
+            if let contentCell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityContentCell") as? CommunityContentCell {
+                cell = contentCell
+            }
+            
         } else {
-            let cell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as! CommunityCommentCell
-            return cell
+            if let commentCell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
+                cell = commentCell
+            }
         }
+        
+        return cell
     }
     
 }

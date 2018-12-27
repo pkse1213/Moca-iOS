@@ -29,7 +29,10 @@ extension HomeConceptCell: UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = conceptListCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeConceptListCell", for: indexPath) as! HomeConceptListCell
+        var cell = UICollectionViewCell()
+        if let conceptCell = conceptListCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeConceptListCell", for: indexPath) as? HomeConceptListCell {
+            cell = conceptCell
+        }
         return cell
     }
     
