@@ -52,6 +52,7 @@
 		CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */; };
 		CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */; };
 		CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */; };
+		CBF2FC3821D533DD00DFC50A /* CommunityReviewImaegCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3721D533DD00DFC50A /* CommunityReviewImaegCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksBaristaCell.swift; sourceTree = "<group>"; };
 		CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluationCell.swift; sourceTree = "<group>"; };
 		CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksAllEvaluationCell.swift; sourceTree = "<group>"; };
+		CBF2FC3721D533DD00DFC50A /* CommunityReviewImaegCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewImaegCell.swift; sourceTree = "<group>"; };
 		F276F3C77C6C9645A0274CB4 /* Pods-Moca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */,
+				CBF2FC3721D533DD00DFC50A /* CommunityReviewImaegCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */,
+				CBF2FC3821D533DD00DFC50A /* CommunityReviewImaegCell.swift in Sources */,
 				7780ED6121D4F29F00CC2BA7 /* MocaPlusCafeCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
 				7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */,

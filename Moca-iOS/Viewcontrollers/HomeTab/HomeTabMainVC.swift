@@ -23,6 +23,7 @@ class HomeTabMainVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
+    
     private func setUpView() {
         searchBarView.applyRadius(radius: 5)
         searchBarView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1))

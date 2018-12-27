@@ -9,16 +9,78 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
-
+    let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+    var tapFlag = true
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var likeAndCommentCntStackView: UIStackView!
+    @IBOutlet weak var likeCntLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
+    @IBOutlet weak var reviewContentLabel: UILabel!
+   
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var imageCntLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setUpCollectionView()
+        setUpView()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    private func setUpCollectionView() {
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
+        imageCollectionView.isPagingEnabled = true
     }
-
+    
+    private func setUpView() {
+        imageCntLabel.text = "1/\(colors.count)"
+    }
+    
 }
+
+extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let lenght = imageCollectionView.frame.width
+        return CGSize(width: lenght, height: lenght)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return colors.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell = UICollectionViewCell()
+        if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
+            imageCell.contentImageView.backgroundColor = colors[indexPath.item]
+            cell = imageCell
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CommunityContentImageCell {
+            tapFlag = !tapFlag
+            cell.gradationImageView.isHidden = !cell.gradationImageView.isHidden
+//            likeAndCommentCntStackView.isHidden = !tapFlag
+//            imageCntLabel.isHidden = !imageCntLabel.isHidden
+        }
+    }
+    
+}
+
+extension CommunityFeedCell: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView is UICollectionView {
+            let indexPath = imageCollectionView.indexPathForItem(at: scrollView.contentOffset)
+            if let index = indexPath?.item {
+                imageCntLabel.text = "\(index+1)/\(colors.count)"
+            }
+            
+        }
+    }
+}
+

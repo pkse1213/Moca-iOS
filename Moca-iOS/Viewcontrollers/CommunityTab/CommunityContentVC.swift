@@ -9,7 +9,9 @@
 import UIKit
 
 class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
-
+    let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+    
+    @IBOutlet weak var imageCntLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var cotentTableView: UITableView!
     
@@ -25,6 +27,7 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     private func setUpView() {
         textSquareView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8469749093, green: 0.8471175432, blue: 0.8469561338, alpha: 1))
         textBackgroundView.applyRadius(radius: 39/2)
+        imageCntLabel.text = "1/\(colors.count)"
     }
     
     private func setUpListView() {
@@ -57,9 +60,14 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     }
 }
 
-extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let lenght = imageCollectionView.frame.width
+        return CGSize(width: lenght, height: lenght)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,5 +99,16 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+}
+
+extension CommunityContentVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView is UICollectionView {
+            let indexPath = imageCollectionView.indexPathForItem(at: scrollView.contentOffset)
+            if let index = indexPath?.item {
+                imageCntLabel.text = "\(index+1)/\(colors.count)"
+            }
+            
+        }
+    }
 }
