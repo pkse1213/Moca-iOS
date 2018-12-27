@@ -35,5 +35,8 @@ extension MocaPicksListVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksCafeVC") as! MocaPicksCafeVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
