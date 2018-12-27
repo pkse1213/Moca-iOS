@@ -10,7 +10,10 @@ import UIKit
 
 class MocaPicksCafeVC: UIViewController {
 
-    let colors = [#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1),#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)]
+    let colors = [#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1),#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1),#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)]
+    var progressUnit: Float = 0
+    var count = 0
+    
     @IBOutlet weak var cafeImageCollectionView: UICollectionView!
     @IBOutlet weak var baristaTableView: UITableView!
     @IBOutlet weak var scrollProgressView: UIProgressView!
@@ -18,30 +21,29 @@ class MocaPicksCafeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpListView()
+        progressUnit = Float(1)/Float(colors.count)
+        scrollProgressView.progress = progressUnit
     }
     
     private func setUpListView() {
         cafeImageCollectionView.delegate = self
         cafeImageCollectionView.dataSource = self
-        
+        cafeImageCollectionView.isPagingEnabled = true
         baristaTableView.delegate = self
         baristaTableView.dataSource = self
         baristaTableView.applyRadius(radius: 10)
         
     }
-    
-    
-    
 }
 
 extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = baristaTableView.dequeueReusableCell(withIdentifier: "") as! UITableViewCell
+        let cell = UITableViewCell()
         
         return cell
     }
@@ -51,16 +53,24 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
 extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        
+        return colors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = cafeImageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as! CommunityContentImageCell
         cell.backgroundColor = colors[indexPath.item]
-        return cell
         
+        return cell
     }
+    
+}
+
+extension MocaPicksCafeVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
+        if scrollView is UICollectionView {
+            scrollProgressView.progress = Float(scrollView.contentOffset.x+scrollView.frame.width) / Float(scrollView.frame.width*CGFloat(colors.count))
+            
+        }
     }
 }
