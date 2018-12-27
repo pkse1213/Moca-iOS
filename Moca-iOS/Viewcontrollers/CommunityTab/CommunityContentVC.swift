@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommunityContentVC: UIViewController {
+class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var cotentTableView: UITableView!
@@ -23,17 +23,37 @@ class CommunityContentVC: UIViewController {
     }
     
     private func setUpView() {
-       textSquareView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8469749093, green: 0.8471175432, blue: 0.8469561338, alpha: 1))
+        textSquareView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8469749093, green: 0.8471175432, blue: 0.8469561338, alpha: 1))
         textBackgroundView.applyRadius(radius: 39/2)
     }
     
     private func setUpListView() {
+//        let gesture = UIPanGestureRecognizer(target: self, action: Selector(("wasDragged:")))
+//        cotentTableView.addGestureRecognizer(gesture)
+//        cotentTableView.isUserInteractionEnabled = true
+//        gesture.delegate = self
+//        
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
         
         cotentTableView.delegate = self
         cotentTableView.dataSource = self
         cotentTableView.applyRadius(radius: 10)
+    }
+    
+    func wasDragged(gestureRecognizer: UIPanGestureRecognizer) {
+        if gestureRecognizer.state == UIGestureRecognizer.State.began || gestureRecognizer.state == UIGestureRecognizer.State.changed {
+            let translation = gestureRecognizer.translation(in: self.view)
+            print(gestureRecognizer.view!.center.y)
+            if(gestureRecognizer.view!.center.y < 462) {
+                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + translation.y)
+            }else {
+                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: 554)
+            }
+            
+            gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
+        }
+        
     }
 }
 
