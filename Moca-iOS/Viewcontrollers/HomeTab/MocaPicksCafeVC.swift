@@ -50,7 +50,11 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width
+        return CGSize(width: width , height: 228*width/375)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

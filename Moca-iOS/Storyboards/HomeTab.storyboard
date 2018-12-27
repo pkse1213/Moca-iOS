@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ct-TH-rcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218.4000000000001" y="119.70443349753695"/>
+            <point key="canvasLocation" x="2425" y="83"/>
         </scene>
         <!--Moca Picks CafeVC-->
         <scene sceneID="pqc-Io-rtQ">
@@ -287,29 +287,29 @@
                                         <rect key="frame" x="0.0" y="63" width="375" height="228"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="q2f-KH-5UK">
-                                            <size key="itemSize" width="375" height="375"/>
+                                            <size key="itemSize" width="375" height="228"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CommunityContentImageCell" reuseIdentifier="CommunityContentImageCell" id="bt8-An-SH6" customClass="CommunityContentImageCell" customModule="Moca_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-73.666666666666671" width="375" height="375"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-32-Pnm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="aUc-32-Pnm" secondAttribute="bottom" id="7rP-8Z-4h5"/>
-                                                    <constraint firstItem="aUc-32-Pnm" firstAttribute="top" secondItem="bt8-An-SH6" secondAttribute="top" id="Ylf-V2-rfA"/>
-                                                    <constraint firstItem="aUc-32-Pnm" firstAttribute="leading" secondItem="bt8-An-SH6" secondAttribute="leading" id="ojf-ff-Qgb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="aUc-32-Pnm" secondAttribute="trailing" id="vPq-sb-5r2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aUc-32-Pnm" secondAttribute="bottom" id="OFe-XB-SS9"/>
+                                                    <constraint firstItem="aUc-32-Pnm" firstAttribute="leading" secondItem="bt8-An-SH6" secondAttribute="leading" id="WOV-QB-veW"/>
+                                                    <constraint firstItem="aUc-32-Pnm" firstAttribute="top" secondItem="bt8-An-SH6" secondAttribute="top" id="noL-CF-G6R"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aUc-32-Pnm" secondAttribute="trailing" id="vf4-Ih-XtR"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="contentImageView" destination="aUc-32-Pnm" id="Hye-ih-vhw"/>
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-1X-Nkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="119.70443349753695"/>
+            <point key="canvasLocation" x="3047" y="83"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZLv-QS-qhw">
