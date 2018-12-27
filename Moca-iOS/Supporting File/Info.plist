@@ -4,7 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>NanumGothic</string>
+		<string>NanumGothicBold</string>
+		<string>NanumGothicExtraBold</string>
+		<string>NanumGothicLight</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
