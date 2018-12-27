@@ -40,7 +40,9 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as! CommunityContentVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+             self.navigationController?.pushViewController(vc, animated: true)
+        }
+       
     }
 }

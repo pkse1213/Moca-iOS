@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ve8-ZX-z8X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKT-OO-6HP">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--랭킹-->
+        <!--Ranking-->
         <scene sceneID="2iY-eL-6YL">
             <objects>
-                <viewController storyboardIdentifier="HomeRankingListVC" id="nKT-OO-6HP" customClass="HomeRankingListVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeRankingListVC" title="Ranking" id="nKT-OO-6HP" customClass="HomeRankingListVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jeK-6S-UQB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cbd-4f-MRN">
-                                <rect key="frame" x="21" y="93" width="354" height="685"/>
+                                <rect key="frame" x="21" y="62" width="354" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="21" minimumInteritemSpacing="0.0" id="lsc-Zh-b9Z">
                                     <size key="itemSize" width="175" height="238"/>
@@ -144,7 +144,7 @@
                             <constraint firstItem="J5L-fa-AQc" firstAttribute="trailing" secondItem="Cbd-4f-MRN" secondAttribute="trailing" id="8LP-ec-cSl"/>
                             <constraint firstItem="Cbd-4f-MRN" firstAttribute="leading" secondItem="J5L-fa-AQc" secondAttribute="leading" constant="21" id="8rk-TP-efb"/>
                             <constraint firstItem="J5L-fa-AQc" firstAttribute="bottom" secondItem="Cbd-4f-MRN" secondAttribute="bottom" id="y0a-fC-bo5"/>
-                            <constraint firstItem="Cbd-4f-MRN" firstAttribute="top" secondItem="J5L-fa-AQc" secondAttribute="top" constant="49" id="yoY-gn-lfu"/>
+                            <constraint firstItem="Cbd-4f-MRN" firstAttribute="top" secondItem="J5L-fa-AQc" secondAttribute="top" constant="18" id="yoY-gn-lfu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J5L-fa-AQc"/>
                     </view>
@@ -155,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYk-zA-ra9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="120.44334975369459"/>
+            <point key="canvasLocation" x="2711.1999999999998" y="82.758620689655174"/>
         </scene>
         <!--Moca Picks-->
         <scene sceneID="Lh8-bC-TDS">
@@ -166,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pAw-vj-VSA">
-                                <rect key="frame" x="26" y="88" width="349" height="690"/>
+                                <rect key="frame" x="26" y="44" width="349" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MocaPicksListCell" rowHeight="282" id="Eoh-Py-Ock" customClass="MocaPicksListCell" customModule="Moca_iOS" customModuleProvider="target">
@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ct-TH-rcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="83"/>
+            <point key="canvasLocation" x="2711" y="752"/>
         </scene>
         <!--Moca Picks CafeVC-->
         <scene sceneID="pqc-Io-rtQ">
@@ -709,25 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-1X-Nkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3045.5999999999999" y="82.758620689655174"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZLv-QS-qhw">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ve8-ZX-z8X" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cyu-0K-UF4">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LE4-gI-vKN" kind="relationship" relationship="rootViewController" id="F8X-2r-0Z4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8E8-dd-yMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1276" y="119.70443349753695"/>
+            <point key="canvasLocation" x="3351" y="752"/>
         </scene>
     </scenes>
     <resources>
