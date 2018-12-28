@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeTabMainVC: UIViewController {
-
+    
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTabTableView: UITableView!
    
@@ -51,6 +51,8 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
         var cell = UITableViewCell()
         if indexPath.row == 0 {
             if let mocaPicksCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as? HomeMocaPicksCell {
+                mocaPicksCell.navigationController = self.navigationController
+                
                 cell = mocaPicksCell
             }
             

@@ -10,6 +10,7 @@ import UIKit
 
 class HomeMocaPicksCell: UITableViewCell {
 
+    var navigationController: UINavigationController?
     @IBOutlet weak var mocaPickCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -37,5 +38,13 @@ extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let navi = navigationController else {
+            return
+        }
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksListVC") as? MocaPicksListVC {
+            navi.pushViewController(vc, animated: true)
+        }
+    }
     
 }
