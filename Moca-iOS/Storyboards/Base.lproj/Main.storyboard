@@ -847,7 +847,54 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmd-i8-ydi">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jwd-ij-4bw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5gO-8K-Rzy"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunitySelectFeedCell" rowHeight="50" id="XoM-Vw-jKY" customClass="CommunitySelectFeedCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XoM-Vw-jKY" id="hsz-iE-J9L">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbP-UV-6J5">
+                                                            <rect key="frame" x="27.000000000000004" y="18.333333333333332" width="34.333333333333343" height="13.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                            <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonYellowcircle" translatesAutoresizingMaskIntoConstraints="NO" id="MQy-5B-dO3">
+                                                            <rect key="frame" x="336" y="13" width="24" height="24"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="sbP-UV-6J5" firstAttribute="leading" secondItem="hsz-iE-J9L" secondAttribute="leading" constant="27" id="5C6-Wz-Jr7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MQy-5B-dO3" secondAttribute="bottom" constant="13" id="C4C-f3-3sE"/>
+                                                        <constraint firstItem="sbP-UV-6J5" firstAttribute="centerY" secondItem="hsz-iE-J9L" secondAttribute="centerY" id="MNa-Ds-sbV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MQy-5B-dO3" secondAttribute="trailing" constant="15" id="c0A-ve-VVq"/>
+                                                        <constraint firstItem="MQy-5B-dO3" firstAttribute="centerY" secondItem="hsz-iE-J9L" secondAttribute="centerY" id="dhS-1y-LS6"/>
+                                                        <constraint firstItem="MQy-5B-dO3" firstAttribute="top" secondItem="hsz-iE-J9L" secondAttribute="top" constant="13" id="vfj-Wc-Fxl"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="choosedImageView" destination="MQy-5B-dO3" id="IAC-C4-hv0"/>
+                                                    <outlet property="feedNameLabel" destination="sbP-UV-6J5" id="v6r-zK-OCR"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.29719606164383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="jwd-ij-4bw" firstAttribute="leading" secondItem="Bmd-i8-ydi" secondAttribute="leading" id="iK2-pP-esF"/>
+                                    <constraint firstItem="jwd-ij-4bw" firstAttribute="top" secondItem="Bmd-i8-ydi" secondAttribute="top" id="suy-xH-d4D"/>
+                                    <constraint firstAttribute="trailing" secondItem="jwd-ij-4bw" secondAttribute="trailing" id="vlZ-ub-Ubt"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -862,17 +909,20 @@
                             <constraint firstItem="ZNp-9i-tiW" firstAttribute="bottom" secondItem="Bmd-i8-ydi" secondAttribute="bottom" id="wbk-Ki-e7S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Bmd-i8-ydi"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="HBe-po-uXl"/>
+                    <navigationItem key="navigationItem" id="HBe-po-uXl">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="40E-OF-lrn">
+                            <connections>
+                                <action selector="chooseFeedKindAction:" destination="5dy-aw-F6V" id="kch-1m-B0U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="communityTableView" destination="b7E-P6-97G" id="DtT-fz-kai"/>
+                        <outlet property="feedMenuTableView" destination="jwd-ij-4bw" id="tDC-GA-Iry"/>
                         <outlet property="profileBackgroundView" destination="ZSX-pm-YK9" id="9yK-kb-gAY"/>
                         <outlet property="profileSquareView" destination="LM8-56-9gg" id="4cp-B8-hsV"/>
+                        <outlet property="selectFeedView" destination="Bmd-i8-ydi" id="oIV-WB-V6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAI-Or-NGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -940,6 +990,7 @@
         <image name="commonCommentWhite" width="15" height="13"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartWhite" width="15" height="13"/>
+        <image name="commonYellowcircle" width="24" height="24"/>
         <image name="communityFollowlistSearch" width="22" height="22"/>
         <image name="communityGradation" width="336" height="336"/>
         <image name="communityStarGray" width="11" height="11"/>
