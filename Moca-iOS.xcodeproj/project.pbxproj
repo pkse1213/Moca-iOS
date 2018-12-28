@@ -39,6 +39,7 @@
 		CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */; };
 		CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */; };
 		CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */; };
+		CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */; };
 		CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */; };
 		CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */; };
 		CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */; };
@@ -93,6 +94,7 @@
 		CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListCell.swift; sourceTree = "<group>"; };
 		CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabMainVC.swift; sourceTree = "<group>"; };
 		CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCell.swift; sourceTree = "<group>"; };
+		CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySelectFeedCell.swift; sourceTree = "<group>"; };
 		CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListVC.swift; sourceTree = "<group>"; };
 		CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeCell.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */,
 				CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */,
 				CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */,
+				CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */,
 			);
 			path = ContentDetail;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
+				CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */,
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
