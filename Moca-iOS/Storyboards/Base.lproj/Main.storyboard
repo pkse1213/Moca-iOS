@@ -1210,7 +1210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qt-u8-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912.8" y="2870.6896551724139"/>
+            <point key="canvasLocation" x="1913" y="2894"/>
         </scene>
         <!--커뮤니티-->
         <scene sceneID="yjA-sg-gPU">
@@ -1254,7 +1254,6 @@
         <!--마이페이지-->
         <scene sceneID="Tnv-oK-nfC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XgU-s3-T1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tD9-rr-bYX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이페이지" id="1Eo-Ry-50F"/>
                     <toolbarItems/>
@@ -1268,6 +1267,7 @@
                         <segue destination="3hk-yQ-r4D" kind="relationship" relationship="rootViewController" id="710-We-Klj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XgU-s3-T1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078" y="2871"/>
         </scene>
