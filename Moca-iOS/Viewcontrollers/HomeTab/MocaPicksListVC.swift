@@ -17,6 +17,11 @@ class MocaPicksListVC: UIViewController {
         setUpTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setUpTableView() {
         mocaPicksTableView.delegate = self
         mocaPicksTableView.dataSource = self

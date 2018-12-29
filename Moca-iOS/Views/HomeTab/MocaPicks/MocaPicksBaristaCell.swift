@@ -9,7 +9,8 @@
 import UIKit
 
 class MocaPicksBaristaCell: UITableViewCell {
-
+    
+    var navigationController: UINavigationController?
     @IBOutlet weak var baristaImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -19,5 +20,14 @@ class MocaPicksBaristaCell: UITableViewCell {
     
     private func setUpView() {
         baristaImageView.applyRadius(radius: 23)
+    }
+    
+    @IBAction func pushBaristaDetailAction(_ sender: UIButton) {
+        guard let navi = navigationController else {
+            return
+        }
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksBaristaDetailVC") as? MocaPicksBaristaDetailVC {
+            navi.pushViewController(vc, animated: true)
+        }
     }
 }

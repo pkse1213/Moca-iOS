@@ -15,6 +15,8 @@ class CommunityTabMainVC: UIViewController {
             changeFeedKind()
         }
     }
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
     
@@ -28,6 +30,8 @@ class CommunityTabMainVC: UIViewController {
     }
     
     private func setUpView() {
+        selectFeedView.isHidden = true
+        
         feedMenuTableView.delegate = self
         feedMenuTableView.dataSource = self
         
@@ -38,13 +42,26 @@ class CommunityTabMainVC: UIViewController {
         profileSquareView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     }
     
-    func changeFeedKind() {
+    private func changeFeedKind() {
         feedMenuTableView.reloadData()
-        selectFeedView.isHidden = !selectFeedView.isHidden
+        dropUpandDropDown()
+    }
+    
+    private func dropUpandDropDown() {
+        UIView.animate(withDuration: 0.5) {
+            self.selectFeedView.isHidden = !self.selectFeedView.isHidden
+            
+            if self.tableViewTopConstraint.constant == 0 {
+                self.tableViewTopConstraint.constant = -100
+            } else {
+                self.tableViewTopConstraint.constant = 0
+            }
+            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func chooseFeedKindAction(_ sender: Any) {
-        selectFeedView.isHidden = !selectFeedView.isHidden
+        dropUpandDropDown()
     }
     
 }
@@ -87,6 +104,7 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if tableView == feedMenuTableView {
             selectIndex = indexPath.row
+            
         }
     }
 }

@@ -34,6 +34,7 @@ class MocaPicksCafeVC: UIViewController {
         baristaTableView.applyRadius(radius: 10)
         
     }
+    
 }
 
 extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
@@ -57,6 +58,7 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 1 {
             if let baristaCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksBaristaCell") as? MocaPicksBaristaCell {
+                baristaCell.navigationController = self.navigationController
                 cell = baristaCell
             }
         } else if indexPath.section == 2 {
@@ -68,7 +70,6 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
                 cell = allEvaluationCell
             }
         }
-        
         return cell
     }
     
@@ -101,7 +102,6 @@ extension MocaPicksCafeVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView is UICollectionView {
             scrollProgressView.progress = Float(scrollView.contentOffset.x+scrollView.frame.width) / Float(scrollView.frame.width*CGFloat(colors.count))
-            
         }
     }
 }

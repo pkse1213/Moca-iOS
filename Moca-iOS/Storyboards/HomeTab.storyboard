@@ -456,6 +456,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF5-Lp-KxE">
                                                     <rect key="frame" x="285" y="26" width="67" height="22"/>
                                                     <state key="normal" image="mocapicksMore"/>
+                                                    <connections>
+                                                        <action selector="pushBaristaDetailAction:" destination="l5I-ci-iyi" eventType="touchUpInside" id="A0Q-LA-NNz"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
