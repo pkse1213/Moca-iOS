@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTg-HE-D3f">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--음료 쿠폰-->
+        <scene sceneID="uUv-OF-eJh">
+            <objects>
+                <viewController id="hRe-WR-J55" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uov-SY-vYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="O87-Qt-Vs2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="음료 쿠폰" id="gXL-39-okd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lq-AK-AoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159.2" y="-175.1231527093596"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q9I-dQ-Prx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VTg-HE-D3f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="commonCancelBlack" id="j2D-AZ-VPY">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hRe-WR-J55" kind="relationship" relationship="rootViewController" id="gbG-2v-EiI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mf6-IP-x5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216.80000000000001" y="-175.1231527093596"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="commonCancelBlack" width="24" height="24"/>
+    </resources>
+</document>
