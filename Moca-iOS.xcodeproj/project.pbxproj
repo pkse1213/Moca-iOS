@@ -266,6 +266,7 @@
 				CB32A08221D2497D004796F7 /* Utils */,
 				CB08316521D0E4C5000F5D67 /* Storyboards */,
 				CB08316721D0E4DF000F5D67 /* Supporting File */,
+				CB08315F21D0E4B1000F5D67 /* Info.plist */,
 				CB2ACCEF21D7F935004DBF2E /* BridgingHeader.h */,
 			);
 			path = "Moca-iOS";
@@ -302,7 +303,6 @@
 			children = (
 				CB32A07121D23D13004796F7 /* Fonts */,
 				CB08315A21D0E4B1000F5D67 /* Assets.xcassets */,
-				CB08315F21D0E4B1000F5D67 /* Info.plist */,
 				CB08315321D0E4B0000F5D67 /* AppDelegate.swift */,
 			);
 			path = "Supporting File";
@@ -807,7 +807,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Moca-iOS/Supporting File/Info.plist";
+				INFOPLIST_FILE = "Moca-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -832,7 +832,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "Moca-iOS/Supporting File/Info.plist";
+				INFOPLIST_FILE = "Moca-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
