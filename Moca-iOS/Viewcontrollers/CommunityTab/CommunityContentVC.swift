@@ -9,7 +9,9 @@
 import UIKit
 
 class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
-
+    let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)]
+    
+    @IBOutlet weak var imageCntLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var cotentTableView: UITableView!
     
@@ -25,6 +27,7 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     private func setUpView() {
         textSquareView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8469749093, green: 0.8471175432, blue: 0.8469561338, alpha: 1))
         textBackgroundView.applyRadius(radius: 39/2)
+        imageCntLabel.text = "1/\(colors.count)"
     }
     
     private func setUpListView() {
@@ -57,13 +60,22 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     }
 }
 
-extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let lenght = imageCollectionView.frame.width
+        return CGSize(width: lenght, height: lenght)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as! CommunityContentImageCell
+        var cell = UICollectionViewCell()
+        if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
+            imageCell.contentImageView.backgroundColor = colors[indexPath.item]
+            cell = imageCell
+        }
         return cell
     }
     
@@ -82,14 +94,31 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
         if indexPath.section == 0 {
-            let cell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityContentCell") as! CommunityContentCell
-            return cell
+            if let contentCell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityContentCell") as? CommunityContentCell {
+                cell = contentCell
+            }
+            
         } else {
-            let cell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as! CommunityCommentCell
-            return cell
+            if let commentCell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
+                cell = commentCell
+            }
         }
+        
+        return cell
     }
     
-    
+}
+
+extension CommunityContentVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView is UICollectionView {
+            let indexPath = imageCollectionView.indexPathForItem(at: scrollView.contentOffset)
+            if let index = indexPath?.item {
+                imageCntLabel.text = "\(index+1)/\(colors.count)"
+            }
+            
+        }
+    }
 }

@@ -29,7 +29,10 @@ extension CommunityReviewWrittingVC: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = writtingTableView.dequeueReusableCell(withIdentifier: "ReviewWrittingCell") as! ReviewWrittingCell
+        var cell = UITableViewCell()
+        if let writtingCell = writtingTableView.dequeueReusableCell(withIdentifier: "ReviewWrittingCell") as? ReviewWrittingCell {
+            cell = writtingCell
+        }
         return cell
     }
     

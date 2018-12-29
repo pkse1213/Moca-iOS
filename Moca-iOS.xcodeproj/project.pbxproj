@@ -45,6 +45,7 @@
 		CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */; };
 		CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */; };
 		CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */; };
+		CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */; };
 		CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */; };
 		CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */; };
 		CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */; };
@@ -58,6 +59,9 @@
 		CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */; };
 		CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */; };
 		CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */; };
+		CBF2FC3821D533DD00DFC50A /* CommunityReviewImaegCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3721D533DD00DFC50A /* CommunityReviewImaegCell.swift */; };
+		CBF2FC3A21D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3921D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift */; };
+		CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC3B21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +106,7 @@
 		CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListCell.swift; sourceTree = "<group>"; };
 		CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabMainVC.swift; sourceTree = "<group>"; };
 		CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCell.swift; sourceTree = "<group>"; };
+		CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySelectFeedCell.swift; sourceTree = "<group>"; };
 		CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListVC.swift; sourceTree = "<group>"; };
 		CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeCell.swift; sourceTree = "<group>"; };
@@ -115,6 +120,9 @@
 		CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksBaristaCell.swift; sourceTree = "<group>"; };
 		CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluationCell.swift; sourceTree = "<group>"; };
 		CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksAllEvaluationCell.swift; sourceTree = "<group>"; };
+		CBF2FC3721D533DD00DFC50A /* CommunityReviewImaegCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewImaegCell.swift; sourceTree = "<group>"; };
+		CBF2FC3921D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksBaristaDetailCell.swift; sourceTree = "<group>"; };
+		CBF2FC3B21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksBaristaDetailVC.swift; sourceTree = "<group>"; };
 		F276F3C77C6C9645A0274CB4 /* Pods-Moca-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +245,7 @@
 				CBF2FC3121D4FCC900DFC50A /* MocaPicksBaristaCell.swift */,
 				CBF2FC3321D4FD2700DFC50A /* MocaPicksEvaluationCell.swift */,
 				CBF2FC3521D4FD5D00DFC50A /* MocaPicksAllEvaluationCell.swift */,
+				CBF2FC3921D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift */,
 			);
 			path = MocaPicks;
 			sourceTree = "<group>";
@@ -290,6 +299,7 @@
 				CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */,
 				CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */,
 				CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */,
+				CBF2FC3B21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift */,
 				7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */,
 				7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */,
 				77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */,
@@ -343,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */,
+				CBF2FC3721D533DD00DFC50A /* CommunityReviewImaegCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -354,6 +365,7 @@
 				CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */,
 				CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */,
 				CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */,
+				CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */,
 			);
 			path = ContentDetail;
 			sourceTree = "<group>";
@@ -503,6 +515,7 @@
 			files = (
 				CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */,
 				776211A121D6A61300F90D8A /* PracticeVC.swift in Sources */,
+				CBF2FC3A21D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
@@ -517,6 +530,7 @@
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				776211A321D6AC1900F90D8A /* Unwind.swift in Sources */,
 				CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */,
+				CBF2FC3821D533DD00DFC50A /* CommunityReviewImaegCell.swift in Sources */,
 				7780ED6121D4F29F00CC2BA7 /* MocaPlusCafeCell.swift in Sources */,
 				7757B4D021D5DB93004613BD /* HomeSearchResultCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
@@ -525,6 +539,7 @@
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
 				CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */,
 				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
+				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
 				CB32A08F21D259B8004796F7 /* HomeConceptListCell.swift in Sources */,
@@ -534,6 +549,7 @@
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
+				CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */,
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,

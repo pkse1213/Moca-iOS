@@ -17,6 +17,11 @@ class MocaPicksListVC: UIViewController {
         setUpTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setUpTableView() {
         mocaPicksTableView.delegate = self
         mocaPicksTableView.dataSource = self
@@ -30,7 +35,10 @@ extension MocaPicksListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mocaPicksTableView.dequeueReusableCell(withIdentifier: "MocaPicksListCell") as! MocaPicksListCell
+        var cell = UITableViewCell()
+        if let mocaPicksCell = mocaPicksTableView.dequeueReusableCell(withIdentifier: "MocaPicksListCell") as? MocaPicksListCell {
+            cell = mocaPicksCell
+        }
         return cell
         
     }

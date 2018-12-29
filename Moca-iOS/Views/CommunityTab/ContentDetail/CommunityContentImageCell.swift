@@ -11,4 +11,5 @@ import UIKit
 class CommunityContentImageCell: UICollectionViewCell {
     @IBOutlet weak var contentImageView: UIImageView!
     
+    @IBOutlet weak var gradationImageView: UIImageView!
 }

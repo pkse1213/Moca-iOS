@@ -10,6 +10,7 @@ import UIKit
 
 class HomeMocaPicksCell: UITableViewCell {
 
+    var navigationController: UINavigationController?
     @IBOutlet weak var mocaPickCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -26,13 +27,24 @@ class HomeMocaPicksCell: UITableViewCell {
 
 extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = mocaPickCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeMocaPicksCafeListCell", for: indexPath) as! HomeMocaPicksCafeListCell
+        var cell = UICollectionViewCell()
+        if let cafeCell = mocaPickCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeMocaPicksCafeListCell", for: indexPath) as? HomeMocaPicksCafeListCell {
+            cell = cafeCell
+        }
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let navi = navigationController else {
+            return
+        }
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksListVC") as? MocaPicksListVC {
+            navi.pushViewController(vc, animated: true)
+        }
+    }
     
 }

@@ -31,7 +31,10 @@ extension HomeRankingCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = rankTableView.dequeueReusableCell(withIdentifier: "HomeRankingListCell") as! HomeRankingListCell
+        var cell = UITableViewCell()
+        if let rankingCell = rankTableView.dequeueReusableCell(withIdentifier: "HomeRankingListCell") as? HomeRankingListCell {
+            cell = rankingCell
+        }
         return cell
     }
     
