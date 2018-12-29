@@ -90,6 +90,9 @@
                                                 <state key="normal" title="전체">
                                                     <color key="titleColor" red="0.88235294117647056" green="0.69803921568627447" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="allTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="Smb-TF-ugy"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="u8p-93-NqO">
                                                 <rect key="frame" x="0.0" y="36" width="125" height="4"/>
@@ -112,6 +115,9 @@
                                                 <state key="normal" title="카페명">
                                                     <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cafeTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="TPE-dP-Vn8"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="vUA-La-aOQ">
                                                 <rect key="frame" x="0.0" y="36" width="125" height="4"/>
@@ -134,6 +140,9 @@
                                                 <state key="normal" title="위치">
                                                     <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="locationTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="BiB-34-z8g"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="GpM-Hs-yai">
                                                 <rect key="frame" x="0.0" y="36" width="125" height="4"/>
@@ -239,9 +248,6 @@
                             <constraint firstItem="Fff-Jh-oXm" firstAttribute="trailing" secondItem="k5B-nK-04j" secondAttribute="trailing" id="zDT-kR-r0I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fff-Jh-oXm"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Vkb-zj-3dv" appends="YES" id="3pT-hb-pu4"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="mY9-xm-2dU">
                         <nil key="title"/>
@@ -256,13 +262,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allTabButton" destination="a1a-m3-0d9" id="duh-mP-xRC"/>
+                        <outlet property="allTabView" destination="u8p-93-NqO" id="KYU-8V-czi"/>
+                        <outlet property="cafeTabButton" destination="L95-DI-jAp" id="mlf-2r-4wh"/>
+                        <outlet property="cafeTabView" destination="vUA-La-aOQ" id="zBc-Yo-4yn"/>
+                        <outlet property="locationTabButton" destination="sRs-xm-HSV" id="JuP-vf-vPy"/>
+                        <outlet property="locationTabView" destination="GpM-Hs-yai" id="j3B-JU-M2a"/>
                         <outlet property="searchResultTableView" destination="F0O-MU-2QI" id="aNe-Px-lYZ"/>
                         <outlet property="searchTextField" destination="0CB-xH-W78" id="fJO-lv-KTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fa-4J-hov" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qLH-Ia-MkX" userLabel="Exit" sceneMemberID="exit"/>
-                <swipeGestureRecognizer direction="right" id="Vkb-zj-3dv"/>
             </objects>
             <point key="canvasLocation" x="1285.5999999999999" y="-171.42857142857144"/>
         </scene>
