@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7729030121D533F800C19416 /* HomeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7729030021D533F800C19416 /* HomeSearch.storyboard */; };
+		7757B4D021D5DB93004613BD /* HomeSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757B4CF21D5DB93004613BD /* HomeSearchResultCell.swift */; };
+		7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */; };
+		776211A121D6A61300F90D8A /* PracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776211A021D6A61300F90D8A /* PracticeVC.swift */; };
+		776211A321D6AC1900F90D8A /* Unwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776211A221D6AC1900F90D8A /* Unwind.swift */; };
 		7780ED5921D4F25200CC2BA7 /* MocaPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */; };
 		7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5B21D4F29E00CC2BA7 /* MocaPlusHomeListCell.swift */; };
 		7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5C21D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift */; };
@@ -14,6 +19,7 @@
 		7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5E21D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift */; };
 		7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */; };
 		7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */; };
+		77FAE6D121D5441B006C24F4 /* HomeSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */; };
 		8517728C6C50F34105911A84 /* Pods_Moca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */; };
 		CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08315321D0E4B0000F5D67 /* AppDelegate.swift */; };
 		CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08315521D0E4B0000F5D67 /* HomeTabMainVC.swift */; };
@@ -55,6 +61,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7729030021D533F800C19416 /* HomeSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeSearch.storyboard; sourceTree = "<group>"; };
+		7757B4CF21D5DB93004613BD /* HomeSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultCell.swift; sourceTree = "<group>"; };
+		7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRightToLeft.swift; sourceTree = "<group>"; };
+		776211A021D6A61300F90D8A /* PracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeVC.swift; sourceTree = "<group>"; };
+		776211A221D6AC1900F90D8A /* Unwind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwind.swift; sourceTree = "<group>"; };
 		7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MocaPlus.storyboard; sourceTree = "<group>"; };
 		7780ED5B21D4F29E00CC2BA7 /* MocaPlusHomeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeListCell.swift; sourceTree = "<group>"; };
 		7780ED5C21D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusDetailTopicCell.swift; sourceTree = "<group>"; };
@@ -62,6 +73,7 @@
 		7780ED5E21D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusCafeImageCell.swift; sourceTree = "<group>"; };
 		7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusDetailVC.swift; sourceTree = "<group>"; };
 		7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeVC.swift; sourceTree = "<group>"; };
+		77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchVC.swift; sourceTree = "<group>"; };
 		8870235A62FE8FFCFDF56460 /* Pods-Moca-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moca_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB08315021D0E4B0000F5D67 /* Moca-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moca-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +138,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7757B4CE21D5DB77004613BD /* HomeSearch */ = {
+			isa = PBXGroup;
+			children = (
+				7757B4CF21D5DB93004613BD /* HomeSearchResultCell.swift */,
+			);
+			path = HomeSearch;
+			sourceTree = "<group>";
+		};
 		7780ED5A21D4F29300CC2BA7 /* MocaPlus */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +195,7 @@
 				CB8DDB7521D363C2001D8191 /* CommunityTab.storyboard */,
 				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
 				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
+				7729030021D533F800C19416 /* HomeSearch.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -184,6 +205,7 @@
 			children = (
 				CB32A09821D2A281004796F7 /* CommunityTab */,
 				CB32A08921D24CCA004796F7 /* HomeTab */,
+				776211A021D6A61300F90D8A /* PracticeVC.swift */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -234,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				CB32A08321D249A1004796F7 /* UIView+Extension.swift */,
+				7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */,
+				776211A221D6AC1900F90D8A /* Unwind.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -250,6 +274,7 @@
 		CB32A08821D24CBA004796F7 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				7757B4CE21D5DB77004613BD /* HomeSearch */,
 				7780ED5A21D4F29300CC2BA7 /* MocaPlus */,
 				CB8DDB8921D3C26E001D8191 /* Main */,
 				CB8DDB6E21D33777001D8191 /* Ranking */,
@@ -267,6 +292,7 @@
 				CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */,
 				7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */,
 				7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */,
+				77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -403,6 +429,7 @@
 			files = (
 				CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */,
 				CB08315E21D0E4B1000F5D67 /* LaunchScreen.storyboard in Resources */,
+				7729030121D533F800C19416 /* HomeSearch.storyboard in Resources */,
 				7780ED5921D4F25200CC2BA7 /* MocaPlus.storyboard in Resources */,
 				CBF2FC3021D4B5EC00DFC50A /* NanumGothicExtraBold.otf in Resources */,
 				CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */,
@@ -475,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */,
+				776211A121D6A61300F90D8A /* PracticeVC.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
@@ -487,9 +515,12 @@
 				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
 				7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
+				776211A321D6AC1900F90D8A /* Unwind.swift in Sources */,
 				CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */,
 				7780ED6121D4F29F00CC2BA7 /* MocaPlusCafeCell.swift in Sources */,
+				7757B4D021D5DB93004613BD /* HomeSearchResultCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
+				77FAE6D121D5441B006C24F4 /* HomeSearchVC.swift in Sources */,
 				7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */,
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
 				CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */,
@@ -497,6 +528,7 @@
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
 				CB32A08F21D259B8004796F7 /* HomeConceptListCell.swift in Sources */,
+				7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
