@@ -23,6 +23,13 @@ class MyPageVC: UIViewController {
         myPageTableView.delegate = self
         myPageTableView.dataSource = self
     }
+    
+    @objc func moreAction(_:UIImageView) {
+        if let vc = UIStoryboard(name: "MyPageTab", bundle: nil).instantiateViewController(withIdentifier: "MyPageCouponVC") as? MyPageCouponVC {
+//            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true)
+        }
+    }
 }
 
 extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
@@ -31,25 +38,33 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell()
+        
         if indexPath.row == 0 {
-            let cell = myPageTableView.dequeueReusableCell(withIdentifier: "MyPageInfoCell", for: indexPath) as! MyPageInfoCell
-            
-            return cell
+            if let myPageInfoCell = myPageTableView.dequeueReusableCell(withIdentifier: "MyPageInfoCell", for: indexPath) as? MyPageInfoCell {
+                cell = myPageInfoCell
+            }
         }
         else if indexPath.row == 1 {
-            let cell = myPageTableView.dequeueReusableCell(withIdentifier: "LikeCafeCell", for: indexPath) as! LikeCafeCell
-            
-            return cell
+            if let likeCafeCell = myPageTableView.dequeueReusableCell(withIdentifier: "LikeCafeCell", for: indexPath) as? LikeCafeCell {
+                
+                cell = likeCafeCell
+            }
         }
         else if indexPath.row == 2 {
-            let cell = myPageTableView.dequeueReusableCell(withIdentifier: "MyPageCell", for: indexPath) as! MyPageCell
-            
-            return cell
+            if let myPageCell = myPageTableView.dequeueReusableCell(withIdentifier: "MyPageCell", for: indexPath) as? MyPageCell {
+                let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
+
+                myPageCell.addGestureRecognizer(moreBtnTapGestureRecognizer)
+                
+                cell = myPageCell
+            }
         }
         else {
-            let cell = myPageTableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as! MembershipCell
-            
-            return cell
+            if let membershipCell = myPageTableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as? MembershipCell {
+                cell = membershipCell
+            }
         }
+        return cell
     }
 }
