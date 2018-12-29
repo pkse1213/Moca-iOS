@@ -53,6 +53,7 @@
 		CB2ACCEA21D7F8AA004DBF2E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCE921D7F8AA004DBF2E /* libc++.tbd */; };
 		CB2ACCEC21D7F8B5004DBF2E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCEB21D7F8B5004DBF2E /* libxml2.tbd */; };
 		CB2ACCEE21D7F8BF004DBF2E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCED21D7F8BE004DBF2E /* libsqlite3.tbd */; };
+		CB2ACCF221D7FC40004DBF2E /* LocationMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */; };
 		CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08321D249A1004796F7 /* UIView+Extension.swift */; };
 		CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */; };
 		CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */; };
@@ -132,6 +133,7 @@
 		CB2ACCEB21D7F8B5004DBF2E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		CB2ACCED21D7F8BE004DBF2E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CB2ACCEF21D7F935004DBF2E /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMainVC.swift; sourceTree = "<group>"; };
 		CB32A08321D249A1004796F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCell.swift; sourceTree = "<group>"; };
 		CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCafeListCell.swift; sourceTree = "<group>"; };
@@ -286,9 +288,10 @@
 		CB08316621D0E4CE000F5D67 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				CB2ACCF021D7FC1F004DBF2E /* LocationTab */,
+				CB32A08921D24CCA004796F7 /* HomeTab */,
 				772A952F21D78CEC009114FC /* MyPageTab */,
 				CB32A09821D2A281004796F7 /* CommunityTab */,
-				CB32A08921D24CCA004796F7 /* HomeTab */,
 				776211A021D6A61300F90D8A /* PracticeVC.swift */,
 			);
 			path = Viewcontrollers;
@@ -324,6 +327,14 @@
 				CBF2FC3921D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift */,
 			);
 			path = MocaPicks;
+			sourceTree = "<group>";
+		};
+		CB2ACCF021D7FC1F004DBF2E /* LocationTab */ = {
+			isa = PBXGroup;
+			children = (
+				CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */,
+			);
+			path = LocationTab;
 			sourceTree = "<group>";
 		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
@@ -597,6 +608,7 @@
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
+				CB2ACCF221D7FC40004DBF2E /* LocationMainVC.swift in Sources */,
 				CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */,
 				CB25ACA121D3F10800636DFE /* CommunityReviewWrittingVC.swift in Sources */,
 				772A953421D793A9009114FC /* MyPageInfoCell.swift in Sources */,
