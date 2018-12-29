@@ -378,7 +378,7 @@
                                         <rect key="frame" x="0.0" y="783" width="375" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F51-aM-jm6" id="hGA-G1-Wvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-Cl-9m1">
@@ -458,7 +458,7 @@
             </objects>
             <point key="canvasLocation" x="2021.5999999999999" y="133.74384236453201"/>
         </scene>
-        <!--카테고리-->
+        <!--View Controller-->
         <scene sceneID="wEF-rJ-dfj">
             <objects>
                 <viewController id="L2E-PX-Fjk" sceneMemberID="viewController">
@@ -468,7 +468,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bDb-Oq-vVl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="카테고리" id="XOO-zL-hHx"/>
+                    <tabBarItem key="tabBarItem" title="" image="category" id="XOO-zL-hHx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nML-Rf-oBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -483,11 +483,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Axv-Dk-h3A" kind="relationship" relationship="viewControllers" id="ejc-xf-XIn"/>
                         <segue destination="L2E-PX-Fjk" kind="relationship" relationship="viewControllers" id="kes-Od-gRh"/>
-                        <segue destination="dA4-oN-ZKf" kind="relationship" relationship="viewControllers" id="xMJ-UN-oV1"/>
+                        <segue destination="HhV-cw-Xdo" kind="relationship" relationship="viewControllers" id="xMJ-UN-oV1"/>
                         <segue destination="iG6-zR-Pqr" kind="relationship" relationship="viewControllers" id="4oM-N6-fnJ"/>
                         <segue destination="tD9-rr-bYX" kind="relationship" relationship="viewControllers" id="noK-8S-k6E"/>
                     </connections>
@@ -496,21 +497,64 @@
             </objects>
             <point key="canvasLocation" x="223" y="1430"/>
         </scene>
-        <!--위치-->
+        <!--Location MainVC-->
         <scene sceneID="U4A-EU-BE5">
             <objects>
-                <viewController id="dA4-oN-ZKf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationMainVC" id="dA4-oN-ZKf" customClass="LocationMainVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SSl-aS-4du">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCF-Tw-1co">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-nw-aOD">
+                                <rect key="frame" x="0.0" y="601" width="375" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="exd-hz-9vn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Juv-MQ-8up">
+                                    <size key="itemSize" width="100" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Wxu-8D-ByS">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FCF-Tw-1co" firstAttribute="leading" secondItem="Zel-g9-k1d" secondAttribute="leading" id="0br-TA-FWI"/>
+                            <constraint firstItem="EJJ-nw-aOD" firstAttribute="leading" secondItem="Zel-g9-k1d" secondAttribute="leading" id="E0c-Hu-zgq"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="bottom" secondItem="FCF-Tw-1co" secondAttribute="bottom" id="HFk-18-EgX"/>
+                            <constraint firstItem="EJJ-nw-aOD" firstAttribute="trailing" secondItem="Zel-g9-k1d" secondAttribute="trailing" id="IwI-Ao-FII"/>
+                            <constraint firstItem="FCF-Tw-1co" firstAttribute="top" secondItem="Zel-g9-k1d" secondAttribute="top" id="QiZ-aY-Hun"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="trailing" secondItem="FCF-Tw-1co" secondAttribute="trailing" id="UJg-k9-5br"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="bottom" secondItem="EJJ-nw-aOD" secondAttribute="bottom" id="tic-8I-JLy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zel-g9-k1d"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="위치" id="cXf-Hs-ANE"/>
+                    <navigationItem key="navigationItem" id="mlm-GZ-0Dm"/>
+                    <connections>
+                        <outlet property="cafeCollectionView" destination="EJJ-nw-aOD" id="eUc-XD-ca7"/>
+                        <outlet property="mapParentView" destination="FCF-Tw-1co" id="X8T-Ha-3Kg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgZ-Gi-guL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="1430"/>
+            <point key="canvasLocation" x="1913" y="1430"/>
         </scene>
         <!--Community Tab MainVC-->
         <scene sceneID="PWJ-se-IgH">
@@ -1212,11 +1256,11 @@
             </objects>
             <point key="canvasLocation" x="1913" y="2894"/>
         </scene>
-        <!--커뮤니티-->
+        <!--Navigation Controller-->
         <scene sceneID="yjA-sg-gPU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iG6-zR-Pqr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="커뮤니티" id="5hH-Xh-G1X"/>
+                    <tabBarItem key="tabBarItem" title="" image="community" id="5hH-Xh-G1X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2AW-Af-9dk">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1232,11 +1276,11 @@
             </objects>
             <point key="canvasLocation" x="1079" y="2168"/>
         </scene>
-        <!--홈-->
+        <!--Navigation Controller-->
         <scene sceneID="6H7-oh-abj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Axv-Dk-h3A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" id="6G9-br-5bR"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="6G9-br-5bR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hjM-ew-AkU">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1251,11 +1295,11 @@
             </objects>
             <point key="canvasLocation" x="1079.2" y="133.74384236453201"/>
         </scene>
-        <!--마이페이지-->
+        <!--Navigation Controller-->
         <scene sceneID="Tnv-oK-nfC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tD9-rr-bYX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="마이페이지" id="1Eo-Ry-50F"/>
+                    <tabBarItem key="tabBarItem" title="" image="mypage" id="1Eo-Ry-50F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KsJ-Xq-Ce8">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1271,20 +1315,44 @@
             </objects>
             <point key="canvasLocation" x="1078" y="2871"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0vW-4S-ZFO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HhV-cw-Xdo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="location" id="cXf-Hs-ANE"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q79-sD-hGK">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dA4-oN-ZKf" kind="relationship" relationship="rootViewController" id="hy7-i0-Sqv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02J-5Y-Rh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="1429.8029556650247"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="category" width="25" height="25"/>
         <image name="commonComment" width="24" height="24"/>
         <image name="commonCommentWhite" width="15" height="13"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartWhite" width="15" height="13"/>
         <image name="commonYellowcircle" width="24" height="24"/>
+        <image name="community" width="25" height="25"/>
         <image name="communityFollowlistSearch" width="22" height="22"/>
         <image name="communityGradation" width="336" height="336"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
+        <image name="home" width="25" height="25"/>
         <image name="homeAlert" width="36" height="36"/>
         <image name="homeRankingMore" width="67" height="22"/>
         <image name="icCommunityLocation" width="12" height="13"/>
+        <image name="location" width="25" height="25"/>
+        <image name="mypage" width="25" height="25"/>
         <image name="mypageArrowRight" width="24" height="24"/>
         <image name="mypageSetting" width="36" height="36"/>
         <image name="rankingMark" width="30" height="40"/>
