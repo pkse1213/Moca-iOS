@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationMainVC: UIViewController, MTMapViewDelegate {
+class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
     
@@ -97,6 +97,8 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         self.mapView.setMapCenter(item?.mapPoint, animated: true)
         self.mapView.select(item, animated: true)
     }
-    
+}
 
+extension LocationMainVC: MTMapViewDelegate {
+    
 }

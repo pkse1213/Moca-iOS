@@ -15,7 +15,7 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var reviewContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageCntLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    @IBOutlet weak var cotentTableView: UITableView!
+    @IBOutlet weak var contentTableView: UITableView!
     
     @IBOutlet weak var textBackgroundView: UIView!
     @IBOutlet weak var textSquareView: UIView!
@@ -24,64 +24,59 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         setUpListView()
         setUpView()
+        
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.wasDragged(_:)))
+        contentTableView.addGestureRecognizer(gesture)
+        gesture.delegate = self
     }
+   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+     
+    }
+    
+    
+    @objc func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
+        
+        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
+            
+            let translation = gestureRecognizer.translation(in: self.view)
+            
+            print(contentTableView.center.y)
+            
+            if(contentTableView.center.y >= self.view.frame.height-100) {
+                contentTableView.center.y = contentTableView.center.y + translation.y
+                
+            } else {
+                contentTableView.center.y = contentTableView.frame.height/2+64
+                UIView.animate(withDuration: 0.5) {
+                    self.textSquareView.isHidden = false
+                    self.textFieldViewBottomConstraint.constant = 0
+//                    self.reviewContentViewTopConstraint.constant = 0
+                    self.view.layoutIfNeeded()
+                }
+            }
+            gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
+        }
     }
     
     private func setUpView() {
-//        if let view = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "sample").view {
-//
-//            commentView.addSubview(view)
-//
-//            view.translatesAutoresizingMaskIntoConstraints = false
-//
-//            let bottom = view.bottomAnchor.constraint(equalTo: commentView.bottomAnchor)
-//            let top = view.topAnchor.constraint(equalTo: commentView.topAnchor)
-//            let leading = view.leadingAnchor.constraint(equalTo: commentView.leadingAnchor)
-//            let trailing = view.trailingAnchor.constraint(equalTo: commentView.trailingAnchor)
-//            commentView.addConstraints([top, bottom, leading, trailing])
-//            self.addChild( vc )
-//            vc.view.frame = self.commentView.frame
-//            self.commentView.addSubview( vc.view )
-//            vc.didMove(toParent: self )
-//        }
-        
         textSquareView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8469749093, green: 0.8471175432, blue: 0.8469561338, alpha: 1))
         textBackgroundView.applyRadius(radius: 39/2)
         imageCntLabel.text = "1/\(colors.count)"
     }
     
     private func setUpListView() {
-//        let gesture = UIPanGestureRecognizer(target: self, action: Selector(("wasDragged:")))
-//        cotentTableView.addGestureRecognizer(gesture)
-//        cotentTableView.isUserInteractionEnabled = true
-//        gesture.delegate = self
-//        
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
         
-        cotentTableView.delegate = self
-        cotentTableView.dataSource = self
-        cotentTableView.applyRadius(radius: 10)
+        contentTableView.delegate = self
+        contentTableView.dataSource = self
+        contentTableView.applyRadius(radius: 10)
     }
     
-    func wasDragged(gestureRecognizer: UIPanGestureRecognizer) {
-        if gestureRecognizer.state == UIGestureRecognizer.State.began || gestureRecognizer.state == UIGestureRecognizer.State.changed {
-            let translation = gestureRecognizer.translation(in: self.view)
-            print(gestureRecognizer.view!.center.y)
-            if(gestureRecognizer.view!.center.y < 462) {
-                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + translation.y)
-            }else {
-                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: 554)
-            }
-            
-            gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
-        }
-        
-    }
 }
 
 extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -113,19 +108,20 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 5
+            return 10
+            
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if indexPath.section == 0 {
-            if let contentCell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityContentCell") as? CommunityContentCell {
+            if let contentCell = contentTableView.dequeueReusableCell(withIdentifier: "CommunityContentCell") as? CommunityContentCell {
                 cell = contentCell
             }
             
         } else {
-            if let commentCell = cotentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
+            if let commentCell = contentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
                 cell = commentCell
             }
         }
@@ -143,26 +139,28 @@ extension CommunityContentVC: UIScrollViewDelegate {
                 imageCntLabel.text = "\(index+1)/\(colors.count)"
             }
             
-        } else if scrollView is UITableView {
-            if scrollView.contentOffset.y > 0.0 {
-                UIView.animate(withDuration: 0.5) {
-                    self.textSquareView.isHidden = false
-                    self.textFieldViewBottomConstraint.constant = 0
-                    self.reviewContentViewTopConstraint.constant = 0
-                    self.view.layoutIfNeeded()
-                }
-            }
-            if scrollView.contentOffset.y == 0.0 {
-                UIView.animate(withDuration: 0.5) {
-                    
-                    self.textFieldViewBottomConstraint.constant = -54
-                    self.reviewContentViewTopConstraint.constant = 418.67
-                    self.view.layoutIfNeeded()
-                }
-                self.textSquareView.isHidden = true
-            }
-            
         }
+//        else if scrollView is UITableView {
+//            print(contentTableView.center.y)
+//            if scrollView.contentOffset.y > 0.0 {
+//                UIView.animate(withDuration: 0.5) {
+//                    self.textSquareView.isHidden = false
+//                    self.textFieldViewBottomConstraint.constant = 0
+//                    self.reviewContentViewTopConstraint.constant = 0
+//                    self.view.layoutIfNeeded()
+//                }
+//            }
+//            if scrollView.contentOffset.y == 0.0 {
+//                UIView.animate(withDuration: 0.5) {
+//
+//                    self.textFieldViewBottomConstraint.constant = -54
+//                    self.reviewContentViewTopConstraint.constant = 418.67
+//                    self.view.layoutIfNeeded()
+//                }
+//                self.textSquareView.isHidden = true
+//            }
+//
+//        }
     }
 }
 
