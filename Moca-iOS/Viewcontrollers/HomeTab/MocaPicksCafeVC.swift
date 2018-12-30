@@ -89,7 +89,7 @@ extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = cafeImageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.backgroundColor = colors[indexPath.item]
+            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             cell = imageCell
         }
         

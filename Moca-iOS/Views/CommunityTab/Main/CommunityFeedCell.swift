@@ -55,7 +55,7 @@ extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.contentImageView.backgroundColor = colors[indexPath.item]
+            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             cell = imageCell
         }
         return cell

@@ -13,9 +13,9 @@ class LocationMainVC: UIViewController, MTMapViewDelegate {
     @IBOutlet var cafeCollectionView: UICollectionView!
     
     var mapView: MTMapView!
-    let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665]
+    let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
     
-    let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585]
+    let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585,127.04255064005092]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,21 +43,17 @@ class LocationMainVC: UIViewController, MTMapViewDelegate {
             self.mapView.addPOIItems([item])
         }
         
-        
-        
         self.mapView.fitAreaToShowAllPOIItems()
         let mapPoint = MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: myLat[0], longitude: myLong[0]))
         
         self.mapView.setMapCenter(mapPoint, animated: true)
         self.mapView.setZoomLevel(2, animated: true)
         
+        let item = self.mapView.findPOIItem(byTag: 0)
+        self.mapView.select(item, animated: true)
+        
         mapParentView.addSubview(mapView)
-        
-        
     }
-    
-    
-    
 }
 
 
