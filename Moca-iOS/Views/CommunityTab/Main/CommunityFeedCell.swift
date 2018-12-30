@@ -10,7 +10,7 @@ import UIKit
 
 class CommunityFeedCell: UITableViewCell {
     let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
-    var tapFlag = true
+    var navigationController: UINavigationController?
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,6 +21,7 @@ class CommunityFeedCell: UITableViewCell {
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var reviewContentLabel: UILabel!
    
+    @IBOutlet weak var cntBackgroundView: UIView!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var imageCntLabel: UILabel!
     
@@ -37,9 +38,16 @@ class CommunityFeedCell: UITableViewCell {
     }
     
     private func setUpView() {
+        cntBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.5141925812, green: 0.5142051578, blue: 0.5141984224, alpha: 1))
+        cntBackgroundView.applyRadius(radius: cntBackgroundView.frame.height/2)
         imageCntLabel.text = "1/\(colors.count)"
     }
     
+    @IBAction func moreLookAction(_ sender: UIButton) {
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -55,19 +63,19 @@ extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.contentImageView.backgroundColor = colors[indexPath.item]
+            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             cell = imageCell
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? CommunityContentImageCell {
-            tapFlag = !tapFlag
-            cell.gradationImageView.isHidden = !cell.gradationImageView.isHidden
+//        if let cell = collectionView.cellForItem(at: indexPath) as? CommunityContentImageCell {
+//            tapFlag = !tapFlag
+//            cell.gradationImageView.isHidden = !cell.gradationImageView.isHidden
 //            likeAndCommentCntStackView.isHidden = !tapFlag
 //            imageCntLabel.isHidden = !imageCntLabel.isHidden
-        }
+//        }
     }
     
 }

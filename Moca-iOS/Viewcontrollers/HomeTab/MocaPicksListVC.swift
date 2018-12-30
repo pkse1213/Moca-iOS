@@ -31,12 +31,13 @@ class MocaPicksListVC: UIViewController {
 
 extension MocaPicksListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  10
+        return  8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if let mocaPicksCell = mocaPicksTableView.dequeueReusableCell(withIdentifier: "MocaPicksListCell") as? MocaPicksListCell {
+            mocaPicksCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = mocaPicksCell
         }
         return cell

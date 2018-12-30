@@ -9,5 +9,9 @@
 import UIKit
 
 class RankingCafeCell: UICollectionViewCell {
+    @IBOutlet var rankNumLabel: UILabel!
+    @IBOutlet var cafeImageView: UIImageView!
+    @IBOutlet var cafeNameLabel: UILabel!
+    @IBOutlet var cafeAddressLabel: UILabel!
     
 }

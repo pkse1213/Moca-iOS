@@ -15,6 +15,7 @@ class CommunityTabMainVC: UIViewController {
             changeFeedKind()
         }
     }
+    
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var selectFeedView: UIView!
@@ -27,6 +28,11 @@ class CommunityTabMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setUpView() {
@@ -80,8 +86,10 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         
         if tableView == communityTableView {
             if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                feedCell.navigationController = self.navigationController
                 cell = feedCell
             }
+            
         } else if tableView == feedMenuTableView {
             if let selectCell = feedMenuTableView.dequeueReusableCell(withIdentifier: "CommunitySelectFeedCell") as? CommunitySelectFeedCell {
                 selectCell.feedNameLabel.text = selectMenus[indexPath.row]
@@ -98,13 +106,8 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == communityTableView {
-            if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        } else if tableView == feedMenuTableView {
+        if tableView == feedMenuTableView {
             selectIndex = indexPath.row
-            
         }
     }
 }
