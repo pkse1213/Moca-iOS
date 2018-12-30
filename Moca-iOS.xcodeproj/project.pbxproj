@@ -17,6 +17,8 @@
 		772A953E21D7C06A009114FC /* MembershipCouponCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A953D21D7C06A009114FC /* MembershipCouponCollectionCell.swift */; };
 		772A954221D7D4F2009114FC /* MyPageTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772A954121D7D4F2009114FC /* MyPageTab.storyboard */; };
 		772A954421D7DA7F009114FC /* MyPageCouponVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A954321D7DA7F009114FC /* MyPageCouponVC.swift */; };
+		7735356521D8040F00FB914C /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735356421D8040F00FB914C /* CouponTableViewCell.swift */; };
+		7735356921D80BA800FB914C /* CouponAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735356821D80BA800FB914C /* CouponAlertVC.swift */; };
 		7757B4D021D5DB93004613BD /* HomeSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7757B4CF21D5DB93004613BD /* HomeSearchResultCell.swift */; };
 		7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */; };
 		776211A121D6A61300F90D8A /* PracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776211A021D6A61300F90D8A /* PracticeVC.swift */; };
@@ -93,6 +95,8 @@
 		772A953D21D7C06A009114FC /* MembershipCouponCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipCouponCollectionCell.swift; sourceTree = "<group>"; };
 		772A954121D7D4F2009114FC /* MyPageTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageTab.storyboard; sourceTree = "<group>"; };
 		772A954321D7DA7F009114FC /* MyPageCouponVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCouponVC.swift; sourceTree = "<group>"; };
+		7735356421D8040F00FB914C /* CouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
+		7735356821D80BA800FB914C /* CouponAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponAlertVC.swift; sourceTree = "<group>"; };
 		7757B4CF21D5DB93004613BD /* HomeSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultCell.swift; sourceTree = "<group>"; };
 		7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRightToLeft.swift; sourceTree = "<group>"; };
 		776211A021D6A61300F90D8A /* PracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeVC.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				772A953021D78D0C009114FC /* MyPageVC.swift */,
 				772A954321D7DA7F009114FC /* MyPageCouponVC.swift */,
+				7735356821D80BA800FB914C /* CouponAlertVC.swift */,
 			);
 			path = MyPageTab;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				772A953921D7A126009114FC /* LikeCafeCell.swift */,
 				772A953B21D7B051009114FC /* MembershipCell.swift */,
 				772A953D21D7C06A009114FC /* MembershipCouponCollectionCell.swift */,
+				7735356421D8040F00FB914C /* CouponTableViewCell.swift */,
 			);
 			path = MyPageTab;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 				CBF2FC3A21D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
+				7735356921D80BA800FB914C /* CouponAlertVC.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
 				CB2ACCF221D7FC40004DBF2E /* LocationMainVC.swift in Sources */,
 				CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */,
@@ -617,6 +624,7 @@
 				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
 				CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */,
 				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
+				7735356521D8040F00FB914C /* CouponTableViewCell.swift in Sources */,
 				7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				776211A321D6AC1900F90D8A /* Unwind.swift in Sources */,
