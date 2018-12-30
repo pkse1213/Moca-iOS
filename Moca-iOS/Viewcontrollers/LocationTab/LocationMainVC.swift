@@ -16,18 +16,39 @@ class LocationMainVC: UIViewController, MTMapViewDelegate {
     let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
     
     let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585,127.04255064005092]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpCollectionView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        mapInit()
+    }
+    
+    private func setUpCollectionView() {
         cafeCollectionView.delegate = self
         cafeCollectionView.dataSource = self
-        
-        
-        mapView = MTMapView(frame: mapParentView.frame)
-        
+    }
+    
+    private func mapInit() {
+        mapView = MTMapView(frame: self.mapParentView.frame)
         mapView.delegate = self
         mapView.baseMapType = .standard
         
+        addMarkerInMap()
+        
+        mapParentView.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        let bottom = mapView.bottomAnchor.constraint(equalTo: mapParentView.bottomAnchor)
+        let top = mapView.topAnchor.constraint(equalTo: mapParentView.topAnchor)
+        let leading = mapView.leadingAnchor.constraint(equalTo: mapParentView.leadingAnchor)
+        let trailing = mapView.trailingAnchor.constraint(equalTo: mapParentView.trailingAnchor)
+        mapParentView.addConstraints([top, bottom, leading, trailing])
+    }
+    
+    private func addMarkerInMap() {
         for i in 0..<myLat.count {
             let item = MTMapPOIItem()
             item.tag = i
@@ -51,8 +72,6 @@ class LocationMainVC: UIViewController, MTMapViewDelegate {
         
         let item = self.mapView.findPOIItem(byTag: 0)
         self.mapView.select(item, animated: true)
-        
-        mapParentView.addSubview(mapView)
     }
 }
 
