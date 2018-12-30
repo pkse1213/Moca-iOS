@@ -20,11 +20,12 @@ class LocationMainVC: UIViewController, MTMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        mapInit()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        mapInit()
+    
     }
     
     private func setUpCollectionView() {
@@ -82,7 +83,12 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UICollectionViewCell
+        var cell = UICollectionViewCell()
+        if let cafeCell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "LocationMapCafeCell", for: indexPath) as? LocationMapCafeCell {
+            cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.item+1)")
+            
+            cell = cafeCell
+        }
         return cell
     }
     
