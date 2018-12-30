@@ -22,17 +22,12 @@ class HomeTabMainVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        
     }
     
     private func setUpView() {
         searchBarView.applyRadius(radius: 5)
         searchBarView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1))
-    }
-    
-    @objc func moreAction(_:UIImageView) {
-        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeRankingListVC") as? HomeRankingListVC {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
     
     private func setUpTableView() {
@@ -63,8 +58,7 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             if let rankingCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as? HomeRankingCell {
-                let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
-                rankingCell.moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+                rankingCell.navigationController = self.navigationController
                 cell = rankingCell
             }
         }

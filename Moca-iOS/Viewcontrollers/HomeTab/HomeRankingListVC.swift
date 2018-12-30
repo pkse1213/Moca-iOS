@@ -39,12 +39,14 @@ extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let cafeCell = rankingCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
+            cafeCell.rankNumLabel.text = "\(indexPath.row+1)"
+            cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = cafeCell
         }
         return cell

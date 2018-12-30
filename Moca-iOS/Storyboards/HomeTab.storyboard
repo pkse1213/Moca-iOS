@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="175" height="238"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample1" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-YT-NcT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-YT-NcT">
                                                     <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fWm-YT-NcT" secondAttribute="height" multiplier="1:1" id="vKC-xZ-JyZ"/>
@@ -110,6 +110,12 @@
                                             <constraint firstItem="Zgt-bU-ZHe" firstAttribute="leading" secondItem="iAU-CD-Xod" secondAttribute="leading" constant="2" id="bff-YI-sEC"/>
                                             <constraint firstItem="xDb-qU-twp" firstAttribute="leading" secondItem="fWm-YT-NcT" secondAttribute="leading" constant="9" id="ibw-ad-yfH"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cafeAddressLabel" destination="Ars-Lw-PlP" id="gYa-Qa-OmG"/>
+                                            <outlet property="cafeImageView" destination="fWm-YT-NcT" id="eTo-9A-rtY"/>
+                                            <outlet property="cafeNameLabel" destination="gJz-Wx-jGV" id="xMD-iX-fiv"/>
+                                            <outlet property="rankNumLabel" destination="3W5-kE-UxI" id="5rH-w2-gxC"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Oed-gB-oHM">
                                         <rect key="frame" x="179" y="0.0" width="175" height="238"/>
@@ -175,7 +181,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="349" height="282"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample3" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-Hd-MGi">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-Hd-MGi">
                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="220"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="tY0-Hd-MGi" secondAttribute="height" multiplier="349:220" id="Ddx-6b-2gT"/>
@@ -301,11 +307,18 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-32-Pnm">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                                         </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mocaPicksGradation" translatesAutoresizingMaskIntoConstraints="NO" id="ayo-o7-dSB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="ayo-o7-dSB" firstAttribute="top" secondItem="bt8-An-SH6" secondAttribute="top" id="5Wc-8Q-fSr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ayo-o7-dSB" secondAttribute="bottom" id="8pt-GT-csl"/>
                                                     <constraint firstAttribute="bottom" secondItem="aUc-32-Pnm" secondAttribute="bottom" id="OFe-XB-SS9"/>
                                                     <constraint firstItem="aUc-32-Pnm" firstAttribute="leading" secondItem="bt8-An-SH6" secondAttribute="leading" id="WOV-QB-veW"/>
+                                                    <constraint firstItem="ayo-o7-dSB" firstAttribute="leading" secondItem="bt8-An-SH6" secondAttribute="leading" id="feM-Ar-J4Q"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ayo-o7-dSB" secondAttribute="trailing" id="hNK-9b-TMf"/>
                                                     <constraint firstItem="aUc-32-Pnm" firstAttribute="top" secondItem="bt8-An-SH6" secondAttribute="top" id="noL-CF-G6R"/>
                                                     <constraint firstAttribute="trailing" secondItem="aUc-32-Pnm" secondAttribute="trailing" id="vf4-Ih-XtR"/>
                                                 </constraints>
@@ -1152,9 +1165,8 @@
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="icCommunityLocation" width="12" height="13"/>
+        <image name="mocaPicksGradation" width="376" height="228"/>
         <image name="mocapicksEvaluation" width="68" height="30"/>
         <image name="rankingMark" width="30" height="40"/>
-        <image name="sample1" width="1080" height="1080"/>
-        <image name="sample3" width="1080" height="1080"/>
     </resources>
 </document>

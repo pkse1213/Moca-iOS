@@ -11,6 +11,8 @@ import UIKit
 class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)]
     
+    @IBOutlet var textFieldViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var reviewContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageCntLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var cotentTableView: UITableView!
@@ -24,7 +26,29 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
         setUpView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     private func setUpView() {
+//        if let view = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "sample").view {
+//
+//            commentView.addSubview(view)
+//
+//            view.translatesAutoresizingMaskIntoConstraints = false
+//
+//            let bottom = view.bottomAnchor.constraint(equalTo: commentView.bottomAnchor)
+//            let top = view.topAnchor.constraint(equalTo: commentView.topAnchor)
+//            let leading = view.leadingAnchor.constraint(equalTo: commentView.leadingAnchor)
+//            let trailing = view.trailingAnchor.constraint(equalTo: commentView.trailingAnchor)
+//            commentView.addConstraints([top, bottom, leading, trailing])
+//            self.addChild( vc )
+//            vc.view.frame = self.commentView.frame
+//            self.commentView.addSubview( vc.view )
+//            vc.didMove(toParent: self )
+//        }
+        
         textSquareView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8469749093, green: 0.8471175432, blue: 0.8469561338, alpha: 1))
         textBackgroundView.applyRadius(radius: 39/2)
         imageCntLabel.text = "1/\(colors.count)"
@@ -67,7 +91,7 @@ extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 9
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -119,6 +143,26 @@ extension CommunityContentVC: UIScrollViewDelegate {
                 imageCntLabel.text = "\(index+1)/\(colors.count)"
             }
             
+        } else if scrollView is UITableView {
+            if scrollView.contentOffset.y > 0.0 {
+                UIView.animate(withDuration: 0.5) {
+                    self.textSquareView.isHidden = false
+                    self.textFieldViewBottomConstraint.constant = 0
+                    self.reviewContentViewTopConstraint.constant = 0
+                    self.view.layoutIfNeeded()
+                }
+            }
+            if scrollView.contentOffset.y == 0.0 {
+                UIView.animate(withDuration: 0.5) {
+                    
+                    self.textFieldViewBottomConstraint.constant = -54
+                    self.reviewContentViewTopConstraint.constant = 418.67
+                    self.view.layoutIfNeeded()
+                }
+                self.textSquareView.isHidden = true
+            }
+            
         }
     }
 }
+

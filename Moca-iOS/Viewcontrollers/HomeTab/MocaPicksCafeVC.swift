@@ -24,7 +24,10 @@ class MocaPicksCafeVC: UIViewController {
         progressUnit = Float(1)/Float(colors.count)
         scrollProgressView.progress = progressUnit
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
     private func setUpListView() {
         cafeImageCollectionView.delegate = self
         cafeImageCollectionView.dataSource = self
