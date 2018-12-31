@@ -11,6 +11,8 @@ import UIKit
 class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)]
     
+    @IBOutlet var safeAreaView: UIView!
+    
     @IBOutlet var textFieldViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var reviewContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageCntLabel: UILabel!
@@ -24,12 +26,9 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         setUpListView()
         setUpView()
-        
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.wasDragged(_:)))
-        contentTableView.addGestureRecognizer(gesture)
-        gesture.delegate = self
+        registerGesture()
+        checkVersion()
     }
-   
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,6 +36,19 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
      
     }
     
+    private func checkVersion() {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+            if let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 24 {
+                safeAreaView.isHidden = false
+            }
+        }
+    }
+    
+    private func registerGesture() {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.wasDragged(_:)))
+        contentTableView.addGestureRecognizer(gesture)
+        gesture.delegate = self
+    }
     
     @objc func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
         
@@ -46,12 +58,13 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
             
             print(contentTableView.center.y)
             
-            if(contentTableView.center.y >= self.view.frame.height-100) {
+            if(contentTableView.center.y > self.view.frame.height+100) {
                 contentTableView.center.y = contentTableView.center.y + translation.y
                 
             } else {
-                contentTableView.center.y = contentTableView.frame.height/2+64
                 UIView.animate(withDuration: 0.5) {
+                    self.contentTableView.center.y = self.view.frame.height/2+64
+                    
                     self.textSquareView.isHidden = false
                     self.textFieldViewBottomConstraint.constant = 0
 //                    self.reviewContentViewTopConstraint.constant = 0
