@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ae4-gI-qin">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,19 +24,19 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Location Cafe DetailVC-->
         <scene sceneID="GfR-MK-dvK">
             <objects>
-                <viewController id="ae4-gI-qin" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationCafeDetailVC" id="ae4-gI-qin" customClass="LocationCafeDetailVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rYB-1g-e1J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9WP-2s-pee">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9WP-2s-pee">
                                 <rect key="frame" x="0.0" y="44" width="375" height="686"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="375" id="0Og-Rq-cdL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailImageCell" rowHeight="375" id="0Og-Rq-cdL" customClass="CafeDetailImageCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Og-Rq-cdL" id="Xr1-F7-57u">
@@ -64,6 +64,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-Rv-9Ue">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                                        <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
@@ -104,7 +105,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="490" id="rFU-0F-0M9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailInfoCell" rowHeight="490" id="rFU-0F-0M9" customClass="CafeDetailInfoCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="403" width="375" height="490"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rFU-0F-0M9" id="EOY-h8-APr">
@@ -493,6 +494,48 @@
                                                                 <constraint firstAttribute="trailing" secondItem="oDk-Nh-u55" secondAttribute="trailing" id="tWi-Eo-qIb"/>
                                                             </constraints>
                                                         </collectionViewCell>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oik-sj-CIE">
+                                                            <rect key="frame" x="424" y="0.0" width="76" height="125"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="125"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fy6-Lc-Eca">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="Fy6-Lc-Eca" secondAttribute="height" multiplier="1:1" id="z7p-9W-wng"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U00-1U-15H">
+                                                                        <rect key="frame" x="0.0" y="91" width="76" height="33.333333333333343"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아메리카노" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H6-PK-JJj">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="13"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="13"/>
+                                                                                <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsY-XX-QS3">
+                                                                                <rect key="frame" x="0.0" y="19" width="76" height="14.333333333333336"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
+                                                                                <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="Fy6-Lc-Eca" firstAttribute="top" secondItem="oik-sj-CIE" secondAttribute="top" id="1rG-JS-679"/>
+                                                                <constraint firstItem="U00-1U-15H" firstAttribute="top" secondItem="Fy6-Lc-Eca" secondAttribute="bottom" constant="15" id="Cqs-nO-Rkl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="U00-1U-15H" secondAttribute="trailing" id="KOu-31-aFX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Fy6-Lc-Eca" secondAttribute="trailing" id="Lpj-pl-ZFT"/>
+                                                                <constraint firstItem="U00-1U-15H" firstAttribute="centerX" secondItem="oik-sj-CIE" secondAttribute="centerX" id="URa-vN-FOK"/>
+                                                                <constraint firstItem="Fy6-Lc-Eca" firstAttribute="leading" secondItem="oik-sj-CIE" secondAttribute="leading" id="hAf-N8-YFO"/>
+                                                                <constraint firstItem="U00-1U-15H" firstAttribute="leading" secondItem="oik-sj-CIE" secondAttribute="leading" id="q5j-2R-eNF"/>
+                                                            </constraints>
+                                                        </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
@@ -524,11 +567,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="58" id="eox-rH-Wnc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailReviewHeaderCell" rowHeight="58" id="eox-rH-Wnc" customClass="CafeDetailReviewHeaderCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="893" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eox-rH-Wnc" id="tDM-iE-L8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-4u-d7L">
@@ -566,7 +609,7 @@
                                         <rect key="frame" x="0.0" y="951" width="375" height="555"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ddc-N8-H2I" id="01p-QW-vBp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="554.66666666666663"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GNY-Xe-gfV">
@@ -791,11 +834,11 @@
                                             <outlet property="reviewContentLabel" destination="4Th-V0-cTy" id="Yd8-FA-OMM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="91" id="fGD-fT-HCB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailReviewFooterCell" rowHeight="91" id="fGD-fT-HCB" customClass="CafeDetailReviewFooterCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1506" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGD-fT-HCB" id="7ad-pn-MlX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-hX-cC5">
@@ -820,7 +863,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="603" id="aFR-r8-cYR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailNearCafeCell" rowHeight="603" id="aFR-r8-cYR" customClass="CafeDetailNearCafeCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1597" width="375" height="603"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFR-r8-cYR" id="iCs-O4-ZKa">
@@ -1023,6 +1066,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bYt-tR-9n8"/>
                     </view>
+                    <connections>
+                        <outlet property="cafeDetailTableView" destination="9WP-2s-pee" id="hIt-NS-OWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GQ-Ka-xgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
