@@ -17,7 +17,6 @@ class MocaPicksCafeVC: UIViewController {
     @IBOutlet weak var cafeImageCollectionView: UICollectionView!
     @IBOutlet weak var baristaTableView: UITableView!
     @IBOutlet weak var scrollProgressView: UIProgressView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpListView()
