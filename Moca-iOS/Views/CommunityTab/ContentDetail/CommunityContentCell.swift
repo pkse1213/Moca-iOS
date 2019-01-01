@@ -21,7 +21,7 @@ class CommunityContentCell: UITableViewCell {
     }
     
     private func setUpView() {
-        profileImageView.applyRadius(radius: 15)
+        profileImageView.applyRadius(radius: 20)
     }
 
 }

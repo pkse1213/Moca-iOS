@@ -20,10 +20,15 @@ class CommunityTabMainVC: UIViewController {
     
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
-    
-    @IBOutlet weak var communityTableView: UITableView!
+   
+    // 상단 프로필 뷰
     @IBOutlet weak var profileBackgroundView: UIView!
     @IBOutlet weak var profileSquareView: UIView!
+    @IBOutlet var profileImageView: UIImageView!
+    
+    // 피드 테이블 뷰
+    @IBOutlet weak var communityTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,7 @@ class CommunityTabMainVC: UIViewController {
         communityTableView.delegate = self
         communityTableView.dataSource = self
         
+        profileImageView.applyRadius(radius: 24)
         profileSquareView.applyRadius(radius: 3)
         profileSquareView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     }

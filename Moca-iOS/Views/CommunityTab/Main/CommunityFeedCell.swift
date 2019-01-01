@@ -38,6 +38,7 @@ class CommunityFeedCell: UITableViewCell {
     }
     
     private func setUpView() {
+        profileImageView.applyRadius(radius: 20)
         cntBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.5141925812, green: 0.5142051578, blue: 0.5141984224, alpha: 1))
         cntBackgroundView.applyRadius(radius: cntBackgroundView.frame.height/2)
         imageCntLabel.text = "1/\(colors.count)"

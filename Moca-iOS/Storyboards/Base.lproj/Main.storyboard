@@ -459,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2021.5999999999999" y="133.74384236453201"/>
+            <point key="canvasLocation" x="1913" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wEF-rJ-dfj">
@@ -1036,6 +1036,7 @@
                         <outlet property="communityTableView" destination="b7E-P6-97G" id="DtT-fz-kai"/>
                         <outlet property="feedMenuTableView" destination="jwd-ij-4bw" id="tDC-GA-Iry"/>
                         <outlet property="profileBackgroundView" destination="ZSX-pm-YK9" id="9yK-kb-gAY"/>
+                        <outlet property="profileImageView" destination="AUU-d8-XPa" id="pGp-YG-Ahy"/>
                         <outlet property="profileSquareView" destination="LM8-56-9gg" id="4cp-B8-hsV"/>
                         <outlet property="selectFeedView" destination="Bmd-i8-ydi" id="oIV-WB-V6B"/>
                         <outlet property="tableViewTopConstraint" destination="TdV-IA-bIZ" id="1gd-oS-tvN"/>
@@ -1329,7 +1330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qt-u8-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="2894"/>
+            <point key="canvasLocation" x="1913" y="2871"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yjA-sg-gPU">
