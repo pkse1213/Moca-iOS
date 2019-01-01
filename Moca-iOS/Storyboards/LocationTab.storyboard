@@ -36,26 +36,26 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="686"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailImageCell" rowHeight="375" id="0Og-Rq-cdL" customClass="CafeDetailImageCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailImageListCell" rowHeight="375" id="0Og-Rq-cdL" customClass="CafeDetailImageListCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Og-Rq-cdL" id="Xr1-F7-57u">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C0m-ID-KWn">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C0m-ID-KWn">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="C0m-ID-KWn" secondAttribute="height" multiplier="1:1" id="elf-1k-peH"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tym-Ie-XQc">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="tym-Ie-XQc">
                                                         <size key="itemSize" width="375" height="375"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aGI-LG-7Mj">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CafeDetailImageCell" id="aGI-LG-7Mj" customClass="CafeDetailImageCell" customModule="Moca_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -64,7 +64,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-Rv-9Ue">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                                                        <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
@@ -84,10 +84,10 @@
                                                     <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </progressView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckb-pI-gca">
-                                                    <rect key="frame" x="0.0" y="365" width="375" height="10"/>
+                                                    <rect key="frame" x="0.0" y="365" width="375" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="qyq-3O-STb"/>
+                                                        <constraint firstAttribute="height" constant="20" id="cba-4q-gTe"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -98,14 +98,19 @@
                                                 <constraint firstAttribute="bottom" secondItem="C0m-ID-KWn" secondAttribute="bottom" id="boa-pX-kzk"/>
                                                 <constraint firstItem="IUv-cd-gQA" firstAttribute="leading" secondItem="Xr1-F7-57u" secondAttribute="leading" constant="40" id="fec-Pm-dao"/>
                                                 <constraint firstItem="C0m-ID-KWn" firstAttribute="leading" secondItem="Xr1-F7-57u" secondAttribute="leading" id="fgf-6H-zeF"/>
-                                                <constraint firstAttribute="bottom" secondItem="ckb-pI-gca" secondAttribute="bottom" id="ipY-qe-pax"/>
+                                                <constraint firstAttribute="bottom" secondItem="ckb-pI-gca" secondAttribute="bottom" constant="-10" id="ipY-qe-pax"/>
                                                 <constraint firstAttribute="trailing" secondItem="C0m-ID-KWn" secondAttribute="trailing" id="okJ-Dr-RWu"/>
                                                 <constraint firstAttribute="trailing" secondItem="ckb-pI-gca" secondAttribute="trailing" id="pBX-cC-XNj"/>
                                                 <constraint firstAttribute="trailing" secondItem="IUv-cd-gQA" secondAttribute="trailing" constant="40" id="xeS-Q7-qF4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCollectionView" destination="C0m-ID-KWn" id="PxQ-Ly-tAc"/>
+                                            <outlet property="scrollProgressView" destination="IUv-cd-gQA" id="DCg-aI-SYT"/>
+                                            <outlet property="squareView" destination="ckb-pI-gca" id="waf-Cl-PNd"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailInfoCell" rowHeight="490" id="rFU-0F-0M9" customClass="CafeDetailInfoCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailInfoCell" rowHeight="490" id="rFU-0F-0M9" customClass="CafeDetailInfoCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="403" width="375" height="490"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rFU-0F-0M9" id="EOY-h8-APr">
@@ -313,7 +318,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-h1-Dvm">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-h1-Dvm">
                                                     <rect key="frame" x="26" y="354.33333333333331" width="349" height="125"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -326,7 +331,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PGj-Qt-3jh">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SignatureMenuCell" id="PGj-Qt-3jh" customClass="SignatureMenuCell" customModule="Moca_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="125"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -335,6 +340,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3C-bI-bZi">
                                                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                                        <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="l3C-bI-bZi" secondAttribute="height" multiplier="1:1" id="n2b-B5-BPF"/>
                                                                         </constraints>
@@ -566,8 +572,11 @@
                                                 <constraint firstItem="j3A-OX-mCt" firstAttribute="top" secondItem="IXU-9d-hIN" secondAttribute="bottom" constant="9" id="uFl-J6-yW8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="signatureMenuCollectionView" destination="ne6-h1-Dvm" id="esb-9C-GDC"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailReviewHeaderCell" rowHeight="58" id="eox-rH-Wnc" customClass="CafeDetailReviewHeaderCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailReviewHeaderCell" rowHeight="58" id="eox-rH-Wnc" customClass="CafeDetailReviewHeaderCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="893" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eox-rH-Wnc" id="tDM-iE-L8h">
@@ -834,7 +843,7 @@
                                             <outlet property="reviewContentLabel" destination="4Th-V0-cTy" id="Yd8-FA-OMM"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailReviewFooterCell" rowHeight="91" id="fGD-fT-HCB" customClass="CafeDetailReviewFooterCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailReviewFooterCell" rowHeight="91" id="fGD-fT-HCB" customClass="CafeDetailReviewFooterCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1506" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGD-fT-HCB" id="7ad-pn-MlX">
@@ -863,15 +872,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CafeDetailNearCafeCell" rowHeight="603" id="aFR-r8-cYR" customClass="CafeDetailNearCafeCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailNearCafeCell" rowHeight="603" id="aFR-r8-cYR" customClass="CafeDetailNearCafeCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1597" width="375" height="603"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFR-r8-cYR" id="iCs-O4-ZKa">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="602.66666666666663"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시그니처 메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peG-0p-cAI">
-                                                    <rect key="frame" x="26" y="26" width="89" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주변 카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peG-0p-cAI">
+                                                    <rect key="frame" x="25.999999999999996" y="26" width="60.666666666666657" height="17"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1020,6 +1029,9 @@
                                                 <constraint firstItem="yPU-r5-REH" firstAttribute="centerY" secondItem="peG-0p-cAI" secondAttribute="centerY" id="zXd-cY-f9j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nearCafeCollectionView" destination="HjQ-sP-HYz" id="sw5-WI-aB6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1027,18 +1039,18 @@
                                 <rect key="frame" x="0.0" y="730" width="375" height="82"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-jP-oet">
-                                        <rect key="frame" x="312" y="4" width="48" height="48"/>
-                                        <state key="normal" image="detailviewMessage"/>
+                                        <rect key="frame" x="324" y="4" width="36" height="36"/>
+                                        <state key="normal" image="detailviewNavigation"/>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Uy2-g7-L9s">
-                                        <rect key="frame" x="15" y="4" width="121" height="48"/>
+                                        <rect key="frame" x="15" y="4" width="97" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P35-1o-Juf">
-                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                                 <state key="normal" image="detailviewShare"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFc-Qf-jwe">
-                                                <rect key="frame" x="73" y="0.0" width="48" height="48"/>
+                                                <rect key="frame" x="61" y="0.0" width="36" height="36"/>
                                                 <state key="normal" image="detailviewScrap"/>
                                             </button>
                                         </subviews>
@@ -1086,13 +1098,13 @@
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="detailview24H" width="30" height="30"/>
         <image name="detailviewCar" width="30" height="30"/>
-        <image name="detailviewMessage" width="48" height="48"/>
+        <image name="detailviewNavigation" width="36" height="36"/>
         <image name="detailviewReservation" width="30" height="30"/>
         <image name="detailviewReview" width="55" height="16"/>
         <image name="detailviewReviewMore" width="302" height="48"/>
         <image name="detailviewReviewWrite" width="67" height="25"/>
-        <image name="detailviewScrap" width="48" height="48"/>
-        <image name="detailviewShare" width="48" height="48"/>
+        <image name="detailviewScrap" width="36" height="36"/>
+        <image name="detailviewShare" width="36" height="36"/>
         <image name="detailviewSmoke" width="30" height="30"/>
         <image name="detailviewSurroundMore" width="60" height="30"/>
         <image name="detailviewWifi" width="30" height="30"/>

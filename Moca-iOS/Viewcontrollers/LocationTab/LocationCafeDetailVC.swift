@@ -46,7 +46,7 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             switch indexPath.row {
             case 0:
-                if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailImageCell") as? CafeDetailImageCell {
+                if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailImageListCell") as? CafeDetailImageListCell {
                     cell = imageCell
                 }
             case 1:

@@ -1,5 +1,5 @@
 //
-//  CafeDetailImageCell.swift
+//  SignatureMenuCell.swift
 //  Moca-iOS
 //
 //  Created by 박세은 on 2019. 1. 2..
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CafeDetailImageCell: UICollectionViewCell {
+class SignatureMenuCell: UICollectionViewCell {
     
 }
