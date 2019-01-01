@@ -16,13 +16,21 @@ class LikeCafeCell: UITableViewCell {
         super.awakeFromNib()
         
         setUpCollectionView()
+        
+        registerGesture()
+    }
+    
+    private func registerGesture() {
+        let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(likeDetailAction(_:)))
+        self.addGestureRecognizer(moreBtnTapGestureRecognizer)
+    }
+    
+    @objc func likeDetailAction(_:UIImageView) {
+        if let vc = UIStoryboard(name: "MyPageTab", bundle: nil).instantiateViewController(withIdentifier: "LikeCafeDetailVC") as? LikeCafeDetailVC {
+//            present
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     private func setUpCollectionView() {
         cafeImageCollectionView.delegate = self
@@ -42,5 +50,7 @@ extension LikeCafeCell : UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
