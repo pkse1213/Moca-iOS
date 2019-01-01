@@ -1,19 +1,14 @@
 //
-//  MocaPlusHomeListCell.swift
+//  CouponTableViewCell.swift
 //  Moca-iOS
 //
-//  Created by soomin on 2018. 12. 26..
+//  Created by 조수민 on 2018. 12. 30..
 //  Copyright © 2018년 박세은. All rights reserved.
 //
 
 import UIKit
 
-class MocaPlusHomeListCell: UITableViewCell {
-    
-    @IBOutlet weak var contentsImageView: UIImageView!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+class CouponTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

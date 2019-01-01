@@ -78,11 +78,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k5B-nK-04j">
                                 <rect key="frame" x="0.0" y="88.333333333333329" width="375" height="39.999999999999986"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ud0-nZ-kUS">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ud0-nZ-kUS">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-m3-0d9">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="36"/>
+                                                <rect key="frame" x="47.666666666666664" y="0.0" width="29.999999999999993" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="zRs-ev-I8F"/>
                                                 </constraints>
@@ -91,67 +91,81 @@
                                                     <color key="titleColor" red="0.88235294117647056" green="0.69803921568627447" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="allTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="Smb-TF-ugy"/>
+                                                    <action selector="allTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="cTE-SQ-4PO"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="u8p-93-NqO">
-                                                <rect key="frame" x="0.0" y="36" width="125" height="4"/>
+                                                <rect key="frame" x="37" y="36" width="51" height="4"/>
                                                 <color key="backgroundColor" red="0.88235294117647056" green="0.69803921568627447" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="ArM-6Y-oko"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="u8p-93-NqO" secondAttribute="trailing" constant="37" id="4tL-px-DWb"/>
+                                            <constraint firstItem="u8p-93-NqO" firstAttribute="leading" secondItem="Ud0-nZ-kUS" secondAttribute="leading" constant="37" id="FKs-uj-biR"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bJ5-JA-Kaw">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vFa-pQ-b4q">
                                         <rect key="frame" x="125" y="0.0" width="125" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-DI-jAp">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="36"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sb0-Us-TdT">
+                                                <rect key="frame" x="44" y="0.0" width="37" height="36"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="dSR-43-YIw"/>
+                                                    <constraint firstAttribute="height" constant="36" id="f0A-NB-vFb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
                                                 <state key="normal" title="카페명">
                                                     <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cafeTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="TPE-dP-Vn8"/>
+                                                    <action selector="allTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="zIX-sT-0ks"/>
+                                                    <action selector="cafeTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="gkH-IZ-3Mb"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="vUA-La-aOQ">
-                                                <rect key="frame" x="0.0" y="36" width="125" height="4"/>
+                                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-mt-dvA">
+                                                <rect key="frame" x="37" y="36" width="51" height="4"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="4" id="GcO-WQ-sDb"/>
+                                                    <constraint firstAttribute="height" constant="4" id="71P-w7-dkK"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rSw-mt-dvA" firstAttribute="leading" secondItem="vFa-pQ-b4q" secondAttribute="leading" constant="37" id="JBy-JX-uNt"/>
+                                            <constraint firstAttribute="trailing" secondItem="rSw-mt-dvA" secondAttribute="trailing" constant="37" id="o7v-tU-1je"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EgV-NM-uoO">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ygX-gJ-GHa">
                                         <rect key="frame" x="250" y="0.0" width="125" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRs-xm-HSV">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="36"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUz-az-zrr">
+                                                <rect key="frame" x="47.666666666666686" y="0.0" width="30" height="36"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="36" id="nrx-LH-eYi"/>
+                                                    <constraint firstAttribute="height" constant="36" id="aWM-p5-sfJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
                                                 <state key="normal" title="위치">
-                                                    <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="locationTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="BiB-34-z8g"/>
+                                                    <action selector="allTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="4ey-YI-le3"/>
+                                                    <action selector="locationTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="xic-ny-yhR"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="GpM-Hs-yai">
-                                                <rect key="frame" x="0.0" y="36" width="125" height="4"/>
+                                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="dLt-Nc-MqY">
+                                                <rect key="frame" x="37" y="36" width="51" height="4"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="4" id="RDT-aT-AWb"/>
+                                                    <constraint firstAttribute="height" constant="4" id="UfT-Me-HcD"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="dLt-Nc-MqY" firstAttribute="leading" secondItem="ygX-gJ-GHa" secondAttribute="leading" constant="37" id="V3i-oh-JXJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="dLt-Nc-MqY" secondAttribute="trailing" constant="37" id="kWM-C1-Xum"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -264,10 +278,10 @@
                     <connections>
                         <outlet property="allTabButton" destination="a1a-m3-0d9" id="duh-mP-xRC"/>
                         <outlet property="allTabView" destination="u8p-93-NqO" id="KYU-8V-czi"/>
-                        <outlet property="cafeTabButton" destination="L95-DI-jAp" id="mlf-2r-4wh"/>
-                        <outlet property="cafeTabView" destination="vUA-La-aOQ" id="zBc-Yo-4yn"/>
-                        <outlet property="locationTabButton" destination="sRs-xm-HSV" id="JuP-vf-vPy"/>
-                        <outlet property="locationTabView" destination="GpM-Hs-yai" id="j3B-JU-M2a"/>
+                        <outlet property="cafeTabButton" destination="sb0-Us-TdT" id="Hcv-Fe-EJH"/>
+                        <outlet property="cafeTabView" destination="rSw-mt-dvA" id="Wai-7y-cEZ"/>
+                        <outlet property="locationTabButton" destination="iUz-az-zrr" id="xwJ-R8-2Bz"/>
+                        <outlet property="locationTabView" destination="dLt-Nc-MqY" id="bp8-Z4-sIl"/>
                         <outlet property="searchResultTableView" destination="F0O-MU-2QI" id="aNe-Px-lYZ"/>
                         <outlet property="searchTextField" destination="0CB-xH-W78" id="fJO-lv-KTZ"/>
                     </connections>
