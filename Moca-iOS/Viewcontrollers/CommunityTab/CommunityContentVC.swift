@@ -51,20 +51,16 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
-        
         if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-            
             let translation = gestureRecognizer.translation(in: self.view)
-            
             print(contentTableView.center.y)
             
-            if(contentTableView.center.y > self.view.frame.height+100) {
+            if contentTableView.center.y > self.view.frame.height+100 {
                 contentTableView.center.y = contentTableView.center.y + translation.y
                 
             } else {
                 UIView.animate(withDuration: 0.5) {
                     self.contentTableView.center.y = self.view.frame.height/2+64
-                    
                     self.textSquareView.isHidden = false
                     self.textFieldViewBottomConstraint.constant = 0
 //                    self.reviewContentViewTopConstraint.constant = 0
