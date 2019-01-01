@@ -206,7 +206,6 @@
 		772A952F21D78CEC009114FC /* MyPageTab */ = {
 			isa = PBXGroup;
 			children = (
-				CB32A08921D24CCA004796F7 /* HomeTab */,
 				772A953021D78D0C009114FC /* MyPageVC.swift */,
 				772A954321D7DA7F009114FC /* MyPageCouponVC.swift */,
 			);
@@ -296,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2ACCF021D7FC1F004DBF2E /* LocationTab */,
+				CB32A08921D24CCA004796F7 /* HomeTab */,
 				772A952F21D78CEC009114FC /* MyPageTab */,
 				CB32A09821D2A281004796F7 /* CommunityTab */,
 				776211A021D6A61300F90D8A /* PracticeVC.swift */,
