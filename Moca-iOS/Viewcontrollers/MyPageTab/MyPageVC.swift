@@ -30,6 +30,13 @@ class MyPageVC: UIViewController {
             self.present(vc, animated: true)
         }
     }
+    
+    @IBAction func profileModifyAction(_ sender: Any) {
+        if let vc = UIStoryboard(name: "MyPageTab", bundle: nil).instantiateViewController(withIdentifier: "ProfileModifyVC") as? ProfileModifyVC {
+            
+            self.present(vc, animated: true)
+        }
+    }
 }
 
 extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
