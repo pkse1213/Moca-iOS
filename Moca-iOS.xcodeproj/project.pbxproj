@@ -36,6 +36,7 @@
 		CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB08315A21D0E4B1000F5D67 /* Assets.xcassets */; };
 		CB08315E21D0E4B1000F5D67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */; };
 		CB0AAD7C21D8B22B0007E174 /* LocationMapCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0AAD7B21D8B22B0007E174 /* LocationMapCafeCell.swift */; };
+		CB24777121DB8D94003F6569 /* LocationTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB24777021DB8D94003F6569 /* LocationTab.storyboard */; };
 		CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */; };
 		CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */; };
 		CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */; };
@@ -116,6 +117,7 @@
 		CB08315D21D0E4B1000F5D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB08315F21D0E4B1000F5D67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0AAD7B21D8B22B0007E174 /* LocationMapCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapCafeCell.swift; sourceTree = "<group>"; };
+		CB24777021DB8D94003F6569 /* LocationTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationTab.storyboard; sourceTree = "<group>"; };
 		CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentImageCell.swift; sourceTree = "<group>"; };
 		CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentCell.swift; sourceTree = "<group>"; };
 		CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCommentCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		772A952F21D78CEC009114FC /* MyPageTab */ = {
 			isa = PBXGroup;
 			children = (
+				CB32A08921D24CCA004796F7 /* HomeTab */,
 				772A953021D78D0C009114FC /* MyPageVC.swift */,
 				772A954321D7DA7F009114FC /* MyPageCouponVC.swift */,
 			);
@@ -277,13 +280,14 @@
 		CB08316521D0E4C5000F5D67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 				CB08315721D0E4B0000F5D67 /* Main.storyboard */,
 				CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */,
+				CB24777021DB8D94003F6569 /* LocationTab.storyboard */,
 				CB8DDB7521D363C2001D8191 /* CommunityTab.storyboard */,
-				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
-				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
-				7729030021D533F800C19416 /* HomeSearch.storyboard */,
 				772A954121D7D4F2009114FC /* MyPageTab.storyboard */,
+				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
+				7729030021D533F800C19416 /* HomeSearch.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -292,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				CB2ACCF021D7FC1F004DBF2E /* LocationTab */,
-				CB32A08921D24CCA004796F7 /* HomeTab */,
 				772A952F21D78CEC009114FC /* MyPageTab */,
 				CB32A09821D2A281004796F7 /* CommunityTab */,
 				776211A021D6A61300F90D8A /* PracticeVC.swift */,
@@ -545,6 +548,7 @@
 				CBF2FC3021D4B5EC00DFC50A /* NanumGothicExtraBold.otf in Resources */,
 				CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */,
 				CB08315921D0E4B0000F5D67 /* Main.storyboard in Resources */,
+				CB24777121DB8D94003F6569 /* LocationTab.storyboard in Resources */,
 				CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */,
 				CBF2FC2F21D4B5EC00DFC50A /* NanumGothicBold.ttf in Resources */,
 				772A954221D7D4F2009114FC /* MyPageTab.storyboard in Resources */,

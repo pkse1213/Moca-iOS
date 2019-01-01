@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
+class CommunityContentVC: UIViewController {
     let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)]
     
     @IBOutlet var safeAreaView: UIView!
@@ -60,7 +60,7 @@ class CommunityContentVC: UIViewController, UIGestureRecognizerDelegate {
                 
             } else {
                 UIView.animate(withDuration: 0.5) {
-                    self.contentTableView.center.y = self.view.frame.height/2+64
+                    self.contentTableView.center.y = self.view.frame.height/2+64-54
                     self.textSquareView.isHidden = false
                     self.textFieldViewBottomConstraint.constant = 0
 //                    self.reviewContentViewTopConstraint.constant = 0
@@ -173,3 +173,8 @@ extension CommunityContentVC: UIScrollViewDelegate {
     }
 }
 
+extension CommunityContentVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
