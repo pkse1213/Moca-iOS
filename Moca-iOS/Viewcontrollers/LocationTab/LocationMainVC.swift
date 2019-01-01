@@ -8,26 +8,48 @@
 
 import UIKit
 
-class LocationMainVC: UIViewController, MTMapViewDelegate {
+class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
     
     var mapView: MTMapView!
-    let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665]
+    let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
     
-    let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585]
+    let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585,127.04255064005092]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpCollectionView()
+        mapInit()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    
+    }
+    
+    private func setUpCollectionView() {
         cafeCollectionView.delegate = self
         cafeCollectionView.dataSource = self
-        
-        
-        mapView = MTMapView(frame: mapParentView.frame)
-        
+    }
+    
+    private func mapInit() {
+        mapView = MTMapView(frame: self.mapParentView.frame)
         mapView.delegate = self
         mapView.baseMapType = .standard
         
+        addMarkerInMap()
+        
+        mapParentView.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        let bottom = mapView.bottomAnchor.constraint(equalTo: mapParentView.bottomAnchor)
+        let top = mapView.topAnchor.constraint(equalTo: mapParentView.topAnchor)
+        let leading = mapView.leadingAnchor.constraint(equalTo: mapParentView.leadingAnchor)
+        let trailing = mapView.trailingAnchor.constraint(equalTo: mapParentView.trailingAnchor)
+        mapParentView.addConstraints([top, bottom, leading, trailing])
+    }
+    
+    private func addMarkerInMap() {
         for i in 0..<myLat.count {
             let item = MTMapPOIItem()
             item.tag = i
@@ -43,21 +65,15 @@ class LocationMainVC: UIViewController, MTMapViewDelegate {
             self.mapView.addPOIItems([item])
         }
         
-        
-        
         self.mapView.fitAreaToShowAllPOIItems()
         let mapPoint = MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: myLat[0], longitude: myLong[0]))
         
         self.mapView.setMapCenter(mapPoint, animated: true)
         self.mapView.setZoomLevel(2, animated: true)
         
-        mapParentView.addSubview(mapView)
-        
-        
+        let item = self.mapView.findPOIItem(byTag: 0)
+        self.mapView.select(item, animated: true)
     }
-    
-    
-    
 }
 
 
@@ -67,7 +83,12 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UICollectionViewCell
+        var cell = UICollectionViewCell()
+        if let cafeCell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "LocationMapCafeCell", for: indexPath) as? LocationMapCafeCell {
+            cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.item+1)")
+            
+            cell = cafeCell
+        }
         return cell
     }
     
@@ -76,6 +97,8 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         self.mapView.setMapCenter(item?.mapPoint, animated: true)
         self.mapView.select(item, animated: true)
     }
-    
+}
 
+extension LocationMainVC: MTMapViewDelegate {
+    
 }

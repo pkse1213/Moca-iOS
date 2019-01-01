@@ -24,7 +24,10 @@ class MocaPicksCafeVC: UIViewController {
         progressUnit = Float(1)/Float(colors.count)
         scrollProgressView.progress = progressUnit
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
     private func setUpListView() {
         cafeImageCollectionView.delegate = self
         cafeImageCollectionView.dataSource = self
@@ -89,7 +92,7 @@ extension MocaPicksCafeVC: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = cafeImageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.backgroundColor = colors[indexPath.item]
+            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             cell = imageCell
         }
         

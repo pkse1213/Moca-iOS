@@ -15,18 +15,29 @@ class CommunityTabMainVC: UIViewController {
             changeFeedKind()
         }
     }
+    
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
-    
-    @IBOutlet weak var communityTableView: UITableView!
+   
+    // 상단 프로필 뷰
     @IBOutlet weak var profileBackgroundView: UIView!
     @IBOutlet weak var profileSquareView: UIView!
+    @IBOutlet var profileImageView: UIImageView!
+    
+    // 피드 테이블 뷰
+    @IBOutlet weak var communityTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setUpView() {
@@ -38,6 +49,7 @@ class CommunityTabMainVC: UIViewController {
         communityTableView.delegate = self
         communityTableView.dataSource = self
         
+        profileImageView.applyRadius(radius: 24)
         profileSquareView.applyRadius(radius: 3)
         profileSquareView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     }
@@ -80,8 +92,10 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         
         if tableView == communityTableView {
             if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                feedCell.navigationController = self.navigationController
                 cell = feedCell
             }
+            
         } else if tableView == feedMenuTableView {
             if let selectCell = feedMenuTableView.dequeueReusableCell(withIdentifier: "CommunitySelectFeedCell") as? CommunitySelectFeedCell {
                 selectCell.feedNameLabel.text = selectMenus[indexPath.row]
@@ -98,13 +112,8 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == communityTableView {
-            if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        } else if tableView == feedMenuTableView {
+        if tableView == feedMenuTableView {
             selectIndex = indexPath.row
-            
         }
     }
 }

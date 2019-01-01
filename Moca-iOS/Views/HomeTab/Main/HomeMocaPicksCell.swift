@@ -12,17 +12,30 @@ class HomeMocaPicksCell: UITableViewCell {
 
     var navigationController: UINavigationController?
     @IBOutlet weak var mocaPickCollectionView: UICollectionView!
+    @IBOutlet var moreBtnImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
+        registerGesture()
     }
     
     private func setUpCollectionView() {
         self.mocaPickCollectionView.delegate = self
         self.mocaPickCollectionView.dataSource = self
     }
-
+    
+    private func registerGesture() {
+        let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
+        moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+    }
+    
+    @objc func moreAction(_:UIImageView) {
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksListVC") as? MocaPicksListVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -39,11 +52,9 @@ extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let navi = navigationController else {
-            return
-        }
-        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksListVC") as? MocaPicksListVC {
-            navi.pushViewController(vc, animated: true)
+        
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksCafeVC") as? MocaPicksCafeVC {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

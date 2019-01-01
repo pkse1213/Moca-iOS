@@ -37,7 +37,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-YT-NcT">
                                                     <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
-                                                    <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fWm-YT-NcT" secondAttribute="height" multiplier="1:1" id="vKC-xZ-JyZ"/>
                                                     </constraints>
@@ -111,6 +110,12 @@
                                             <constraint firstItem="Zgt-bU-ZHe" firstAttribute="leading" secondItem="iAU-CD-Xod" secondAttribute="leading" constant="2" id="bff-YI-sEC"/>
                                             <constraint firstItem="xDb-qU-twp" firstAttribute="leading" secondItem="fWm-YT-NcT" secondAttribute="leading" constant="9" id="ibw-ad-yfH"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cafeAddressLabel" destination="Ars-Lw-PlP" id="gYa-Qa-OmG"/>
+                                            <outlet property="cafeImageView" destination="fWm-YT-NcT" id="eTo-9A-rtY"/>
+                                            <outlet property="cafeNameLabel" destination="gJz-Wx-jGV" id="xMD-iX-fiv"/>
+                                            <outlet property="rankNumLabel" destination="3W5-kE-UxI" id="5rH-w2-gxC"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Oed-gB-oHM">
                                         <rect key="frame" x="179" y="0.0" width="175" height="238"/>
@@ -178,7 +183,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-Hd-MGi">
                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="220"/>
-                                                    <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="tY0-Hd-MGi" secondAttribute="height" multiplier="349:220" id="Ddx-6b-2gT"/>
                                                     </constraints>
@@ -303,11 +307,18 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-32-Pnm">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                                         </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mocaPicksGradation" translatesAutoresizingMaskIntoConstraints="NO" id="ayo-o7-dSB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="ayo-o7-dSB" firstAttribute="top" secondItem="bt8-An-SH6" secondAttribute="top" id="5Wc-8Q-fSr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ayo-o7-dSB" secondAttribute="bottom" id="8pt-GT-csl"/>
                                                     <constraint firstAttribute="bottom" secondItem="aUc-32-Pnm" secondAttribute="bottom" id="OFe-XB-SS9"/>
                                                     <constraint firstItem="aUc-32-Pnm" firstAttribute="leading" secondItem="bt8-An-SH6" secondAttribute="leading" id="WOV-QB-veW"/>
+                                                    <constraint firstItem="ayo-o7-dSB" firstAttribute="leading" secondItem="bt8-An-SH6" secondAttribute="leading" id="feM-Ar-J4Q"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ayo-o7-dSB" secondAttribute="trailing" id="hNK-9b-TMf"/>
                                                     <constraint firstItem="aUc-32-Pnm" firstAttribute="top" secondItem="bt8-An-SH6" secondAttribute="top" id="noL-CF-G6R"/>
                                                     <constraint firstAttribute="trailing" secondItem="aUc-32-Pnm" secondAttribute="trailing" id="vf4-Ih-XtR"/>
                                                 </constraints>
@@ -391,11 +402,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ylH-Tt-27X">
+                                                    <rect key="frame" x="290" y="34.333333333333336" width="59" height="11"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="YGi-be-TAH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="Q7r-0R-2sd">
+                                                            <rect key="frame" x="12" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="sEl-uO-rlP">
+                                                            <rect key="frame" x="24" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="GVZ-Zx-AFD">
+                                                            <rect key="frame" x="36" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarGray" translatesAutoresizingMaskIntoConstraints="NO" id="sLy-gU-qtN">
+                                                            <rect key="frame" x="48" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ylH-Tt-27X" firstAttribute="centerY" secondItem="Tb9-JN-wxC" secondAttribute="centerY" id="2zI-H4-WwQ"/>
                                                 <constraint firstItem="Tb9-JN-wxC" firstAttribute="leading" secondItem="pdb-Eh-bXX" secondAttribute="leading" constant="27" id="ShB-O0-tcD"/>
                                                 <constraint firstItem="Tb9-JN-wxC" firstAttribute="top" secondItem="pdb-Eh-bXX" secondAttribute="top" constant="31" id="TEI-Uz-Fh5"/>
                                                 <constraint firstAttribute="bottom" secondItem="Tb9-JN-wxC" secondAttribute="bottom" constant="12" id="WS3-Z0-8JI"/>
+                                                <constraint firstAttribute="trailing" secondItem="ylH-Tt-27X" secondAttribute="trailing" constant="26" id="dvh-eS-XdX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -454,8 +487,8 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF5-Lp-KxE">
-                                                    <rect key="frame" x="285" y="26" width="67" height="22"/>
-                                                    <state key="normal" image="mocapicksMore"/>
+                                                    <rect key="frame" x="284" y="22" width="68" height="30"/>
+                                                    <state key="normal" image="mocapicksEvaluation"/>
                                                     <connections>
                                                         <action selector="pushBaristaDetailAction:" destination="l5I-ci-iyi" eventType="touchUpInside" id="A0Q-LA-NNz"/>
                                                     </connections>
@@ -1132,7 +1165,8 @@
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="icCommunityLocation" width="12" height="13"/>
-        <image name="mocapicksMore" width="67" height="22"/>
+        <image name="mocaPicksGradation" width="376" height="228"/>
+        <image name="mocapicksEvaluation" width="68" height="30"/>
         <image name="rankingMark" width="30" height="40"/>
     </resources>
 </document>
