@@ -15,7 +15,7 @@ class CafeDetailNearCafeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        unit = (nearCafeCollectionView.frame.width/2-3)/175
+        unit = (nearCafeCollectionView.frame.width/2-3)/173
         setUpCollectionView()
     }
     private func setUpCollectionView() {
@@ -27,7 +27,7 @@ class CafeDetailNearCafeCell: UITableViewCell {
 extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width:175*unit , height: 238*unit)
+        return CGSize(width:173*unit , height: 236*unit)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

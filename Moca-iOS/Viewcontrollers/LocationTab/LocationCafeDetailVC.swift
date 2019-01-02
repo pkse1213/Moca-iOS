@@ -10,7 +10,7 @@ import UIKit
 
 class LocationCafeDetailVC: UIViewController {
 
-    @IBOutlet var cafeDetailTableView: UITableView!
+    @IBOutlet weak var cafeDetailTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,11 @@ class LocationCafeDetailVC: UIViewController {
     private func setUpTableView() {
         cafeDetailTableView.delegate = self
         cafeDetailTableView.dataSource = self
+    }
+    
+    @objc func reviewLookActin(_:UIButton) {
+        print("dfsd")
+        cafeDetailTableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
     }
 
 }
@@ -51,6 +56,7 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
                 }
             case 1:
                 if let infoCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailInfoCell") as? CafeDetailInfoCell {
+                    infoCell.reviewLookButton.addTarget(self, action: #selector(reviewLookActin(_:)), for: .touchUpInside)
                     cell = infoCell
                 }
             default:

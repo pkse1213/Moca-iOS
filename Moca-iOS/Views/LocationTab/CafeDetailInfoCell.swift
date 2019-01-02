@@ -11,6 +11,7 @@ import UIKit
 class CafeDetailInfoCell: UITableViewCell {
 
     @IBOutlet weak var signatureMenuCollectionView: UICollectionView!
+    @IBOutlet weak var reviewLookButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

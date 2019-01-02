@@ -10,4 +10,5 @@ import UIKit
 
 class CafeDetailImageCell: UICollectionViewCell {
     
+    @IBOutlet var cafeImageView: UIImageView!
 }

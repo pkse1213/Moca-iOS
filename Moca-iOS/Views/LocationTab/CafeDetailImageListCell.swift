@@ -18,6 +18,7 @@ class CafeDetailImageListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
+        setUpView()
     }
     
     private func setUpView() {
@@ -31,7 +32,12 @@ class CafeDetailImageListCell: UITableViewCell {
     }
 }
 
-extension CafeDetailImageListCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CafeDetailImageListCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: imageCollectionView.frame.width , height: imageCollectionView.frame.width)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
@@ -39,6 +45,7 @@ extension CafeDetailImageListCell: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CafeDetailImageCell", for: indexPath) as? CafeDetailImageCell {
+            imageCell.cafeImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             cell = imageCell
         }
         return cell

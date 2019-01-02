@@ -62,6 +62,7 @@
 		CB2ACCEC21D7F8B5004DBF2E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCEB21D7F8B5004DBF2E /* libxml2.tbd */; };
 		CB2ACCEE21D7F8BF004DBF2E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCED21D7F8BE004DBF2E /* libsqlite3.tbd */; };
 		CB2ACCF221D7FC40004DBF2E /* LocationMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */; };
+		CB2D78E321DC86A70033C2A0 /* LocationMapDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78E221DC86A70033C2A0 /* LocationMapDialogVC.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -158,6 +159,7 @@
 		CB2ACCED21D7F8BE004DBF2E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CB2ACCEF21D7F935004DBF2E /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMainVC.swift; sourceTree = "<group>"; };
+		CB2D78E221DC86A70033C2A0 /* LocationMapDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapDialogVC.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			children = (
 				CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */,
 				CB909BAC21DBEECC0040F4A5 /* LocationCafeDetailVC.swift */,
+				CB2D78E221DC86A70033C2A0 /* LocationMapDialogVC.swift */,
 			);
 			path = LocationTab;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */,
 				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
 				774B597321DBCF5A00B10989 /* UITextField+Extension.swift in Sources */,
+				CB2D78E321DC86A70033C2A0 /* LocationMapDialogVC.swift in Sources */,
 				CB909BB121DBF14A0040F4A5 /* CafeDetailInfoCell.swift in Sources */,
 				CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */,
 				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
