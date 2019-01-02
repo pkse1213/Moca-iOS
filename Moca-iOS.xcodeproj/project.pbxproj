@@ -72,6 +72,8 @@
 		CB2D78F321DCFE3D0033C2A0 /* LocationSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78F221DCFE3D0033C2A0 /* LocationSearchCell.swift */; };
 		CB2D78F521DD02630033C2A0 /* LocationSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78F421DD02630033C2A0 /* LocationSearchVC.swift */; };
 		CB2D78F721DD0CF00033C2A0 /* UIViewController+extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78F621DD0CF00033C2A0 /* UIViewController+extesion.swift */; };
+		CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78F821DD23E50033C2A0 /* HomeNoticeVC.swift */; };
+		CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78FA21DD247C0033C2A0 /* HomeNoticeCell.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -178,6 +180,8 @@
 		CB2D78F221DCFE3D0033C2A0 /* LocationSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchCell.swift; sourceTree = "<group>"; };
 		CB2D78F421DD02630033C2A0 /* LocationSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchVC.swift; sourceTree = "<group>"; };
 		CB2D78F621DD0CF00033C2A0 /* UIViewController+extesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extesion.swift"; sourceTree = "<group>"; };
+		CB2D78F821DD23E50033C2A0 /* HomeNoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoticeVC.swift; sourceTree = "<group>"; };
+		CB2D78FA21DD247C0033C2A0 /* HomeNoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoticeCell.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -493,6 +497,7 @@
 				7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */,
 				7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */,
 				77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */,
+				CB2D78F821DD23E50033C2A0 /* HomeNoticeVC.swift */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 				CB32A09021D259CB004796F7 /* HomeConceptCell.swift */,
 				CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */,
 				CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */,
+				CB2D78FA21DD247C0033C2A0 /* HomeNoticeCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -762,6 +768,8 @@
 				7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */,
+				CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */,
+				CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */,
 				774B596D21DB837900B10989 /* ProfileModifyVC.swift in Sources */,
 				774B596F21DBBA2B00B10989 /* LikeCafeDetailVC.swift in Sources */,
 				CB2E8F0021DC04930087EFE2 /* SignatureMenuCell.swift in Sources */,

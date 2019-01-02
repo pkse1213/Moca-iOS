@@ -23,6 +23,11 @@ class LocationSearchVC: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     private func setupView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -60,10 +65,10 @@ extension LocationSearchVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if flag {
-//            NotificationCenter.default.post(name: Notification.Name("setAddress"), object: searchAddress[indexPath.row])
-//            self.navigationController?.popViewController(animated: true)
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        NotificationCenter.default.post(name: Notification.Name("setAddress"), object: searchAddress[indexPath.row])
+        self.navigationController?.popViewController(animated: true)
+        
+    }
 }

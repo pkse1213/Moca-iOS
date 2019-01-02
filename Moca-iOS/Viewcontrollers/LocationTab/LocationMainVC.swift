@@ -21,14 +21,52 @@ class LocationMainVC: UIViewController{
     let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
     
     let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585,127.04255064005092]
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
         mapInit()
+        setNoti()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func setNoti() {
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(setAddress(noti:)), name: NSNotification.Name("setAddress") , object: nil)
+    }
+    
+    @objc func setAddress(noti:Notification) {
+        if let address = noti.object as? Address{
+            let navView = UIView()
+            let label = UILabel()
+            label.text = address.roadAddressName
+            label.sizeToFit()
+            label.center = navView.center
+            label.textAlignment = NSTextAlignment.center
+            
+            let image = UIImageView()
+            image.image = #imageLiteral(resourceName: "locationSearch")
+            
+            let imageAspect = image.image!.size.width/image.image!.size.height
+            image.frame = CGRect(x: label.frame.origin.x-label.frame.size.height*imageAspect, y: label.frame.origin.y, width: label.frame.size.height*imageAspect, height: label.frame.size.height)
+            image.contentMode = UIView.ContentMode.scaleAspectFit
+            
+            navView.addSubview(label)
+            navView.addSubview(image)
+            
+            self.navigationItem.titleView = navView
+            navView.sizeToFit()
+        }
+    }
+    
+    @IBAction func searchAction(_ sender: UIBarButtonItem) {
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationSearchVC") as? LocationSearchVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func setUpCollectionView() {
