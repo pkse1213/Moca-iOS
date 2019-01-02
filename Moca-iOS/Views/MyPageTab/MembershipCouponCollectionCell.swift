@@ -16,7 +16,7 @@ class MembershipCouponCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         
         couponImageView.layer.masksToBounds = false
-        couponImageView.layer.cornerRadius = couponImageView.frame.height/2
+        couponImageView.layer.cornerRadius = couponImageView.frame.width/2
         couponImageView.clipsToBounds = true
     }
 }
