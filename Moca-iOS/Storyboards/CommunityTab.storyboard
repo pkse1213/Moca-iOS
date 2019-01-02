@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aGJ-fC-G6O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -835,6 +835,9 @@
                                                                 <constraint firstAttribute="trailing" secondItem="Pdn-gv-xMS" secondAttribute="trailing" id="bgM-85-21c"/>
                                                                 <constraint firstItem="Pdn-gv-xMS" firstAttribute="leading" secondItem="787-uL-HUW" secondAttribute="leading" id="hsC-0M-5rf"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="selectImageView" destination="Pdn-gv-xMS" id="RMF-d8-9yr"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -884,7 +887,7 @@
                         <viewLayoutGuide key="safeArea" id="1lA-ix-xs3"/>
                     </view>
                     <connections>
-                        <outlet property="WrittingTableView" destination="S7s-bq-q4q" id="RqM-Wo-IhV"/>
+                        <outlet property="writtingTableView" destination="S7s-bq-q4q" id="WhI-Xl-xPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qic-GN-5bw" userLabel="First Responder" sceneMemberID="firstResponder"/>

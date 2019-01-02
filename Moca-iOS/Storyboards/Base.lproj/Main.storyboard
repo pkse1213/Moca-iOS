@@ -706,15 +706,28 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPr-0C-rY7">
+                                                    <rect key="frame" x="319" y="28" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="3lc-UT-Bty"/>
+                                                        <constraint firstAttribute="width" constant="24" id="teE-Gg-j4U"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="communityMyAddreview"/>
+                                                    <connections>
+                                                        <action selector="profileButtonAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="nNN-ni-a6e"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="icF-hC-qtb" firstAttribute="centerX" secondItem="LM8-56-9gg" secondAttribute="centerX" constant="-15" id="AB2-RH-PgF"/>
+                                                <constraint firstItem="kPr-0C-rY7" firstAttribute="top" secondItem="LM8-56-9gg" secondAttribute="top" constant="28" id="AK4-Kh-JHz"/>
                                                 <constraint firstItem="AUU-d8-XPa" firstAttribute="top" secondItem="LM8-56-9gg" secondAttribute="top" constant="16" id="OkB-Kz-rPU"/>
                                                 <constraint firstItem="AUU-d8-XPa" firstAttribute="leading" secondItem="LM8-56-9gg" secondAttribute="leading" constant="12" id="X0n-V1-gVu"/>
                                                 <constraint firstItem="9Te-Xn-YwU" firstAttribute="leading" secondItem="AUU-d8-XPa" secondAttribute="trailing" constant="13" id="j76-17-nrU"/>
                                                 <constraint firstAttribute="bottom" secondItem="icF-hC-qtb" secondAttribute="bottom" constant="16" id="n75-r9-fk1"/>
                                                 <constraint firstItem="9Te-Xn-YwU" firstAttribute="centerY" secondItem="AUU-d8-XPa" secondAttribute="centerY" id="qfI-oF-Q1U"/>
+                                                <constraint firstAttribute="trailing" secondItem="kPr-0C-rY7" secondAttribute="trailing" constant="26" id="uMK-b8-odD"/>
                                                 <constraint firstAttribute="height" constant="115" id="yGx-8d-dfV"/>
                                             </constraints>
                                         </view>
@@ -1031,6 +1044,7 @@
                         <outlet property="communityTableView" destination="b7E-P6-97G" id="DtT-fz-kai"/>
                         <outlet property="feedMenuTableView" destination="jwd-ij-4bw" id="tDC-GA-Iry"/>
                         <outlet property="profileBackgroundView" destination="ZSX-pm-YK9" id="9yK-kb-gAY"/>
+                        <outlet property="profileButton" destination="kPr-0C-rY7" id="YJ5-Yd-O9g"/>
                         <outlet property="profileImageView" destination="AUU-d8-XPa" id="pGp-YG-Ahy"/>
                         <outlet property="profileSquareView" destination="LM8-56-9gg" id="4cp-B8-hsV"/>
                         <outlet property="selectFeedView" destination="Bmd-i8-ydi" id="oIV-WB-V6B"/>
@@ -1456,6 +1470,7 @@
         <image name="communityFollowlistSearch" width="22" height="22"/>
         <image name="communityGradation" width="336" height="336"/>
         <image name="communityMore" width="329" height="28"/>
+        <image name="communityMyAddreview" width="24" height="24"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="home" width="25" height="25"/>
