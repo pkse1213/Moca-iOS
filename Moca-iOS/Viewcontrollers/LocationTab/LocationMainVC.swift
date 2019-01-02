@@ -21,16 +21,14 @@ class LocationMainVC: UIViewController{
     let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
     
     let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585,127.04255064005092]
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
         mapInit()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    
     }
     
     private func setUpCollectionView() {
@@ -102,10 +100,25 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = self.mapView.findPOIItem(byTag: indexPath.item)
-        self.mapView.setMapCenter(item?.mapPoint, animated: true)
-        self.mapView.select(item, animated: true)
-        selectedIndex = indexPath.item
+        
+        if let cell = cafeCollectionView.cellForItem(at: indexPath) as? LocationMapCafeCell {
+            if cell.selectedFlag == true {
+                if let dialogVC = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationMapDialogVC") as? LocationMapDialogVC {
+                    self.addChild(dialogVC)
+                    dialogVC.view.frame = self.view.frame
+                    self.view.addSubview(dialogVC.view)
+                    dialogVC.didMove(toParent: self )
+                }
+                
+            } else {
+                let item = self.mapView.findPOIItem(byTag: indexPath.item)
+                self.mapView.setMapCenter(item?.mapPoint, animated: true)
+                self.mapView.select(item, animated: true)
+                
+                selectedIndex = indexPath.item
+            }
+        }
+        
         
     }
     

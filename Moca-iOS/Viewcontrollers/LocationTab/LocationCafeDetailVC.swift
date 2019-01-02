@@ -17,6 +17,11 @@ class LocationCafeDetailVC: UIViewController {
         setUpTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     private func setUpTableView() {
         cafeDetailTableView.delegate = self
         cafeDetailTableView.dataSource = self
