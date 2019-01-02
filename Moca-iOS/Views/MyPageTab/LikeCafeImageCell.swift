@@ -11,13 +11,16 @@ import UIKit
 class LikeCafeImageCell: UICollectionViewCell {
     
     @IBOutlet weak var likeCafeImageView: UIImageView!
+    @IBOutlet var numberVerticalStack: UIStackView!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         likeCafeImageView.layer.masksToBounds = false
-        likeCafeImageView.layer.cornerRadius = likeCafeImageView.frame.height/2
+        likeCafeImageView.layer.cornerRadius = (likeCafeImageView.frame.size).height/2
         likeCafeImageView.clipsToBounds = true
+        
+//        var sizes =
     }
 }

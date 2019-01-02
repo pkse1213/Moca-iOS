@@ -12,11 +12,17 @@ class MyPageVC: UIViewController {
     
     @IBOutlet weak var myPageTableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
         setUpTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setUpTableView() {
@@ -26,15 +32,13 @@ class MyPageVC: UIViewController {
     
     @objc func moreAction(_:UIImageView) {
         if let vc = UIStoryboard(name: "MyPageTab", bundle: nil).instantiateViewController(withIdentifier: "MyPageCouponVC") as? MyPageCouponVC {
-//            self.navigationController?.pushViewController(vc, animated: true)
             self.present(vc, animated: true)
         }
     }
     
     @IBAction func profileModifyAction(_ sender: Any) {
         if let vc = UIStoryboard(name: "MyPageTab", bundle: nil).instantiateViewController(withIdentifier: "ProfileModifyVC") as? ProfileModifyVC {
-            
-            self.present(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -54,7 +58,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.row == 1 {
             if let likeCafeCell = myPageTableView.dequeueReusableCell(withIdentifier: "LikeCafeCell", for: indexPath) as? LikeCafeCell {
-                
+                likeCafeCell.navigationbarController = self.navigationController
                 cell = likeCafeCell
             }
         }
@@ -69,6 +73,7 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         }
         else {
             if let membershipCell = myPageTableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as? MembershipCell {
+                
                 cell = membershipCell
             }
         }
