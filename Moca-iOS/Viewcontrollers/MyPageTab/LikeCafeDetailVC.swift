@@ -17,6 +17,8 @@ class LikeCafeDetailVC: UIViewController {
         super.viewDidLoad()
 
         setUpTableView()
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     private func setUpTableView() {
