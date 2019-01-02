@@ -11,6 +11,11 @@ import UIKit
 class ReviewWrittingCell: UITableViewCell {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    
+    // 추가
+    var presentVC : UIViewController?
+    // 추가
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
@@ -31,6 +36,9 @@ extension ReviewWrittingCell: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "ReviewPlusImageCell", for: indexPath) as? ReviewPlusImageCell {
+            // 추가
+            imageCell.presVC = presentVC
+            
             cell = imageCell
         }
         return cell

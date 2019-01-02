@@ -25,6 +25,7 @@ class CommunityTabMainVC: UIViewController {
     @IBOutlet weak var profileBackgroundView: UIView!
     @IBOutlet weak var profileSquareView: UIView!
     @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var profileButton: UIButton!
     
     // 피드 테이블 뷰
     @IBOutlet weak var communityTableView: UITableView!
@@ -74,6 +75,12 @@ class CommunityTabMainVC: UIViewController {
     
     @IBAction func chooseFeedKindAction(_ sender: Any) {
         dropUpandDropDown()
+    }
+    
+    @IBAction func profileButtonAction(_ sender: Any) {
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityReviewWrittingVC") as? CommunityReviewWrittingVC {
+            self.present(vc, animated: true)
+        }
     }
     
 }
