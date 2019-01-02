@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "commonCancelBlack.png",
+      "idiom" : "universal",
       "scale" : "1x",
-      "idiom" : "universal"
+      "filename" : "commonCancelBlack.png"
     },
     {
-      "filename" : "commonCancelBlack@2x.png",
+      "idiom" : "universal",
       "scale" : "2x",
-      "idiom" : "universal"
+      "filename" : "commonCancelBlack@2x.png"
     },
     {
-      "filename" : "commonCancelBlack@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "commonCancelBlack@3x.png"
     }
   ],
   "info" : {
