@@ -11,6 +11,11 @@ import UIKit
 class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
+    var selectedIndex = 0 {
+        didSet{
+            cafeCollectionView.reloadData()
+        }
+    }
     
     var mapView: MTMapView!
     let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
@@ -86,7 +91,11 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         var cell = UICollectionViewCell()
         if let cafeCell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "LocationMapCafeCell", for: indexPath) as? LocationMapCafeCell {
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.item+1)")
-            
+            if indexPath.item == selectedIndex {
+                cafeCell.selectedFlag = true
+            } else {
+                cafeCell.selectedFlag = false
+            }
             cell = cafeCell
         }
         return cell
@@ -96,7 +105,11 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let item = self.mapView.findPOIItem(byTag: indexPath.item)
         self.mapView.setMapCenter(item?.mapPoint, animated: true)
         self.mapView.select(item, animated: true)
+        selectedIndex = indexPath.item
+        
     }
+    
+    
 }
 
 extension LocationMainVC: MTMapViewDelegate {
