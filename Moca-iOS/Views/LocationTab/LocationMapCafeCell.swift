@@ -25,9 +25,9 @@ class LocationMapCafeCell: UICollectionViewCell {
     
     private func setBoader() {
         if selectedFlag {
-            self.applyBorder(width: 3, color: #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1))
+            self.applyBorder(width: 1.5, color: #colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1))
         } else {
-            self.applyBorder(width: 1, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+            self.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8769704103, green: 0.8771176934, blue: 0.8769509196, alpha: 1))
         }
     }
 }

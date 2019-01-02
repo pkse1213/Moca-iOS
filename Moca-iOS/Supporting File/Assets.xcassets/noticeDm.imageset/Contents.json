@@ -2,17 +2,17 @@
   "images" : [
     {
       "scale" : "1x",
-      "filename" : "communityFollowlistSearch.png",
+      "filename" : "noticeDm.png",
       "idiom" : "universal"
     },
     {
       "scale" : "2x",
-      "filename" : "communityFollowlistSearch@2x.png",
+      "filename" : "noticeDm@2x.png",
       "idiom" : "universal"
     },
     {
       "scale" : "3x",
-      "filename" : "communityFollowlistSearch@3x.png",
+      "filename" : "noticeDm@3x.png",
       "idiom" : "universal"
     }
   ],

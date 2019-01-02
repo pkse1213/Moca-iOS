@@ -60,7 +60,7 @@ class CommunityContentVC: UIViewController {
                 
             } else {
                 UIView.animate(withDuration: 0.5) {
-                    self.contentTableView.center.y = self.view.frame.height/2+64-54
+                    self.contentTableView.center.y = self.view.frame.height/2+88-54
                     self.textSquareView.isHidden = false
                     self.textFieldViewBottomConstraint.constant = 0
 //                    self.reviewContentViewTopConstraint.constant = 0
@@ -81,6 +81,7 @@ class CommunityContentVC: UIViewController {
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
         
+//        contentTableView.isScrollEnabled = false
         contentTableView.delegate = self
         contentTableView.dataSource = self
         contentTableView.applyRadius(radius: 10)

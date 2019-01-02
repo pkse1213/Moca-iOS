@@ -12,11 +12,10 @@ class HomeTabMainVC: UIViewController {
     
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTabTableView: UITableView!
+    @IBOutlet weak var noticeImageView: UIImageView!
     
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpView()
         setUpTableView()
         registerGesture()
@@ -39,11 +38,21 @@ class HomeTabMainVC: UIViewController {
     }
     
     private func registerGesture() {
-        let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToSearchAction(_:)))
-        searchBarView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+        let searchTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToSearchAction(_:)))
+        searchBarView.addGestureRecognizer(searchTapGestureRecognizer)
+        
+        let noticeTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToNoticeActon(_:)))
+        noticeImageView.addGestureRecognizer(noticeTapGestureRecognizer)
+        
     }
     
-    @objc func goToSearchAction(_:UIImageView) {
+    @objc func goToNoticeActon(_: UIImageView) {
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeNoticeVC") as? HomeNoticeVC {
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func goToSearchAction(_: UIImageView) {
         if let vc = UIStoryboard(name: "HomeSearch", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
             navigationController?.pushViewController(vc, animated: true)
         }
