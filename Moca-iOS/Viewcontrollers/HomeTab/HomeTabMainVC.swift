@@ -12,17 +12,20 @@ class HomeTabMainVC: UIViewController {
     
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTabTableView: UITableView!
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpView()
         setUpTableView()
+        registerGesture()
     }
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setUpView() {
@@ -34,6 +37,18 @@ class HomeTabMainVC: UIViewController {
         self.homeTabTableView.delegate = self
         self.homeTabTableView.dataSource = self
     }
+    
+    private func registerGesture() {
+        let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToSearchAction(_:)))
+        searchBarView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+    }
+    
+    @objc func goToSearchAction(_:UIImageView) {
+        if let vc = UIStoryboard(name: "HomeSearch", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
