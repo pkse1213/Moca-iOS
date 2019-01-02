@@ -135,7 +135,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjb-Eh-DJn">
-                                                    <rect key="frame" x="26" y="12" width="78" height="24"/>
+                                                    <rect key="frame" x="26" y="12" width="77" height="24"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -454,7 +454,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="homeTabTableView" destination="fvM-Y8-2mf" id="hmG-n0-G4u"/>
-                        <outlet property="searchBarView" destination="Wwo-eQ-vaJ" id="X45-YC-5Vg"/>
+                        <outlet property="searchBarView" destination="Wwo-eQ-vaJ" id="6Zs-7k-Hmq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1364,7 +1364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qt-u8-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912.8" y="2870.6896551724139"/>
+            <point key="canvasLocation" x="1913" y="2887"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yjA-sg-gPU">

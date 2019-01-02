@@ -32,6 +32,10 @@ class HomeSearchVC: UIViewController {
         setUpTableView()
         setUpTextField()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
 
     private func setUpTextField() {
         // TextField paddingLeft 설정
@@ -45,6 +49,12 @@ class HomeSearchVC: UIViewController {
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
     }
+    
+    // back action
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     // Tab Action
     @IBAction func allTabAction(_ sender: Any) {
