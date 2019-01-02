@@ -14,6 +14,7 @@ class CommunityReviewWrittingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpView()
     }
     
@@ -31,6 +32,8 @@ extension CommunityReviewWrittingVC: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if let writtingCell = writtingTableView.dequeueReusableCell(withIdentifier: "ReviewWrittingCell") as? ReviewWrittingCell {
+            writtingCell.presentVC = self
+            
             cell = writtingCell
         }
         return cell
