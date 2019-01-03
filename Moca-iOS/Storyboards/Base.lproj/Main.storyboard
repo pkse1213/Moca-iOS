@@ -381,7 +381,7 @@
                                         <rect key="frame" x="0.0" y="783" width="375" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F51-aM-jm6" id="hGA-G1-Wvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-Cl-9m1">
@@ -454,6 +454,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="homeTabTableView" destination="fvM-Y8-2mf" id="hmG-n0-G4u"/>
+                        <outlet property="noticeImageView" destination="Et9-bS-NVu" id="qSH-bk-WL3"/>
                         <outlet property="searchBarView" destination="Wwo-eQ-vaJ" id="6Zs-7k-Hmq"/>
                     </connections>
                 </viewController>
@@ -596,7 +597,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zel-g9-k1d"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mlm-GZ-0Dm"/>
+                    <navigationItem key="navigationItem" id="mlm-GZ-0Dm">
+                        <barButtonItem key="rightBarButtonItem" image="commonSearch" id="KyX-uf-d0R">
+                            <color key="tintColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="searchAction:" destination="dA4-oN-ZKf" id="Mxf-Zs-ely"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cafeCollectionView" destination="EJJ-nw-aOD" id="eUc-XD-ca7"/>
                         <outlet property="mapParentView" destination="FCF-Tw-1co" id="X8T-Ha-3Kg"/>
@@ -1281,7 +1289,7 @@
                                                     <color key="textColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAC-a2-JRu">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAC-a2-JRu">
                                                     <rect key="frame" x="20" y="49.333333333333329" width="335" height="209.66666666666669"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -1465,6 +1473,7 @@
         <image name="commonCommentSmall" width="24" height="24"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartBlankSmall" width="24" height="24"/>
+        <image name="commonSearch" width="24" height="24"/>
         <image name="commonYellowcircle" width="24" height="24"/>
         <image name="community" width="25" height="25"/>
         <image name="communityFollowlistSearch" width="22" height="22"/>

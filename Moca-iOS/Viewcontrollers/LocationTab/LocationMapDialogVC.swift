@@ -10,6 +10,7 @@ import UIKit
 
 class LocationMapDialogVC: UIViewController {
 
+    @IBOutlet var dialogParentView: UIView!
     @IBOutlet weak var dialogBackgroundView: UIView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var detailLookButton: UIButton!
@@ -34,9 +35,17 @@ class LocationMapDialogVC: UIViewController {
         detailLookButton.applyRadius(radius: 5)
         dialogBackgroundView.applyRadius(radius: 5)
     }
+    
+    @IBAction func closeAction(_ sender: UIButton) {
+        self.view.removeFromSuperview()
+    }
+    
     @IBAction func detailLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            
             self.navigationController?.pushViewController(vc, animated: true)
+            self.view.removeFromSuperview()
+            
         }
     }
     

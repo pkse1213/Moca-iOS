@@ -26,11 +26,47 @@ class LocationMainVC: UIViewController{
         super.viewDidLoad()
         setUpCollectionView()
         mapInit()
+        setNoti()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
+    private func setNoti() {
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(setAddress(noti:)), name: NSNotification.Name("setAddress") , object: nil)
+    }
+    
+    @objc func setAddress(noti:Notification) {
+        if let address = noti.object as? Address{
+            let navView = UIView()
+            let label = UILabel()
+            label.text = address.roadAddressName
+            label.sizeToFit()
+            label.center = navView.center
+            label.textAlignment = NSTextAlignment.center
+            
+            let image = UIImageView()
+            image.image = #imageLiteral(resourceName: "locationSearch")
+            
+            let imageAspect = image.image!.size.width/image.image!.size.height
+            image.frame = CGRect(x: label.frame.origin.x-label.frame.size.height*imageAspect, y: label.frame.origin.y, width: label.frame.size.height*imageAspect, height: label.frame.size.height)
+            image.contentMode = UIView.ContentMode.scaleAspectFit
+            
+            navView.addSubview(label)
+            navView.addSubview(image)
+            
+            self.navigationItem.titleView = navView
+            navView.sizeToFit()
+        }
+    }
+    
+    @IBAction func searchAction(_ sender: UIBarButtonItem) {
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationSearchVC") as? LocationSearchVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func setUpCollectionView() {
@@ -102,10 +138,25 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = self.mapView.findPOIItem(byTag: indexPath.item)
-        self.mapView.setMapCenter(item?.mapPoint, animated: true)
-        self.mapView.select(item, animated: true)
-        selectedIndex = indexPath.item
+        
+        if let cell = cafeCollectionView.cellForItem(at: indexPath) as? LocationMapCafeCell {
+            if cell.selectedFlag == true {
+                if let dialogVC = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationMapDialogVC") as? LocationMapDialogVC {
+                    self.addChild(dialogVC)
+                    dialogVC.view.frame = self.view.frame
+                    self.view.addSubview(dialogVC.view)
+                    dialogVC.didMove(toParent: self )
+                }
+                
+            } else {
+                let item = self.mapView.findPOIItem(byTag: indexPath.item)
+                self.mapView.setMapCenter(item?.mapPoint, animated: true)
+                self.mapView.select(item, animated: true)
+                
+                selectedIndex = indexPath.item
+            }
+        }
+        
         
     }
     
