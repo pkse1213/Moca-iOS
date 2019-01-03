@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */; };
 		7729030121D533F800C19416 /* HomeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7729030021D533F800C19416 /* HomeSearch.storyboard */; };
 		772A953121D78D0C009114FC /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A953021D78D0C009114FC /* MyPageVC.swift */; };
 		772A953421D793A9009114FC /* MyPageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A953321D793A9009114FC /* MyPageInfoCell.swift */; };
@@ -34,6 +35,7 @@
 		7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5E21D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift */; };
 		7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */; };
 		7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */; };
+		77F445F721DE412200734992 /* HotCafeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */; };
 		77FAE6D121D5441B006C24F4 /* HomeSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */; };
 		8517728C6C50F34105911A84 /* Pods_Moca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */; };
 		CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB08315321D0E4B0000F5D67 /* AppDelegate.swift */; };
@@ -100,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		7729030021D533F800C19416 /* HomeSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeSearch.storyboard; sourceTree = "<group>"; };
 		772A953021D78D0C009114FC /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		772A953321D793A9009114FC /* MyPageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoCell.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		7780ED5E21D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusCafeImageCell.swift; sourceTree = "<group>"; };
 		7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusDetailVC.swift; sourceTree = "<group>"; };
 		7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeVC.swift; sourceTree = "<group>"; };
+		77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCafeCollectionViewCell.swift; sourceTree = "<group>"; };
 		77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchVC.swift; sourceTree = "<group>"; };
 		8870235A62FE8FFCFDF56460 /* Pods-Moca-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moca_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				7757B4CF21D5DB93004613BD /* HomeSearchResultCell.swift */,
+				77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */,
+				7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */,
 			);
 			path = HomeSearch;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				776211A321D6AC1900F90D8A /* Unwind.swift in Sources */,
 				772A953A21D7A126009114FC /* LikeCafeCell.swift in Sources */,
+				77F445F721DE412200734992 /* HotCafeCollectionViewCell.swift in Sources */,
 				CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */,
 				CBF2FC3821D533DD00DFC50A /* CommunityReviewImaegCell.swift in Sources */,
 				7780ED6121D4F29F00CC2BA7 /* MocaPlusCafeCell.swift in Sources */,
@@ -730,6 +737,7 @@
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
 				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
+				7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

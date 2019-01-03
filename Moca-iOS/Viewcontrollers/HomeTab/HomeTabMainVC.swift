@@ -48,7 +48,6 @@ class HomeTabMainVC: UIViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {

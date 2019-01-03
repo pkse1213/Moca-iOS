@@ -626,6 +626,9 @@
                                     <navigationItem title="글 작성" id="fhc-eq-7hR">
                                         <barButtonItem key="leftBarButtonItem" image="commonCancelBlack" id="hWu-W5-flh">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="cancelAction:" destination="OVh-MG-xsZ" id="jDv-5x-o2Q"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -823,7 +826,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-gv-xMS">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="communityAddreviewPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-gv-xMS">
                                                                         <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                                                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </imageView>
@@ -901,6 +904,7 @@
         <image name="commonCommentWhite" width="15" height="13"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartWhite" width="15" height="13"/>
+        <image name="communityAddreviewPhoto" width="104" height="104"/>
         <image name="communityFollowingFollow" width="70" height="24"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
