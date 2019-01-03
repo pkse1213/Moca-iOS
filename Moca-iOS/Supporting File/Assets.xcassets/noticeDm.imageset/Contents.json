@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
       "idiom" : "universal",
       "scale" : "1x",
       "filename" : "noticeDm.png"
@@ -15,21 +14,6 @@
       "idiom" : "universal",
       "scale" : "3x",
       "filename" : "noticeDm@3x.png"
-=======
-      "scale" : "1x",
-      "filename" : "noticeDm.png",
-      "idiom" : "universal"
-    },
-    {
-      "scale" : "2x",
-      "filename" : "noticeDm@2x.png",
-      "idiom" : "universal"
-    },
-    {
-      "scale" : "3x",
-      "filename" : "noticeDm@3x.png",
-      "idiom" : "universal"
->>>>>>> be7581e37aeb7e6d575529bc636f367ca2fd500e
     }
   ],
   "info" : {

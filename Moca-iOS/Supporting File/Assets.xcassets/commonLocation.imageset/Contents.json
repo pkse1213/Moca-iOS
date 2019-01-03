@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "commonLocation.png",
-      "idiom" : "universal"
+      "filename" : "commonLocation.png"
     },
     {
+      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "commonLocation@2x.png",
-      "idiom" : "universal"
+      "filename" : "commonLocation@2x.png"
     },
     {
+      "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "commonLocation@3x.png",
-      "idiom" : "universal"
+      "filename" : "commonLocation@3x.png"
     }
   ],
   "info" : {

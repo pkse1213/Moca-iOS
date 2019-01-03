@@ -13,6 +13,9 @@ class ReviewWrittingCell: UITableViewCell {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     var parentVC = UIViewController()
     
+    @IBOutlet var completeBtn: UIButton!
+    
+    
     var reviewImageArr: [UIImage] = []
     
     override func awakeFromNib() {
@@ -20,6 +23,14 @@ class ReviewWrittingCell: UITableViewCell {
         setUpCollectionView()
         
         reviewImageArr = [UIImage]()
+        setUpButton()
+    }
+    
+    // 버튼 radius
+    private func setUpButton() {
+        completeBtn.layer.masksToBounds = false
+        completeBtn.layer.cornerRadius = 5.0
+        completeBtn.clipsToBounds = true
     }
     
     private func setUpCollectionView() {

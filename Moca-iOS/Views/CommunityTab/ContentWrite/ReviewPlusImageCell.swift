@@ -11,4 +11,12 @@ import UIKit
 class ReviewPlusImageCell: UICollectionViewCell {
     
     @IBOutlet var selectImageView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectImageView.layer.masksToBounds = false
+        selectImageView.layer.cornerRadius = 5.0
+        selectImageView.clipsToBounds = true
+    }
 }

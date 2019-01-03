@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "communityMyAddreview.png",
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "communityMyAddreview.png"
     },
     {
-      "filename" : "communityMyAddreview@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "communityMyAddreview@2x.png"
     },
     {
-      "filename" : "communityMyAddreview@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "communityMyAddreview@3x.png"
     }
   ],
   "info" : {

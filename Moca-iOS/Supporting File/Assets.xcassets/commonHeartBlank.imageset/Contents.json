@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "commonHeartBlank.png",
+      "idiom" : "universal",
       "scale" : "1x",
-      "idiom" : "universal"
+      "filename" : "commonHeartBlank.png"
     },
     {
-      "filename" : "commonHeartBlank@2x.png",
+      "idiom" : "universal",
       "scale" : "2x",
-      "idiom" : "universal"
+      "filename" : "commonHeartBlank@2x.png"
     },
     {
-      "filename" : "commonHeartBlank@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "commonHeartBlank@3x.png"
     }
   ],
   "info" : {
