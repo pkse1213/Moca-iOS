@@ -83,6 +83,12 @@ class CommunityTabMainVC: UIViewController {
         }
     }
     
+    @IBAction func goToSearch(_ sender: Any) {
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunitySearchVC") as? CommunitySearchVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {

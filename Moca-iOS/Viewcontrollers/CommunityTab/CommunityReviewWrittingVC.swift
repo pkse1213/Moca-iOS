@@ -22,6 +22,9 @@ class CommunityReviewWrittingVC: UIViewController {
         writtingTableView.delegate = self
         writtingTableView.dataSource = self
     }
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 extension CommunityReviewWrittingVC: UITableViewDataSource, UITableViewDelegate {
@@ -32,8 +35,7 @@ extension CommunityReviewWrittingVC: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if let writtingCell = writtingTableView.dequeueReusableCell(withIdentifier: "ReviewWrittingCell") as? ReviewWrittingCell {
-            writtingCell.presentVC = self
-            
+            writtingCell.parentVC = self
             cell = writtingCell
         }
         return cell

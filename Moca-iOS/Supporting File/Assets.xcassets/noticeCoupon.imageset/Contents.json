@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "noticeCoupon.png",
-      "idiom" : "universal"
+      "filename" : "noticeCoupon.png"
     },
     {
+      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "noticeCoupon@2x.png",
-      "idiom" : "universal"
+      "filename" : "noticeCoupon@2x.png"
     },
     {
+      "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "noticeCoupon@3x.png",
-      "idiom" : "universal"
+      "filename" : "noticeCoupon@3x.png"
     }
   ],
   "info" : {
