@@ -10,5 +10,6 @@
 #define BridgingHeader_h
 
 #import <DaumMap/MTMapView.h>
+#import <DaumMap/MTMapReverseGeoCoder.h>
 
 #endif /* BridgingHeader_h */
