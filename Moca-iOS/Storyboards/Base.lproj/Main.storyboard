@@ -462,21 +462,504 @@
             </objects>
             <point key="canvasLocation" x="1913" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--카테고리-->
         <scene sceneID="wEF-rJ-dfj">
             <objects>
-                <viewController id="L2E-PX-Fjk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryMainVC" id="L2E-PX-Fjk" customClass="CategoryMainVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WXf-do-RQm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="37F-p9-RTn">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoryMainCell" rowHeight="630" id="xFW-NS-7rk" customClass="CategoryMainCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="630"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xFW-NS-7rk" id="BXr-gR-Y5W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lo-wT-yAF">
+                                                    <rect key="frame" x="14" y="36" width="347" height="284"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="categoryMap" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7A-dzj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="347" height="284"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-xu-po0">
+                                                            <rect key="frame" x="158.66666666666666" y="114" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="종로">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="kuc-5t-7CP"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-75-JOD">
+                                                            <rect key="frame" x="177.66666666666666" y="138" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="중구">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="FQp-CO-zpE"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-3w-NLh">
+                                                            <rect key="frame" x="162" y="166" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="용산">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Hzp-7f-fqh"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btx-GV-64I">
+                                                            <rect key="frame" x="213.33333333333334" y="146.33333333333334" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="성동">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="MAU-lK-h9L"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-le-5BI">
+                                                            <rect key="frame" x="222.66666666666666" y="117.66666666666666" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="동대문">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Jg6-sk-KRm"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-aq-P5N">
+                                                            <rect key="frame" x="254" y="100.33333333333334" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="중랑">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="zEu-Zy-ykd"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ab-ek-Jrh">
+                                                            <rect key="frame" x="294.66666666666669" y="151.66666666666666" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="강동">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="VNQ-8P-Zb4"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-76-VRU">
+                                                            <rect key="frame" x="191.66666666666666" y="97.666666666666657" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="성북">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Xhe-Sk-eLY"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-rg-80f">
+                                                            <rect key="frame" x="186.66666666666666" y="56" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="강북">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="its-1Z-XDY"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em7-lM-B9e">
+                                                            <rect key="frame" x="240" y="50.333333333333329" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="노원">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="9D3-4o-hyE"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-jt-kAi">
+                                                            <rect key="frame" x="118.33333333333334" y="77.333333333333329" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="은평">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="zX5-8Y-YHU"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Bh-Jye">
+                                                            <rect key="frame" x="126" y="120" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="서대문">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="2Le-RS-nxn"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mO-ArV">
+                                                            <rect key="frame" x="100.66666666666667" y="139.66666666666666" width="30.000000000000014" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="마포">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="UrO-ha-IzC"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-Vc-sY1">
+                                                            <rect key="frame" x="28.333333333333336" y="130.66666666666666" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="강서">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="G3D-P4-Zj8"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-HL-dPZ">
+                                                            <rect key="frame" x="104.66666666666667" y="175.33333333333334" width="30.000000000000014" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="영등포">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Kzh-Rf-ABz"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-Wm-m4E">
+                                                            <rect key="frame" x="138.66666666666666" y="197.33333333333334" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="동작">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ve5-bY-6A2"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-oq-xqB">
+                                                            <rect key="frame" x="54.333333333333329" y="180.33333333333334" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="양천">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="KVs-pH-gCT"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rs0-Se-TzC">
+                                                            <rect key="frame" x="47" y="207" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="구로">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ag5-jk-s53"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-aa-eXU">
+                                                            <rect key="frame" x="207.33333333333334" y="31.666666666666671" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="도봉">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="hyQ-Yb-vRh"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK5-GN-BUP">
+                                                            <rect key="frame" x="250" y="151.66666666666666" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="광진">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="e6K-8u-tvQ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-Bw-dCS">
+                                                            <rect key="frame" x="136" y="233.33333333333331" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="관악">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="bsZ-BH-fAg"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-zu-AYb">
+                                                            <rect key="frame" x="97" y="237.66666666666669" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="금천">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="bP2-kh-GKg"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hx-MVU">
+                                                            <rect key="frame" x="189" y="217.66666666666666" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="서초">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="A0e-OY-Ndc"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcZ-CN-BAC">
+                                                            <rect key="frame" x="226" y="207" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="강남">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="3YP-Vp-pGU"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-IB-Aib">
+                                                            <rect key="frame" x="279" y="197.33333333333334" width="30" height="23"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
+                                                            <state key="normal" title="송파">
+                                                                <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ygi-yt-kvg"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="categoryPoint" translatesAutoresizingMaskIntoConstraints="NO" id="zrQ-xi-bjk">
+                                                            <rect key="frame" x="163" y="129" width="21" height="26"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="mEl-HL-dPZ" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.76" id="2Da-rb-4D5"/>
+                                                        <constraint firstItem="uAB-zu-AYb" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.55" id="6ce-lS-qKS"/>
+                                                        <constraint firstItem="MSQ-rg-80f" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:2.1" id="BcU-vN-dKe"/>
+                                                        <constraint firstItem="ogf-IB-Aib" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.68" id="D4v-g3-6dw"/>
+                                                        <constraint firstItem="1xi-Wm-m4E" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.68" id="DJB-ec-MmT"/>
+                                                        <constraint firstItem="f8k-Bh-Jye" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.23" id="DP6-zO-dCl"/>
+                                                        <constraint firstItem="ogf-IB-Aib" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.59" id="DlK-x1-fFe"/>
+                                                        <constraint firstItem="p4e-le-5BI" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:1.1" id="EAX-jU-640"/>
+                                                        <constraint firstItem="QxF-jt-kAi" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.3" id="EuW-lK-Tn4"/>
+                                                        <constraint firstItem="gYs-Vc-sY1" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:4" id="FKL-Ez-KR3"/>
+                                                        <constraint firstItem="JK5-GN-BUP" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.87" id="FNq-UW-4f7"/>
+                                                        <constraint firstItem="Xeg-Bw-dCS" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.15" id="H5x-6D-Y1p"/>
+                                                        <constraint firstItem="zrQ-xi-bjk" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" id="Hc3-uZ-VLs"/>
+                                                        <constraint firstItem="gYs-Vc-sY1" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" id="HmE-qq-3G7"/>
+                                                        <constraint firstItem="x5H-7A-dzj" firstAttribute="leading" secondItem="0lo-wT-yAF" secondAttribute="leading" id="ITb-At-b2U"/>
+                                                        <constraint firstItem="lel-75-JOD" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.95" id="IUe-WH-kEO"/>
+                                                        <constraint firstItem="JK5-GN-BUP" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.655" id="IqT-yG-n4c"/>
+                                                        <constraint firstItem="nE3-aq-P5N" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.645" id="Jk2-wl-ch0"/>
+                                                        <constraint firstItem="Xeg-Bw-dCS" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.58" id="KCy-cZ-V20"/>
+                                                        <constraint firstItem="qcZ-CN-BAC" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.65" id="Mxc-2c-Nv4"/>
+                                                        <constraint firstItem="QxF-jt-kAi" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:1.6" id="NGz-2F-V5G"/>
+                                                        <constraint firstItem="PCP-3w-NLh" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.98" id="Nk4-3p-kfY"/>
+                                                        <constraint firstItem="em7-lM-B9e" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.68" id="NkE-9F-kYC"/>
+                                                        <constraint firstItem="7Ab-ek-Jrh" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.87" id="OMh-pv-U5w"/>
+                                                        <constraint firstItem="MSQ-rg-80f" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.86" id="OcN-Eb-wJ3"/>
+                                                        <constraint firstItem="lK0-76-VRU" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.84" id="PAe-Tp-ayd"/>
+                                                        <constraint firstItem="uAB-zu-AYb" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.57" id="QeE-lI-Gex"/>
+                                                        <constraint firstAttribute="trailing" secondItem="x5H-7A-dzj" secondAttribute="trailing" id="Rgp-sO-Dwg"/>
+                                                        <constraint firstItem="p4e-le-5BI" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.73" id="SJq-YY-40v"/>
+                                                        <constraint firstItem="1Xb-oq-xqB" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:2.5" id="VxG-25-ssu"/>
+                                                        <constraint firstItem="YN9-hx-MVU" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.62" id="WVp-l7-qtD"/>
+                                                        <constraint firstItem="f8k-Bh-Jye" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:1.08" id="Y46-ds-bbf"/>
+                                                        <constraint firstItem="cJS-xu-po0" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" id="ZVN-A6-XmG"/>
+                                                        <constraint firstItem="1Xb-oq-xqB" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.74" id="amg-uG-UmI"/>
+                                                        <constraint firstItem="qcZ-CN-BAC" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.72" id="bTV-Km-L7o"/>
+                                                        <constraint firstItem="aXq-aa-eXU" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.78" id="cVV-sl-OAH"/>
+                                                        <constraint firstItem="mEl-HL-dPZ" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.45" id="ctB-1x-9DG"/>
+                                                        <constraint firstItem="nE3-aq-P5N" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:1.27" id="e4p-uU-8jC"/>
+                                                        <constraint firstItem="7Ab-ek-Jrh" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.56" id="eOL-Yl-hoE"/>
+                                                        <constraint firstAttribute="width" secondItem="0lo-wT-yAF" secondAttribute="height" multiplier="347:284" id="eRV-Ri-9Mi"/>
+                                                        <constraint firstItem="x5H-7A-dzj" firstAttribute="top" secondItem="0lo-wT-yAF" secondAttribute="top" id="fG1-Zt-fvI"/>
+                                                        <constraint firstItem="Rs0-Se-TzC" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:2.8" id="gAJ-Kp-BEN"/>
+                                                        <constraint firstItem="em7-lM-B9e" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:2.3" id="hjk-OD-q6t"/>
+                                                        <constraint firstItem="YN9-hx-MVU" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.85" id="j5F-jW-tpy"/>
+                                                        <constraint firstItem="1xi-Wm-m4E" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.13" id="jjl-PB-zFO"/>
+                                                        <constraint firstItem="PCP-3w-NLh" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.8" id="lPS-xB-UOA"/>
+                                                        <constraint firstItem="ofS-mO-ArV" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.94" id="lZ8-mT-ram"/>
+                                                        <constraint firstItem="cJS-xu-po0" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:1.13" id="luY-3b-Xp5"/>
+                                                        <constraint firstItem="ofS-mO-ArV" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:1.5" id="n3l-G1-8jS"/>
+                                                        <constraint firstItem="Btx-GV-64I" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.76" id="qhS-WU-aco"/>
+                                                        <constraint firstItem="lel-75-JOD" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" multiplier="1:0.9" id="qz2-F8-kK8"/>
+                                                        <constraint firstItem="zrQ-xi-bjk" firstAttribute="centerX" secondItem="0lo-wT-yAF" secondAttribute="centerX" id="tmy-nn-IfB"/>
+                                                        <constraint firstItem="Btx-GV-64I" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.9" id="uTK-c3-Mpz"/>
+                                                        <constraint firstItem="lK0-76-VRU" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:1.3" id="vUe-jx-GyE"/>
+                                                        <constraint firstItem="aXq-aa-eXU" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:3.3" id="yGT-Pb-CuD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="x5H-7A-dzj" secondAttribute="bottom" id="zCv-33-MMq"/>
+                                                        <constraint firstItem="Rs0-Se-TzC" firstAttribute="centerY" secondItem="0lo-wT-yAF" secondAttribute="centerY" multiplier="1:0.65" id="zgE-az-ki0"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvj-T9-mNx">
+                                                    <rect key="frame" x="26" y="22" width="28.333333333333329" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="dr4-UL-NYH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="컨셉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfo-td-eIc">
+                                                    <rect key="frame" x="26" y="340" width="28.333333333333329" height="17.333333333333314"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-2x-GxM">
+                                                    <rect key="frame" x="26" y="367.33333333333331" width="349" height="60"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Dma-2x-GxM" secondAttribute="height" multiplier="349:60" id="bdi-Kp-BJp"/>
+                                                    </constraints>
+                                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="7" minimumInteritemSpacing="0.0" id="eam-og-Q1w">
+                                                        <size key="itemSize" width="60" height="60"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryConceptCell" id="Mbg-mn-erK" customClass="CategoryConceptCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterPet" translatesAutoresizingMaskIntoConstraints="NO" id="XMj-zn-8kJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="XMj-zn-8kJ" firstAttribute="top" secondItem="Mbg-mn-erK" secondAttribute="top" id="OyU-PC-AVf"/>
+                                                                <constraint firstItem="XMj-zn-8kJ" firstAttribute="leading" secondItem="Mbg-mn-erK" secondAttribute="leading" id="fYj-hH-MV5"/>
+                                                                <constraint firstAttribute="bottom" secondItem="XMj-zn-8kJ" secondAttribute="bottom" id="lRd-Re-Igf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="XMj-zn-8kJ" secondAttribute="trailing" id="pdK-Yn-BCG"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="conceptImageView" destination="XMj-zn-8kJ" id="u69-3l-38s"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Aek-dv-Zde">
+                                                    <rect key="frame" x="26" y="479.66666666666669" width="349" height="60.000000000000057"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Aek-dv-Zde" secondAttribute="height" multiplier="349:60" id="yIn-fV-TmS"/>
+                                                    </constraints>
+                                                    <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="7" minimumInteritemSpacing="0.0" id="38j-Iz-vdM">
+                                                        <size key="itemSize" width="60" height="60"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryMenuCell" id="hYA-Fh-pN2" customClass="CategoryMenuCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterRooftop" translatesAutoresizingMaskIntoConstraints="NO" id="oAs-aT-h5a">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="oAs-aT-h5a" secondAttribute="trailing" id="JJB-mD-os5"/>
+                                                                <constraint firstItem="oAs-aT-h5a" firstAttribute="leading" secondItem="hYA-Fh-pN2" secondAttribute="leading" id="aMr-fc-Gjb"/>
+                                                                <constraint firstAttribute="bottom" secondItem="oAs-aT-h5a" secondAttribute="bottom" id="gkU-Kh-uaw"/>
+                                                                <constraint firstItem="oAs-aT-h5a" firstAttribute="top" secondItem="hYA-Fh-pN2" secondAttribute="top" id="r7G-Es-BY3"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="menuImageView" destination="oAs-aT-h5a" id="MTJ-gI-857"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GX3-mq-6SS">
+                                                    <rect key="frame" x="26" y="452.33333333333337" width="28.333333333333329" height="17.333333333333314"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crh-BQ-Xuw">
+                                                    <rect key="frame" x="15" y="574.66666666666663" width="345" height="48"/>
+                                                    <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="crh-BQ-Xuw" secondAttribute="height" multiplier="115:16" id="PP0-jd-dgH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="15"/>
+                                                    <state key="normal" title="적용">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uvj-T9-mNx" firstAttribute="top" secondItem="BXr-gR-Y5W" secondAttribute="top" constant="22" id="4Yl-Lb-d3i"/>
+                                                <constraint firstItem="crh-BQ-Xuw" firstAttribute="top" secondItem="Aek-dv-Zde" secondAttribute="bottom" constant="35" id="6g5-DP-YXM"/>
+                                                <constraint firstItem="GX3-mq-6SS" firstAttribute="top" secondItem="Dma-2x-GxM" secondAttribute="bottom" constant="25" id="DPO-zb-ipW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="crh-BQ-Xuw" secondAttribute="trailing" id="F2t-JX-cPt"/>
+                                                <constraint firstAttribute="trailing" secondItem="0lo-wT-yAF" secondAttribute="trailing" constant="14" id="Gl8-Qr-7dg"/>
+                                                <constraint firstItem="Aek-dv-Zde" firstAttribute="leading" secondItem="GX3-mq-6SS" secondAttribute="leading" id="H5D-zm-z4w"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dma-2x-GxM" secondAttribute="trailing" id="JJm-hr-1De"/>
+                                                <constraint firstItem="Aek-dv-Zde" firstAttribute="top" secondItem="GX3-mq-6SS" secondAttribute="bottom" constant="10" id="O2K-TP-ifE"/>
+                                                <constraint firstItem="GX3-mq-6SS" firstAttribute="leading" secondItem="Dma-2x-GxM" secondAttribute="leading" id="TUL-nt-8HV"/>
+                                                <constraint firstAttribute="bottom" secondItem="crh-BQ-Xuw" secondAttribute="bottom" constant="7.3300000000000001" id="TdE-4b-mT1"/>
+                                                <constraint firstItem="uvj-T9-mNx" firstAttribute="leading" secondItem="BXr-gR-Y5W" secondAttribute="leading" constant="26" id="UGm-wo-u82"/>
+                                                <constraint firstItem="Dma-2x-GxM" firstAttribute="top" secondItem="kfo-td-eIc" secondAttribute="bottom" constant="10" id="V5h-1T-H26"/>
+                                                <constraint firstItem="Dma-2x-GxM" firstAttribute="leading" secondItem="kfo-td-eIc" secondAttribute="leading" id="cn6-hC-Blv"/>
+                                                <constraint firstItem="0lo-wT-yAF" firstAttribute="top" secondItem="uvj-T9-mNx" secondAttribute="bottom" id="g09-2H-K0k"/>
+                                                <constraint firstItem="kfo-td-eIc" firstAttribute="top" secondItem="0lo-wT-yAF" secondAttribute="bottom" constant="20" id="u99-E5-RBp"/>
+                                                <constraint firstItem="0lo-wT-yAF" firstAttribute="leading" secondItem="BXr-gR-Y5W" secondAttribute="leading" constant="14" id="xbK-cH-BTQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Aek-dv-Zde" secondAttribute="trailing" id="yKT-dx-fAU"/>
+                                                <constraint firstItem="kfo-td-eIc" firstAttribute="leading" secondItem="BXr-gR-Y5W" secondAttribute="leading" constant="26" id="ya8-K4-p9L"/>
+                                                <constraint firstItem="crh-BQ-Xuw" firstAttribute="leading" secondItem="BXr-gR-Y5W" secondAttribute="leadingMargin" id="zkR-2O-qqN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="applyButton" destination="crh-BQ-Xuw" id="JyI-hA-8xK"/>
+                                            <outlet property="conceptCollectionView" destination="Dma-2x-GxM" id="6q5-mY-6rx"/>
+                                            <outlet property="menuCollectionView" destination="Aek-dv-Zde" id="ekF-7n-rwg"/>
+                                            <outlet property="pinImageView" destination="zrQ-xi-bjk" id="hi8-y6-nIG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="37F-p9-RTn" firstAttribute="leading" secondItem="WXf-do-RQm" secondAttribute="leading" id="3nm-gl-gtQ"/>
+                            <constraint firstItem="37F-p9-RTn" firstAttribute="top" secondItem="bDb-Oq-vVl" secondAttribute="top" id="FYn-7V-PYg"/>
+                            <constraint firstItem="bDb-Oq-vVl" firstAttribute="bottom" secondItem="37F-p9-RTn" secondAttribute="bottom" id="ic4-wx-AsO"/>
+                            <constraint firstItem="bDb-Oq-vVl" firstAttribute="trailing" secondItem="37F-p9-RTn" secondAttribute="trailing" id="oev-NU-6w1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bDb-Oq-vVl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="category" id="XOO-zL-hHx"/>
+                    <navigationItem key="navigationItem" title="카테고리" id="r0p-dU-8kX"/>
+                    <connections>
+                        <outlet property="categoryTableView" destination="37F-p9-RTn" id="NgM-Bk-SEO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nML-Rf-oBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="775"/>
+            <point key="canvasLocation" x="1912.8" y="773.64532019704438"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="J1k-ba-0Vb">
@@ -492,7 +975,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Axv-Dk-h3A" kind="relationship" relationship="viewControllers" id="ejc-xf-XIn"/>
-                        <segue destination="L2E-PX-Fjk" kind="relationship" relationship="viewControllers" id="kes-Od-gRh"/>
+                        <segue destination="rw5-8Y-0lD" kind="relationship" relationship="viewControllers" id="kes-Od-gRh"/>
                         <segue destination="HhV-cw-Xdo" kind="relationship" relationship="viewControllers" id="xMJ-UN-oV1"/>
                         <segue destination="iG6-zR-Pqr" kind="relationship" relationship="viewControllers" id="4oM-N6-fnJ"/>
                         <segue destination="tD9-rr-bYX" kind="relationship" relationship="viewControllers" id="noK-8S-k6E"/>
@@ -1446,7 +1929,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fda-Dg-QRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="133.74384236453201"/>
+            <point key="canvasLocation" x="1078" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tnv-oK-nfC">
@@ -1487,9 +1970,30 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="1429.8029556650247"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tyc-BF-2ef">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rw5-8Y-0lD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="category" id="XOO-zL-hHx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="po1-iA-CIC">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L2E-PX-Fjk" kind="relationship" relationship="rootViewController" id="M0D-W6-gbR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKx-fO-iBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="774.38423645320199"/>
+        </scene>
     </scenes>
     <resources>
         <image name="category" width="25" height="25"/>
+        <image name="categoryMap" width="346" height="283"/>
+        <image name="categoryPoint" width="21" height="26"/>
         <image name="commonComment" width="29" height="29"/>
         <image name="commonCommentSmall" width="24" height="24"/>
         <image name="commonHeartBlank" width="24" height="24"/>
@@ -1503,6 +2007,8 @@
         <image name="communityMyAddreview" width="24" height="24"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
+        <image name="filterPet" width="60" height="60"/>
+        <image name="filterRooftop" width="60" height="60"/>
         <image name="home" width="25" height="25"/>
         <image name="homeAlert" width="36" height="36"/>
         <image name="homeAll" width="67" height="27"/>
