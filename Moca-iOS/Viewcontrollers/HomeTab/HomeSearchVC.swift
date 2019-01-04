@@ -24,6 +24,10 @@ class HomeSearchVC: UIViewController {
     @IBOutlet weak var cafeTabButton: UIButton!
     @IBOutlet weak var locationTabButton: UIButton!
     
+    @IBOutlet var beforeSearchView: UIView!
+    @IBOutlet var hotCafeCollectionView: UICollectionView!
+    @IBOutlet var recommendCollectionView: UICollectionView!
+    
     
     
     override func viewDidLoad() {
@@ -31,6 +35,10 @@ class HomeSearchVC: UIViewController {
         
         setUpTableView()
         setUpTextField()
+        setUpHotCafeCollectionView()
+        setUpRecommendCollectionView()
+        
+        searchTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +50,18 @@ class HomeSearchVC: UIViewController {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: searchTextField.frame.height))
         searchTextField.leftView = paddingView
         searchTextField.leftViewMode = UITextField.ViewMode.always
+    }
+    
+    // 이번주 인기 카페 설정
+    private func setUpHotCafeCollectionView() {
+        hotCafeCollectionView.dataSource = self
+        hotCafeCollectionView.delegate = self
+    }
+    
+    // 모카 추천 플레이스 설정
+    private func setUpRecommendCollectionView() {
+        recommendCollectionView.delegate = self
+        recommendCollectionView.dataSource = self
     }
     
     // tableView delegate랑 dataSource 설정
@@ -115,5 +135,39 @@ extension HomeSearchVC : UITableViewDelegate, UITableViewDataSource {
     // delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 카페 이름 검색했을 떄랑 위치 검색했을 때 다른 데로 이동
+    }
+}
+
+// 검색 전 화면 설정
+extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.hotCafeCollectionView {
+            return 8
+        }
+        else {
+            return 7
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == self.hotCafeCollectionView {
+            let cell = hotCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "HotCafeCollectionViewCell", for: indexPath) as! HotCafeCollectionViewCell
+            
+            return cell
+        }
+        else {
+            let cell = recommendCollectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCollectionViewCell", for: indexPath) as! RecommendCollectionViewCell
+            
+            return cell
+        }
+    }
+}
+
+extension HomeSearchVC : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        beforeSearchView.isHidden = true
+        
+        return true
     }
 }

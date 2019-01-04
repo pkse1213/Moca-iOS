@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "communityStarYellow.png",
+      "idiom" : "universal",
       "scale" : "1x",
-      "idiom" : "universal"
+      "filename" : "communityStarYellow.png"
     },
     {
-      "filename" : "communityStarYellow@2x.png",
+      "idiom" : "universal",
       "scale" : "2x",
-      "idiom" : "universal"
+      "filename" : "communityStarYellow@2x.png"
     },
     {
-      "filename" : "communityStarYellow@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "communityStarYellow@3x.png"
     }
   ],
   "info" : {
