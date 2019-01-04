@@ -20,6 +20,7 @@ class LocationSearchVC: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarTxtFd.becomeFirstResponder()
         setupView()
     }
     
@@ -29,6 +30,7 @@ class LocationSearchVC: UIViewController {
     }
     
     private func setupView() {
+        searchBarTxtFd.delegate = self
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchBarView.applyRadius(radius: 37/2)
@@ -70,5 +72,12 @@ extension LocationSearchVC: UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.post(name: Notification.Name("setAddress"), object: searchAddress[indexPath.row])
         self.navigationController?.popViewController(animated: true)
         
+    }
+}
+
+extension LocationSearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
