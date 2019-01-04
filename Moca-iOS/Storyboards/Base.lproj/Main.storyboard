@@ -511,9 +511,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCF-Tw-1co">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="561"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qs-Js-znK">
+                                <rect key="frame" x="316" y="109" width="43" height="43"/>
+                                <state key="normal" image="locationLocationPink"/>
+                                <connections>
+                                    <action selector="currentLocationAction:" destination="dA4-oN-ZKf" eventType="touchUpInside" id="z3x-RX-uUX"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="locationGradationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-UG-kz0">
+                                <rect key="frame" x="0.0" y="465" width="375" height="264"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-nw-aOD">
                                 <rect key="frame" x="0.0" y="583" width="375" height="130"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -589,11 +599,16 @@
                         <constraints>
                             <constraint firstItem="FCF-Tw-1co" firstAttribute="trailing" secondItem="Zel-g9-k1d" secondAttribute="trailing" id="4o4-we-ceC"/>
                             <constraint firstItem="EJJ-nw-aOD" firstAttribute="leading" secondItem="Zel-g9-k1d" secondAttribute="leading" id="8Os-Ks-VVH"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="trailing" secondItem="CmE-UG-kz0" secondAttribute="trailing" id="DjB-Fo-n1y"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="trailing" secondItem="0Qs-Js-znK" secondAttribute="trailing" constant="16" id="MUA-fL-BhY"/>
                             <constraint firstItem="Zel-g9-k1d" firstAttribute="trailing" secondItem="EJJ-nw-aOD" secondAttribute="trailing" id="P7v-2I-Jvj"/>
                             <constraint firstItem="FCF-Tw-1co" firstAttribute="top" secondItem="Zel-g9-k1d" secondAttribute="top" id="WME-Wp-wUG"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="bottom" secondItem="CmE-UG-kz0" secondAttribute="bottom" id="fRs-qa-GWQ"/>
                             <constraint firstItem="FCF-Tw-1co" firstAttribute="leading" secondItem="Zel-g9-k1d" secondAttribute="leading" id="fuG-Wb-u1v"/>
                             <constraint firstItem="Zel-g9-k1d" firstAttribute="bottom" secondItem="EJJ-nw-aOD" secondAttribute="bottom" constant="16" id="h0t-vF-kWb"/>
-                            <constraint firstItem="Zel-g9-k1d" firstAttribute="bottom" secondItem="FCF-Tw-1co" secondAttribute="bottom" id="sCd-1P-OAM"/>
+                            <constraint firstItem="0Qs-Js-znK" firstAttribute="top" secondItem="Zel-g9-k1d" secondAttribute="top" constant="21" id="pZ3-A8-JDv"/>
+                            <constraint firstItem="CmE-UG-kz0" firstAttribute="leading" secondItem="SSl-aS-4du" secondAttribute="leading" id="qkF-VS-fjf"/>
+                            <constraint firstItem="Zel-g9-k1d" firstAttribute="bottom" secondItem="FCF-Tw-1co" secondAttribute="bottom" constant="80" id="sCd-1P-OAM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zel-g9-k1d"/>
                     </view>
@@ -1493,6 +1508,8 @@
         <image name="homeRankingMark" width="36" height="36"/>
         <image name="icCommunityLocation" width="12" height="13"/>
         <image name="location" width="25" height="25"/>
+        <image name="locationGradationWhite" width="377" height="264"/>
+        <image name="locationLocationPink" width="43" height="43"/>
         <image name="mypage" width="25" height="25"/>
         <image name="mypageArrowRight" width="24" height="24"/>
         <image name="mypageSetting" width="36" height="36"/>
