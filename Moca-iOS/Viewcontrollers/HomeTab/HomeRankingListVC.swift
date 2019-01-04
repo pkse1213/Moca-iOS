@@ -28,6 +28,7 @@ class HomeRankingListVC: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         unit = (self.rankingCollectionView.frame.width/2-3)/175
     }
 }

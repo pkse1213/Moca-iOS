@@ -1275,7 +1275,7 @@
     </scenes>
     <resources>
         <image name="commonCancelBlack" width="24" height="24"/>
-        <image name="commonScrapGrayLine" width="36" height="36"/>
+        <image name="commonScrapGrayLine" width="24" height="24"/>
         <image name="commonScrapWhiteLine" width="36" height="36"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
