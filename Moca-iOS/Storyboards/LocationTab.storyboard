@@ -739,14 +739,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="J6c-l8-Y0o">
-                                                    <rect key="frame" x="297" y="28" width="54" height="24"/>
+                                                    <rect key="frame" x="292" y="25.666666666666671" width="59" height="29"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQH-xa-6eQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="29"/>
                                                             <state key="normal" backgroundImage="commonHeartBlank"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-aw-s3q">
-                                                            <rect key="frame" x="30" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="30" y="0.0" width="29" height="29"/>
                                                             <state key="normal" backgroundImage="commonComment"/>
                                                         </button>
                                                     </subviews>
@@ -854,7 +854,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-hX-cC5">
-                                                    <rect key="frame" x="36.666666666666657" y="0.0" width="302" height="48"/>
+                                                    <rect key="frame" x="26" y="0.0" width="323" height="48"/>
                                                     <state key="normal" image="detailviewReviewMore"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jde-5H-2vW">
@@ -1377,7 +1377,7 @@
     </scenes>
     <resources>
         <image name="commonCancelBlack" width="24" height="24"/>
-        <image name="commonComment" width="24" height="24"/>
+        <image name="commonComment" width="29" height="29"/>
         <image name="commonCommentSmall" width="24" height="24"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartBlankSmall" width="24" height="24"/>
@@ -1392,7 +1392,7 @@
         <image name="detailviewNavigation" width="36" height="36"/>
         <image name="detailviewReservation" width="30" height="30"/>
         <image name="detailviewReview" width="55" height="16"/>
-        <image name="detailviewReviewMore" width="302" height="48"/>
+        <image name="detailviewReviewMore" width="323" height="48"/>
         <image name="detailviewReviewWrite" width="67" height="25"/>
         <image name="detailviewScrap" width="36" height="36"/>
         <image name="detailviewShare" width="36" height="36"/>
