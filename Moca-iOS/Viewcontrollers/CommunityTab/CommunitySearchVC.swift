@@ -89,7 +89,8 @@ class CommunitySearchVC: UIViewController {
     
     // 카페명 검색 결과 설정 - 최신 리뷰 설정하기 위해
     override func viewDidLayoutSubviews() {
-        unit = (self.recentReviewCollection.frame.width/3)/120
+        super.viewDidLayoutSubviews()
+        unit = self.view.frame.width/375
     }
     
     // back action
