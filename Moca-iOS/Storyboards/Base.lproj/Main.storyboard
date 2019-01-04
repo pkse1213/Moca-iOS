@@ -622,6 +622,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cafeCollectionView" destination="EJJ-nw-aOD" id="eUc-XD-ca7"/>
+                        <outlet property="currentLocationButton" destination="0Qs-Js-znK" id="l7U-mm-OwD"/>
                         <outlet property="mapParentView" destination="FCF-Tw-1co" id="X8T-Ha-3Kg"/>
                     </connections>
                 </viewController>

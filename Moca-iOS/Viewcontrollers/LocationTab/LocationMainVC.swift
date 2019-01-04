@@ -18,6 +18,7 @@ struct MyLocation {
 class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
+    @IBOutlet var currentLocationButton: UIButton!
     var mapView: MTMapView!
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
@@ -57,12 +58,18 @@ class LocationMainVC: UIViewController{
     }
     
     @IBAction func currentLocationAction(_ sender: UIButton) {
-        sender.imageView?.image = #imageLiteral(resourceName: "locationLocationPink")
+        sender.setImage(#imageLiteral(resourceName: "locationLocationPink"), for: .normal)
         locationManager.startUpdatingLocation()
     }
     
     @objc func setAddress(noti:Notification) {
+        currentLocationButton.setImage(#imageLiteral(resourceName: "locationLocationGray"), for: .normal)
+        
         if let address = noti.object as? Address{
+            if let lat = Double(address.y) , let long = Double(address.x) {
+                print("성공")
+                updateSelectedAddress(latitude: lat, longitude: long)
+            }
             showAddressInNavgationItem(address: address.roadAddressName)
         }
     }
@@ -131,8 +138,8 @@ extension LocationMainVC: CLLocationManagerDelegate {
     
 }
 
-extension LocationMainVC: MTMapViewDelegate, MTMapReverseGeoCoderDelegate {
-    private func initMap() {
+extension LocationMainVC: MTMapViewDelegate {
+    func initMap() {
         // 위치 사용 동의 알람창 최초
         isAuthorizedtoGetUserLocation()
         
@@ -175,11 +182,17 @@ extension LocationMainVC: MTMapViewDelegate, MTMapReverseGeoCoderDelegate {
         item.showAnimationType = .noAnimation
         item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 30)    // 마커 위치 조정
         self.mapView?.add(item)
-        let mapPointGeo = MTMapPointGeo(latitude: latitude, longitude: longitude)
-        let mapPoint = MTMapPoint(geoCoord: mapPointGeo)
-        self.mapView.setMapCenter(mapPoint, zoomLevel: 3, animated: true)
         // 추적 멈춤
         locationManager.stopUpdatingLocation()
+    }
+    
+    // 주소 설정 기반으로 업데이트
+    func updateSelectedAddress(latitude: Double, longitude: Double) {
+        // 지도 위 객체 모두 삭제
+        removeAllObjectInMap()
+        // 원 생성
+        makeCircleInMap(latitude: latitude, longitude: longitude)
+        
     }
     
     // 지도 위 객체 모두 삭제
@@ -190,15 +203,20 @@ extension LocationMainVC: MTMapViewDelegate, MTMapReverseGeoCoderDelegate {
     
     // 원 생성 method
     func makeCircleInMap(latitude: Double, longitude: Double) {
+        
         let circle = MTMapCircle()
         circle.circleLineColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1)
         circle.circleFillColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 0.4)
-        circle.circleCenterPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: latitude, longitude: longitude))
+        
+        let mapPointGeo = MTMapPointGeo(latitude: latitude, longitude: longitude)
+        let mapPoint = MTMapPoint(geoCoord: mapPointGeo)
+        circle.circleCenterPoint = mapPoint
         circle.circleRadius = 1000
         mapView.addCircle(circle)
+        self.mapView.setMapCenter(circle.circleCenterPoint, zoomLevel: 3, animated: true)
     }
     
-    private func addMarkerInMap() {
+    func addMarkerInMap() {
         for i in 0..<myLat.count {
             let item = MTMapPOIItem()
             item.tag = i
