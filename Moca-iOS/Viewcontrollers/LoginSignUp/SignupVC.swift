@@ -14,6 +14,12 @@ class SignupVC: UIViewController {
     @IBOutlet var selectButton: UIButton!
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var nameTxt: UITextField!
+    @IBOutlet var phoneTxt: UITextField!
+    @IBOutlet var idTxt: UITextField!
+    @IBOutlet var pwTxt: UITextField!
+    @IBOutlet var pwCheckTxt: UITextField!
+    
     
     
     override func viewDidLoad() {
@@ -22,6 +28,7 @@ class SignupVC: UIViewController {
         setUpProfileImag()
         setUpImageSelect()
         setUpButton()
+        setUpTextField()
     }
     
     // ProfileImage 원형 처리
@@ -55,7 +62,6 @@ class SignupVC: UIViewController {
         imageTap.delegate = self
         
         self.selectButton.addGestureRecognizer(imageTap)
-        
     }
     
     @objc func imageTapped() {
@@ -78,6 +84,42 @@ class SignupVC: UIViewController {
         self.present(actionSheet, animated: true)
     }
     // 여기까지 이미지 선택
+    
+    // 텍스트필드 위로,,
+    private func setUpTextField() {
+        nameTxt.delegate = self
+        phoneTxt.delegate = self
+        idTxt.delegate = self
+        pwTxt.delegate = self
+        pwCheckTxt.delegate = self
+        
+        // 텍스트필드 누르면 위로 올라가게 설정
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification,
+                                             object: nil)
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification,
+                                             object: nil)
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
+    }
+    
+    @objc func endEditing(){
+        nameTxt.resignFirstResponder()
+        phoneTxt.resignFirstResponder()
+        idTxt.resignFirstResponder()
+        pwTxt.resignFirstResponder()
+        pwCheckTxt.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.view.frame.origin.y = -150
+    }
+    
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.view.frame.origin.y = 0
+    }
+    // 여기까지
 }
 
 extension SignupVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
@@ -99,5 +141,33 @@ extension SignupVC : UIImagePickerControllerDelegate, UINavigationControllerDele
         }
         profileImage.image = newImg
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension SignupVC : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.view.endEditing(true)
+        
+        if textField == nameTxt {
+            phoneTxt.becomeFirstResponder()
+        }
+        else if textField == phoneTxt {
+            idTxt.becomeFirstResponder()
+        }
+        else if textField == idTxt {
+            pwTxt.becomeFirstResponder()
+        }
+        else if textField == pwTxt {
+            pwCheckTxt.becomeFirstResponder()
+        }
+        else {
+            textField.resignFirstResponder()
+        }
+        return true
+        
+//        textField.resignFirstResponder()
+        
+//        return true
     }
 }
