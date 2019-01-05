@@ -1539,6 +1539,11 @@
                             <constraint firstItem="ZNp-9i-tiW" firstAttribute="bottom" secondItem="Bmd-i8-ydi" secondAttribute="bottom" id="uU1-jx-IdG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Bmd-i8-ydi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="HBe-po-uXl">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="LLM-IR-K2d">

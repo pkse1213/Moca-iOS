@@ -50,7 +50,14 @@ class LocationMapDialogVC: UIViewController {
     }
     
     @IBAction func searchLocationAction(_ sender: Any) {
-    
+        guard let schemeURL = URL(string: "daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT")else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(schemeURL) {
+            UIApplication.shared.open(schemeURL, options: [:]) { (bool) in
+                print(bool)
+            }
+        }
     }
     
 }
