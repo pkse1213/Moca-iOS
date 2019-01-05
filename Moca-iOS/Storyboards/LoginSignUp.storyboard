@@ -107,7 +107,7 @@
                                 <rect key="frame" x="55" y="576.33333333333337" width="265" height="37"/>
                                 <color key="backgroundColor" red="0.88235294117647056" green="0.69803921568627447" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="GjS-OD-JnP"/>
+                                    <constraint firstAttribute="width" secondItem="KsG-18-8ZJ" secondAttribute="height" multiplier="265:37" id="5cU-aq-rTo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="13"/>
                                 <state key="normal" title="로그인">

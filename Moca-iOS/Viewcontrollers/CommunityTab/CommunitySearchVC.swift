@@ -26,7 +26,8 @@ class CommunitySearchVC: UIViewController {
     
     @IBOutlet var beforeSearchView: UIView!
     @IBOutlet var hotCafeCollectionView: UICollectionView!
-    @IBOutlet var recommendCollectionView: UICollectionView!
+    @IBOutlet var popularUserCollectionView: UICollectionView!
+    
     
     // 카페명 검색 결과 뷰 설정
     // 인기 리뷰
@@ -67,10 +68,10 @@ class CommunitySearchVC: UIViewController {
         hotCafeCollectionView.delegate = self
     }
     
-    // 모카 추천 플레이스 설정
+    // 이번주 인기 많은 사용자 설정
     private func setUpRecommendCollectionView() {
-        recommendCollectionView.delegate = self
-        recommendCollectionView.dataSource = self
+        popularUserCollectionView.delegate = self
+        popularUserCollectionView.dataSource = self
     }
     
     // tableView delegate랑 dataSource 설정
@@ -181,7 +182,7 @@ extension CommunitySearchVC : UICollectionViewDelegate, UICollectionViewDataSour
         else if collectionView == self.hotCafeCollectionView {
             return CGSize(width:140 , height: 200)
         }
-        else if collectionView == self.recommendCollectionView {
+        else if collectionView == self.popularUserCollectionView {
             return CGSize(width: 136, height: 173)
         }
         else {
@@ -193,7 +194,7 @@ extension CommunitySearchVC : UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == self.hotCafeCollectionView {
             return 8
         }
-        else if collectionView == self.recommendCollectionView {
+        else if collectionView == self.popularUserCollectionView {
             return 7
         }
         else if collectionView == self.popularReviewCollection {
@@ -211,8 +212,8 @@ extension CommunitySearchVC : UICollectionViewDelegate, UICollectionViewDataSour
             
             return cell
         }
-        else if collectionView == self.recommendCollectionView {
-            let cell = recommendCollectionView.dequeueReusableCell(withReuseIdentifier: "PopularCollectionViewCell", for: indexPath) as! PopularCollectionViewCell
+        else if collectionView == self.popularUserCollectionView {
+            let cell = popularUserCollectionView.dequeueReusableCell(withReuseIdentifier: "PopularCollectionViewCell", for: indexPath) as! PopularCollectionViewCell
             
             return cell
         }

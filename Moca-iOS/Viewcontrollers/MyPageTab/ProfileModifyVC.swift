@@ -27,10 +27,13 @@ class ProfileModifyVC: UIViewController {
         paddingTextField()
         setSwitch()
         setUpImageSelect()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
-
     }
     
     // 스위치 크기 설정
