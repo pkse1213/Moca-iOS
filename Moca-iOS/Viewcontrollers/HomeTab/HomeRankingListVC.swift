@@ -20,8 +20,10 @@ class HomeRankingListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.isNavigationBarHidden = false
     }
+    
     private func setUpCollectionView() {
         self.rankingCollectionView.delegate = self
         self.rankingCollectionView.dataSource = self
@@ -29,13 +31,13 @@ class HomeRankingListVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        unit = (self.rankingCollectionView.frame.width/2-3)/175
+        unit = (self.rankingCollectionView.frame.width/2-2)/175
     }
 }
 
 extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+       
         return CGSize(width:175*unit , height: 238*unit)
     }
     
@@ -54,6 +56,9 @@ extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

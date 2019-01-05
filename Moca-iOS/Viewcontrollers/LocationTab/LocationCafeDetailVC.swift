@@ -79,6 +79,7 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
                 }
             default:
                 if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    imageCell.navigationController = self.navigationController
                     cell = imageCell
                 }
             }

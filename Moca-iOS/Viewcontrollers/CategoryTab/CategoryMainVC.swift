@@ -21,6 +21,11 @@ class CategoryMainVC: UIViewController {
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
     }
+    @IBAction func applyAction(_ sender: UIButton) {
+        if let vc = UIStoryboard(name: "CategoryTab", bundle: nil).instantiateViewController(withIdentifier: "CategoryResultVC") as? CategoryResultVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension CategoryMainVC: UITableViewDelegate, UITableViewDataSource {
@@ -35,4 +40,5 @@ extension CategoryMainVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
 }

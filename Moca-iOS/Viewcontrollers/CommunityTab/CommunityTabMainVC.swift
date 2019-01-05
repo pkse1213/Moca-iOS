@@ -17,15 +17,14 @@ class CommunityTabMainVC: UIViewController {
     }
     
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
    
     // 상단 프로필 뷰
     @IBOutlet weak var profileBackgroundView: UIView!
     @IBOutlet weak var profileSquareView: UIView!
-    @IBOutlet var profileImageView: UIImageView!
-    @IBOutlet var profileButton: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
     
     // 피드 테이블 뷰
     @IBOutlet weak var communityTableView: UITableView!

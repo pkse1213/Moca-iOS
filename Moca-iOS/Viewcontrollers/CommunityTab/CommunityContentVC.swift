@@ -13,8 +13,8 @@ class CommunityContentVC: UIViewController {
     
     @IBOutlet var safeAreaView: UIView!
     
-    @IBOutlet var textFieldViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var reviewContentViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textFieldViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var reviewContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageCntLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var contentTableView: UITableView!
