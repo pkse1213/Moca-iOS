@@ -1797,27 +1797,27 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fAC-a2-JRu">
-                                                    <rect key="frame" x="20" y="49.333333333333329" width="335" height="209.66666666666669"/>
+                                                    <rect key="frame" x="40" y="51.333333333333343" width="295" height="209.00000000000003"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="209.66999999999999" id="kOn-af-EaC"/>
+                                                        <constraint firstAttribute="width" secondItem="fAC-a2-JRu" secondAttribute="height" multiplier="295:209" id="cOj-xe-oUf"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="5f7-a2-XHD">
-                                                        <size key="itemSize" width="60" height="60"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="5f7-a2-XHD">
+                                                        <size key="itemSize" width="55" height="55"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="MembershipCouponCollectionCell" id="DBa-ek-H2L" customClass="MembershipCouponCollectionCell" customModule="Moca_iOS" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-kl-Oou">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                         <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -1828,7 +1828,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="Auf-kl-Oou" secondAttribute="trailing" id="cD4-5z-DDF"/>
                                                                 <constraint firstItem="Auf-kl-Oou" firstAttribute="leading" secondItem="DBa-ek-H2L" secondAttribute="leading" id="pN0-MV-SfG"/>
                                                             </constraints>
-                                                            <size key="customSize" width="60" height="60"/>
+                                                            <size key="customSize" width="55" height="55"/>
                                                             <connections>
                                                                 <outlet property="couponImageView" destination="Auf-kl-Oou" id="hAQ-HD-v6S"/>
                                                             </connections>
@@ -1867,12 +1867,12 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ifF-No-zx4" firstAttribute="top" secondItem="fAC-a2-JRu" secondAttribute="bottom" constant="11.333333333333314" id="0QK-OC-bRz"/>
-                                                <constraint firstItem="fAC-a2-JRu" firstAttribute="leading" secondItem="O5Q-Ch-aw1" secondAttribute="leading" constant="20" id="IsC-iU-bsT"/>
+                                                <constraint firstItem="9uv-Rl-zuv" firstAttribute="top" secondItem="fAC-a2-JRu" secondAttribute="bottom" constant="10" id="0QK-OC-bRz"/>
+                                                <constraint firstItem="fAC-a2-JRu" firstAttribute="leading" secondItem="O5Q-Ch-aw1" secondAttribute="leading" constant="40" id="IsC-iU-bsT"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fp8-FI-Vi1" secondAttribute="trailing" constant="21" id="JZG-cl-cf8"/>
-                                                <constraint firstItem="fAC-a2-JRu" firstAttribute="top" secondItem="emf-YQ-03I" secondAttribute="bottom" constant="14.999999999999993" id="MlA-sc-Dis"/>
+                                                <constraint firstItem="fAC-a2-JRu" firstAttribute="top" secondItem="emf-YQ-03I" secondAttribute="bottom" constant="17" id="MlA-sc-Dis"/>
                                                 <constraint firstItem="9uv-Rl-zuv" firstAttribute="centerX" secondItem="O5Q-Ch-aw1" secondAttribute="centerX" id="QNb-9z-oNS"/>
-                                                <constraint firstAttribute="trailing" secondItem="fAC-a2-JRu" secondAttribute="trailing" constant="20" id="TnC-uD-O35"/>
+                                                <constraint firstAttribute="trailing" secondItem="fAC-a2-JRu" secondAttribute="trailing" constant="40" id="TnC-uD-O35"/>
                                                 <constraint firstAttribute="bottom" secondItem="9uv-Rl-zuv" secondAttribute="bottom" constant="10" id="bbi-lC-QjC"/>
                                                 <constraint firstItem="emf-YQ-03I" firstAttribute="top" secondItem="O5Q-Ch-aw1" secondAttribute="top" constant="21" id="hqT-So-hlm"/>
                                                 <constraint firstItem="Fp8-FI-Vi1" firstAttribute="centerY" secondItem="emf-YQ-03I" secondAttribute="centerY" id="nT9-KI-eKj"/>

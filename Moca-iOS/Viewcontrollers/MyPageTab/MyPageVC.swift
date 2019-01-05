@@ -12,12 +12,16 @@ class MyPageVC: UIViewController {
     
     @IBOutlet weak var myPageTableView: UITableView!
     
+    var unit : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
         setUpTableView()
+        
+        myPageTableView.estimatedRowHeight = 293
+        myPageTableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +32,12 @@ class MyPageVC: UIViewController {
     private func setUpTableView() {
         myPageTableView.delegate = self
         myPageTableView.dataSource = self
+    }
+    
+    // 카페명 검색 결과 설정 - 최신 리뷰 설정하기 위해
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        unit = self.view.frame.width/375
     }
     
     @objc func moreAction(_:UIImageView) {
@@ -76,10 +86,12 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             if let membershipCell = myPageTableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as? MembershipCell {
                 
                 membershipCell.parentVC = self
+                membershipCell.unit = unit
                 
                 cell = membershipCell
             }
         }
+        
         return cell
     }
 }

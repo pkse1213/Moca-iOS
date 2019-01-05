@@ -17,6 +17,10 @@ class MembershipCell: UITableViewCell {
     
     var parentVC = UIViewController()
     
+    
+    var unit : CGFloat = 0
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -49,23 +53,23 @@ extension MembershipCell :  UICollectionViewDataSource, UICollectionViewDelegate
 //
 //
 //
-////        let width : CGFloat = (couponCollectionView.frame.width - 90) / 4
-////        let height : CGFloat = (couponCollectionView.frame.width - 90) / 4
-////
-////        return CGSize(width: width, height: height)
+//        let width : CGFloat = (couponCollectionView.frame.width - 90) / 4
+//        let height : CGFloat = (couponCollectionView.frame.width - 90) / 4
+//
+//        return CGSize(width: width, height: height)
 //    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//    }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 30
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 15
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 30
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
@@ -74,6 +78,16 @@ extension MembershipCell :  UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = couponCollectionView.dequeueReusableCell(withReuseIdentifier: "MembershipCouponCollectionCell", for: indexPath) as! MembershipCouponCollectionCell
         
+        print("unit = \(unit)")
+        cell.cellUnit = unit
+        print("cell.cellUnit = \(cell.cellUnit)")
+        
         return cell
+    }
+    
+    // 최신 리뷰 셀 크기 설정
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width:55*unit , height: 55*unit)
     }
 }
