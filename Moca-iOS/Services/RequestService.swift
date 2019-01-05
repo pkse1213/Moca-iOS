@@ -18,11 +18,11 @@ extension RequestService {
     func gettable(_ URL: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
         Alamofire.request(URL, method: .get, parameters: body, encoding: JSONEncoding.default, headers: header).responseData { (res) in
             
-//            guard let statusCode = res.response?.statusCode else {
-//                print("status")
-//                return
-//            }
-//            guard let status: HTTPStatusCode = HTTPStatusCode(rawValue: statusCode) else { return }
+            guard let statusCode = res.response?.statusCode else {
+                print("status")
+                return
+            }
+            guard let status: HTTPStatusCode = HTTPStatusCode(rawValue: statusCode) else { return }
             switch res.result {
             case .success:
                 print("200")
