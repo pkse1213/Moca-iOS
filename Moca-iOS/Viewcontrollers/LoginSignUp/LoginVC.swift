@@ -80,7 +80,6 @@ class LoginVC: UIViewController {
 extension LoginVC : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        print("end")
         if textField == self.idTxt {
             if textField.text != "" {
                 idCircleImage.isHidden = false
