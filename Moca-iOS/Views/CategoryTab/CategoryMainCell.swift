@@ -58,16 +58,13 @@ extension CategoryMainCell: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
-        print("ererer")
         if collectionView == conceptCollectionView {
             if let conceptCell = conceptCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryConceptCell", for: indexPath) as? CategoryConceptCell {
-                print("df")
                 cell = conceptCell
             }
         } else {
             
             if let menuCell = menuCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryMenuCell", for: indexPath) as? CategoryMenuCell {
-                print("Erer")
                 cell = menuCell
             }
         }

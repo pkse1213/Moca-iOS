@@ -29,13 +29,13 @@ class HomeRankingListVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        unit = (self.rankingCollectionView.frame.width/2-3)/175
+        unit = (self.rankingCollectionView.frame.width/2-2)/175
     }
 }
 
 extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+       
         return CGSize(width:175*unit , height: 238*unit)
     }
     
@@ -46,6 +46,7 @@ extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let cafeCell = rankingCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
+            print("셀 초기화")
             cafeCell.rankNumLabel.text = "\(indexPath.row+1)"
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = cafeCell
