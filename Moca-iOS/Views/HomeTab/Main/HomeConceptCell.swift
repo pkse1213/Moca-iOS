@@ -12,6 +12,8 @@ class HomeConceptCell: UITableViewCell {
 
     @IBOutlet weak var conceptListCollectionView: UICollectionView!
     
+    var parentVC = UIViewController()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
@@ -37,4 +39,9 @@ extension HomeConceptCell: UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let vc = UIStoryboard(name: "HomeTabConcept", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
+            parentVC.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
