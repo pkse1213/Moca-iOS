@@ -203,7 +203,6 @@ extension LocationMainVC: MTMapViewDelegate {
     
     // 원 생성 method
     func makeCircleInMap(latitude: Double, longitude: Double) {
-        
         let circle = MTMapCircle()
         circle.circleLineColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1)
         circle.circleFillColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 0.4)
@@ -213,7 +212,7 @@ extension LocationMainVC: MTMapViewDelegate {
         circle.circleCenterPoint = mapPoint
         circle.circleRadius = 1000
         mapView.addCircle(circle)
-        self.mapView.setMapCenter(circle.circleCenterPoint, zoomLevel: 3, animated: true)
+        self.mapView.setMapCenter(mapPoint, zoomLevel: 3, animated: true)
     }
     
     func addMarkerInMap() {

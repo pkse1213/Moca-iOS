@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumGothic.otf">
+            <string>NanumGothicOTF</string>
+        </array>
+        <array key="NanumGothicBold.ttf">
+            <string>NanumGothicBold</string>
+        </array>
+        <array key="NanumGothicExtraBold.otf">
+            <string>NanumGothicOTFExtraBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Category ResultVC-->
+        <scene sceneID="JUY-DV-lE2">
+            <objects>
+                <viewController storyboardIdentifier="CategoryResultVC" id="Vkf-4W-Tyz" customClass="CategoryResultVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pHh-pg-Ru4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-9I-rv7">
+                                <rect key="frame" x="26" y="57" width="349" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="PhD-w3-bsq"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="6" minimumInteritemSpacing="6" id="P3e-Jp-RnD">
+                                    <size key="itemSize" width="50" height="28"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectedLocationCell" id="Jq3-Ob-EhY" customClass="SelectedLocationCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="51" height="28"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강동구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glo-xV-GfC">
+                                                    <rect key="frame" x="7" y="6.6666666666666679" width="37" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="13"/>
+                                                    <color key="textColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="glo-xV-GfC" firstAttribute="centerX" secondItem="Jq3-Ob-EhY" secondAttribute="centerX" id="4n6-QJ-1V2"/>
+                                            <constraint firstItem="glo-xV-GfC" firstAttribute="centerY" secondItem="Jq3-Ob-EhY" secondAttribute="centerY" id="TPb-yp-7EI"/>
+                                        </constraints>
+                                        <size key="customSize" width="51" height="28"/>
+                                        <connections>
+                                            <outlet property="locationLabel" destination="glo-xV-GfC" id="Svd-sd-cGA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectedOptionCell" id="xl3-im-Hcf" customClass="SelectedOptionCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="0.0" width="50" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="28"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디저트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DS-Io-wIt">
+                                                    <rect key="frame" x="6.6666666666666679" y="6.6666666666666679" width="37" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="4DS-Io-wIt" firstAttribute="centerX" secondItem="xl3-im-Hcf" secondAttribute="centerX" id="Aip-Vc-uGA"/>
+                                            <constraint firstItem="4DS-Io-wIt" firstAttribute="centerY" secondItem="xl3-im-Hcf" secondAttribute="centerY" id="wUC-lT-8Wp"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="optionLabel" destination="4DS-Io-wIt" id="dYN-fh-fmU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xm5-vz-Q7X">
+                                <rect key="frame" x="26" y="97" width="325" height="681"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CategoryCafeCell" rowHeight="180" id="yqW-EQ-aMf" customClass="CategoryCafeCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="325" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yqW-EQ-aMf" id="8zd-rT-uU6">
+                                            <rect key="frame" x="0.0" y="0.0" width="325" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CdK-6i-A8D">
+                                                    <rect key="frame" x="257" y="123" width="59" height="11"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="RXD-9R-oiy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="oSe-Rl-mLk">
+                                                            <rect key="frame" x="12" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="lf3-cB-SkT">
+                                                            <rect key="frame" x="24" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="mia-2M-EwC">
+                                                            <rect key="frame" x="36" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarGray" translatesAutoresizingMaskIntoConstraints="NO" id="nbZ-17-4Ay">
+                                                            <rect key="frame" x="48" y="0.0" width="11" height="11"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="egH-ms-Uwg">
+                                                    <rect key="frame" x="12" y="99.333333333333329" width="104" height="34.666666666666671"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울리즘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAo-9P-tch">
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="17.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uWA-YA-bbN">
+                                                            <rect key="frame" x="0.0" y="21.666666666666671" width="104" height="13"/>
+                                                            <subviews>
+                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonLocationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="fik-VO-FlU">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강동구 명일동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-au-CEM">
+                                                                    <rect key="frame" x="12" y="0.0" width="92" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="khr-C3-MoV">
+                                                    <rect key="frame" x="6" y="152" width="313" height="18"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="1yo-uS-YgB"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="6" minimumInteritemSpacing="6" id="yYK-ft-gBV">
+                                                        <size key="itemSize" width="33" height="18"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectedOptionCell" id="ITN-L9-tN5" customClass="SelectedOptionCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="33" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="33" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커피" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Y-at-h2E">
+                                                                        <rect key="frame" x="6" y="3.0000000000000009" width="21" height="12.333333333333336"/>
+                                                                        <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="11"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="89Y-at-h2E" firstAttribute="centerY" secondItem="ITN-L9-tN5" secondAttribute="centerY" id="ASz-RY-iff"/>
+                                                                <constraint firstItem="89Y-at-h2E" firstAttribute="centerX" secondItem="ITN-L9-tN5" secondAttribute="centerX" id="VBD-jb-lt7"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="optionLabel" destination="89Y-at-h2E" id="XmS-vQ-Bsj"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample1" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-GJ-gWJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="146"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="44Q-GJ-gWJ" secondAttribute="height" multiplier="325:146" id="tuL-Uq-slr"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="egH-ms-Uwg" firstAttribute="bottom" secondItem="44Q-GJ-gWJ" secondAttribute="bottom" constant="-12" id="7Ci-Sj-Ehj"/>
+                                                <constraint firstItem="khr-C3-MoV" firstAttribute="leading" secondItem="8zd-rT-uU6" secondAttribute="leading" constant="6" id="MLo-Ka-GPs"/>
+                                                <constraint firstItem="CdK-6i-A8D" firstAttribute="trailing" secondItem="44Q-GJ-gWJ" secondAttribute="trailing" constant="-9" id="YmJ-2D-ySc"/>
+                                                <constraint firstItem="44Q-GJ-gWJ" firstAttribute="top" secondItem="8zd-rT-uU6" secondAttribute="top" id="aPI-7F-pUj"/>
+                                                <constraint firstAttribute="trailing" secondItem="44Q-GJ-gWJ" secondAttribute="trailing" id="abd-FW-8Jc"/>
+                                                <constraint firstItem="CdK-6i-A8D" firstAttribute="bottom" secondItem="44Q-GJ-gWJ" secondAttribute="bottom" constant="-12" id="ash-eP-Tb1"/>
+                                                <constraint firstItem="egH-ms-Uwg" firstAttribute="leading" secondItem="44Q-GJ-gWJ" secondAttribute="leading" constant="12" id="ld4-Je-3zM"/>
+                                                <constraint firstItem="44Q-GJ-gWJ" firstAttribute="leading" secondItem="8zd-rT-uU6" secondAttribute="leading" id="m5c-0x-vot"/>
+                                                <constraint firstAttribute="bottom" secondItem="khr-C3-MoV" secondAttribute="bottom" constant="10" id="mjD-Kw-F2d"/>
+                                                <constraint firstItem="khr-C3-MoV" firstAttribute="top" secondItem="44Q-GJ-gWJ" secondAttribute="bottom" constant="6" id="qUy-3T-7aw"/>
+                                                <constraint firstAttribute="trailing" secondItem="khr-C3-MoV" secondAttribute="trailing" constant="6" id="zV8-Zd-2nd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cafeImageView" destination="44Q-GJ-gWJ" id="sEh-ei-OJ8"/>
+                                            <outlet property="optionCollectionView" destination="khr-C3-MoV" id="UZw-lq-zua"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xm5-vz-Q7X" firstAttribute="top" secondItem="3yT-9I-rv7" secondAttribute="bottom" constant="12" id="00V-KT-W31"/>
+                            <constraint firstItem="3yT-9I-rv7" firstAttribute="leading" secondItem="FhF-dV-rT8" secondAttribute="leading" constant="26" id="EY9-Tb-m7w"/>
+                            <constraint firstItem="FhF-dV-rT8" firstAttribute="bottom" secondItem="xm5-vz-Q7X" secondAttribute="bottom" id="OTI-na-ehA"/>
+                            <constraint firstItem="xm5-vz-Q7X" firstAttribute="leading" secondItem="FhF-dV-rT8" secondAttribute="leading" constant="26" id="b1o-ZT-lyU"/>
+                            <constraint firstItem="FhF-dV-rT8" firstAttribute="trailing" secondItem="3yT-9I-rv7" secondAttribute="trailing" id="kaZ-ie-CgK"/>
+                            <constraint firstItem="3yT-9I-rv7" firstAttribute="top" secondItem="FhF-dV-rT8" secondAttribute="top" constant="13" id="l3z-OY-qfq"/>
+                            <constraint firstItem="FhF-dV-rT8" firstAttribute="trailing" secondItem="xm5-vz-Q7X" secondAttribute="trailing" constant="24" id="yvf-yC-rg4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FhF-dV-rT8"/>
+                    </view>
+                    <connections>
+                        <outlet property="cafeTableView" destination="xm5-vz-Q7X" id="2TC-qd-5Ks"/>
+                        <outlet property="optionCollectionView" destination="3yT-9I-rv7" id="iBt-EV-gfj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rF-Lr-eX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="-197.29064039408868"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="commonLocationWhite" width="12" height="13"/>
+        <image name="communityStarGray" width="11" height="11"/>
+        <image name="communityStarYellow" width="11" height="11"/>
+        <image name="sample1" width="1080" height="1080"/>
+    </resources>
+</document>

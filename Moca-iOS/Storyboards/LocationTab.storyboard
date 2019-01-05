@@ -739,14 +739,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="J6c-l8-Y0o">
-                                                    <rect key="frame" x="292" y="25.666666666666671" width="59" height="29"/>
+                                                    <rect key="frame" x="297" y="28" width="54" height="24"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQH-xa-6eQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="29"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                             <state key="normal" backgroundImage="commonHeartBlank"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-aw-s3q">
-                                                            <rect key="frame" x="30" y="0.0" width="29" height="29"/>
+                                                            <rect key="frame" x="30" y="0.0" width="24" height="24"/>
                                                             <state key="normal" backgroundImage="commonComment"/>
                                                         </button>
                                                     </subviews>
@@ -850,7 +850,7 @@
                                         <rect key="frame" x="0.0" y="1506" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGD-fT-HCB" id="7ad-pn-MlX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-hX-cC5">
@@ -882,21 +882,21 @@
                                         <rect key="frame" x="0.0" y="1597" width="375" height="603"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFR-r8-cYR" id="iCs-O4-ZKa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="602.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주변 카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peG-0p-cAI">
-                                                    <rect key="frame" x="25.999999999999996" y="26" width="60.666666666666657" height="24.666666666666671"/>
+                                                    <rect key="frame" x="25.999999999999996" y="25.999999999999996" width="60.666666666666657" height="15.333333333333332"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPU-r5-REH">
-                                                    <rect key="frame" x="305" y="23.333333333333329" width="60" height="30"/>
+                                                    <rect key="frame" x="305" y="18.666666666666671" width="60" height="30"/>
                                                     <state key="normal" image="detailviewSurroundMore"/>
                                                 </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HjQ-sP-HYz">
-                                                    <rect key="frame" x="26" y="69.666666666666686" width="349" height="532.33333333333326"/>
+                                                    <rect key="frame" x="10" y="60.333333333333314" width="355" height="541.66666666666674"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HjQ-sP-HYz" secondAttribute="height" multiplier="59:90" id="eLB-W0-JUc"/>
@@ -998,7 +998,7 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eSH-C4-e5S">
-                                                            <rect key="frame" x="176" y="0.0" width="173" height="236"/>
+                                                            <rect key="frame" x="182" y="0.0" width="173" height="236"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="173" height="236"/>
@@ -1014,7 +1014,7 @@
                                                             </view>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3vo-Fv-oHG">
-                                                            <rect key="frame" x="176" y="257" width="173" height="236"/>
+                                                            <rect key="frame" x="182" y="257" width="173" height="236"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="173" height="236"/>
@@ -1026,8 +1026,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HjQ-sP-HYz" firstAttribute="top" secondItem="peG-0p-cAI" secondAttribute="bottom" constant="19" id="5Ju-pn-xJW"/>
-                                                <constraint firstItem="HjQ-sP-HYz" firstAttribute="leading" secondItem="iCs-O4-ZKa" secondAttribute="leading" constant="26" id="6bf-WN-V6r"/>
-                                                <constraint firstAttribute="trailing" secondItem="HjQ-sP-HYz" secondAttribute="trailing" id="Dyr-Hd-z2f"/>
+                                                <constraint firstItem="HjQ-sP-HYz" firstAttribute="leading" secondItem="iCs-O4-ZKa" secondAttribute="leading" constant="10" id="6bf-WN-V6r"/>
+                                                <constraint firstAttribute="trailing" secondItem="HjQ-sP-HYz" secondAttribute="trailing" constant="10" id="Dyr-Hd-z2f"/>
                                                 <constraint firstAttribute="bottom" secondItem="HjQ-sP-HYz" secondAttribute="bottom" constant="0.67000000000000004" id="f0O-cV-keI"/>
                                                 <constraint firstItem="peG-0p-cAI" firstAttribute="top" secondItem="iCs-O4-ZKa" secondAttribute="top" constant="26" id="tNw-Ov-uvO"/>
                                                 <constraint firstAttribute="trailing" secondItem="yPU-r5-REH" secondAttribute="trailing" constant="10" id="txX-5l-tkV"/>
@@ -1502,7 +1502,7 @@
     </scenes>
     <resources>
         <image name="commonCancelBlack" width="24" height="24"/>
-        <image name="commonComment" width="29" height="29"/>
+        <image name="commonComment" width="24" height="24"/>
         <image name="commonCommentSmall" width="24" height="24"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartBlankSmall" width="24" height="24"/>

@@ -16,6 +16,7 @@ class MocaPicksCafeVC: UIViewController {
     @IBOutlet weak var cafeImageCollectionView: UICollectionView!
     @IBOutlet weak var baristaTableView: UITableView!
     @IBOutlet weak var scrollProgressView: UIProgressView!
+    @IBOutlet weak var squareView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpListView()
@@ -35,7 +36,7 @@ class MocaPicksCafeVC: UIViewController {
         cafeImageCollectionView.isPagingEnabled = true
         baristaTableView.delegate = self
         baristaTableView.dataSource = self
-        baristaTableView.applyRadius(radius: 10)
+        squareView.applyRadius(radius: 10)
     }
     
 }
