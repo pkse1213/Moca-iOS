@@ -10,5 +10,21 @@ import UIKit
 
 class CategoryMenuCell: UICollectionViewCell {
     @IBOutlet var menuImageView: UIImageView!
+    var selectedFlag = false {
+        didSet {
+            changeImage()
+        }
+    }
+    var defalutImage = UIImage()
+    var selectedImage = UIImage()
+    
+    
+    func changeImage() {
+        if selectedFlag {
+            menuImageView.image = selectedImage
+        } else {
+            menuImageView.image = defalutImage
+        }
+    }
     
 }

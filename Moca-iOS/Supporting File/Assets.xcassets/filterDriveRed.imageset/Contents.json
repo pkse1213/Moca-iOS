@@ -3,17 +3,17 @@
     {
       "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "filterEtc.png"
+      "filename" : "filterDriveRed.png"
     },
     {
       "scale" : "2x",
       "idiom" : "universal",
-      "filename" : "filterEtc@2x.png"
+      "filename" : "filterDriveRed@2x.png"
     },
     {
       "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "filterEtc@3x.png"
+      "filename" : "filterDriveRed@3x.png"
     }
   ],
   "info" : {
