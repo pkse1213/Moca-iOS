@@ -1858,15 +1858,24 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-FI-Vi1">
+                                                    <rect key="frame" x="330" y="15.666666666666664" width="24" height="24"/>
+                                                    <state key="normal" image="mypageArrowRight"/>
+                                                    <connections>
+                                                        <action selector="goToMembershipHistoryAction:" destination="a9U-wy-lyi" eventType="touchUpInside" id="rPe-YU-1Zg"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ifF-No-zx4" firstAttribute="top" secondItem="fAC-a2-JRu" secondAttribute="bottom" constant="11.333333333333314" id="0QK-OC-bRz"/>
                                                 <constraint firstItem="fAC-a2-JRu" firstAttribute="leading" secondItem="O5Q-Ch-aw1" secondAttribute="leading" constant="20" id="IsC-iU-bsT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fp8-FI-Vi1" secondAttribute="trailing" constant="21" id="JZG-cl-cf8"/>
                                                 <constraint firstItem="fAC-a2-JRu" firstAttribute="top" secondItem="emf-YQ-03I" secondAttribute="bottom" constant="14.999999999999993" id="MlA-sc-Dis"/>
                                                 <constraint firstItem="9uv-Rl-zuv" firstAttribute="centerX" secondItem="O5Q-Ch-aw1" secondAttribute="centerX" id="QNb-9z-oNS"/>
                                                 <constraint firstAttribute="trailing" secondItem="fAC-a2-JRu" secondAttribute="trailing" constant="20" id="TnC-uD-O35"/>
                                                 <constraint firstAttribute="bottom" secondItem="9uv-Rl-zuv" secondAttribute="bottom" constant="10" id="bbi-lC-QjC"/>
                                                 <constraint firstItem="emf-YQ-03I" firstAttribute="top" secondItem="O5Q-Ch-aw1" secondAttribute="top" constant="21" id="hqT-So-hlm"/>
+                                                <constraint firstItem="Fp8-FI-Vi1" firstAttribute="centerY" secondItem="emf-YQ-03I" secondAttribute="centerY" id="nT9-KI-eKj"/>
                                                 <constraint firstItem="emf-YQ-03I" firstAttribute="leading" secondItem="O5Q-Ch-aw1" secondAttribute="leading" constant="20" id="oyL-GR-Bi3"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1995,7 +2004,7 @@
     </scenes>
     <resources>
         <image name="category" width="25" height="25"/>
-        <image name="categoryMap" width="346" height="283"/>
+        <image name="categoryMap" width="346.66665649414062" height="283.66665649414062"/>
         <image name="categoryPoint" width="21" height="26"/>
         <image name="commonComment" width="24" height="24"/>
         <image name="commonCommentSmall" width="24" height="24"/>
@@ -2019,7 +2028,7 @@
         <image name="icCommunityLocation" width="12" height="13"/>
         <image name="location" width="25" height="25"/>
         <image name="locationGradationWhite" width="377" height="264"/>
-        <image name="locationLocationPink" width="43" height="43"/>
+        <image name="locationLocationPink" width="43" height="43.333332061767578"/>
         <image name="mypage" width="25" height="25"/>
         <image name="mypageArrowRight" width="24" height="24"/>
         <image name="mypageSetting" width="36" height="36"/>

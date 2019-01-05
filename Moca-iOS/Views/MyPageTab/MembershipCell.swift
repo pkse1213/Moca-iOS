@@ -15,6 +15,8 @@ class MembershipCell: UITableViewCell {
     let margin: CGFloat = 10
     let cellsPerRow = 4
     
+    var parentVC = UIViewController()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -33,7 +35,12 @@ class MembershipCell: UITableViewCell {
     }
     
     
-
+    @IBAction func goToMembershipHistoryAction(_ sender: Any) {
+        if let vc = UIStoryboard(name: "MyPageTab", bundle: nil).instantiateViewController(withIdentifier: "SavingHistoryVC") as? SavingHistoryVC {
+            parentVC.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 }
 
 extension MembershipCell :  UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
