@@ -42,6 +42,9 @@
 		7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */; };
 		77C669D321DFC09200763441 /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C669D221DFC09200763441 /* ReviewVC.swift */; };
 		77F445F721DE412200734992 /* HotCafeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */; };
+		77FA13F521E0FD2B006C8E20 /* PopularReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13F221E0FD2B006C8E20 /* PopularReviewCollectionViewCell.swift */; };
+		77FA13F621E0FD2B006C8E20 /* RecentReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13F321E0FD2B006C8E20 /* RecentReviewCollectionViewCell.swift */; };
+		77FA13F721E0FD2B006C8E20 /* CommunitySearchPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13F421E0FD2B006C8E20 /* CommunitySearchPeopleTableViewCell.swift */; };
 		77FAE6D121D5441B006C24F4 /* HomeSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */; };
 		8517728C6C50F34105911A84 /* Pods_Moca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */; };
 		CB00664521E0954000F53D61 /* CategoryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB00664421E0954000F53D61 /* CategoryTab.storyboard */; };
@@ -163,6 +166,9 @@
 		7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeVC.swift; sourceTree = "<group>"; };
 		77C669D221DFC09200763441 /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCafeCollectionViewCell.swift; sourceTree = "<group>"; };
+		77FA13F221E0FD2B006C8E20 /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopularReviewCollectionViewCell.swift; path = "../../../../../Moca-iOS 2/Moca-iOS/Views/CommunityTab/Search/PopularReviewCollectionViewCell.swift"; sourceTree = "<group>"; };
+		77FA13F321E0FD2B006C8E20 /* RecentReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentReviewCollectionViewCell.swift; path = "../../../../../Moca-iOS 2/Moca-iOS/Views/CommunityTab/Search/RecentReviewCollectionViewCell.swift"; sourceTree = "<group>"; };
+		77FA13F421E0FD2B006C8E20 /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunitySearchPeopleTableViewCell.swift; path = "../../../../../Moca-iOS 2/Moca-iOS/Views/CommunityTab/Search/CommunitySearchPeopleTableViewCell.swift"; sourceTree = "<group>"; };
 		77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchVC.swift; sourceTree = "<group>"; };
 		8870235A62FE8FFCFDF56460 /* Pods-Moca-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moca_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,9 +355,9 @@
 		77FA13F121E0F77F006C8E20 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				7723437621DE9C9A00E5E070 /* CommunitySearchPeopleTableViewCell.swift */,
-				7723437821DE9F3B00E5E070 /* PopularReviewCollectionViewCell.swift */,
-				7723437A21DEA1FD00E5E070 /* RecentReviewCollectionViewCell.swift */,
+				77FA13F421E0FD2B006C8E20 /* CommunitySearchPeopleTableViewCell.swift */,
+				77FA13F221E0FD2B006C8E20 /* PopularReviewCollectionViewCell.swift */,
+				77FA13F321E0FD2B006C8E20 /* RecentReviewCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -840,6 +846,7 @@
 				7757B4D021D5DB93004613BD /* HomeSearchResultCell.swift in Sources */,
 				772A954421D7DA7F009114FC /* MyPageCouponVC.swift in Sources */,
 				CB2CA70D21E0AF76004DA344 /* SelectedLocationCell.swift in Sources */,
+				77FA13F621E0FD2B006C8E20 /* RecentReviewCollectionViewCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
 				CB2D78F121DCFE150033C2A0 /* AddressData.swift in Sources */,
 				CB2D78F521DD02630033C2A0 /* LocationSearchVC.swift in Sources */,
@@ -875,6 +882,7 @@
 				CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
 				CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */,
+				77FA13F521E0FD2B006C8E20 /* PopularReviewCollectionViewCell.swift in Sources */,
 				772A953121D78D0C009114FC /* MyPageVC.swift in Sources */,
 				772A953C21D7B051009114FC /* MembershipCell.swift in Sources */,
 				774B597121DBC3C900B10989 /* LikeCafeDetailTableViewCell.swift in Sources */,
@@ -890,6 +898,7 @@
 				CB2D78EE21DCFDD40033C2A0 /* HTTPStatusCode.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
 				CB00664721E09D7900F53D61 /* CategoryResultVC.swift in Sources */,
+				77FA13F721E0FD2B006C8E20 /* CommunitySearchPeopleTableViewCell.swift in Sources */,
 				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
 				7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */,
 				CB2D78F721DD0CF00033C2A0 /* UIViewController+extesion.swift in Sources */,
