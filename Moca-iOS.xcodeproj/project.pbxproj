@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771E4EC221E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E4EBF21E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift */; };
+		771E4EC321E1723900FFC8CB /* RecentReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E4EC021E1723900FFC8CB /* RecentReviewCollectionViewCell.swift */; };
+		771E4EC421E1723900FFC8CB /* PopularReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E4EC121E1723900FFC8CB /* PopularReviewCollectionViewCell.swift */; };
 		7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */; };
 		7723437321DE8F1000E5E070 /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437221DE8F1000E5E070 /* PopularCollectionViewCell.swift */; };
 		7723437521DE8F6200E5E070 /* CommunitySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437421DE8F6200E5E070 /* CommunitySearchVC.swift */; };
@@ -143,6 +146,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		771E4EBF21E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunitySearchPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		771E4EC021E1723900FFC8CB /* RecentReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		771E4EC121E1723900FFC8CB /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		7723437221DE8F1000E5E070 /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		7723437421DE8F6200E5E070 /* CommunitySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchVC.swift; sourceTree = "<group>"; };
@@ -317,6 +323,16 @@
 				A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		771E4EBE21E1722D00FFC8CB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				771E4EBF21E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift */,
+				771E4EC121E1723900FFC8CB /* PopularReviewCollectionViewCell.swift */,
+				771E4EC021E1723900FFC8CB /* RecentReviewCollectionViewCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		7723437F21DEB65300E5E070 /* LoginSignUp */ = {
@@ -641,6 +657,7 @@
 		CB32A09921D2A2B9004796F7 /* CommunityTab */ = {
 			isa = PBXGroup;
 			children = (
+				771E4EBE21E1722D00FFC8CB /* Search */,
 				CB8DDB8A21D3C2A2001D8191 /* Main */,
 				CB8DDB8B21D3C2B4001D8191 /* ContentDetail */,
 				CB25AC9721D3F01800636DFE /* ContentWrite */,
@@ -927,6 +944,7 @@
 				772A954421D7DA7F009114FC /* MyPageCouponVC.swift in Sources */,
 				CB2CA70D21E0AF76004DA344 /* SelectedLocationCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
+				771E4EC321E1723900FFC8CB /* RecentReviewCollectionViewCell.swift in Sources */,
 				CB2D78F121DCFE150033C2A0 /* AddressData.swift in Sources */,
 				CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */,
 				CB2D78F521DD02630033C2A0 /* LocationSearchVC.swift in Sources */,
@@ -963,6 +981,7 @@
 				7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */,
 				774B596F21DBBA2B00B10989 /* LikeCafeDetailVC.swift in Sources */,
 				CB2E8F0021DC04930087EFE2 /* SignatureMenuCell.swift in Sources */,
+				771E4EC421E1723900FFC8CB /* PopularReviewCollectionViewCell.swift in Sources */,
 				CB2CA70F21E0AFAC004DA344 /* SelectedOptionCell.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				7723437321DE8F1000E5E070 /* PopularCollectionViewCell.swift in Sources */,
@@ -975,6 +994,7 @@
 				7723438121DEB68600E5E070 /* LoginVC.swift in Sources */,
 				CB2C591F21DFD21E00CDB39F /* CategoryConceptCell.swift in Sources */,
 				CB2D78F321DCFE3D0033C2A0 /* LocationSearchCell.swift in Sources */,
+				771E4EC221E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift in Sources */,
 				CB2C591D21DFCF2F00CDB39F /* CategoryMainCell.swift in Sources */,
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
