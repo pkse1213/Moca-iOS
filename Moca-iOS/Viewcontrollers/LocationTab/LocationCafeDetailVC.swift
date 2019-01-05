@@ -75,6 +75,8 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
                 }
             case 4:
                 if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailReviewFooterCell") as? CafeDetailReviewFooterCell {
+                    imageCell.parentVC = self
+                    
                     cell = imageCell
                 }
             default:
@@ -94,6 +96,4 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
-    
-    
 }

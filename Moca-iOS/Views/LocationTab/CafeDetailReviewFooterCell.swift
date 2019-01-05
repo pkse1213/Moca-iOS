@@ -9,6 +9,8 @@
 import UIKit
 
 class CafeDetailReviewFooterCell: UITableViewCell {
+    
+    var parentVC = UIViewController()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,8 +19,11 @@ class CafeDetailReviewFooterCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    @IBAction func goToReviewAction(_ sender: Any) {
+        if let vc = parentVC.storyboard?.instantiateViewController(withIdentifier: "ReviewVC") as? ReviewVC {
+            parentVC.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

@@ -60,7 +60,7 @@ class LoginVC: UIViewController {
     // 로그인 버튼 radius
     private func setLoginBtn() {
         loginBtn.layer.masksToBounds = false
-        loginBtn.layer.cornerRadius = 19.0
+        loginBtn.layer.cornerRadius = 19
         loginBtn.clipsToBounds = true
     }
     
