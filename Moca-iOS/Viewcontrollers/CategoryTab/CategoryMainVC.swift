@@ -40,4 +40,5 @@ extension CategoryMainVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
 }

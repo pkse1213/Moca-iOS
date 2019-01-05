@@ -103,12 +103,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-GJ-gWJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="146"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="44Q-GJ-gWJ" secondAttribute="height" multiplier="325:146" id="GiQ-cc-vFh"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CdK-6i-A8D">
                                                     <rect key="frame" x="257" y="123" width="59" height="11"/>
                                                     <subviews>
@@ -130,22 +124,22 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="egH-ms-Uwg">
-                                                    <rect key="frame" x="11.999999999999993" y="99.666666666666671" width="111.33333333333331" height="34.333333333333329"/>
+                                                    <rect key="frame" x="12" y="99.333333333333329" width="104" height="34.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울리즘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAo-9P-tch">
-                                                            <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="17.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="17.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uWA-YA-bbN">
-                                                            <rect key="frame" x="0.0" y="21.333333333333329" width="111.33333333333333" height="13"/>
+                                                            <rect key="frame" x="0.0" y="21.666666666666671" width="104" height="13"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonLocationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="fik-VO-FlU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강동구 명일동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-au-CEM">
-                                                                    <rect key="frame" x="12" y="0.0" width="99.333333333333329" height="12.333333333333334"/>
+                                                                    <rect key="frame" x="12" y="0.0" width="92" height="13"/>
                                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -191,6 +185,12 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample1" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-GJ-gWJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="146"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="44Q-GJ-gWJ" secondAttribute="height" multiplier="325:146" id="tuL-Uq-slr"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="egH-ms-Uwg" firstAttribute="bottom" secondItem="44Q-GJ-gWJ" secondAttribute="bottom" constant="-12" id="7Ci-Sj-Ehj"/>
@@ -240,5 +240,6 @@
         <image name="commonLocationWhite" width="12" height="13"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
+        <image name="sample1" width="1080" height="1080"/>
     </resources>
 </document>

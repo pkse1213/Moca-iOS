@@ -20,8 +20,10 @@ class HomeRankingListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.isNavigationBarHidden = false
     }
+    
     private func setUpCollectionView() {
         self.rankingCollectionView.delegate = self
         self.rankingCollectionView.dataSource = self
@@ -46,7 +48,6 @@ extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let cafeCell = rankingCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
-            print("셀 초기화")
             cafeCell.rankNumLabel.text = "\(indexPath.row+1)"
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = cafeCell

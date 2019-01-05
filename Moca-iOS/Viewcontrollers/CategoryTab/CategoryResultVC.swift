@@ -19,6 +19,11 @@ class CategoryResultVC: UIViewController {
         setUpListView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     private func setUpListView() {
         optionCollectionView.delegate = self
         optionCollectionView.dataSource = self
@@ -84,5 +89,9 @@ extension CategoryResultVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
