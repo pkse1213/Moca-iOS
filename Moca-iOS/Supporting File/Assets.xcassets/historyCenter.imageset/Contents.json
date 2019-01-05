@@ -3,17 +3,17 @@
     {
       "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "mypageArrowRight.png"
+      "filename" : "historyCenter.png"
     },
     {
       "scale" : "2x",
       "idiom" : "universal",
-      "filename" : "mypageArrowRight@2x.png"
+      "filename" : "historyCenter@2x.png"
     },
     {
       "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "mypageArrowRight@3x.png"
+      "filename" : "historyCenter@3x.png"
     }
   ],
   "info" : {

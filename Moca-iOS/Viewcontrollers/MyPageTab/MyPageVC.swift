@@ -41,6 +41,7 @@ class MyPageVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
 }
 
 extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
@@ -73,6 +74,8 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         }
         else {
             if let membershipCell = myPageTableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as? MembershipCell {
+                
+                membershipCell.parentVC = self
                 
                 cell = membershipCell
             }
