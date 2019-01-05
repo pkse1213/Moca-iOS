@@ -76,6 +76,8 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
             
         } else if indexPath.row == 1 {
             if let conceptCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as? HomeConceptCell {
+                conceptCell.parentVC = self
+                
                 cell = conceptCell
             }
             

@@ -24,7 +24,6 @@ class SavingHistoryVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
     }
-
 }
 
 extension SavingHistoryVC : UITableViewDelegate, UITableViewDataSource {
