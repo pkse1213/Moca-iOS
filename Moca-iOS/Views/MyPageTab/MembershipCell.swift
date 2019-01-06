@@ -36,6 +36,7 @@ class MembershipCell: UITableViewCell {
     private func setUpCollectionView() {
         couponCollectionView.delegate = self
         couponCollectionView.dataSource = self
+        self.layoutIfNeeded()
     }
     
     
@@ -78,14 +79,12 @@ extension MembershipCell :  UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = couponCollectionView.dequeueReusableCell(withReuseIdentifier: "MembershipCouponCollectionCell", for: indexPath) as! MembershipCouponCollectionCell
         
-        cell.cellUnit = unit
-        
         return cell
     }
     
     // 최신 리뷰 셀 크기 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width:55*unit , height: 55*unit)
+        let size = (couponCollectionView.frame.width - 72) / 4
+        return CGSize(width: size, height: size)
     }
 }

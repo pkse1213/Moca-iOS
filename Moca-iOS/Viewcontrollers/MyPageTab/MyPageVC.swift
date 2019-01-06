@@ -86,7 +86,6 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
             if let membershipCell = myPageTableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as? MembershipCell {
                 
                 membershipCell.parentVC = self
-                membershipCell.unit = unit
                 
                 cell = membershipCell
             }
