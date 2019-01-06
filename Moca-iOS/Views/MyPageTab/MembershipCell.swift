@@ -78,9 +78,7 @@ extension MembershipCell :  UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = couponCollectionView.dequeueReusableCell(withReuseIdentifier: "MembershipCouponCollectionCell", for: indexPath) as! MembershipCouponCollectionCell
         
-        print("unit = \(unit)")
         cell.cellUnit = unit
-        print("cell.cellUnit = \(cell.cellUnit)")
         
         return cell
     }

@@ -22,8 +22,6 @@ class CategoryMainVC: UIViewController {
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
     }
-    
-   
 }
 
 extension CategoryMainVC: UITableViewDelegate, UITableViewDataSource {

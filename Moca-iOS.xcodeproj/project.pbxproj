@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		771E4EC221E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E4EBF21E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift */; };
-		771E4EC321E1723900FFC8CB /* RecentReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E4EC021E1723900FFC8CB /* RecentReviewCollectionViewCell.swift */; };
-		771E4EC421E1723900FFC8CB /* PopularReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771E4EC121E1723900FFC8CB /* PopularReviewCollectionViewCell.swift */; };
 		7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */; };
 		7723437321DE8F1000E5E070 /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437221DE8F1000E5E070 /* PopularCollectionViewCell.swift */; };
 		7723437521DE8F6200E5E070 /* CommunitySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723437421DE8F6200E5E070 /* CommunitySearchVC.swift */; };
@@ -43,6 +40,9 @@
 		7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */; };
 		7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */; };
 		77C669D321DFC09200763441 /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C669D221DFC09200763441 /* ReviewVC.swift */; };
+		77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift */; };
+		77CD53E921E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53E821E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift */; };
+		77CD53EB21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53EA21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift */; };
 		77F445F721DE412200734992 /* HotCafeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */; };
 		77FA13F921E10A7E006C8E20 /* SavingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13F821E10A7E006C8E20 /* SavingHistoryVC.swift */; };
 		77FA13FB21E11378006C8E20 /* SavingHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13FA21E11378006C8E20 /* SavingHistoryTableViewCell.swift */; };
@@ -73,9 +73,6 @@
 		CB25ACA121D3F10800636DFE /* CommunityReviewWrittingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA021D3F10800636DFE /* CommunityReviewWrittingVC.swift */; };
 		CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */; };
 		CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */; };
-		CB28595B21E0FE3600E691A9 /* RecentReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595821E0FE3600E691A9 /* RecentReviewCollectionViewCell.swift */; };
-		CB28595C21E0FE3600E691A9 /* CommunitySearchPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595921E0FE3600E691A9 /* CommunitySearchPeopleTableViewCell.swift */; };
-		CB28595D21E0FE3600E691A9 /* PopularReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595A21E0FE3600E691A9 /* PopularReviewCollectionViewCell.swift */; };
 		CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */; };
 		CB2ACCE021D7F7AD004DBF2E /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCDF21D7F7AD004DBF2E /* DaumMap.framework */; };
 		CB2ACCE221D7F881004DBF2E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCE121D7F881004DBF2E /* OpenGLES.framework */; };
@@ -146,9 +143,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		771E4EBF21E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunitySearchPeopleTableViewCell.swift; sourceTree = "<group>"; };
-		771E4EC021E1723900FFC8CB /* RecentReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentReviewCollectionViewCell.swift; sourceTree = "<group>"; };
-		771E4EC121E1723900FFC8CB /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		7723437221DE8F1000E5E070 /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		7723437421DE8F6200E5E070 /* CommunitySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchVC.swift; sourceTree = "<group>"; };
@@ -182,6 +176,9 @@
 		7780ED6321D4F2B900CC2BA7 /* MocaPlusDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusDetailVC.swift; sourceTree = "<group>"; };
 		7780ED6421D4F2B900CC2BA7 /* MocaPlusHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeVC.swift; sourceTree = "<group>"; };
 		77C669D221DFC09200763441 /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
+		77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		77CD53E821E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		77CD53EA21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCafeCollectionViewCell.swift; sourceTree = "<group>"; };
 		77FA13F821E10A7E006C8E20 /* SavingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryVC.swift; sourceTree = "<group>"; };
 		77FA13FA21E11378006C8E20 /* SavingHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,9 +325,9 @@
 		771E4EBE21E1722D00FFC8CB /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				771E4EBF21E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift */,
-				771E4EC121E1723900FFC8CB /* PopularReviewCollectionViewCell.swift */,
-				771E4EC021E1723900FFC8CB /* RecentReviewCollectionViewCell.swift */,
+				77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift */,
+				77CD53E821E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift */,
+				77CD53EA21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -904,7 +901,6 @@
 				CBF2FC3421D4FD2700DFC50A /* MocaPicksEvaluationCell.swift in Sources */,
 				CBF2FC3A21D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
-				CB28595C21E0FE3600E691A9 /* CommunitySearchPeopleTableViewCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
 				7735356921D80BA800FB914C /* CouponAlertVC.swift in Sources */,
 				CB2C592121DFD22F00CDB39F /* CategoryMenuCell.swift in Sources */,
@@ -929,6 +925,7 @@
 				CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */,
 				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
 				7735356521D8040F00FB914C /* CouponTableViewCell.swift in Sources */,
+				77CD53EB21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift in Sources */,
 				7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */,
 				CB2CA71121E0B671004DA344 /* CategoryCafeCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
@@ -944,7 +941,6 @@
 				772A954421D7DA7F009114FC /* MyPageCouponVC.swift in Sources */,
 				CB2CA70D21E0AF76004DA344 /* SelectedLocationCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
-				771E4EC321E1723900FFC8CB /* RecentReviewCollectionViewCell.swift in Sources */,
 				CB2D78F121DCFE150033C2A0 /* AddressData.swift in Sources */,
 				CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */,
 				CB2D78F521DD02630033C2A0 /* LocationSearchVC.swift in Sources */,
@@ -962,7 +958,6 @@
 				CBD4C7B821E15632008BE065 /* CategoryConceptService.swift in Sources */,
 				CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */,
 				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
-				CB28595B21E0FE3600E691A9 /* RecentReviewCollectionViewCell.swift in Sources */,
 				772A953E21D7C06A009114FC /* MembershipCouponCollectionCell.swift in Sources */,
 				77FA141221E142FA006C8E20 /* ConceptImageCollectionViewCell.swift in Sources */,
 				77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */,
@@ -979,9 +974,9 @@
 				CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */,
 				774B596D21DB837900B10989 /* ProfileModifyVC.swift in Sources */,
 				7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */,
+				77CD53E921E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift in Sources */,
 				774B596F21DBBA2B00B10989 /* LikeCafeDetailVC.swift in Sources */,
 				CB2E8F0021DC04930087EFE2 /* SignatureMenuCell.swift in Sources */,
-				771E4EC421E1723900FFC8CB /* PopularReviewCollectionViewCell.swift in Sources */,
 				CB2CA70F21E0AFAC004DA344 /* SelectedOptionCell.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				7723437321DE8F1000E5E070 /* PopularCollectionViewCell.swift in Sources */,
@@ -994,11 +989,9 @@
 				7723438121DEB68600E5E070 /* LoginVC.swift in Sources */,
 				CB2C591F21DFD21E00CDB39F /* CategoryConceptCell.swift in Sources */,
 				CB2D78F321DCFE3D0033C2A0 /* LocationSearchCell.swift in Sources */,
-				771E4EC221E1723900FFC8CB /* CommunitySearchPeopleTableViewCell.swift in Sources */,
 				CB2C591D21DFCF2F00CDB39F /* CategoryMainCell.swift in Sources */,
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
-				CB28595D21E0FE3600E691A9 /* PopularReviewCollectionViewCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
 				772A953621D79517009114FC /* MyPageCell.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
@@ -1007,6 +1000,7 @@
 				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
 				CB00664721E09D7900F53D61 /* CategoryResultVC.swift in Sources */,
 				77FA140121E1387F006C8E20 /* HotPlaceVC.swift in Sources */,
+				77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift in Sources */,
 				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
 				7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */,
 				CB2D78F721DD0CF00033C2A0 /* UIViewController+extesion.swift in Sources */,
@@ -1158,7 +1152,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N6JH7RBUA4;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1183,7 +1177,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N6JH7RBUA4;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
