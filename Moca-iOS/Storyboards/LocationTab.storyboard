@@ -120,17 +120,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-4Q-v8i">
-                                                    <rect key="frame" x="25.999999999999993" y="15" width="84.333333333333314" height="44"/>
+                                                    <rect key="frame" x="25.999999999999993" y="15" width="90.333333333333314" height="44"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Bxv-Oz-f5M">
-                                                            <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="13"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="13"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icCommunityLocation" translatesAutoresizingMaskIntoConstraints="NO" id="R9r-sJ-nib">
                                                                     <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc3-XE-PuS">
-                                                                    <rect key="frame" x="19" y="0.0" width="65.333333333333329" height="13"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                    <rect key="frame" x="19" y="0.0" width="71.333333333333329" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -375,6 +375,11 @@
                                                                 <constraint firstAttribute="trailing" secondItem="l3C-bI-bZi" secondAttribute="trailing" id="dqU-eK-hSK"/>
                                                                 <constraint firstItem="dhA-0I-bFl" firstAttribute="centerX" secondItem="PGj-Qt-3jh" secondAttribute="centerX" id="eb3-cf-3aW"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="menuImageView" destination="l3C-bI-bZi" id="bgF-Cx-644"/>
+                                                                <outlet property="menuNameLabel" destination="rIM-sy-eoG" id="SJO-3g-aKX"/>
+                                                                <outlet property="menuPriceLabel" destination="nrV-Ua-e96" id="0QB-u7-9Td"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GAx-aV-05P">
                                                             <rect key="frame" x="106" y="0.0" width="76" height="125"/>
@@ -575,8 +580,24 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addressLabel" destination="hc3-XE-PuS" id="Qyi-nt-pvT"/>
+                                            <outlet property="dayLabel" destination="CT2-Ea-EFj" id="BLv-Sj-zaa"/>
+                                            <outlet property="detailAddressLabel" destination="Okj-TM-pln" id="MlX-LG-oSZ"/>
+                                            <outlet property="nameLabel" destination="po2-iU-pCx" id="1tT-ML-jng"/>
+                                            <outlet property="phoneNumLabel" destination="F6w-W3-CTL" id="DV8-ZQ-wSm"/>
                                             <outlet property="reviewLookButton" destination="OHr-Ug-arN" id="gYT-kO-9YE"/>
                                             <outlet property="signatureMenuCollectionView" destination="ne6-h1-Dvm" id="esb-9C-GDC"/>
+                                            <outlet property="timeLabel" destination="gfs-hc-dn9" id="ySI-G6-0Bs"/>
+                                            <outletCollection property="etcImageCollection" destination="K18-Ic-CNw" collectionClass="NSMutableArray" id="jPd-zU-EWN"/>
+                                            <outletCollection property="etcImageCollection" destination="GeM-qu-dCv" collectionClass="NSMutableArray" id="59U-Et-Tzt"/>
+                                            <outletCollection property="etcImageCollection" destination="eP3-th-N0B" collectionClass="NSMutableArray" id="QHj-dl-s42"/>
+                                            <outletCollection property="etcImageCollection" destination="Jb3-l7-5hZ" collectionClass="NSMutableArray" id="ENY-zP-BPn"/>
+                                            <outletCollection property="etcImageCollection" destination="kuB-qa-0Rn" collectionClass="NSMutableArray" id="P89-yi-ELM"/>
+                                            <outletCollection property="etcLabelCollection" destination="vRy-Nl-rQJ" collectionClass="NSMutableArray" id="un6-LF-swf"/>
+                                            <outletCollection property="etcLabelCollection" destination="X10-ZR-joe" collectionClass="NSMutableArray" id="mod-qu-Ihh"/>
+                                            <outletCollection property="etcLabelCollection" destination="BuY-MY-ReW" collectionClass="NSMutableArray" id="nf5-ry-DSs"/>
+                                            <outletCollection property="etcLabelCollection" destination="yR8-VQ-LMf" collectionClass="NSMutableArray" id="iLy-m5-Esc"/>
+                                            <outletCollection property="etcLabelCollection" destination="EKi-GK-MFK" collectionClass="NSMutableArray" id="IqK-ah-X7J"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailReviewHeaderCell" rowHeight="58" id="eox-rH-Wnc" customClass="CafeDetailReviewHeaderCell" customModule="Moca_iOS" customModuleProvider="target">
@@ -769,6 +790,12 @@
                                                         <constraint firstItem="SPT-Iq-qXR" firstAttribute="leading" secondItem="WWa-QR-bhe" secondAttribute="leading" constant="9" id="zHO-ph-bvx"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gK5-ea-vbN">
+                                                    <rect key="frame" x="311.33333333333331" y="420" width="47.666666666666686" height="12.333333333333314"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S4-9B-hEZ">
                                                     <rect key="frame" x="39.666666666666657" y="517.66666666666663" width="329" height="28"/>
                                                     <state key="normal" image="communityMore"/>
@@ -809,6 +836,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gK5-ea-vbN" secondAttribute="trailing" constant="16" id="3XE-TS-5wE"/>
                                                 <constraint firstAttribute="trailing" secondItem="GNY-Xe-gfV" secondAttribute="trailing" id="6Gh-Cd-Loe"/>
                                                 <constraint firstItem="6S4-9B-hEZ" firstAttribute="centerX" secondItem="4Th-V0-cTy" secondAttribute="centerX" id="79N-ME-4lb"/>
                                                 <constraint firstItem="4Th-V0-cTy" firstAttribute="top" secondItem="0z3-2e-WyE" secondAttribute="bottom" constant="4" id="917-SR-cZp"/>
@@ -817,6 +845,7 @@
                                                 <constraint firstItem="KXL-Ns-Hys" firstAttribute="leading" secondItem="HIJ-S0-N4d" secondAttribute="trailing" constant="14" id="Hvr-fW-ADl"/>
                                                 <constraint firstItem="oSI-jf-7fl" firstAttribute="top" secondItem="GNY-Xe-gfV" secondAttribute="bottom" constant="9" id="I6t-KG-etz"/>
                                                 <constraint firstItem="0z3-2e-WyE" firstAttribute="leading" secondItem="oSI-jf-7fl" secondAttribute="leading" constant="-4" id="SGp-jj-xoY"/>
+                                                <constraint firstItem="gK5-ea-vbN" firstAttribute="top" secondItem="GNY-Xe-gfV" secondAttribute="bottom" constant="12" id="Sgq-EJ-HbT"/>
                                                 <constraint firstAttribute="trailing" secondItem="J6c-l8-Y0o" secondAttribute="trailing" constant="24" id="VTu-cR-0pl"/>
                                                 <constraint firstItem="HIJ-S0-N4d" firstAttribute="leading" secondItem="01p-QW-vBp" secondAttribute="leading" constant="22" id="XaE-fd-TVz"/>
                                                 <constraint firstItem="GNY-Xe-gfV" firstAttribute="top" secondItem="HIJ-S0-N4d" secondAttribute="bottom" constant="12" id="aC2-db-34R"/>
@@ -844,13 +873,14 @@
                                             <outlet property="nameLabel" destination="Emm-67-O70" id="UvW-Gd-ckD"/>
                                             <outlet property="profileImageView" destination="HIJ-S0-N4d" id="6aH-7e-mrs"/>
                                             <outlet property="reviewContentLabel" destination="4Th-V0-cTy" id="Yd8-FA-OMM"/>
+                                            <outlet property="timeLabel" destination="gK5-ea-vbN" id="ter-IN-I5z"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CafeDetailReviewFooterCell" rowHeight="91" id="fGD-fT-HCB" customClass="CafeDetailReviewFooterCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1506" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGD-fT-HCB" id="7ad-pn-MlX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-hX-cC5">
@@ -922,24 +952,24 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Edv-xN-GrZ">
-                                                                        <rect key="frame" x="2" y="179" width="79.333333333333329" height="33"/>
+                                                                        <rect key="frame" x="2" y="179" width="90.333333333333329" height="32.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-Dg-dNj">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="15.666666666666666"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="15"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-go-eva">
-                                                                                <rect key="frame" x="0.0" y="19.666666666666657" width="79.333333333333329" height="13.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="19" width="90.333333333333329" height="13.333333333333336"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icCommunityLocation" translatesAutoresizingMaskIntoConstraints="NO" id="KH2-sV-BR6">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="13.333333333333334"/>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pz3-ja-A3T">
-                                                                                        <rect key="frame" x="19.000000000000004" y="0.0" width="60.333333333333343" height="13.333333333333334"/>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                                                        <rect key="frame" x="19" y="0.0" width="71.333333333333329" height="13.333333333333334"/>
+                                                                                        <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
+                                                                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -947,7 +977,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dYv-z9-xrC">
-                                                                        <rect key="frame" x="106" y="190" width="59" height="11"/>
+                                                                        <rect key="frame" x="106" y="189.66666666666666" width="59" height="11"/>
                                                                         <subviews>
                                                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="njG-rR-X7o">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="11" height="11"/>
@@ -994,32 +1024,9 @@
                                                                 <outlet property="cafeAddressLabel" destination="Pz3-ja-A3T" id="3DT-WZ-5Hf"/>
                                                                 <outlet property="cafeImageView" destination="prV-5t-Bhu" id="BhL-Ry-vhd"/>
                                                                 <outlet property="cafeNameLabel" destination="cRT-Dg-dNj" id="i6v-pM-yfN"/>
+                                                                <outlet property="rankBackgroundView" destination="L0b-pR-ThK" id="pYU-ux-s4M"/>
                                                                 <outlet property="rankNumLabel" destination="ERg-fD-i1c" id="Jcl-nA-KMJ"/>
                                                             </connections>
-                                                        </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eSH-C4-e5S">
-                                                            <rect key="frame" x="182" y="0.0" width="173" height="236"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="173" height="236"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </view>
-                                                        </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IYt-lK-Fxz">
-                                                            <rect key="frame" x="0.0" y="257" width="173" height="236"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="173" height="236"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </view>
-                                                        </collectionViewCell>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3vo-Fv-oHG">
-                                                            <rect key="frame" x="182" y="257" width="173" height="236"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="173" height="236"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </view>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -1036,6 +1043,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="moreLookButton" destination="yPU-r5-REH" id="PbR-dr-Wbe"/>
                                             <outlet property="nearCafeCollectionView" destination="HjQ-sP-HYz" id="sw5-WI-aB6"/>
                                         </connections>
                                     </tableViewCell>
@@ -1047,6 +1055,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-jP-oet">
                                         <rect key="frame" x="324" y="4" width="36" height="36"/>
                                         <state key="normal" image="detailviewNavigation"/>
+                                        <connections>
+                                            <action selector="locationActon:" destination="ae4-gI-qin" eventType="touchUpInside" id="00J-ZO-YD5"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Uy2-g7-L9s">
                                         <rect key="frame" x="15" y="4" width="97" height="36"/>
@@ -1054,10 +1065,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P35-1o-Juf">
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                                                 <state key="normal" image="detailviewShare"/>
+                                                <connections>
+                                                    <action selector="shareAction:" destination="ae4-gI-qin" eventType="touchUpInside" id="0dq-sD-XxW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFc-Qf-jwe">
                                                 <rect key="frame" x="61" y="0.0" width="36" height="36"/>
                                                 <state key="normal" image="detailviewScrap"/>
+                                                <connections>
+                                                    <action selector="scrapAction:" destination="ae4-gI-qin" eventType="touchUpInside" id="aIH-sw-JAz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1090,7 +1107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GQ-Ka-xgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1506" y="-260"/>
+            <point key="canvasLocation" x="1504.8" y="-260.09852216748772"/>
         </scene>
         <!--Location Map DialogVC-->
         <scene sceneID="azS-dF-YBq">
@@ -1516,12 +1533,12 @@
         <image name="detailviewCar" width="30" height="30"/>
         <image name="detailviewNavigation" width="36" height="36"/>
         <image name="detailviewReservation" width="30" height="30"/>
-        <image name="detailviewReview" width="55.666667938232422" height="16"/>
+        <image name="detailviewReview" width="55" height="16"/>
         <image name="detailviewReviewMore" width="323" height="48"/>
         <image name="detailviewReviewWrite" width="67" height="25"/>
         <image name="detailviewScrap" width="36" height="36"/>
         <image name="detailviewShare" width="36" height="36"/>
-        <image name="detailviewSmoke" width="30.333333969116211" height="30"/>
+        <image name="detailviewSmoke" width="30" height="30"/>
         <image name="detailviewSurroundMore" width="60" height="30"/>
         <image name="detailviewWifi" width="30" height="30"/>
         <image name="icCommunityLocation" width="12" height="13"/>

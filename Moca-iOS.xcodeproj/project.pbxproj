@@ -139,6 +139,10 @@
 		CBD4C7CE21E227A4008BE065 /* CafeDetailImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7CD21E227A4008BE065 /* CafeDetailImageService.swift */; };
 		CBD4C7D021E23ECA008BE065 /* NearByCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7CF21E23ECA008BE065 /* NearByCafeData.swift */; };
 		CBD4C7D221E23F6B008BE065 /* NearByCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7D121E23F6B008BE065 /* NearByCafeService.swift */; };
+		CBD4C7D421E24DEF008BE065 /* CafeDetailBestReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7D321E24DEF008BE065 /* CafeDetailBestReviewData.swift */; };
+		CBD4C7D621E24E31008BE065 /* CafeDetailReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7D521E24E31008BE065 /* CafeDetailReviewService.swift */; };
+		CBD4C7D821E28404008BE065 /* CafeScrapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7D721E28404008BE065 /* CafeScrapService.swift */; };
+		CBD4C7DB21E2848A008BE065 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7DA21E2848A008BE065 /* ResponseData.swift */; };
 		CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */; };
 		CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */; };
 		CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */; };
@@ -292,6 +296,10 @@
 		CBD4C7CD21E227A4008BE065 /* CafeDetailImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailImageService.swift; sourceTree = "<group>"; };
 		CBD4C7CF21E23ECA008BE065 /* NearByCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByCafeData.swift; sourceTree = "<group>"; };
 		CBD4C7D121E23F6B008BE065 /* NearByCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByCafeService.swift; sourceTree = "<group>"; };
+		CBD4C7D321E24DEF008BE065 /* CafeDetailBestReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailBestReviewData.swift; sourceTree = "<group>"; };
+		CBD4C7D521E24E31008BE065 /* CafeDetailReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewService.swift; sourceTree = "<group>"; };
+		CBD4C7D721E28404008BE065 /* CafeScrapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeScrapService.swift; sourceTree = "<group>"; };
+		CBD4C7DA21E2848A008BE065 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeVC.swift; sourceTree = "<group>"; };
 		CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
@@ -573,6 +581,7 @@
 		CB2D78E421DCFD720033C2A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CBD4C7D921E28481008BE065 /* Base */,
 				CBD4C7B621E15609008BE065 /* CategoryTab */,
 				CBD4C7AE21E1501A008BE065 /* CafeDetail */,
 				CB2D78E521DCFD850033C2A0 /* KakaoAddressService.swift */,
@@ -732,6 +741,8 @@
 				CBD4C7C921E22791008BE065 /* CafeDetailInfoService.swift */,
 				CBD4C7CB21E2279C008BE065 /* CafeDetailSignitureService.swift */,
 				CBD4C7CD21E227A4008BE065 /* CafeDetailImageService.swift */,
+				CBD4C7D521E24E31008BE065 /* CafeDetailReviewService.swift */,
+				CBD4C7D721E28404008BE065 /* CafeScrapService.swift */,
 				CBD4C7D121E23F6B008BE065 /* NearByCafeService.swift */,
 			);
 			path = CafeDetail;
@@ -781,9 +792,18 @@
 				CBD4C7C321E22684008BE065 /* CafeDetailInfoData.swift */,
 				CBD4C7C521E226F6008BE065 /* CafeDetailSignitureData.swift */,
 				CBD4C7C721E22730008BE065 /* CafeDetailImageData.swift */,
+				CBD4C7D321E24DEF008BE065 /* CafeDetailBestReviewData.swift */,
 				CBD4C7CF21E23ECA008BE065 /* NearByCafeData.swift */,
 			);
 			path = CafeDetail;
+			sourceTree = "<group>";
+		};
+		CBD4C7D921E28481008BE065 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CBD4C7DA21E2848A008BE065 /* ResponseData.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		F22DC76F8604CE1CC745F438 /* Pods */ = {
@@ -972,12 +992,14 @@
 				CB2CA71121E0B671004DA344 /* CategoryCafeCell.swift in Sources */,
 				CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */,
 				776211A321D6AC1900F90D8A /* Unwind.swift in Sources */,
+				CBD4C7D421E24DEF008BE065 /* CafeDetailBestReviewData.swift in Sources */,
 				772A953A21D7A126009114FC /* LikeCafeCell.swift in Sources */,
 				77F445F721DE412200734992 /* HotCafeCollectionViewCell.swift in Sources */,
 				CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */,
 				CBF2FC3821D533DD00DFC50A /* CommunityReviewImaegCell.swift in Sources */,
 				CBD4C7BA21E15644008BE065 /* CategoryMenuService.swift in Sources */,
 				7780ED6121D4F29F00CC2BA7 /* MocaPlusCafeCell.swift in Sources */,
+				CBD4C7D621E24E31008BE065 /* CafeDetailReviewService.swift in Sources */,
 				7757B4D021D5DB93004613BD /* HomeSearchResultCell.swift in Sources */,
 				77FA13F921E10A7E006C8E20 /* SavingHistoryVC.swift in Sources */,
 				772A954421D7DA7F009114FC /* MyPageCouponVC.swift in Sources */,
@@ -998,10 +1020,12 @@
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
 				CBD4C7CE21E227A4008BE065 /* CafeDetailImageService.swift in Sources */,
 				CBD4C7B521E1552C008BE065 /* CategoryMenuData.swift in Sources */,
+				CBD4C7DB21E2848A008BE065 /* ResponseData.swift in Sources */,
 				CBF2FC3621D4FD5E00DFC50A /* MocaPicksAllEvaluationCell.swift in Sources */,
 				CBD4C7B821E15632008BE065 /* CategoryConceptService.swift in Sources */,
 				CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */,
 				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
+				CBD4C7D821E28404008BE065 /* CafeScrapService.swift in Sources */,
 				772A953E21D7C06A009114FC /* MembershipCouponCollectionCell.swift in Sources */,
 				CBD4C7C421E22684008BE065 /* CafeDetailInfoData.swift in Sources */,
 				77FA141221E142FA006C8E20 /* ConceptImageCollectionViewCell.swift in Sources */,

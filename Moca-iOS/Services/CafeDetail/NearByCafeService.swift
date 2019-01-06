@@ -36,7 +36,5 @@ struct NearByCafeService: APIService, RequestService{
                 error(errCode)
             }
         }
-        
     }
-    
 }

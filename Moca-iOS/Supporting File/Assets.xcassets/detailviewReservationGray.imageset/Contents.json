@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "detailviewReservationGray.png",
       "scale" : "1x",
-      "filename" : "detailviewReservationGray.png"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "detailviewReservationGray@2x.png",
       "scale" : "2x",
-      "filename" : "detailviewReservationGray@2x.png"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "detailviewReservationGray@3x.png",
       "scale" : "3x",
-      "filename" : "detailviewReservationGray@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

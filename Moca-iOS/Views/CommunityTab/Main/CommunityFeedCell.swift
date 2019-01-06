@@ -9,7 +9,7 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
-    let colors = [#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+    let images = [Image]()
     var navigationController: UINavigationController?
     
     @IBOutlet weak var profileImageView: UIImageView!
@@ -19,6 +19,7 @@ class CommunityFeedCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
     @IBOutlet weak var reviewContentLabel: UILabel!
    
     @IBOutlet weak var cntBackgroundView: UIView!
@@ -41,7 +42,7 @@ class CommunityFeedCell: UITableViewCell {
         profileImageView.applyRadius(radius: 20)
         cntBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.5141925812, green: 0.5142051578, blue: 0.5141984224, alpha: 1))
         cntBackgroundView.applyRadius(radius: cntBackgroundView.frame.height/2)
-        imageCntLabel.text = "1/\(colors.count)"
+        imageCntLabel.text = "1/\(images.count)"
     }
     
     @IBAction func moreLookAction(_ sender: UIButton) {
@@ -58,7 +59,7 @@ extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,7 +87,7 @@ extension CommunityFeedCell: UIScrollViewDelegate {
         if scrollView is UICollectionView {
             let indexPath = imageCollectionView.indexPathForItem(at: scrollView.contentOffset)
             if let index = indexPath?.item {
-                imageCntLabel.text = "\(index+1)/\(colors.count)"
+                imageCntLabel.text = "\(index+1)/\(images.count)"
             }
             
         }

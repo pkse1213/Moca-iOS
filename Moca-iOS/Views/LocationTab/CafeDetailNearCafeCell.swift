@@ -9,8 +9,9 @@
 import UIKit
 
 class CafeDetailNearCafeCell: UITableViewCell {
-
+    var nearByCafes = [NearByCafe]()
     @IBOutlet var nearCafeCollectionView: UICollectionView!
+    @IBOutlet var moreLookButton: UIButton!
     var unit: CGFloat = 0
     
     override func awakeFromNib() {
@@ -31,13 +32,17 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return nearByCafes.count > 4 ? 4 : nearByCafes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let cafeCell = nearCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
-            cafeCell.rankNumLabel.text = "\(indexPath.row+1)"
+            let cafe = nearByCafes[indexPath.item]
+            cafeCell.rankNumLabel.isHidden = true
+            cafeCell.rankBackgroundView.isHidden = true
+            cafeCell.cafeNameLabel.text = cafe.cafeName
+//            cafeCell.cafeAddressLabel.text = cafe.
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = cafeCell
         }

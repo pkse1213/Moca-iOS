@@ -13,7 +13,7 @@ import SwiftyJSON
 struct CafeDetailInfoService: APIService, RequestService {
     
     static let shareInstance = CafeDetailInfoService()
-    let URL = url("/category/location")
+    let URL = url("/cafe")
     typealias NetworkData = CafeDetailInfoData
     
     func getCafeDetailInfo(cafeId: Int, token: String, completion: @escaping (CafeDetailInfo) -> Void, error: @escaping (Int) -> Void) {

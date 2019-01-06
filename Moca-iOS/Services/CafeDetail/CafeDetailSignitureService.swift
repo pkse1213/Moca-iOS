@@ -13,11 +13,11 @@ import SwiftyJSON
 struct CafeDetailSignitureService: APIService, RequestService {
     
     static let shareInstance = CafeDetailSignitureService()
-    let URL = url("/category/signiture")
+    let URL = url("/cafe")
     typealias NetworkData = CafeDetailSignitureData
     
     func getCafeDetailSigniture(cafeId: Int, token: String, completion: @escaping ([CafeDetailSigniture]) -> Void, error: @escaping (Int) -> Void) {
-        let signitureURL = URL + "/\(cafeId)/detail"
+        let signitureURL = URL + "/\(cafeId)/signiture"
         let header: HTTPHeaders = [
             "Authoirzation" : token ,
             "Content-Type" : "application/json"

@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "detailviewCarGray.png",
       "scale" : "1x",
-      "filename" : "detailviewCarGray.png"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "detailviewCarGray@2x.png",
       "scale" : "2x",
-      "filename" : "detailviewCarGray@2x.png"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "detailviewCarGray@3x.png",
       "scale" : "3x",
-      "filename" : "detailviewCarGray@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -16,17 +16,22 @@ class LocationCafeDetailVC: UIViewController {
     var cafeInfo: CafeDetailInfo? {
         didSet { }
     }
-    
     var cafeImages: [CafeDetailImage]? {
         didSet { }
     }
-    
     var cafeSignitures: [CafeDetailSigniture]? {
-        didSet
+        didSet { }
+    }
+    var cafeReviews: [CafeDetailReview]? {
+        didSet { }
+    }
+    var nearByCafes: [NearByCafe]? {
+        didSet { }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initData()
         setUpTableView()
     }
     
@@ -48,14 +53,42 @@ class LocationCafeDetailVC: UIViewController {
         }) { (err) in
             print("카페 디테일 imgae 실패")
         }
-        CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (<#[CafeDetailSigniture]#>) in
-            <#code#>
-        }, error: <#T##(Int) -> Void#>)
+        CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (res) in
+            print("카페 디테일 signiture 성공")
+            self.cafeSignitures = res
+        }) { (err) in
+            print("카페 디테일 signiture 실패")
+        }
+        CafeDetailReviewService.shareInstance.getCafeDetailReview(cafeId: cafeId, token: token, completion: { (res) in
+            print("카페 디테일 review 성공")
+            self.cafeReviews = res
+        }) { (err) in
+            print("카페 디테일 review 실패")
+        }
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, cafeId: cafeId, latitude: 0.0, longitude: 0.0, completion: { (res) in
+            self.nearByCafes = res
+            print("주변 카페 성공")
+        }) { (err) in
+            print("주변 카페 실패")
+        }
     }
     
     private func setUpTableView() {
         cafeDetailTableView.delegate = self
         cafeDetailTableView.dataSource = self
+    }
+    
+    @IBAction func shareAction(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func scrapAction(_ sender: UIButton) {
+        guard let cafe = cafeInfo else { return }
+    }
+    
+    @IBAction func locationActon(_ sender: UIButton) {
+        guard let cafe = cafeInfo else { return }
+        
     }
     
     @objc func reviewLookActin(_:UIButton) {
@@ -70,10 +103,14 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let _ = cafeInfo, let _ = cafeImages, let reviews = cafeReviews, let _ = nearByCafes else { return 0 }
+        
         if section == 0 {
-            return 2
+            return 1
         } else if section == 1 {
-            return 5
+            return 1
+        } else if section == 2 {
+            return reviews.count == 0 ? 0 : reviews.count + 2
         } else {
             return 1
         }
@@ -81,43 +118,56 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
+        guard let info = cafeInfo, let images = cafeImages, let reviews = cafeReviews, let nearCafes = nearByCafes else { return cell }
         
         switch indexPath.section {
         case 0:
-            switch indexPath.row {
-            case 0:
-                if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailImageListCell") as? CafeDetailImageListCell {
-                    cell = imageCell
-                }
-            case 1:
-                if let infoCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailInfoCell") as? CafeDetailInfoCell {
-                    infoCell.reviewLookButton.addTarget(self, action: #selector(reviewLookActin(_:)), for: .touchUpInside)
-                    cell = infoCell
-                }
-            default:
-                return cell
+            if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailImageListCell") as? CafeDetailImageListCell {
+                imageCell.images = images
+                cell = imageCell
             }
         case 1:
-            switch indexPath.row {
-            case 0:
-                if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailReviewHeaderCell") as? CafeDetailReviewHeaderCell {
-                    cell = imageCell
-                }
-            case 4:
-                if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailReviewFooterCell") as? CafeDetailReviewFooterCell {
-                    imageCell.parentVC = self
-                    
-                    cell = imageCell
-                }
-            default:
-                if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    imageCell.navigationController = self.navigationController
-                    cell = imageCell
-                }
+            if let infoCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailInfoCell") as? CafeDetailInfoCell {
+                infoCell.reviewLookButton.addTarget(self, action: #selector(reviewLookActin(_:)), for: .touchUpInside)
+                infoCell.nameLabel.text = info.cafeName
+                infoCell.addressLabel.text = info.addressDistrictName
+                infoCell.detailAddressLabel.text = info.cafeAddressDetail
+                infoCell.dayLabel.text = info.cafeDays
+                infoCell.timeLabel.text = info.cafeTimes
+                infoCell.phoneNumLabel.text = info.cafePhone
+                infoCell.etcFlag = [info.cafeOptionParking, info.cafeOptionWifi, info.cafeOptionSmokingarea, info.cafeOptionAllnight, info.cafeOptionReservation]
+                cell = infoCell
             }
         case 2:
-            if let imageCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailNearCafeCell") as? CafeDetailNearCafeCell {
-                cell = imageCell
+            switch indexPath.row {
+            case 0:
+                if let headerCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailReviewHeaderCell") as? CafeDetailReviewHeaderCell {
+                    cell = headerCell
+                }
+            case reviews.count+1:
+                if let footerCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailReviewFooterCell") as? CafeDetailReviewFooterCell {
+                    footerCell.parentVC = self
+                    
+                    cell = footerCell
+                }
+            default:
+                if let reviewCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    reviewCell.navigationController = self.navigationController
+                    let review = reviews[indexPath.row-1]
+                    reviewCell.nameLabel.text = review.userID
+                    reviewCell.cafeNameLabel.text = review.cafeName
+                    reviewCell.cafeAddressLabel.text = review.cafeAddress
+                    reviewCell.likeCntLabel.text = "\(review.likeCount)"
+                    reviewCell.commentLabel.text = "\(review.commentCount)"
+                    reviewCell.reviewContentLabel.text = review.reviewTitle
+                    reviewCell.timeLabel.text = review.time
+                    cell = reviewCell
+                }
+            }
+        case 3:
+            if let cafeCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailNearCafeCell") as? CafeDetailNearCafeCell {
+                cafeCell.nearByCafes = nearCafes
+                cell = cafeCell
             }
         default:
             return cell
