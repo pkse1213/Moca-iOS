@@ -1,0 +1,38 @@
+//
+//  CafeDetailSignitureService.swift
+//  Moca-iOS
+//
+//  Created by 박세은 on 2019. 1. 6..
+//  Copyright © 2019년 박세은. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+import SwiftyJSON
+
+struct CafeDetailSignitureService: APIService, RequestService {
+    
+    static let shareInstance = CafeDetailSignitureService()
+    let URL = url("/category/signiture")
+    typealias NetworkData = CafeDetailSignitureData
+    
+    func getCafeDetailSigniture(cafeId: Int, token: String, completion: @escaping ([CafeDetailSigniture]) -> Void, error: @escaping (Int) -> Void) {
+        let signitureURL = URL + "/\(cafeId)/detail"
+        let header: HTTPHeaders = [
+            "Authoirzation" : token ,
+            "Content-Type" : "application/json"
+        ]
+        gettable(signitureURL, body: nil, header: header) { res in
+            switch res {
+            case .success(let CafeDetailSignitureData):
+                let data = CafeDetailSignitureData.data
+                completion(data)
+            case .successWithNil(_):
+                break
+            case .error(let errCode):
+                error(errCode)
+            }
+        }
+    }
+    
+}

@@ -16,11 +16,6 @@ class CategoryCafeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
-        setUpView()
-    }
-    
-    private func setUpView() {
-        cafeImageView.applyRadius(radius: 5)
     }
 
     private func setUpCollectionView() {
@@ -32,7 +27,7 @@ class CategoryCafeCell: UITableViewCell {
 
 extension CategoryCafeCell: UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:11*options[indexPath.row].count+10 , height: 18)
+        return CGSize(width:11*options[indexPath.row].count+22 , height: 22)
         
     }
     

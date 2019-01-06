@@ -9,8 +9,21 @@
 import UIKit
 
 class LocationCafeDetailVC: UIViewController {
-
     @IBOutlet weak var cafeDetailTableView: UITableView!
+    var cafeId = 220
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    
+    var cafeInfo: CafeDetailInfo? {
+        didSet { }
+    }
+    
+    var cafeImages: [CafeDetailImage]? {
+        didSet { }
+    }
+    
+    var cafeSignitures: [CafeDetailSigniture]? {
+        didSet
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +35,30 @@ class LocationCafeDetailVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    private func initData() {
+        CafeDetailInfoService.shareInstance.getCafeDetailInfo(cafeId: cafeId, token: token, completion: { (res) in
+            print("카페 디테일 info 성공")
+            self.cafeInfo = res
+        }) { (err) in
+            print("카페 디테일 info 실패")
+        }
+        CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafeId, token: token, completion: { (res) in
+            print("카페 디테일 imaeg 성공")
+            self.cafeImages = res
+        }) { (err) in
+            print("카페 디테일 imgae 실패")
+        }
+        CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (<#[CafeDetailSigniture]#>) in
+            <#code#>
+        }, error: <#T##(Int) -> Void#>)
+    }
+    
     private func setUpTableView() {
         cafeDetailTableView.delegate = self
         cafeDetailTableView.dataSource = self
     }
     
     @objc func reviewLookActin(_:UIButton) {
-        print("dfsd")
         cafeDetailTableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
     }
 

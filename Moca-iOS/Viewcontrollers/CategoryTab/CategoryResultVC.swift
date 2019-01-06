@@ -11,17 +11,42 @@ import UIKit
 class CategoryResultVC: UIViewController {
     let location: String = "강서구"
     let options = ["한옥", "드라이브", "커피", "디저트"]
+    var conceptId: [Int] = [1,2]
+    var menuId: [Int] = [1]
+    
     @IBOutlet weak var optionCollectionView: UICollectionView!
     @IBOutlet weak var cafeTableView: UITableView!
- 
+    var cafes:[CategoryCafe]? {
+        didSet{
+            cafeTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpListView()
+        initData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func initData() {
+        let menu:[Int] = [1,2]
+        let parameter: [String: Int] = ["menu": 1]
+//        parameter["concept"] = [1,2]
+//        parameter["menu"] = 1
+
+        print(parameter)
+        
+        CategoryCafeService.shareInstance.getCategoryCafe(locationId: 1, parameter: parameter, completion: { (cafeList) in
+            self.cafes = cafeList
+            print("카테고리 카페 리스트 성공")
+        }) { (err) in
+            print("카테고리 카페 리스트 실패")
+        }
     }
     
     private func setUpListView() {
