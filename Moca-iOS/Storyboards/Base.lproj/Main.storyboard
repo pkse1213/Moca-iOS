@@ -484,7 +484,7 @@
                                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="categoryMap" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7A-dzj">
                                                             <rect key="frame" x="0.0" y="0.0" width="347" height="284"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-xu-po0">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-xu-po0">
                                                             <rect key="frame" x="158.66666666666666" y="114" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="종로">
@@ -494,7 +494,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="kuc-5t-7CP"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-75-JOD">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-75-JOD">
                                                             <rect key="frame" x="177.66666666666666" y="138" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="중구">
@@ -504,7 +504,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="FQp-CO-zpE"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-3w-NLh">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-3w-NLh">
                                                             <rect key="frame" x="162" y="166" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="용산">
@@ -514,7 +514,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Hzp-7f-fqh"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btx-GV-64I">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btx-GV-64I">
                                                             <rect key="frame" x="213.33333333333334" y="146.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="성동">
@@ -524,7 +524,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="MAU-lK-h9L"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-le-5BI">
+                                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-le-5BI">
                                                             <rect key="frame" x="222.66666666666666" y="117.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="동대문">
@@ -534,7 +534,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Jg6-sk-KRm"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-aq-P5N">
+                                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-aq-P5N">
                                                             <rect key="frame" x="254" y="100.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="중랑">
@@ -544,7 +544,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="zEu-Zy-ykd"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ab-ek-Jrh">
+                                                        <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ab-ek-Jrh">
                                                             <rect key="frame" x="294.66666666666669" y="151.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강동">
@@ -554,7 +554,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="VNQ-8P-Zb4"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-76-VRU">
+                                                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-76-VRU">
                                                             <rect key="frame" x="191.66666666666666" y="97.666666666666657" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="성북">
@@ -564,7 +564,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Xhe-Sk-eLY"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-rg-80f">
+                                                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-rg-80f">
                                                             <rect key="frame" x="186.66666666666666" y="56" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강북">
@@ -574,7 +574,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="its-1Z-XDY"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em7-lM-B9e">
+                                                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em7-lM-B9e">
                                                             <rect key="frame" x="240" y="50.333333333333329" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="노원">
@@ -584,7 +584,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="9D3-4o-hyE"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-jt-kAi">
+                                                        <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-jt-kAi">
                                                             <rect key="frame" x="118.33333333333334" y="77.333333333333329" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="은평">
@@ -594,7 +594,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="zX5-8Y-YHU"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Bh-Jye">
+                                                        <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Bh-Jye">
                                                             <rect key="frame" x="126" y="120" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="서대문">
@@ -604,7 +604,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="2Le-RS-nxn"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mO-ArV">
+                                                        <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mO-ArV">
                                                             <rect key="frame" x="100.66666666666667" y="139.66666666666666" width="30.000000000000014" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="마포">
@@ -614,7 +614,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="UrO-ha-IzC"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-Vc-sY1">
+                                                        <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-Vc-sY1">
                                                             <rect key="frame" x="28.333333333333336" y="130.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강서">
@@ -624,7 +624,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="G3D-P4-Zj8"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-HL-dPZ">
+                                                        <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-HL-dPZ">
                                                             <rect key="frame" x="104.66666666666667" y="175.33333333333334" width="30.000000000000014" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="영등포">
@@ -634,7 +634,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Kzh-Rf-ABz"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-Wm-m4E">
+                                                        <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-Wm-m4E">
                                                             <rect key="frame" x="138.66666666666666" y="197.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="동작">
@@ -644,7 +644,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ve5-bY-6A2"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-oq-xqB">
+                                                        <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-oq-xqB">
                                                             <rect key="frame" x="54.333333333333329" y="180.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="양천">
@@ -654,7 +654,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="KVs-pH-gCT"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rs0-Se-TzC">
+                                                        <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rs0-Se-TzC">
                                                             <rect key="frame" x="47" y="207" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="구로">
@@ -664,7 +664,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ag5-jk-s53"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-aa-eXU">
+                                                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-aa-eXU">
                                                             <rect key="frame" x="207.33333333333334" y="31.666666666666671" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="도봉">
@@ -674,7 +674,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="hyQ-Yb-vRh"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK5-GN-BUP">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK5-GN-BUP">
                                                             <rect key="frame" x="250" y="151.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="광진">
@@ -684,7 +684,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="e6K-8u-tvQ"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-Bw-dCS">
+                                                        <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-Bw-dCS">
                                                             <rect key="frame" x="136" y="233.33333333333331" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="관악">
@@ -694,7 +694,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="bsZ-BH-fAg"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-zu-AYb">
+                                                        <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-zu-AYb">
                                                             <rect key="frame" x="97" y="237.66666666666669" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="금천">
@@ -704,7 +704,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="bP2-kh-GKg"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hx-MVU">
+                                                        <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hx-MVU">
                                                             <rect key="frame" x="189" y="217.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="서초">
@@ -714,7 +714,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="A0e-OY-Ndc"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcZ-CN-BAC">
+                                                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcZ-CN-BAC">
                                                             <rect key="frame" x="226" y="207" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강남">
@@ -724,7 +724,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="3YP-Vp-pGU"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-IB-Aib">
+                                                        <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-IB-Aib">
                                                             <rect key="frame" x="279" y="197.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="송파">
