@@ -26,6 +26,7 @@ class LikeCafeCell: UITableViewCell {
     private func setUpCollectionView() {
         cafeImageCollectionView.delegate = self
         cafeImageCollectionView.dataSource = self
+        self.layoutIfNeeded()
     }
     
     // 추가
