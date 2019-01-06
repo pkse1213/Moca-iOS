@@ -906,9 +906,6 @@
                                                     <state key="normal" title="적용">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="applyAction:" destination="L2E-PX-Fjk" eventType="touchUpInside" id="FKI-lC-8bT"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

@@ -13,10 +13,6 @@ class MembershipCouponCollectionCell: UICollectionViewCell {
     @IBOutlet weak var couponImageView: UIImageView!
     var cellUnit : CGFloat = 0
     
-    override func willChangeValue(forKey key: String, withSetMutation mutationKind: NSKeyValueSetMutationKind, using objects: Set<AnyHashable>) {
-        
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         print("cellUnit = \(cellUnit)")
@@ -30,4 +26,5 @@ class MembershipCouponCollectionCell: UICollectionViewCell {
         
 //        print(couponImageView.frame.width)
     }
+    
 }
