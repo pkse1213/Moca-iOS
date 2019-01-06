@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class CategoryMainCell: UITableViewCell {
     @IBOutlet weak var conceptCollectionView: UICollectionView!
     @IBOutlet weak var menuCollectionView: UICollectionView!

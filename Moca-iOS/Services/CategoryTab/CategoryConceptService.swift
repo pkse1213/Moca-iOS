@@ -16,7 +16,7 @@ struct CategoryConceptService: APIService, RequestService {
     let URL = url("/category/concept")
     typealias NetworkData = CategoryConceptData
     
-    func getCategoryConcept(completion: @escaping ([Concept]) -> Void, error: @escaping (Int) -> Void) {
+    func getCategoryConcept(completion: @escaping ([CategoryConcept]) -> Void, error: @escaping (Int) -> Void) {
         gettable(URL, body: nil, header: nil) { res in
             switch res {
             case .success(let CategoryConceptData):
