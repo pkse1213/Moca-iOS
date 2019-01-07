@@ -2,22 +2,22 @@
 //  CafeDetailBestReviewData.swift
 //  Moca-iOS
 //
-//  Created by 박세은 on 2019. 1. 6..
+//  Created by 박세은 on 2019. 1. 7..
 //  Copyright © 2019년 박세은. All rights reserved.
 //
 
 import Foundation
 
-struct CafeDetailReviewData: Codable {
+struct CommunityReviewData: Codable {
     let status: Int
     let message: String
-    let data: [CafeDetailReview]
+    let data: [CommunityReview]
 }
 
-struct CafeDetailReview: Codable {
+struct CommunityReview: Codable {
     let reviewID, cafeID: Int
     let userID: String
-    let image: [Image]
+    let image: [ReviewImage]
     let reviewRating: Int
     let reviewTitle, reviewContent, reviewDate, cafeName: String
     let cafeAddress, time: String
@@ -42,7 +42,7 @@ struct CafeDetailReview: Codable {
     }
 }
 
-struct Image: Codable {
+struct ReviewImage: Codable {
     let reviewID: Int
     let reviewImgURL: String
     

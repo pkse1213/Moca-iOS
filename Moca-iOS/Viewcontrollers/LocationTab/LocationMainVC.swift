@@ -232,29 +232,32 @@ extension LocationMainVC: MTMapViewDelegate {
         self.mapView.setMapCenter(mapPoint, zoomLevel: 3, animated: true)
     }
     
+    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+        selectedIndex = poiItem.tag
+        return false
+    }
+    
     func addMarkerInMap() {
-        for i in 0..<myLat.count {
+        guard let nearByCafes = nearByCafes else { return }
+        for i in 0..<nearByCafes.count {
+            let cafe = nearByCafes[i]
             let item = MTMapPOIItem()
             item.tag = i
             item.markerType = .customImage
             item.customImage = #imageLiteral(resourceName: "locationPoint")
             item.markerSelectedType = .customImage
             item.customSelectedImage = #imageLiteral(resourceName: "locationPointBig")
-            item.mapPoint = MTMapPoint(geoCoord: .init(latitude: myLat[i], longitude: myLong[i]))
+            item.mapPoint = MTMapPoint(geoCoord: .init(latitude: cafe.cafeLatitude, longitude: cafe.cafeLongitude))
             item.showAnimationType = .springFromGround
-            item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)    // 마커 위치 조정
-            //            self.mapView.remove(self.mapView.findPOIItem(byTag: -1))
+            item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
             self.mapView.addPOIItems([item])
         }
-        
-        self.mapView.fitAreaToShowAllPOIItems()
-        let mapPoint = MTMapPoint.init(geoCoord: MTMapPointGeo.init(latitude: myLat[0], longitude: myLong[0]))
-        
-        self.mapView.setMapCenter(mapPoint, animated: true)
-        self.mapView.setZoomLevel(2, animated: true)
-        
         let item = self.mapView.findPOIItem(byTag: 0)
+        self.mapView.setMapCenter(item?.mapPoint, animated: true)
+        self.mapView.setZoomLevel(2, animated: true)
         self.mapView.select(item, animated: true)
+        self.mapView.fitAreaToShowAllPOIItems()
+        
     }
 }
 

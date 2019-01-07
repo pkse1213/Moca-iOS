@@ -7,27 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LocationCafeDetailVC: UIViewController {
     @IBOutlet weak var cafeDetailTableView: UITableView!
+    let locationManager = CLLocationManager()
     var cafeId = 220
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
-    var cafeInfo: CafeDetailInfo? {
-        didSet { }
-    }
-    var cafeImages: [CafeDetailImage]? {
-        didSet { }
-    }
-    var cafeSignitures: [CafeDetailSigniture]? {
-        didSet { }
-    }
-    var cafeReviews: [CafeDetailReview]? {
-        didSet { }
-    }
-    var nearByCafes: [NearByCafe]? {
-        didSet { }
-    }
+    var cafeInfo: CafeDetailInfo?
+    var cafeImages: [CafeDetailImage]?
+    var cafeSignitures: [CafeDetailSigniture]?
+    var cafeReviews: [CafeDetailReview]?
+    var nearByCafes: [NearByCafe]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,11 +146,12 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
                 if let reviewCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
                     reviewCell.navigationController = self.navigationController
                     let review = reviews[indexPath.row-1]
+                    
                     reviewCell.nameLabel.text = review.userID
                     reviewCell.cafeNameLabel.text = review.cafeName
                     reviewCell.cafeAddressLabel.text = review.cafeAddress
                     reviewCell.likeCntLabel.text = "\(review.likeCount)"
-                    reviewCell.commentLabel.text = "\(review.commentCount)"
+                    reviewCell.commentCntLabel.text = "\(review.commentCount)"
                     reviewCell.reviewContentLabel.text = review.reviewTitle
                     reviewCell.timeLabel.text = review.time
                     cell = reviewCell
@@ -175,5 +168,15 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
         
+    }
+}
+
+extension LocationCafeDetailVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let currentLocation = locations[locations.count-1]
+        let lat = currentLocation.coordinate.latitude
+        let long = currentLocation.coordinate.longitude
+        let location = MyLocation(longitute: lat, latitude: long)
+        myLocation = location
     }
 }

@@ -1593,10 +1593,9 @@
                                             <outlet property="cafeAddressLabel" destination="CqG-I0-azF" id="6oz-JX-Psv"/>
                                             <outlet property="cafeNameLabel" destination="lkn-YA-Fqf" id="TwE-IU-i59"/>
                                             <outlet property="cntBackgroundView" destination="Ux9-rc-FSP" id="iZU-nH-rJN"/>
-                                            <outlet property="commentLabel" destination="h9W-bN-CxY" id="KIk-6w-ydb"/>
+                                            <outlet property="commentCntLabel" destination="h9W-bN-CxY" id="xfc-tp-B0L"/>
                                             <outlet property="imageCntLabel" destination="9B9-Vb-xn3" id="fXh-eN-krD"/>
                                             <outlet property="imageCollectionView" destination="kV4-tI-IlO" id="4MO-fa-PIx"/>
-                                            <outlet property="likeAndCommentCntStackView" destination="rdi-8x-GLV" id="HdM-ug-MtF"/>
                                             <outlet property="likeCntLabel" destination="huE-mh-FXg" id="lV5-Fu-fva"/>
                                             <outlet property="nameLabel" destination="h5Y-J4-rug" id="1KT-gX-ocT"/>
                                             <outlet property="profileImageView" destination="Pm9-D5-QoE" id="Srl-0f-nA4"/>
@@ -1665,6 +1664,11 @@
                             <constraint firstItem="ZNp-9i-tiW" firstAttribute="bottom" secondItem="Bmd-i8-ydi" secondAttribute="bottom" id="uU1-jx-IdG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Bmd-i8-ydi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="HBe-po-uXl">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="LLM-IR-K2d">

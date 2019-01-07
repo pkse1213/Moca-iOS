@@ -9,29 +9,70 @@
 import UIKit
 
 class CommunityTabMainVC: UIViewController {
-    let selectMenus = ["소셜 피드", "내 피드"]
-    var selectIndex = 0 {
-        didSet {
-            changeFeedKind()
-        }
-    }
     // 피드 종류 선택
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
    
     // 피드 테이블 뷰
+    let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
+    
+    var token = ""
+    var selectIndex = 0 {
+        didSet {
+            changeFeedKind()
+            initReviewData()
+        }
+    }
+    var user: CommunityUser?
+    var reviews: [CommunityReview]? {
+        didSet {
+            communityTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        initUserData()
+        initReviewData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func initUserData() {
+        CommunityUserService.shareInstance.getUser(userId: "-1", token: token, completion: { (res) in
+            self.user = res
+            print("내 프로필 성공")
+        }) { (err) in
+            print("내 프로필 실패")
+        }
+    }
+    
+    private func initReviewData() {
+        switch selectIndex {
+        case 0:
+            CommunityReviewService.shareInstance.getSocialReview(token: token, completion: { (res) in
+                self.reviews = res
+                print("소셜 피드 성공")
+            }) { (err) in
+                print("소셜 피드 실패")
+            }
+        case 1:
+            CommunityReviewService.shareInstance.getUserReview(userId: "-1", token: token, completion: { (res) in
+                self.reviews = res
+                print("내 피드 성공")
+            }) { (err) in
+                print("내 피드 실패")
+            }
+        default:
+            return
+        }
     }
     
     private func setUpView() {
@@ -42,13 +83,11 @@ class CommunityTabMainVC: UIViewController {
         
         communityTableView.delegate = self
         communityTableView.dataSource = self
-        
     }
     
     private func changeFeedKind() {
-        communityTableView.reloadData()
-        feedMenuTableView.reloadData()
         dropUpandDropDown()
+        feedMenuTableView.reloadData()
     }
     
     private func dropUpandDropDown() {
@@ -79,7 +118,6 @@ class CommunityTabMainVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
@@ -95,26 +133,35 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == feedMenuTableView {
             return 2
         } else {
+            guard let reviews = reviews else { return 0 }
             if section == 0 {
                 return selectIndex
             } else {
-                return 9
+                return reviews.count
             }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        
         if tableView == communityTableView {
+            guard let reviews = reviews else { return cell }
             if indexPath.section == 0 {
                 if let userCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityUserProfileCell") as? CommunityUserProfileCell {
-                    
                     cell = userCell
                 }
             } else if indexPath.section == 1 {
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    let review = reviews[indexPath.row]
                     feedCell.navigationController = self.navigationController
+                    feedCell.nameLabel.text = review.userID
+                    feedCell.cafeNameLabel.text = review.cafeName
+                    feedCell.cafeAddressLabel.text = review.cafeAddress
+                    feedCell.likeCntLabel.text = "\(review.likeCount)"
+                    feedCell.commentCntLabel.text = "\(review.commentCount)"
+                    feedCell.reviewContentLabel.text = review.reviewContent
+                    feedCell.timeLabel.text = review.time
+                    feedCell.images = review.image
                     cell = feedCell
                 }
             }
@@ -130,7 +177,6 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                 cell = selectCell
             }
         }
-        
         return cell
     }
     

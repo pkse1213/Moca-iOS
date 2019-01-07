@@ -19,7 +19,7 @@ struct CafeDetailSignitureService: APIService, RequestService {
     func getCafeDetailSigniture(cafeId: Int, token: String, completion: @escaping ([CafeDetailSigniture]) -> Void, error: @escaping (Int) -> Void) {
         let signitureURL = URL + "/\(cafeId)/signiture"
         let header: HTTPHeaders = [
-            "Authoirzation" : token ,
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         gettable(signitureURL, body: nil, header: header) { res in

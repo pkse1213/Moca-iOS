@@ -19,7 +19,7 @@ struct CafeDetailImageService: APIService, RequestService {
     func getCafeDetailImage(cafeId: Int, token: String, completion: @escaping ([CafeDetailImage]) -> Void, error: @escaping (Int) -> Void) {
         let imageURL = URL + "/\(cafeId)/image"
         let header: HTTPHeaders = [
-            "Authoirzation" : token ,
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         gettable(imageURL, body: nil, header: header) { res in

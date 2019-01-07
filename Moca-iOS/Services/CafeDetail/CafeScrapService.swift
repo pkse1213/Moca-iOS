@@ -19,7 +19,7 @@ struct CafeScrapService: APIService, RequestService{
     func postCafeScrap(cafeId: Int, token: String, completion: @escaping (String) -> Void, error: @escaping (Int) -> Void) {
         let scrapURL = URL + "\(cafeId)/scrap"
         let header: HTTPHeaders = [
-            "Authoirzation" : token ,
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         postable(scrapURL, body: nil, header: header) { (res) in
@@ -38,7 +38,7 @@ struct CafeScrapService: APIService, RequestService{
     func deleteCafeScrap(cafeId: Int, token: String, completion: @escaping (String) -> Void, error: @escaping (Int) -> Void) {
         let scrapURL = URL + "\(cafeId)/scrap"
         let header: HTTPHeaders = [
-            "Authoirzation" : token ,
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         deletable(scrapURL, body: nil, header: header) { (res) in

@@ -18,7 +18,7 @@ struct CafeDetailReviewService: APIService, RequestService {
     func getCafeDetailReview(cafeId: Int, token: String, completion: @escaping ([CafeDetailReview]) -> Void, error: @escaping (Int) -> Void) {
         let reviewURL = URL + "/\(cafeId)/best"
         let header: HTTPHeaders = [
-            "Authoirzation" : token ,
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         gettable(reviewURL, body: nil, header: header) { res in

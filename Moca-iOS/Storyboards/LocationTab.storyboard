@@ -604,7 +604,7 @@
                                         <rect key="frame" x="0.0" y="893" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eox-rH-Wnc" id="tDM-iE-L8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-4u-d7L">
@@ -642,7 +642,7 @@
                                         <rect key="frame" x="0.0" y="951" width="375" height="555"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ddc-N8-H2I" id="01p-QW-vBp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="554.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GNY-Xe-gfV">
@@ -865,10 +865,9 @@
                                             <outlet property="cafeAddressLabel" destination="yoj-Lh-Vbi" id="pas-yb-sV4"/>
                                             <outlet property="cafeNameLabel" destination="iVW-ky-oLz" id="kQh-zL-eXw"/>
                                             <outlet property="cntBackgroundView" destination="WWa-QR-bhe" id="iJi-Qa-4uU"/>
-                                            <outlet property="commentLabel" destination="4w5-SG-oLm" id="fVI-rL-hK5"/>
+                                            <outlet property="commentCntLabel" destination="4w5-SG-oLm" id="H8P-Au-Ps3"/>
                                             <outlet property="imageCntLabel" destination="SPT-Iq-qXR" id="MHc-Eq-QcL"/>
                                             <outlet property="imageCollectionView" destination="GNY-Xe-gfV" id="8P5-qM-oEi"/>
-                                            <outlet property="likeAndCommentCntStackView" destination="0z3-2e-WyE" id="w5Z-ab-9Sg"/>
                                             <outlet property="likeCntLabel" destination="38a-UU-kgo" id="epE-z1-exo"/>
                                             <outlet property="nameLabel" destination="Emm-67-O70" id="UvW-Gd-ckD"/>
                                             <outlet property="profileImageView" destination="HIJ-S0-N4d" id="6aH-7e-mrs"/>
