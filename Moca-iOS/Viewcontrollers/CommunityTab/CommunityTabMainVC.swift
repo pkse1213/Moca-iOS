@@ -9,26 +9,19 @@
 import UIKit
 
 class CommunityTabMainVC: UIViewController {
-    let selectMenus = ["내 피드", "소셜 피드"]
+    let selectMenus = ["소셜 피드", "내 피드"]
     var selectIndex = 0 {
         didSet {
             changeFeedKind()
         }
     }
-    
+    // 피드 종류 선택
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
    
-    // 상단 프로필 뷰
-    @IBOutlet weak var profileBackgroundView: UIView!
-    @IBOutlet weak var profileSquareView: UIView!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var profileButton: UIButton!
-    
     // 피드 테이블 뷰
     @IBOutlet weak var communityTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,18 +43,16 @@ class CommunityTabMainVC: UIViewController {
         communityTableView.delegate = self
         communityTableView.dataSource = self
         
-        profileImageView.applyRadius(radius: 24)
-        profileSquareView.applyRadius(radius: 3)
-        profileSquareView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     }
     
     private func changeFeedKind() {
+        communityTableView.reloadData()
         feedMenuTableView.reloadData()
         dropUpandDropDown()
     }
     
     private func dropUpandDropDown() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.selectFeedView.isHidden = !self.selectFeedView.isHidden
             
             if self.tableViewTopConstraint.constant == 0 {
@@ -92,11 +83,23 @@ class CommunityTabMainVC: UIViewController {
 }
 
 extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if tableView == feedMenuTableView {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == feedMenuTableView {
             return 2
         } else {
-            return 8
+            if section == 0 {
+                return selectIndex
+            } else {
+                return 9
+            }
         }
     }
     
@@ -104,9 +107,16 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         var cell = UITableViewCell()
         
         if tableView == communityTableView {
-            if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                feedCell.navigationController = self.navigationController
-                cell = feedCell
+            if indexPath.section == 0 {
+                if let userCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityUserProfileCell") as? CommunityUserProfileCell {
+                    
+                    cell = userCell
+                }
+            } else if indexPath.section == 1 {
+                if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    feedCell.navigationController = self.navigationController
+                    cell = feedCell
+                }
             }
             
         } else if tableView == feedMenuTableView {

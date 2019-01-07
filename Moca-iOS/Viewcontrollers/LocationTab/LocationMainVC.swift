@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-
 struct MyLocation {
     var longitute: Double
     var latitude: Double
@@ -19,11 +18,18 @@ class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
     @IBOutlet var currentLocationButton: UIButton!
+    
     var mapView: MTMapView!
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
     var selectedIndex = 0 {
-        didSet{  cafeCollectionView.reloadData() }
+        didSet{ cafeCollectionView.reloadData() }
+    }
+    var nearByCafes: [NearByCafe]? {
+        didSet { } // collectionview , marker
+    }
+    var myLocation: MyLocation? {
+        didSet { initData() } //통신
     }
     
     let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
@@ -47,6 +53,16 @@ class LocationMainVC: UIViewController{
         }
     }
     
+    private func initData() {
+        guard let location = myLocation else { return }
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 0, cafeId: 1, latitude: location.latitude , longitude: location.longitute, completion: { (res) in
+            self.nearByCafes = res
+            print("주변 카페 성공")
+        }) { (err) in
+            print("주변 카페 실패")
+        }
+    }
+    
     private func setUpCollectionView() {
         cafeCollectionView.delegate = self
         cafeCollectionView.dataSource = self
@@ -67,7 +83,8 @@ class LocationMainVC: UIViewController{
         
         if let address = noti.object as? Address{
             if let lat = Double(address.y) , let long = Double(address.x) {
-                print("성공")
+                let location = MyLocation(longitute: lat, latitude: long)
+                myLocation = location
                 updateSelectedAddress(latitude: lat, longitude: long)
             }
             showAddressInNavgationItem(address: address.roadAddressName)
@@ -101,16 +118,16 @@ class LocationMainVC: UIViewController{
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
 
 extension LocationMainVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[locations.count-1]
-        let lat = location.coordinate.latitude
-        let long = location.coordinate.longitude
-        
-        geoCoder.reverseGeocodeLocation(location) { (placemark, error) in
+        let currentLocation = locations[locations.count-1]
+        let lat = currentLocation.coordinate.latitude
+        let long = currentLocation.coordinate.longitude
+        let location = MyLocation(longitute: lat, latitude: long)
+        myLocation = location
+        geoCoder.reverseGeocodeLocation(currentLocation) { (placemark, error) in
             if error != nil {
                 print("Error")
             } else {
@@ -219,7 +236,6 @@ extension LocationMainVC: MTMapViewDelegate {
         for i in 0..<myLat.count {
             let item = MTMapPOIItem()
             item.tag = i
-            //        item.itemName = "현 위치"
             item.markerType = .customImage
             item.customImage = #imageLiteral(resourceName: "locationPoint")
             item.markerSelectedType = .customImage
@@ -244,12 +260,17 @@ extension LocationMainVC: MTMapViewDelegate {
 
 extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myLat.count
+        guard let cafe = nearByCafes else { return 0 }
+        return cafe.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let cafe = nearByCafes?[indexPath.item] else { return cell }
+        
         if let cafeCell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "LocationMapCafeCell", for: indexPath) as? LocationMapCafeCell {
+            cafeCell.cafeNameLabel.text = cafe.cafeName
+            cafeCell.cafeLocationLabel.text = "\(cafe.distance) 이내"
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             if indexPath.item == selectedIndex {
                 cafeCell.selectedFlag = true
@@ -271,7 +292,6 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
                     self.view.addSubview(dialogVC.view)
                     dialogVC.didMove(toParent: self )
                 }
-                
             } else {
                 let item = self.mapView.findPOIItem(byTag: indexPath.item)
                 self.mapView.setMapCenter(item?.mapPoint, animated: true)

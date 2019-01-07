@@ -9,7 +9,7 @@
 import UIKit
 
 class LocationMapDialogVC: UIViewController {
-
+    var cafe: NearByCafe?
     @IBOutlet var dialogParentView: UIView!
     @IBOutlet weak var dialogBackgroundView: UIView!
     @IBOutlet weak var searchButton: UIButton!
@@ -18,14 +18,19 @@ class LocationMapDialogVC: UIViewController {
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var cafeLocationLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpData()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setUpView()
+    }
+    private func setUpData() {
+        guard let cafe = cafe else { return }
+        cafeNameLabel.text = cafe.cafeName
+        cafeLocationLabel.text = "\(cafe.distance) 이내"
     }
     
     private func setUpView() {
@@ -42,10 +47,8 @@ class LocationMapDialogVC: UIViewController {
     
     @IBAction func detailLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
-            
             self.navigationController?.pushViewController(vc, animated: true)
             self.view.removeFromSuperview()
-            
         }
     }
     
