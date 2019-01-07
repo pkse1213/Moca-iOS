@@ -148,6 +148,7 @@
 		CBD4C7E521E35758008BE065 /* CommunityReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7E421E35758008BE065 /* CommunityReviewService.swift */; };
 		CBD4C7E721E3AF5E008BE065 /* CommunityUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7E621E3AF5E008BE065 /* CommunityUserData.swift */; };
 		CBD4C7E921E3AF82008BE065 /* CommunityUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */; };
+		CBD4C7EB21E3CFA4008BE065 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7EA21E3CFA4008BE065 /* Location.swift */; };
 		CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */; };
 		CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */; };
 		CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */; };
@@ -310,6 +311,7 @@
 		CBD4C7E421E35758008BE065 /* CommunityReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewService.swift; sourceTree = "<group>"; };
 		CBD4C7E621E3AF5E008BE065 /* CommunityUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserData.swift; sourceTree = "<group>"; };
 		CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserService.swift; sourceTree = "<group>"; };
+		CBD4C7EA21E3CFA4008BE065 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeVC.swift; sourceTree = "<group>"; };
 		CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */,
 				776211A221D6AC1900F90D8A /* Unwind.swift */,
 				774B597221DBCF5A00B10989 /* UITextField+Extension.swift */,
+				CBD4C7EA21E3CFA4008BE065 /* Location.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				CBD4C7E721E3AF5E008BE065 /* CommunityUserData.swift in Sources */,
 				772A953C21D7B051009114FC /* MembershipCell.swift in Sources */,
 				774B597121DBC3C900B10989 /* LikeCafeDetailTableViewCell.swift in Sources */,
+				CBD4C7EB21E3CFA4008BE065 /* Location.swift in Sources */,
 				CBD4C7BD21E1F722008BE065 /* CategoryCafeData.swift in Sources */,
 				7723438121DEB68600E5E070 /* LoginVC.swift in Sources */,
 				CB2C591F21DFD21E00CDB39F /* CategoryConceptCell.swift in Sources */,

@@ -9,11 +9,6 @@
 import UIKit
 import CoreLocation
 
-struct MyLocation {
-    var longitute: Double
-    var latitude: Double
-}
-
 class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
@@ -26,15 +21,15 @@ class LocationMainVC: UIViewController{
         didSet{ cafeCollectionView.reloadData() }
     }
     var nearByCafes: [NearByCafe]? {
-        didSet { } // collectionview , marker
+        didSet {
+            cafeCollectionView.reloadData()
+            addMarkerInMap()
+        } // collectionview , marker
     }
-    var myLocation: MyLocation? {
+    var myLocation: Location? {
         didSet { initData() } //통신
     }
-    
-    let myLat = [37.558553039064286,37.55724150280182,37.564685851074195,37.56260260091479,37.55850830654665,37.558553039064289]
-    let myLong = [127.04255064005082,127.03836384152798,127.0427905587432,127.04483008120098,127.04660993475585,127.04255064005092]
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
@@ -75,7 +70,15 @@ class LocationMainVC: UIViewController{
     
     @IBAction func currentLocationAction(_ sender: UIButton) {
         sender.setImage(#imageLiteral(resourceName: "locationLocationPink"), for: .normal)
-        locationManager.startUpdatingLocation()
+        // 위치 사용 동의 알람창 최초
+        isAuthorizedtoGetUserLocation()
+        
+        // 위치 동의 완료 위치 정보 사용
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation() // 위치 정보 받음
+        }
     }
     
     @objc func setAddress(noti:Notification) {
@@ -83,7 +86,7 @@ class LocationMainVC: UIViewController{
         
         if let address = noti.object as? Address{
             if let lat = Double(address.y) , let long = Double(address.x) {
-                let location = MyLocation(longitute: lat, latitude: long)
+                let location = Location(longitute: lat, latitude: long)
                 myLocation = location
                 updateSelectedAddress(latitude: lat, longitude: long)
             }
@@ -125,7 +128,7 @@ extension LocationMainVC: CLLocationManagerDelegate {
         let currentLocation = locations[locations.count-1]
         let lat = currentLocation.coordinate.latitude
         let long = currentLocation.coordinate.longitude
-        let location = MyLocation(longitute: lat, latitude: long)
+        let location = Location(longitute: lat, latitude: long)
         myLocation = location
         geoCoder.reverseGeocodeLocation(currentLocation) { (placemark, error) in
             if error != nil {

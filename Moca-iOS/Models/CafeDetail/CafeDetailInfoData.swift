@@ -18,11 +18,13 @@ struct CafeDetailInfo: Codable {
     let cafeID: Int
     let cafeName: String
     let cafeLatitude, cafeLongitude: Double
-    let cafePhone, cafeMenuImgURL, addressDistrictName, cafeAddressDetail: String
+    let cafePhone: String
+    let cafeMenuImgURL: String
+    let addressDistrictName, cafeAddressDetail: String
     let cafeRatingAvg: Int
     let cafeTimes, cafeDays: String
     let cafeOptionParking, cafeOptionWifi, cafeOptionAllnight, cafeOptionReservation: Bool
-    let cafeOptionSmokingarea: Bool
+    let cafeOptionSmokingarea, cafeScrabIs: Bool
     
     enum CodingKeys: String, CodingKey {
         case cafeID = "cafe_id"
@@ -41,5 +43,6 @@ struct CafeDetailInfo: Codable {
         case cafeOptionAllnight = "cafe_option_allnight"
         case cafeOptionReservation = "cafe_option_reservation"
         case cafeOptionSmokingarea = "cafe_option_smokingarea"
+        case cafeScrabIs = "cafe_scrab_is"
     }
 }

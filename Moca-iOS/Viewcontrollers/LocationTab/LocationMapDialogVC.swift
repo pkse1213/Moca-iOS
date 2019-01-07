@@ -10,6 +10,7 @@ import UIKit
 
 class LocationMapDialogVC: UIViewController {
     var cafe: NearByCafe?
+    var startLocation: Location?
     @IBOutlet var dialogParentView: UIView!
     @IBOutlet weak var dialogBackgroundView: UIView!
     @IBOutlet weak var searchButton: UIButton!
@@ -53,14 +54,9 @@ class LocationMapDialogVC: UIViewController {
     }
     
     @IBAction func searchLocationAction(_ sender: Any) {
-        guard let schemeURL = URL(string: "daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT")else {
-            return
-        }
-        if UIApplication.shared.canOpenURL(schemeURL) {
-            UIApplication.shared.open(schemeURL, options: [:]) { (bool) in
-                print(bool)
-            }
-        }
+        guard let cafe = cafe, let startLocation = startLocation else { return }
+        let cafeLocation = Location(longitute: cafe.cafeLongitude, latitude: cafe.cafeLatitude)
+        goToKaKaoMapApp(start: startLocation, end: cafeLocation)
     }
     
 }

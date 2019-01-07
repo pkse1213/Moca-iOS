@@ -12,7 +12,7 @@ import CoreLocation
 class LocationCafeDetailVC: UIViewController {
     @IBOutlet weak var cafeDetailTableView: UITableView!
     let locationManager = CLLocationManager()
-    var cafeId = 220
+    var cafeId = 1
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
     var cafeInfo: CafeDetailInfo?
@@ -70,6 +70,12 @@ class LocationCafeDetailVC: UIViewController {
         cafeDetailTableView.dataSource = self
     }
     
+    func isAuthorizedtoGetUserLocation() {
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
     @IBAction func shareAction(_ sender: UIButton) {
         
     }
@@ -79,14 +85,34 @@ class LocationCafeDetailVC: UIViewController {
     }
     
     @IBAction func locationActon(_ sender: UIButton) {
-        guard let cafe = cafeInfo else { return }
+        // 위치 사용 동의 알람창 최초
+        isAuthorizedtoGetUserLocation()
         
+        // 위치 동의 완료 위치 정보 사용
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation() // 위치 정보 받음
+        }
     }
     
     @objc func reviewLookActin(_:UIButton) {
         cafeDetailTableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
     }
+}
 
+extension LocationCafeDetailVC: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+        let currentLocation = locations[locations.count-1]
+        let lat = currentLocation.coordinate.latitude
+        let long = currentLocation.coordinate.longitude
+        let location = Location(longitute: lat, latitude: long)
+        
+        guard let cafe = cafeInfo else { return }
+        let cafeLocation = Location(longitute: cafe.cafeLongitude, latitude: cafe.cafeLatitude)
+        goToKaKaoMapApp(start: location, end: cafeLocation)
+    }
 }
 
 extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
@@ -168,15 +194,5 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
         
-    }
-}
-
-extension LocationCafeDetailVC: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let currentLocation = locations[locations.count-1]
-        let lat = currentLocation.coordinate.latitude
-        let long = currentLocation.coordinate.longitude
-        let location = MyLocation(longitute: lat, latitude: long)
-        myLocation = location
     }
 }
