@@ -18,7 +18,7 @@ class LocationCafeDetailVC: UIViewController {
     var cafeInfo: CafeDetailInfo?
     var cafeImages: [CafeDetailImage]?
     var cafeSignitures: [CafeDetailSigniture]?
-    var cafeReviews: [CafeDetailReview]?
+    var cafeReviews: [CommunityReview]?
     var nearByCafes: [NearByCafe]?
     
     override func viewDidLoad() {
@@ -171,15 +171,9 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
             default:
                 if let reviewCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
                     reviewCell.navigationController = self.navigationController
-                    let review = reviews[indexPath.row-1]
+                    reviewCell.review = reviews[indexPath.row-1]
                     
-                    reviewCell.nameLabel.text = review.userID
-                    reviewCell.cafeNameLabel.text = review.cafeName
-                    reviewCell.cafeAddressLabel.text = review.cafeAddress
-                    reviewCell.likeCntLabel.text = "\(review.likeCount)"
-                    reviewCell.commentCntLabel.text = "\(review.commentCount)"
-                    reviewCell.reviewContentLabel.text = review.reviewTitle
-                    reviewCell.timeLabel.text = review.time
+                    
                     cell = reviewCell
                 }
             }

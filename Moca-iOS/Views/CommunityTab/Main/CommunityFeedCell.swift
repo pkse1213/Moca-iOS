@@ -9,7 +9,9 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
-    var review: CommunityReview?
+    var review: CommunityReview? {
+        didSet { setUpData() }
+    }
     var images: [ReviewImage]?
     var navigationController: UINavigationController?
     
@@ -30,6 +32,19 @@ class CommunityFeedCell: UITableViewCell {
         super.awakeFromNib()
         setUpCollectionView()
         setUpView()
+    }
+    
+    private func setUpData() {
+        guard let review = review else { return }
+        nameLabel.text = review.userID
+        cafeNameLabel.text = review.cafeName
+        cafeAddressLabel.text = review.cafeAddress
+        likeCntLabel.text = "\(review.likeCount)"
+        commentCntLabel.text = "\(review.commentCount)"
+        reviewContentLabel.text = review.reviewTitle
+        timeLabel.text = review.time
+        
+        images = review.image
     }
     
     private func setUpCollectionView() {
@@ -72,15 +87,6 @@ extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSourc
             cell = imageCell
         }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) as? CommunityContentImageCell {
-//            tapFlag = !tapFlag
-//            cell.gradationImageView.isHidden = !cell.gradationImageView.isHidden
-//            likeAndCommentCntStackView.isHidden = !tapFlag
-//            imageCntLabel.isHidden = !imageCntLabel.isHidden
-//        }
     }
     
 }

@@ -18,18 +18,17 @@ class CommunityTabMainVC: UIViewController {
     let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
     
-    var token = ""
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var selectIndex = 0 {
         didSet {
             changeFeedKind()
             initReviewData()
         }
     }
+    
     var user: CommunityUser?
     var reviews: [CommunityReview]? {
-        didSet {
-            communityTableView.reloadData()
-        }
+        didSet { communityTableView.reloadData() }
     }
     
     override func viewDidLoad() {
@@ -145,23 +144,19 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if tableView == communityTableView {
-            guard let reviews = reviews else { return cell }
+            guard let reviews = reviews, let user = user else { return cell }
             if indexPath.section == 0 {
                 if let userCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityUserProfileCell") as? CommunityUserProfileCell {
+                    userCell.userNameLabel.text = user.userName
+                    userCell.userMessageLabel.text = user.userStatusComment
+                    userCell.contentCntLabel.text = "\(user.reviewCount)"
+                    userCell.follingCntLabel.text = "\(user.followingCount)"
+                    userCell.followerCntLabel.text = "\(user.followerCount)"
                     cell = userCell
                 }
             } else if indexPath.section == 1 {
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    let review = reviews[indexPath.row]
-                    feedCell.navigationController = self.navigationController
-                    feedCell.nameLabel.text = review.userID
-                    feedCell.cafeNameLabel.text = review.cafeName
-                    feedCell.cafeAddressLabel.text = review.cafeAddress
-                    feedCell.likeCntLabel.text = "\(review.likeCount)"
-                    feedCell.commentCntLabel.text = "\(review.commentCount)"
-                    feedCell.reviewContentLabel.text = review.reviewContent
-                    feedCell.timeLabel.text = review.time
-                    feedCell.images = review.image
+                    feedCell.review = reviews[indexPath.row]
                     cell = feedCell
                 }
             }

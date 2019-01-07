@@ -13,9 +13,9 @@ import SwiftyJSON
 struct CafeDetailReviewService: APIService, RequestService {
     static let shareInstance = CafeDetailReviewService()
     let URL = url("/review")
-    typealias NetworkData = CafeDetailReviewData
+    typealias NetworkData = CommunityReviewData
     
-    func getCafeDetailReview(cafeId: Int, token: String, completion: @escaping ([CafeDetailReview]) -> Void, error: @escaping (Int) -> Void) {
+    func getCafeDetailReview(cafeId: Int, token: String, completion: @escaping ([CommunityReview]) -> Void, error: @escaping (Int) -> Void) {
         let reviewURL = URL + "/\(cafeId)/best"
         let header: HTTPHeaders = [
             "Authorization" : token ,
@@ -23,8 +23,8 @@ struct CafeDetailReviewService: APIService, RequestService {
         ]
         gettable(reviewURL, body: nil, header: header) { res in
             switch res {
-            case .success(let CafeDetailReviewData):
-                let data = CafeDetailReviewData.data
+            case .success(let CommunityReviewData):
+                let data = CommunityReviewData.data
                 completion(data)
             case .successWithNil(_):
                 break
