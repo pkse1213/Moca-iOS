@@ -9,6 +9,9 @@
 import UIKit
 
 class CommunityTabMainVC: UIViewController {
+    
+    @IBOutlet var searchBarButtonItem: UIBarButtonItem!
+    
     // 피드 종류 선택
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectFeedView: UIView!
@@ -26,7 +29,9 @@ class CommunityTabMainVC: UIViewController {
         }
     }
     
-    var user: CommunityUser?
+    var user: CommunityUser? {
+        didSet { communityTableView.reloadData() }
+    }
     var reviews: [CommunityReview]? {
         didSet { communityTableView.reloadData() }
     }
@@ -42,6 +47,13 @@ class CommunityTabMainVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @IBAction func test(_ sender: Any) {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CommunityTabMainVC") as? CommunityTabMainVC {
+            vc.selectIndex = 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func initUserData() {
@@ -112,11 +124,6 @@ class CommunityTabMainVC: UIViewController {
         }
     }
     
-    @IBAction func goToSearch(_ sender: Any) {
-        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunitySearchVC") as? CommunitySearchVC {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
 }
 
 extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
@@ -132,10 +139,10 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == feedMenuTableView {
             return 2
         } else {
-            guard let reviews = reviews else { return 0 }
             if section == 0 {
                 return selectIndex
             } else {
+                guard let reviews = reviews else { return 0 }
                 return reviews.count
             }
         }
@@ -144,17 +151,15 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if tableView == communityTableView {
-            guard let reviews = reviews, let user = user else { return cell }
+//            guard let reviews = reviews, let user = user else { return cell }
             if indexPath.section == 0 {
+                guard let user = user else { return cell }
                 if let userCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityUserProfileCell") as? CommunityUserProfileCell {
-                    userCell.userNameLabel.text = user.userName
-                    userCell.userMessageLabel.text = user.userStatusComment
-                    userCell.contentCntLabel.text = "\(user.reviewCount)"
-                    userCell.follingCntLabel.text = "\(user.followingCount)"
-                    userCell.followerCntLabel.text = "\(user.followerCount)"
+                    userCell.user = user
                     cell = userCell
                 }
             } else if indexPath.section == 1 {
+                guard let reviews = reviews else { return cell }
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
                     feedCell.review = reviews[indexPath.row]
                     cell = feedCell

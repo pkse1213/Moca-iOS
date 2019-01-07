@@ -19,11 +19,24 @@ class CommunityUserProfileCell: UITableViewCell {
     @IBOutlet weak var followerCntLabel: UILabel!
     @IBOutlet weak var follingCntLabel: UILabel!
     
+    var user: CommunityUser? {
+        didSet { setUpData() }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
     }
 
+    private func setUpData() {
+        guard let user = user else { return }
+        userNameLabel.text = user.userName
+        userMessageLabel.text = user.userStatusComment
+        contentCntLabel.text = "\(user.reviewCount)"
+        follingCntLabel.text = "\(user.followingCount)"
+        followerCntLabel.text = "\(user.followerCount)"
+    }
+    
     private func setUpView() {
         profileImageView.applyRadius(radius: 24)
         profileSquareView.applyRadius(radius: 3)

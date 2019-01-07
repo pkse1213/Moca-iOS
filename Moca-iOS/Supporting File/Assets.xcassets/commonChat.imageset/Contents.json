@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "commonSearch.png",
+      "filename" : "commonChat.png",
       "scale" : "1x",
       "idiom" : "universal"
     },
     {
-      "filename" : "commonSearch@2x.png",
+      "filename" : "commonChat@2x.png",
       "scale" : "2x",
       "idiom" : "universal"
     },
     {
-      "filename" : "commonSearch@3x.png",
+      "filename" : "commonChat@3x.png",
       "scale" : "3x",
       "idiom" : "universal"
     }

@@ -760,15 +760,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="J6c-l8-Y0o">
-                                                    <rect key="frame" x="297" y="28" width="54" height="24"/>
+                                                    <rect key="frame" x="267" y="28" width="84" height="24"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQH-xa-6eQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                             <state key="normal" backgroundImage="commonHeartBlank"/>
+                                                            <connections>
+                                                                <action selector="likeAction:" destination="Ddc-N8-H2I" eventType="touchUpInside" id="lO1-Zs-R6Z"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-aw-s3q">
                                                             <rect key="frame" x="30" y="0.0" width="24" height="24"/>
                                                             <state key="normal" backgroundImage="commonComment"/>
+                                                            <connections>
+                                                                <action selector="goToCommentAction:" destination="Ddc-N8-H2I" eventType="touchUpInside" id="13h-jA-Bts"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-UV-pTC">
+                                                            <rect key="frame" x="60" y="0.0" width="24" height="24"/>
+                                                            <state key="normal" backgroundImage="communityNotify"/>
+                                                            <connections>
+                                                                <action selector="moreNotifyAction:" destination="Ddc-N8-H2I" eventType="touchUpInside" id="Hy9-b8-Jau"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -879,7 +892,7 @@
                                         <rect key="frame" x="0.0" y="1506" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGD-fT-HCB" id="7ad-pn-MlX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-hX-cC5">
@@ -1526,6 +1539,7 @@
         <image name="communityFollowlistSearch" width="22" height="22"/>
         <image name="communityGradation" width="336" height="336"/>
         <image name="communityMore" width="329" height="28"/>
+        <image name="communityNotify" width="24" height="24"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="detailview24H" width="30" height="30"/>

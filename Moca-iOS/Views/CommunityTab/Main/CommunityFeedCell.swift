@@ -62,6 +62,12 @@ class CommunityFeedCell: UITableViewCell {
         }
     }
     
+    @IBAction func goToCommentAction(_ sender: UIButton) {
+    }
+    @IBAction func likeAction(_ sender: UIButton) {
+    }
+    @IBAction func moreNotifyAction(_ sender: UIButton) {
+    }
     @IBAction func moreLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
             self.navigationController?.pushViewController(vc, animated: true)
