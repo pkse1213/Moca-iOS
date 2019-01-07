@@ -10,6 +10,8 @@ import UIKit
 
 class CategoryCafeCell: UITableViewCell {
     let options = ["한옥", "드라이브", "커피", "디저트"]
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var optionCollectionView: UICollectionView!
     

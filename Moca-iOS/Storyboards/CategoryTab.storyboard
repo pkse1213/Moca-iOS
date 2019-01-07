@@ -207,7 +207,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cafeAddressLabel" destination="Or7-au-CEM" id="TKv-hF-Lgw"/>
                                             <outlet property="cafeImageView" destination="44Q-GJ-gWJ" id="sEh-ei-OJ8"/>
+                                            <outlet property="cafeNameLabel" destination="SAo-9P-tch" id="YN8-2C-6Uj"/>
                                             <outlet property="optionCollectionView" destination="khr-C3-MoV" id="UZw-lq-zua"/>
                                         </connections>
                                     </tableViewCell>

@@ -18,7 +18,8 @@ struct CategoryCafe: Codable {
     let cafeID: Int
     let cafeName, cafeAddressDetail: String
     let cafeRatingAvg: Int
-    let cafeMenuImgURL, cafeMainMenuName, cafeConceptName: String
+    let cafeMenuImgURL: String
+    let cafeMainMenuName, cafeConceptName: String
     
     enum CodingKeys: String, CodingKey {
         case cafeID = "cafe_id"

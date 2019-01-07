@@ -898,13 +898,13 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crh-BQ-Xuw">
                                                     <rect key="frame" x="15" y="574.66666666666663" width="345" height="48"/>
-                                                    <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="crh-BQ-Xuw" secondAttribute="height" multiplier="115:16" id="PP0-jd-dgH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="15"/>
                                                     <state key="normal" title="적용">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="applyAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="WRd-bK-Zxw"/>
