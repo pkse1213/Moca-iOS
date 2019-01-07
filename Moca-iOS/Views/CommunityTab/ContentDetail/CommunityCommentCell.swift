@@ -9,7 +9,9 @@
 import UIKit
 
 class CommunityCommentCell: UITableViewCell {
-
+    var comment: ReviewComment? {
+        didSet { setUpData() }
+    }
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
@@ -18,6 +20,13 @@ class CommunityCommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
+    }
+  
+    private func setUpData() {
+        guard let comment = comment else { return }
+        nameLabel.text = comment.userID
+        contentLabel.text = comment.reviewCommentContent
+        timeLabel.text = comment.time
     }
     
     private func setUpView() {

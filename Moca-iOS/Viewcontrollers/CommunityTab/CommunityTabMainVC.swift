@@ -50,8 +50,7 @@ class CommunityTabMainVC: UIViewController {
     }
     
     @IBAction func test(_ sender: Any) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CommunityTabMainVC") as? CommunityTabMainVC {
-            vc.selectIndex = 1
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -161,6 +160,7 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
             } else if indexPath.section == 1 {
                 guard let reviews = reviews else { return cell }
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    feedCell.navigationController = self.navigationController
                     feedCell.review = reviews[indexPath.row]
                     cell = feedCell
                 }

@@ -999,7 +999,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qs-Js-znK">
                                 <rect key="frame" x="316" y="109" width="43" height="43"/>
-                                <state key="normal" image="locationLocationPink"/>
+                                <state key="normal" image="locationLocationGray"/>
                                 <connections>
                                     <action selector="currentLocationAction:" destination="dA4-oN-ZKf" eventType="touchUpInside" id="z3x-RX-uUX"/>
                                 </connections>
@@ -2066,7 +2066,7 @@
         <image name="icCommunityLocation" width="12" height="13"/>
         <image name="location" width="25" height="25"/>
         <image name="locationGradationWhite" width="377" height="264"/>
-        <image name="locationLocationPink" width="43" height="43"/>
+        <image name="locationLocationGray" width="43" height="43"/>
         <image name="mypage" width="25" height="25"/>
         <image name="mypageArrowRight" width="24" height="24"/>
         <image name="mypageSetting" width="36" height="36"/>

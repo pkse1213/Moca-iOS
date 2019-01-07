@@ -237,6 +237,7 @@ extension LocationMainVC: MTMapViewDelegate {
     
     func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
         selectedIndex = poiItem.tag
+        mapView.select(poiItem, animated: true)
         return false
     }
     

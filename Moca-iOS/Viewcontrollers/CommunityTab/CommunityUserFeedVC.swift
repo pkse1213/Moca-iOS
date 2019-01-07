@@ -11,8 +11,8 @@ import UIKit
 class CommunityUserFeedVC: UIViewController {
     @IBOutlet weak var communityTableView: UITableView!
     
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    var userId = ""
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY29jbyIsImlzcyI6IkRvSVRTT1BUIn0.Rplge4ISuuCrFzrddjOl55TCeRQ2QUD9yuwSMmOZ5X0"
+    var userId = "first"
     var user: CommunityUser? {
         didSet { communityTableView.reloadData() }
     }
@@ -24,6 +24,7 @@ class CommunityUserFeedVC: UIViewController {
         super.viewDidLoad()
         setUpView()
         initUserData()
+        initReviewData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

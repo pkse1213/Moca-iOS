@@ -149,6 +149,8 @@
 		CBD4C7E921E3AF82008BE065 /* CommunityUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */; };
 		CBD4C7EB21E3CFA4008BE065 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7EA21E3CFA4008BE065 /* Location.swift */; };
 		CBD4C7ED21E3F35A008BE065 /* CommunityUserFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7EC21E3F35A008BE065 /* CommunityUserFeedVC.swift */; };
+		CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F221E402E9008BE065 /* CommunityReviewCommentData.swift */; };
+		CBD4C7F521E4032A008BE065 /* CommunityReviewCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */; };
 		CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */; };
 		CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */; };
 		CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */; };
@@ -312,6 +314,8 @@
 		CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserService.swift; sourceTree = "<group>"; };
 		CBD4C7EA21E3CFA4008BE065 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CBD4C7EC21E3F35A008BE065 /* CommunityUserFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserFeedVC.swift; sourceTree = "<group>"; };
+		CBD4C7F221E402E9008BE065 /* CommunityReviewCommentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewCommentData.swift; sourceTree = "<group>"; };
+		CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewCommentService.swift; sourceTree = "<group>"; };
 		CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeVC.swift; sourceTree = "<group>"; };
 		CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
@@ -824,6 +828,7 @@
 			children = (
 				CBD4C7DF21E354C0008BE065 /* CommunityReviewData.swift */,
 				CBD4C7E621E3AF5E008BE065 /* CommunityUserData.swift */,
+				CBD4C7F221E402E9008BE065 /* CommunityReviewCommentData.swift */,
 			);
 			path = CommunityTab;
 			sourceTree = "<group>";
@@ -852,6 +857,7 @@
 			children = (
 				CBD4C7E421E35758008BE065 /* CommunityReviewService.swift */,
 				CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */,
+				CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */,
 			);
 			path = CommunityTab;
 			sourceTree = "<group>";
@@ -1067,6 +1073,7 @@
 				CB2D78ED21DCFDD40033C2A0 /* NetworkResult.swift in Sources */,
 				772A953821D79C88009114FC /* LikeCafeImageCell.swift in Sources */,
 				77FA13FF21E123F7006C8E20 /* SavingHistoryFooterTableViewCell.swift in Sources */,
+				CBD4C7F521E4032A008BE065 /* CommunityReviewCommentService.swift in Sources */,
 				CB2D78EC21DCFDD40033C2A0 /* RequestService.swift in Sources */,
 				CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */,
 				CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */,
@@ -1120,6 +1127,7 @@
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
+				CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */,
 				CBD4C7D221E23F6B008BE065 /* NearByCafeService.swift in Sources */,
 				772A953621D79517009114FC /* MyPageCell.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
