@@ -28,7 +28,6 @@ class LocationMainVC: UIViewController{
             addMarkerInMap()
         } // collectionview , marker
     }
-    var startLocation: Location?
     var myLocation: Location? {
         didSet { initData() } //통신
     }
@@ -135,7 +134,7 @@ extension LocationMainVC: CLLocationManagerDelegate {
         let currentLocation = locations[locations.count-1]
         let lat = currentLocation.coordinate.latitude
         let long = currentLocation.coordinate.longitude
-        let location = Location(longitute: lat, latitude: long)
+        let location = Location(longitute: long, latitude: lat)
         myLocation = location
        
         // 주소로 보여주기
@@ -287,7 +286,6 @@ extension LocationMainVC: MTMapViewDelegate {
 extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let cafe = nearByCafes else { return 0 }
-        print("collectionview")
         return cafe.count
     }
     
@@ -314,8 +312,10 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if let cell = cafeCollectionView.cellForItem(at: indexPath) as? LocationMapCafeCell {
             if cell.selectedFlag == true {
                 if let dialogVC = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationMapDialogVC") as? LocationMapDialogVC {
+                    
                     guard let cafe = nearByCafes?[indexPath.item] else { return }
-                    dialogVC.startLocation = startLocation
+                    
+                    dialogVC.startLocation = myLocation
                     dialogVC.cafe = cafe
                     self.addChild(dialogVC)
                     dialogVC.view.frame = self.view.frame

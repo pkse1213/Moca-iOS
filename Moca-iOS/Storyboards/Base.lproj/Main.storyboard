@@ -1004,8 +1004,11 @@
                                     <action selector="currentLocationAction:" destination="dA4-oN-ZKf" eventType="touchUpInside" id="z3x-RX-uUX"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="locationGradationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-UG-kz0">
-                                <rect key="frame" x="0.0" y="465" width="375" height="264"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="locationGradationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-UG-kz0">
+                                <rect key="frame" x="0.0" y="554" width="375" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CmE-UG-kz0" secondAttribute="height" multiplier="15:7" id="HWR-Be-0NF"/>
+                                </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-nw-aOD">
                                 <rect key="frame" x="0.0" y="583" width="375" height="130"/>
