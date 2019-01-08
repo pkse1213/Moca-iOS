@@ -141,6 +141,9 @@
                                             <constraint firstAttribute="height" constant="24" id="O3G-Xn-9sc"/>
                                         </constraints>
                                         <state key="normal" image="commonHeartBlank"/>
+                                        <connections>
+                                            <action selector="likeAction:" destination="aGJ-fC-G6O" eventType="touchUpInside" id="o7p-Qi-eCv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -387,9 +390,12 @@
                         <viewLayoutGuide key="safeArea" id="a5t-7J-WdC"/>
                     </view>
                     <connections>
+                        <outlet property="cafeAddressLabel" destination="HKU-Ql-4E6" id="xoX-Cs-X8N"/>
+                        <outlet property="cafeNameLabel" destination="V0W-uB-4Dl" id="4o4-Gf-deH"/>
                         <outlet property="contentTableView" destination="wiI-Ib-QpK" id="Rwz-sI-rId"/>
                         <outlet property="imageCntLabel" destination="bh6-gf-9WK" id="J7K-Bc-wgh"/>
                         <outlet property="imageCollectionView" destination="jhn-da-Qv3" id="gDR-yu-lcb"/>
+                        <outlet property="likeButton" destination="Bfs-Vm-hqa" id="b0p-dD-IN9"/>
                         <outlet property="reviewContentViewTopConstraint" destination="oC0-Vn-S0n" id="6l8-Q2-L4c"/>
                         <outlet property="safeAreaView" destination="PAo-UD-q5J" id="CDl-jm-K0n"/>
                         <outlet property="textBackgroundView" destination="obo-mc-JZt" id="XC6-Ie-Fz8"/>

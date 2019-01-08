@@ -10,7 +10,7 @@ import UIKit
 
 class CafeDetailNearCafeCell: UITableViewCell {
     var nearByCafes: [NearByCafe]?
-    var navigationController: UINavigationController?
+    weak var delegate: ListViewCellDelegate?
     
     @IBOutlet var nearCafeCollectionView: UICollectionView!
     @IBOutlet var moreLookButton: UIButton!
@@ -30,7 +30,7 @@ class CafeDetailNearCafeCell: UITableViewCell {
     @IBAction func moreLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "NearByCafeListVC") as? NearByCafeListVC {
             vc.nearByCafes = nearByCafes
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
 }
@@ -69,8 +69,7 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
             guard let cafe = nearByCafes?[indexPath.item] else { return }
             vc.cafeId = cafe.cafeID
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+            delegate?.goToViewController(vc: vc)
         }
     }
 }

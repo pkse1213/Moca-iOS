@@ -160,7 +160,6 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
             } else if indexPath.section == 1 {
                 guard let reviews = reviews else { return cell }
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    feedCell.navigationController = self.navigationController
                     feedCell.review = reviews[indexPath.row]
                     feedCell.delegate = self
                     cell = feedCell
@@ -188,9 +187,9 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension CommunityTabMainVC: UITableViewCellDelegate {
-    func didTapButton(onCell: UITableViewCell) {
-        communityTableView.reloadData()
+extension CommunityTabMainVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func showActionSheet() {
@@ -206,7 +205,4 @@ extension CommunityTabMainVC: UITableViewCellDelegate {
             
     }
     
-    func goToViewController(vc: UIViewController) {
-        self.navigationController?.present(vc, animated: true, completion: nil)
-    }
 }

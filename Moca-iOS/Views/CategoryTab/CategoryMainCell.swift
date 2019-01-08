@@ -17,7 +17,8 @@ class CategoryMainCell: UITableViewCell {
     let menuSelectedImages = [#imageLiteral(resourceName: "filterCoffeeRed"),#imageLiteral(resourceName: "filterTeaRed"),#imageLiteral(resourceName: "filterBakeryRed"),#imageLiteral(resourceName: "filterFruitRed"),#imageLiteral(resourceName: "filterDessertRed"),#imageLiteral(resourceName: "filterEtcRed")]
     let conceptDefaultImaeges = [#imageLiteral(resourceName: "filterMood"),#imageLiteral(resourceName: "filterHanok"),#imageLiteral(resourceName: "filterRooftop"),#imageLiteral(resourceName: "filterFlower"),#imageLiteral(resourceName: "filterBook"),#imageLiteral(resourceName: "filterDrive"),#imageLiteral(resourceName: "filterPet"),#imageLiteral(resourceName: "filterEtc")]
     let conceptSelectedImages = [#imageLiteral(resourceName: "filterMoodRed"),#imageLiteral(resourceName: "filterHanokRed"),#imageLiteral(resourceName: "filterRooftopRed"),#imageLiteral(resourceName: "filterFlowerRed"),#imageLiteral(resourceName: "filterBookRed"),#imageLiteral(resourceName: "filterDriveRed"),#imageLiteral(resourceName: "filterPetRed"),#imageLiteral(resourceName: "filterEtcRed")]
-    var navigationController: UINavigationController?
+    weak var delegate: ListViewCellDelegate?
+    
     var unit: CGFloat = 0.0
     var conceptSelectedId: Set<Int> = []
     var menuSelectedId: Set<Int> = []
@@ -48,7 +49,7 @@ class CategoryMainCell: UITableViewCell {
             vc.locationId = locationId
             print(menuSelectedId)
             print(conceptSelectedId)
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
     

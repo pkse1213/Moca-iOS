@@ -9,13 +9,12 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
-    weak var delegate: UITableViewCellDelegate?
-    var token = ""
+    weak var delegate: ListViewCellDelegate?
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var review: CommunityReview? {
         didSet { setUpData() }
     }
     var images: [ReviewImage]?
-    var navigationController: UINavigationController?
     
     @IBOutlet var likeButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -71,10 +70,20 @@ class CommunityFeedCell: UITableViewCell {
         }
     }
     
+    private func initReviewData() {
+        guard let review = review else { return }
+        CommunityReviewDetailService.shareInstance.getReviewDetail(reviewId: review.reviewID, token: token, completion: { (res) in
+            self.review = res
+            print("리뷰 조회 성공")
+        }) { (err) in
+            print("리뷰 조회 실패")
+        }
+    }
+    
     @IBAction func likeAction(_ sender: UIButton) {
         guard let review = review else { return }
         CommunityReviewLikeService.shareInstance.postLike(reviewId: review.reviewID, token: token, completion: { (message) in
-            self.delegate?.didTapButton(onCell: self)
+            self.initReviewData()
             print("좋아요 취소 성공")
         }) { (err) in
             print("좋아요 취소 실패")
@@ -82,7 +91,11 @@ class CommunityFeedCell: UITableViewCell {
     }
     
     @IBAction func goToCommentAction(_ sender: UIButton) {
-        
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+            vc.review = review
+            vc.images = images
+            delegate?.goToViewController(vc: vc)
+        }
     }
     
     @IBAction func moreNotifyAction(_ sender: UIButton) {

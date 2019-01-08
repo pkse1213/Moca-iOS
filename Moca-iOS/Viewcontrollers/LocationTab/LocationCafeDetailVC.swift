@@ -211,24 +211,40 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
                 }
             default:
                 if let reviewCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    reviewCell.navigationController = self.navigationController
+                    reviewCell.delegate = self
                     reviewCell.review = reviews[indexPath.row-1]
-                    
-                    
                     cell = reviewCell
                 }
             }
         case 3:
             if let cafeCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailNearCafeCell") as? CafeDetailNearCafeCell {
-                cafeCell.navigationController = self.navigationController
+                cafeCell.delegate = self
                 cafeCell.nearByCafes = nearCafes
                 cell = cafeCell
             }
         default:
             return cell
         }
-        
         return cell
+        
+    }
+}
+
+extension LocationCafeDetailVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "게시글 신고", style: .default, handler: { result in
+            //doSomething
+        }))
+        actionSheet.addAction(UIAlertAction(title: "사용자 신고", style: .default, handler: { result in
+            //doSomething
+        }))
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
         
     }
 }

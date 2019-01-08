@@ -12,7 +12,7 @@ class NearByCafeCell: UITableViewCell {
     var cafe: NearByCafe? {
         didSet { setUpData() }
     }
-    var navigationController: UINavigationController?
+    weak var delegate: ListViewCellDelegate?
     @IBOutlet var cafeImageView: UIImageView!
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var cafeAddressLabel: UILabel!
@@ -33,7 +33,7 @@ class NearByCafeCell: UITableViewCell {
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
             guard let cafe = cafe else { return }
             vc.cafeId = cafe.cafeID
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
             
         }
     }

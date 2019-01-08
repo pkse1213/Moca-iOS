@@ -32,10 +32,17 @@ extension CategoryMainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if let categoryCell = categoryTableView.dequeueReusableCell(withIdentifier: "CategoryMainCell") as? CategoryMainCell {
-            categoryCell.navigationController = self.navigationController
+            categoryCell.delegate = self
             cell = categoryCell
         }
         return cell
     }
     
 }
+
+extension CategoryMainVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+

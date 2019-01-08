@@ -69,8 +69,7 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
         var cell = UITableViewCell()
         if indexPath.row == 0 {
             if let mocaPicksCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as? HomeMocaPicksCell {
-                mocaPicksCell.navigationController = self.navigationController
-                
+                mocaPicksCell.delegate = self
                 cell = mocaPicksCell
             }
             
@@ -83,7 +82,7 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             if let rankingCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as? HomeRankingCell {
-                rankingCell.navigationController = self.navigationController
+                rankingCell.delegate = self
                 cell = rankingCell
             }
         }
@@ -91,3 +90,11 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+extension HomeTabMainVC: ListViewCellDelegate {
+    
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+

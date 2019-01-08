@@ -8,12 +8,21 @@
 
 import Foundation
 
-protocol UITableViewCellDelegate: class {
+protocol ListViewCellDelegate: class {
     
     func didTapButton(onCell: UITableViewCell)
     
     func showActionSheet()
     
     func goToViewController(vc: UIViewController)
+    
+}
+
+extension ListViewCellDelegate {
+    func didTapButton(onCell: UITableViewCell) { }
+    
+    func showActionSheet() { }
+    
+    func goToViewController(vc: UIViewController) { }
     
 }

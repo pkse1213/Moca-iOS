@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeRankingCell: UITableViewCell {
-    var navigationController: UINavigationController?
+    weak var delegate: ListViewCellDelegate?
     @IBOutlet weak var rankTableView: UITableView!
     @IBOutlet weak var moreBtnImageView: UIImageView!
     
@@ -31,7 +31,7 @@ class HomeRankingCell: UITableViewCell {
     
     @objc func moreAction(_:UIImageView) {
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeRankingListVC") as? HomeRankingListVC {
-            navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
     

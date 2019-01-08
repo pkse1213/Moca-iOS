@@ -16,7 +16,8 @@ struct CommunityReviewData: Codable {
 
 struct CommunityReview: Codable {
     let reviewID, cafeID: Int
-    let userID: String
+    let userID, userName: String
+    let userImgURL: String
     let image: [ReviewImage]
     let reviewRating: Int
     let reviewTitle, reviewContent, reviewDate, cafeName: String
@@ -28,6 +29,8 @@ struct CommunityReview: Codable {
         case reviewID = "review_id"
         case cafeID = "cafe_id"
         case userID = "user_id"
+        case userName = "user_name"
+        case userImgURL = "user_img_url"
         case image
         case reviewRating = "review_rating"
         case reviewTitle = "review_title"

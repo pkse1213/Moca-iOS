@@ -26,7 +26,6 @@ extension RequestService {
             case .OK:
                 print("200")
                 if let value = res.result.value {
-                    
                     let decoder = JSONDecoder()
                     do {
                         let data = try decoder.decode(NetworkData.self, from: value)

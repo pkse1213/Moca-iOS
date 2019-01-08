@@ -762,23 +762,23 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="J6c-l8-Y0o">
                                                     <rect key="frame" x="267" y="28" width="84" height="24"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQH-xa-6eQ">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQH-xa-6eQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                            <state key="normal" backgroundImage="commonHeartBlank"/>
+                                                            <state key="normal" image="commonHeartBlank"/>
                                                             <connections>
                                                                 <action selector="likeAction:" destination="Ddc-N8-H2I" eventType="touchUpInside" id="lO1-Zs-R6Z"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-aw-s3q">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-aw-s3q">
                                                             <rect key="frame" x="30" y="0.0" width="24" height="24"/>
-                                                            <state key="normal" backgroundImage="commonComment"/>
+                                                            <state key="normal" image="commonComment"/>
                                                             <connections>
                                                                 <action selector="goToCommentAction:" destination="Ddc-N8-H2I" eventType="touchUpInside" id="13h-jA-Bts"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-UV-pTC">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-UV-pTC">
                                                             <rect key="frame" x="60" y="0.0" width="24" height="24"/>
-                                                            <state key="normal" backgroundImage="communityNotify"/>
+                                                            <state key="normal" image="communityNotify"/>
                                                             <connections>
                                                                 <action selector="moreNotifyAction:" destination="Ddc-N8-H2I" eventType="touchUpInside" id="Hy9-b8-Jau"/>
                                                             </connections>
