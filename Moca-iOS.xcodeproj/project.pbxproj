@@ -67,7 +67,7 @@
 		CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */; };
 		CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */; };
 		CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9321D3DB5200636DFE /* CommunityFollowVC.swift */; };
-		CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */; };
+		CB25AC9621D3DC0500636DFE /* CommunityFollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9521D3DC0500636DFE /* CommunityFollowCell.swift */; };
 		CB25AC9D21D3F0C800636DFE /* ReviewWrittingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9C21D3F0C800636DFE /* ReviewWrittingCell.swift */; };
 		CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25AC9E21D3F0D800636DFE /* ReviewPlusImageCell.swift */; };
 		CB25ACA121D3F10800636DFE /* CommunityReviewWrittingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA021D3F10800636DFE /* CommunityReviewWrittingVC.swift */; };
@@ -124,6 +124,7 @@
 		CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */; };
 		CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */; };
 		CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */; };
+		CB6F130821E523570051126C /* CommunityFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6F130721E523570051126C /* CommunityFollowService.swift */; };
 		CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */; };
 		CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */; };
 		CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */; };
@@ -236,7 +237,7 @@
 		CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentCell.swift; sourceTree = "<group>"; };
 		CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCommentCell.swift; sourceTree = "<group>"; };
 		CB25AC9321D3DB5200636DFE /* CommunityFollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowVC.swift; sourceTree = "<group>"; };
-		CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollwCell.swift; sourceTree = "<group>"; };
+		CB25AC9521D3DC0500636DFE /* CommunityFollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowCell.swift; sourceTree = "<group>"; };
 		CB25AC9C21D3F0C800636DFE /* ReviewWrittingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWrittingCell.swift; sourceTree = "<group>"; };
 		CB25AC9E21D3F0D800636DFE /* ReviewPlusImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPlusImageCell.swift; sourceTree = "<group>"; };
 		CB25ACA021D3F10800636DFE /* CommunityReviewWrittingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewWrittingVC.swift; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 		CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabMainVC.swift; sourceTree = "<group>"; };
 		CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCell.swift; sourceTree = "<group>"; };
 		CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySelectFeedCell.swift; sourceTree = "<group>"; };
+		CB6F130721E523570051126C /* CommunityFollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowService.swift; sourceTree = "<group>"; };
 		CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListVC.swift; sourceTree = "<group>"; };
 		CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeCell.swift; sourceTree = "<group>"; };
@@ -774,7 +776,7 @@
 				CB25AC8D21D3C6F700636DFE /* CommunityContentImageCell.swift */,
 				CB25AC8F21D3CDF800636DFE /* CommunityContentCell.swift */,
 				CB25AC9121D3CE1600636DFE /* CommunityCommentCell.swift */,
-				CB25AC9521D3DC0500636DFE /* CommunityFollwCell.swift */,
+				CB25AC9521D3DC0500636DFE /* CommunityFollowCell.swift */,
 				CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */,
 			);
 			path = ContentDetail;
@@ -890,6 +892,7 @@
 				CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */,
 				CB2DE22421E4B1C7009C2683 /* CommunityReviewLikeService.swift */,
 				CB2DE22C21E51A41009C2683 /* CommunityFollowUserService.swift */,
+				CB6F130721E523570051126C /* CommunityFollowService.swift */,
 			);
 			path = CommunityTab;
 			sourceTree = "<group>";
@@ -1049,7 +1052,7 @@
 				CBD4C7E521E35758008BE065 /* CommunityReviewService.swift in Sources */,
 				CBF2FC3A21D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
-				CB25AC9621D3DC0500636DFE /* CommunityFollwCell.swift in Sources */,
+				CB25AC9621D3DC0500636DFE /* CommunityFollowCell.swift in Sources */,
 				CBD4C7BF21E1F756008BE065 /* CategoryCafeService.swift in Sources */,
 				7735356921D80BA800FB914C /* CouponAlertVC.swift in Sources */,
 				CB2C592121DFD22F00CDB39F /* CategoryMenuCell.swift in Sources */,
@@ -1161,6 +1164,7 @@
 				CB2C591F21DFD21E00CDB39F /* CategoryConceptCell.swift in Sources */,
 				CB2D78F321DCFE3D0033C2A0 /* LocationSearchCell.swift in Sources */,
 				CB2C591D21DFCF2F00CDB39F /* CategoryMainCell.swift in Sources */,
+				CB6F130821E523570051126C /* CommunityFollowService.swift in Sources */,
 				CBD4C7DD21E34BC3008BE065 /* CommunityUserProfileCell.swift in Sources */,
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB2DE22721E4F22B009C2683 /* CommunityReviewDetailData.swift in Sources */,

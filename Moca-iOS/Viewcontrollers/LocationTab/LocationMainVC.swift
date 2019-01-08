@@ -247,7 +247,7 @@ extension LocationMainVC: MTMapViewDelegate {
     func makeCircleInMap(latitude: Double, longitude: Double) {
         let circle = MTMapCircle()
         circle.circleLineColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1)
-        circle.circleFillColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 0.4)
+        circle.circleFillColor = #colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 0.2625684307)
         
         let mapPointGeo = MTMapPointGeo(latitude: latitude, longitude: longitude)
         let mapPoint = MTMapPoint(geoCoord: mapPointGeo)

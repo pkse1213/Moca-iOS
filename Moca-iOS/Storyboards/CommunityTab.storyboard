@@ -548,7 +548,7 @@
         <!--Community FollowVC-->
         <scene sceneID="aLP-KE-LBv">
             <objects>
-                <viewController id="JTy-ni-7Wq" customClass="CommunityFollowVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunityFollowVC" id="JTy-ni-7Wq" customClass="CommunityFollowVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kjp-Rw-0cx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,6 +561,9 @@
                                         <nil key="title"/>
                                         <barButtonItem key="leftBarButtonItem" image="commonCancelBlack" id="NoM-15-JHC">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="closeAction:" destination="JTy-ni-7Wq" id="f4M-dZ-aQ6"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -575,7 +578,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityFollwCell" rowHeight="66" id="8ka-nK-Xuf" customClass="CommunityFollwCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityFollowCell" rowHeight="66" id="8ka-nK-Xuf" customClass="CommunityFollowCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="43" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ka-nK-Xuf" id="vos-mD-LjR">
@@ -591,8 +594,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0V-L1-ljP">
-                                                    <rect key="frame" x="86" y="25.333333333333332" width="36.666666666666657" height="15.333333333333332"/>
-                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
+                                                    <rect key="frame" x="86" y="25.333333333333329" width="36.666666666666657" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -602,7 +605,10 @@
                                                         <constraint firstAttribute="height" constant="24" id="bwe-6a-kKU"/>
                                                         <constraint firstAttribute="width" constant="70" id="w00-Yv-cs2"/>
                                                     </constraints>
-                                                    <state key="normal" image="communityFollowingFollow"/>
+                                                    <state key="normal" image="communityFollower"/>
+                                                    <connections>
+                                                        <action selector="followAction:" destination="8ka-nK-Xuf" eventType="touchUpInside" id="3bi-HY-V1i"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1603,19 +1609,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-sd-MMx">
-                                                            <rect key="frame" x="28.333333333333343" y="86.666666666666671" width="282.33333333333326" height="12.333333333333329"/>
+                                                            <rect key="frame" x="17.666666666666657" y="74" width="303.66666666666674" height="25"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ytw-Xy-Rar">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="12.333333333333334"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="게시글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UZ-XC-pJn">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="25"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpS-8h-htl">
-                                                                            <rect key="frame" x="46.333333333333336" y="0.0" width="13.333333333333336" height="12.333333333333334"/>
+                                                                            <rect key="frame" x="46.333333333333336" y="0.0" width="13.333333333333336" height="25"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -1623,37 +1629,53 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BRY-ge-uXw">
-                                                                    <rect key="frame" x="104.66666666666666" y="0.0" width="66.333333333333343" height="12.333333333333334"/>
+                                                                    <rect key="frame" x="104.66666666666669" y="0.0" width="77" height="25"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팔로워" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-wn-POO">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mo-7d-f55">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="25"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYU-BW-85a">
-                                                                            <rect key="frame" x="46.333333333333343" y="0.0" width="20" height="12.333333333333334"/>
+                                                                            <state key="normal" title="팔로워">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followerAction:" destination="q7q-M8-qr2" eventType="touchUpInside" id="vqb-TJ-Vy9"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMi-Pi-RTB">
+                                                                            <rect key="frame" x="47" y="0.0" width="30" height="25"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
+                                                                            <state key="normal" title="300">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followerAction:" destination="q7q-M8-qr2" eventType="touchUpInside" id="9om-eh-fLj"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-5P-xmr">
-                                                                    <rect key="frame" x="215.99999999999997" y="0.0" width="66.333333333333343" height="12.333333333333334"/>
+                                                                    <rect key="frame" x="226.66666666666663" y="0.0" width="77" height="25"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팔로잉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-ly-Bam">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzU-Dl-KK8">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="25"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="124" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="679-xH-V92">
-                                                                            <rect key="frame" x="46.333333333333371" y="0.0" width="20" height="12.333333333333334"/>
+                                                                            <state key="normal" title="팔로잉">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followingAction:" destination="q7q-M8-qr2" eventType="touchUpInside" id="60U-7w-COG"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkb-fH-zQl">
+                                                                            <rect key="frame" x="47" y="0.0" width="30" height="25"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
+                                                                            <state key="normal" title="123">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followingAction:" destination="q7q-M8-qr2" eventType="touchUpInside" id="AjX-uP-cXE"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
@@ -1693,8 +1715,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contentCntLabel" destination="dpS-8h-htl" id="9k7-Rd-etr"/>
-                                            <outlet property="follingCntLabel" destination="679-xH-V92" id="XGE-GT-RAY"/>
-                                            <outlet property="followerCntLabel" destination="lYU-BW-85a" id="R4v-oW-TGh"/>
+                                            <outlet property="follingCntLabel" destination="Zkb-fH-zQl" id="hgJ-7s-y13"/>
+                                            <outlet property="followerCntLabel" destination="qMi-Pi-RTB" id="JKy-lg-bOf"/>
                                             <outlet property="profileButton" destination="e2q-Ay-gDS" id="exo-Lg-hhF"/>
                                             <outlet property="profileImageView" destination="y2N-kz-Hsb" id="8Ih-KP-nbO"/>
                                             <outlet property="profileSquareView" destination="UPq-Og-Hk1" id="PrN-VW-oTW"/>
@@ -1948,6 +1970,7 @@
                                             <outlet property="commentCntLabel" destination="sqo-s9-NE8" id="sjj-H9-0l3"/>
                                             <outlet property="imageCntLabel" destination="JZD-bT-GS2" id="2O1-VE-QHy"/>
                                             <outlet property="imageCollectionView" destination="DWc-sv-Sjf" id="31V-Qr-Fae"/>
+                                            <outlet property="likeButton" destination="she-r1-Ptu" id="0Kg-Be-bNV"/>
                                             <outlet property="likeCntLabel" destination="aVb-iV-6SN" id="q5C-F9-MwF"/>
                                             <outlet property="nameLabel" destination="XUR-6e-LHC" id="N78-pX-WMm"/>
                                             <outlet property="profileImageView" destination="fTA-gF-8DD" id="Nbq-hj-dSc"/>
@@ -1996,6 +2019,7 @@
         <image name="commonScrapGrayLine" width="24" height="24"/>
         <image name="commonSearch" width="24" height="24"/>
         <image name="communityAddreviewPhoto" width="104" height="104"/>
+        <image name="communityFollower" width="70" height="24"/>
         <image name="communityFollowingFollow" width="70" height="24"/>
         <image name="communityFollowingSearchField" width="450" height="37"/>
         <image name="communityFollowinglistFollow" width="70" height="24"/>

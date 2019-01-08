@@ -16,7 +16,7 @@ class CommunityFeedCell: UITableViewCell {
     }
     var images: [ReviewImage]?
     
-    @IBOutlet var likeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var likeCntLabel: UILabel!

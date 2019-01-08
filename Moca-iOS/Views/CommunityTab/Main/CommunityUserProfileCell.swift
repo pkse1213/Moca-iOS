@@ -16,8 +16,8 @@ class CommunityUserProfileCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userMessageLabel: UILabel!
     @IBOutlet weak var contentCntLabel: UILabel!
-    @IBOutlet weak var followerCntLabel: UILabel!
-    @IBOutlet weak var follingCntLabel: UILabel!
+    @IBOutlet weak var followerCntLabel: UIButton!
+    @IBOutlet weak var follingCntLabel: UIButton!
     
     var user: CommunityUser? {
         didSet { setUpData() }
@@ -33,8 +33,9 @@ class CommunityUserProfileCell: UITableViewCell {
         userNameLabel.text = user.userName
         userMessageLabel.text = user.userStatusComment
         contentCntLabel.text = "\(user.reviewCount)"
-        follingCntLabel.text = "\(user.followingCount)"
-        followerCntLabel.text = "\(user.followerCount)"
+        follingCntLabel.setTitle("\(user.followingCount)", for: .normal)
+        
+        followerCntLabel.setTitle("\(user.followerCount)", for: .normal)
     }
     
     private func setUpView() {

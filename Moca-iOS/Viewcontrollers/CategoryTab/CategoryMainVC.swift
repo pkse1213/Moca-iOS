@@ -16,8 +16,6 @@ class CategoryMainVC: UIViewController {
         setUpTableView()
     }
     
-    
-    
     private func setUpTableView() {
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
@@ -37,7 +35,6 @@ extension CategoryMainVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
 }
 
 extension CategoryMainVC: ListViewCellDelegate {

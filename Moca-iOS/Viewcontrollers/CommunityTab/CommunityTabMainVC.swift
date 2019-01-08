@@ -9,7 +9,7 @@
 import UIKit
 
 class CommunityTabMainVC: UIViewController {
-    
+    var first = true
     @IBOutlet var searchBarButtonItem: UIBarButtonItem!
     
     // 피드 종류 선택
@@ -39,6 +39,7 @@ class CommunityTabMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpView()
         initUserData()
         initReviewData()
@@ -46,13 +47,32 @@ class CommunityTabMainVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if first {
+            first = false
+        } else {
+            initUserData()
+            initReviewData()
+        }
+        
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    @IBAction func test(_ sender: Any) {
-        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
-            self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func followerAction(_ sender: UIButton) {
+        guard let user = user else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityFollowVC") as? CommunityFollowVC {
+            vc.path = "follower"
+            vc.userId = user.userID
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func followingAction(_ sender: UIButton) {
+        guard let user = user else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityFollowVC") as? CommunityFollowVC {
+            vc.path = "following"
+            vc.userId = user.userID
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

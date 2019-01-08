@@ -16,7 +16,7 @@ struct CommunityFollowUserService: APIService, RequestService {
     let URL = url("/user")
     typealias NetworkData = CommunityFollowUserData
     
-    func getReviewComment(userId: String, token: String, path: String, completion: @escaping ([FollowUser]) -> Void, error: @escaping (Int) -> Void) {
+    func getFollowUser(userId: String, token: String, path: String, completion: @escaping ([FollowUser]) -> Void, error: @escaping (Int) -> Void) {
         let followURL = URL + "/\(userId)/\(path)"
         let header: HTTPHeaders = [
             "Authorization" : token ,

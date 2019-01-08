@@ -57,6 +57,24 @@ class CommunityUserFeedVC: UIViewController {
         communityTableView.dataSource = self
     }
     
+    @IBAction func followerAction(_ sender: UIButton) {
+        guard let user = user else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityFollowVC") as? CommunityFollowVC {
+            vc.path = "follower"
+            vc.userId = user.userID
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func followingAction(_ sender: UIButton) {
+        guard let user = user else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityFollowVC") as? CommunityFollowVC {
+            vc.path = "following"
+            vc.userId = user.userID
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func profileButtonAction(_ sender: Any) {
         if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityReviewWrittingVC") as? CommunityReviewWrittingVC {
             self.present(vc, animated: true)
