@@ -70,6 +70,8 @@ class CommunityFeedCell: UITableViewCell {
     }
     @IBAction func moreLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+            vc.review = review
+            vc.images = images
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

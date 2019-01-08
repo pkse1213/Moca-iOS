@@ -11,11 +11,14 @@ import CoreLocation
 
 class LocationCafeDetailVC: UIViewController {
     @IBOutlet weak var cafeDetailTableView: UITableView!
+    @IBOutlet weak var scrapButton: UIButton!
     let locationManager = CLLocationManager()
     var cafeId = 1
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
-    var cafeInfo: CafeDetailInfo?
+    var cafeInfo: CafeDetailInfo? {
+        didSet { setScrapButtonImage() }
+    }
     var cafeImages: [CafeDetailImage]?
     var cafeSignitures: [CafeDetailSigniture]?
     var cafeReviews: [CommunityReview]?
@@ -23,6 +26,7 @@ class LocationCafeDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initInfoData()
         initData()
         setUpTableView()
     }
@@ -32,13 +36,17 @@ class LocationCafeDetailVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    private func initData() {
+    
+    private func initInfoData() {
         CafeDetailInfoService.shareInstance.getCafeDetailInfo(cafeId: cafeId, token: token, completion: { (res) in
             print("카페 디테일 info 성공")
             self.cafeInfo = res
         }) { (err) in
             print("카페 디테일 info 실패")
         }
+    }
+    
+    private func initData() {
         CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafeId, token: token, completion: { (res) in
             print("카페 디테일 imaeg 성공")
             self.cafeImages = res
@@ -65,6 +73,19 @@ class LocationCafeDetailVC: UIViewController {
         }
     }
     
+    private func setScrapButtonImage() {
+        guard let cafe = cafeInfo else { return }
+        
+        switch cafe.cafeScrabIs {
+        case true:
+            self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrapRed"), for: .normal)
+        case false:
+            self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapGrayLine"), for: .normal)
+        default:
+            return
+        }
+    }
+    
     private func setUpTableView() {
         cafeDetailTableView.delegate = self
         cafeDetailTableView.dataSource = self
@@ -82,6 +103,26 @@ class LocationCafeDetailVC: UIViewController {
     
     @IBAction func scrapAction(_ sender: UIButton) {
         guard let cafe = cafeInfo else { return }
+        
+        switch cafe.cafeScrabIs {
+        case true:
+            CafeScrapService.shareInstance.deleteCafeScrap(cafeId: cafeId, token: token, completion: { (message) in
+                self.initInfoData()
+                print("스크랩 취소 성공")
+            }) { (err) in
+                print("스크랩 취소 실패")
+            }
+        case false:
+            CafeScrapService.shareInstance.postCafeScrap(cafeId: cafeId, token: token, completion: { (message) in
+                self.initInfoData()
+                print("스크랩 성공")
+            }) { (err) in
+                print("스크랩 실패")
+            }
+        default:
+            return
+        }
+        
     }
     
     @IBAction func locationActon(_ sender: UIButton) {
@@ -179,6 +220,7 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
             }
         case 3:
             if let cafeCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailNearCafeCell") as? CafeDetailNearCafeCell {
+                cafeCell.navigationController = self.navigationController
                 cafeCell.nearByCafes = nearCafes
                 cell = cafeCell
             }

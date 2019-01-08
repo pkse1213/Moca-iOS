@@ -151,6 +151,8 @@
 		CBD4C7ED21E3F35A008BE065 /* CommunityUserFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7EC21E3F35A008BE065 /* CommunityUserFeedVC.swift */; };
 		CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F221E402E9008BE065 /* CommunityReviewCommentData.swift */; };
 		CBD4C7F521E4032A008BE065 /* CommunityReviewCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */; };
+		CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F621E41940008BE065 /* NearByCafeListVC.swift */; };
+		CBD4C7F921E41E22008BE065 /* NearByCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F821E41E22008BE065 /* NearByCafeCell.swift */; };
 		CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */; };
 		CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */; };
 		CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */; };
@@ -316,6 +318,8 @@
 		CBD4C7EC21E3F35A008BE065 /* CommunityUserFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityUserFeedVC.swift; sourceTree = "<group>"; };
 		CBD4C7F221E402E9008BE065 /* CommunityReviewCommentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewCommentData.swift; sourceTree = "<group>"; };
 		CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewCommentService.swift; sourceTree = "<group>"; };
+		CBD4C7F621E41940008BE065 /* NearByCafeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByCafeListVC.swift; sourceTree = "<group>"; };
+		CBD4C7F821E41E22008BE065 /* NearByCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByCafeCell.swift; sourceTree = "<group>"; };
 		CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeVC.swift; sourceTree = "<group>"; };
 		CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
@@ -534,6 +538,7 @@
 				CB2E8F0521DC0FA20087EFE2 /* CafeDetailImageListCell.swift */,
 				CB2E8F0721DC0FC60087EFE2 /* CafeDetailImageCell.swift */,
 				CB2E8EFF21DC04930087EFE2 /* SignatureMenuCell.swift */,
+				CBD4C7F821E41E22008BE065 /* NearByCafeCell.swift */,
 			);
 			path = LocationTab;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				CB2ACCF121D7FC40004DBF2E /* LocationMainVC.swift */,
 				CB909BAC21DBEECC0040F4A5 /* LocationCafeDetailVC.swift */,
 				CB2D78E221DC86A70033C2A0 /* LocationMapDialogVC.swift */,
+				CBD4C7F621E41940008BE065 /* NearByCafeListVC.swift */,
 				77C669D221DFC09200763441 /* ReviewVC.swift */,
 			);
 			path = LocationTab;
@@ -1021,6 +1027,7 @@
 				CBD4C7BF21E1F756008BE065 /* CategoryCafeService.swift in Sources */,
 				7735356921D80BA800FB914C /* CouponAlertVC.swift in Sources */,
 				CB2C592121DFD22F00CDB39F /* CategoryMenuCell.swift in Sources */,
+				CBD4C7F921E41E22008BE065 /* NearByCafeCell.swift in Sources */,
 				CB2D78E621DCFD850033C2A0 /* KakaoAddressService.swift in Sources */,
 				CB25AC8E21D3C6F700636DFE /* CommunityContentImageCell.swift in Sources */,
 				77FA13FB21E11378006C8E20 /* SavingHistoryTableViewCell.swift in Sources */,
@@ -1090,6 +1097,7 @@
 				77FA141221E142FA006C8E20 /* ConceptImageCollectionViewCell.swift in Sources */,
 				77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */,
 				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
+				CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
 				CB2C591A21DFCE7D00CDB39F /* CategoryMainVC.swift in Sources */,

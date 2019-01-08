@@ -9,7 +9,9 @@
 import UIKit
 
 class CafeDetailNearCafeCell: UITableViewCell {
-    var nearByCafes = [NearByCafe]()
+    var nearByCafes: [NearByCafe]?
+    var navigationController: UINavigationController?
+    
     @IBOutlet var nearCafeCollectionView: UICollectionView!
     @IBOutlet var moreLookButton: UIButton!
     var unit: CGFloat = 0
@@ -19,9 +21,17 @@ class CafeDetailNearCafeCell: UITableViewCell {
         unit = (nearCafeCollectionView.frame.width/2-3)/173
         setUpCollectionView()
     }
+    
     private func setUpCollectionView() {
         nearCafeCollectionView.delegate = self
         nearCafeCollectionView.dataSource = self
+    }
+    
+    @IBAction func moreLookAction(_ sender: UIButton) {
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "NearByCafeListVC") as? NearByCafeListVC {
+            vc.nearByCafes = nearByCafes
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -32,17 +42,23 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return nearByCafes.count > 4 ? 4 : nearByCafes.count
+        guard let cafes = nearByCafes else { return 0 }
+        if cafes.count < 5 {
+            moreLookButton.isHidden = true
+            return cafes.count
+        } else {
+            return 4
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let cafes = nearByCafes else { return cell }
+        
         if let cafeCell = nearCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
-            let cafe = nearByCafes[indexPath.item]
-            cafeCell.rankNumLabel.isHidden = true
-            cafeCell.rankBackgroundView.isHidden = true
+            let cafe = cafes[indexPath.item]
             cafeCell.cafeNameLabel.text = cafe.cafeName
-//            cafeCell.cafeAddressLabel.text = cafe.
+            cafeCell.cafeAddressLabel.text = cafe.addressDistrictName
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = cafeCell
         }
@@ -50,6 +66,11 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            guard let cafe = nearByCafes?[indexPath.item] else { return }
+            vc.cafeId = cafe.cafeID
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
 }

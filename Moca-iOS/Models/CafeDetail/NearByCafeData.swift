@@ -17,8 +17,7 @@ struct NearByCafeData: Codable {
 struct NearByCafe: Codable {
     let cafeID: Int
     let cafeLatitude, cafeLongitude: Double
-    let cafeName: String
-    let cafeImgURL: String
+    let cafeName, cafeImgURL, addressDistrictName: String
     let cafeRatingAvg: Int
     let distance: String
     
@@ -28,6 +27,7 @@ struct NearByCafe: Codable {
         case cafeLongitude = "cafe_longitude"
         case cafeName = "cafe_name"
         case cafeImgURL = "cafe_img_url"
+        case addressDistrictName = "address_district_name"
         case cafeRatingAvg = "cafe_rating_avg"
         case distance
     }
