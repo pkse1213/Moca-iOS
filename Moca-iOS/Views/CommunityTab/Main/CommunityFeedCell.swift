@@ -9,12 +9,15 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
+    weak var delegate: UITableViewCellDelegate?
+    var token = ""
     var review: CommunityReview? {
         didSet { setUpData() }
     }
     var images: [ReviewImage]?
     var navigationController: UINavigationController?
     
+    @IBOutlet var likeButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var likeCntLabel: UILabel!
@@ -45,6 +48,12 @@ class CommunityFeedCell: UITableViewCell {
         timeLabel.text = review.time
         
         images = review.image
+        
+        if review.like {
+            likeButton.setImage(#imageLiteral(resourceName: "commonHeartRed"), for: .normal)
+        } else {
+            likeButton.setImage(#imageLiteral(resourceName: "commonHeartBlank"), for: .normal)
+        }
     }
     
     private func setUpCollectionView() {
@@ -62,17 +71,29 @@ class CommunityFeedCell: UITableViewCell {
         }
     }
     
-    @IBAction func goToCommentAction(_ sender: UIButton) {
-    }
     @IBAction func likeAction(_ sender: UIButton) {
+        guard let review = review else { return }
+        CommunityReviewLikeService.shareInstance.postLike(reviewId: review.reviewID, token: token, completion: { (message) in
+            self.delegate?.didTapButton(onCell: self)
+            print("좋아요 취소 성공")
+        }) { (err) in
+            print("좋아요 취소 실패")
+        }
     }
+    
+    @IBAction func goToCommentAction(_ sender: UIButton) {
+        
+    }
+    
     @IBAction func moreNotifyAction(_ sender: UIButton) {
+        delegate?.showActionSheet()
     }
+    
     @IBAction func moreLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
             vc.review = review
             vc.images = images
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
 }
@@ -91,7 +112,8 @@ extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
+            guard let images = images else { return cell }
+            imageCell.image = images[indexPath.item]
             cell = imageCell
         }
         return cell
@@ -102,12 +124,12 @@ extension CommunityFeedCell: UICollectionViewDelegate, UICollectionViewDataSourc
 extension CommunityFeedCell: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let images = images else { return }
+        
         if scrollView is UICollectionView {
             let indexPath = imageCollectionView.indexPathForItem(at: scrollView.contentOffset)
             if let index = indexPath?.item {
                 imageCntLabel.text = "\(index+1)/\(images.count)"
             }
-            
         }
     }
 }

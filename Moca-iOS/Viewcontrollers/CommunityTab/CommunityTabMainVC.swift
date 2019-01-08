@@ -32,6 +32,7 @@ class CommunityTabMainVC: UIViewController {
     var user: CommunityUser? {
         didSet { communityTableView.reloadData() }
     }
+    
     var reviews: [CommunityReview]? {
         didSet { communityTableView.reloadData() }
     }
@@ -122,7 +123,6 @@ class CommunityTabMainVC: UIViewController {
             self.present(vc, animated: true)
         }
     }
-    
 }
 
 extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
@@ -162,6 +162,7 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
                     feedCell.navigationController = self.navigationController
                     feedCell.review = reviews[indexPath.row]
+                    feedCell.delegate = self
                     cell = feedCell
                 }
             }
@@ -184,5 +185,28 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == feedMenuTableView {
             selectIndex = indexPath.row
         }
+    }
+}
+
+extension CommunityTabMainVC: UITableViewCellDelegate {
+    func didTapButton(onCell: UITableViewCell) {
+        communityTableView.reloadData()
+    }
+    
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "게시글 신고", style: .default, handler: { result in
+            //doSomething
+        }))
+        actionSheet.addAction(UIAlertAction(title: "사용자 신고", style: .default, handler: { result in
+            //doSomething
+        }))
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+            
+    }
+    
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
 }

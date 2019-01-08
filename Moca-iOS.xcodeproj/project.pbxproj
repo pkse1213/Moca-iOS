@@ -102,6 +102,8 @@
 		CB2D78F721DD0CF00033C2A0 /* UIViewController+extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78F621DD0CF00033C2A0 /* UIViewController+extesion.swift */; };
 		CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78F821DD23E50033C2A0 /* HomeNoticeVC.swift */; };
 		CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2D78FA21DD247C0033C2A0 /* HomeNoticeCell.swift */; };
+		CB2DE22321E4AD00009C2683 /* UITableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE22221E4AD00009C2683 /* UITableViewCellDelegate.swift */; };
+		CB2DE22521E4B1C7009C2683 /* CommunityReviewLikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE22421E4B1C7009C2683 /* CommunityReviewLikeService.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -269,6 +271,8 @@
 		CB2D78F621DD0CF00033C2A0 /* UIViewController+extesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extesion.swift"; sourceTree = "<group>"; };
 		CB2D78F821DD23E50033C2A0 /* HomeNoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoticeVC.swift; sourceTree = "<group>"; };
 		CB2D78FA21DD247C0033C2A0 /* HomeNoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoticeCell.swift; sourceTree = "<group>"; };
+		CB2DE22221E4AD00009C2683 /* UITableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellDelegate.swift; sourceTree = "<group>"; };
+		CB2DE22421E4B1C7009C2683 /* CommunityReviewLikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewLikeService.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -624,6 +628,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CB2DE22121E4ACF6009C2683 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				CB2DE22221E4AD00009C2683 /* UITableViewCellDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +650,7 @@
 		CB32A08221D2497D004796F7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CB2DE22121E4ACF6009C2683 /* Delegate */,
 				CB2D78F621DD0CF00033C2A0 /* UIViewController+extesion.swift */,
 				CB32A08321D249A1004796F7 /* UIView+Extension.swift */,
 				7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */,
@@ -864,6 +877,7 @@
 				CBD4C7E421E35758008BE065 /* CommunityReviewService.swift */,
 				CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */,
 				CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */,
+				CB2DE22421E4B1C7009C2683 /* CommunityReviewLikeService.swift */,
 			);
 			path = CommunityTab;
 			sourceTree = "<group>";
@@ -1109,6 +1123,7 @@
 				CBD4C7CC21E2279C008BE065 /* CafeDetailSignitureService.swift in Sources */,
 				CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */,
 				CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */,
+				CB2DE22321E4AD00009C2683 /* UITableViewCellDelegate.swift in Sources */,
 				774B596D21DB837900B10989 /* ProfileModifyVC.swift in Sources */,
 				7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */,
 				77CD53E921E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift in Sources */,
@@ -1137,6 +1152,7 @@
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
 				CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */,
 				CBD4C7D221E23F6B008BE065 /* NearByCafeService.swift in Sources */,
+				CB2DE22521E4B1C7009C2683 /* CommunityReviewLikeService.swift in Sources */,
 				772A953621D79517009114FC /* MyPageCell.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,

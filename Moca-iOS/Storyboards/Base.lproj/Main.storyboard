@@ -1507,6 +1507,7 @@
                                             <outlet property="commentCntLabel" destination="h9W-bN-CxY" id="xfc-tp-B0L"/>
                                             <outlet property="imageCntLabel" destination="9B9-Vb-xn3" id="fXh-eN-krD"/>
                                             <outlet property="imageCollectionView" destination="kV4-tI-IlO" id="4MO-fa-PIx"/>
+                                            <outlet property="likeButton" destination="wAe-K1-Dj3" id="zhq-8u-z1t"/>
                                             <outlet property="likeCntLabel" destination="huE-mh-FXg" id="lV5-Fu-fva"/>
                                             <outlet property="nameLabel" destination="h5Y-J4-rug" id="1KT-gX-ocT"/>
                                             <outlet property="profileImageView" destination="Pm9-D5-QoE" id="Srl-0f-nA4"/>
