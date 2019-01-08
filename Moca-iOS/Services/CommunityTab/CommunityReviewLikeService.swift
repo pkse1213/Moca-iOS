@@ -17,6 +17,7 @@ struct CommunityReviewLikeService: APIService, RequestService{
     typealias NetworkData = ResponseData
     
     func postLike(reviewId: Int, token: String, completion: @escaping (String) -> Void, error: @escaping (Int) -> Void) {
+        print(reviewId)
         let likeURL = URL + "/\(reviewId)/like"
         let header: HTTPHeaders = [
             "Authorization" : token ,

@@ -16,10 +16,13 @@ struct CategoryCafeService: APIService, RequestService {
     let URL = url("/category/location")
     typealias NetworkData = CategoryCafeData
     
-    func getCategoryCafe(locationId: Int,parameter: [String: Int], completion: @escaping ([CategoryCafe]) -> Void, error: @escaping (Int) -> Void) {
+    func getCategoryCafe(locationId: Int, parameter: [String: Any], token: String, completion: @escaping ([CategoryCafe]) -> Void, error: @escaping (Int) -> Void) {
         let cafeURL = URL + "/\(locationId)"
-        
-        gettable(cafeURL, body: parameter, header: nil) { res in
+        let header: HTTPHeaders = [
+            "Authorization" : token ,
+            "Content-Type" : "application/json"
+        ]
+        gettable(cafeURL, body: parameter, header: header) { res in
             switch res {
             case .success(let CategoryCafeData):
                 let data = CategoryCafeData.data

@@ -78,9 +78,9 @@ class LocationCafeDetailVC: UIViewController {
         
         switch cafe.cafeScrabIs {
         case true:
-            self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrapRed"), for: .normal)
+            self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapFilled"), for: .normal)
         case false:
-            self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapGrayLine"), for: .normal)
+            self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrap"), for: .normal)
         default:
             return
         }

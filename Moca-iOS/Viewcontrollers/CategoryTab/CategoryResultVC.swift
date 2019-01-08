@@ -11,6 +11,7 @@ import UIKit
 class CategoryResultVC: UIViewController {
     let location: String = "강서구"
     let options = ["한옥", "드라이브", "커피", "디저트"]
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var conceptId: [Int] = [1,2]
     var menuId: [Int] = [1]
     var locationId = 0
@@ -34,14 +35,10 @@ class CategoryResultVC: UIViewController {
     }
     
     private func initData() {
-        let menu:[Int] = [1,2]
-        let parameter: [String: Int] = ["menu": 1]
-//        parameter["concept"] = [1,2]
-//        parameter["menu"] = 1
-
-        print(parameter)
+        let parameter: [String: Any] = ["concept" : conceptId,
+                                        "menu" : menuId ]
         
-        CategoryCafeService.shareInstance.getCategoryCafe(locationId: locationId, parameter: parameter, completion: { (cafeList) in
+        CategoryCafeService.shareInstance.getCategoryCafe(locationId: locationId, parameter: parameter, token: token, completion: { (cafeList) in
             self.cafes = cafeList
             print("카테고리 카페 리스트 성공")
         }) { (err) in

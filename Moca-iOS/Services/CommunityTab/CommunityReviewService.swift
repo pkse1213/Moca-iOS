@@ -38,7 +38,7 @@ struct CommunityReviewService: APIService, RequestService {
     func getSocialReview(token: String, completion: @escaping ([CommunityReview]) -> Void, error: @escaping (Int) -> Void) {
         let reviewURL = URL + "/social"
         let header: HTTPHeaders = [
-            "Authoirzation" : token ,
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         gettable(reviewURL, body: nil, header: header) { res in
