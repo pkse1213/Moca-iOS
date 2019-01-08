@@ -38,7 +38,7 @@ class CommunityFeedCell: UITableViewCell {
     
     private func setUpData() {
         guard let review = review else { return }
-        nameLabel.text = review.userID
+        nameLabel.text = review.userName
         cafeNameLabel.text = review.cafeName
         cafeAddressLabel.text = review.cafeAddress
         likeCntLabel.text = "\(review.likeCount)"

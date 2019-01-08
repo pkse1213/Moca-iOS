@@ -65,7 +65,7 @@ class LocationCafeDetailVC: UIViewController {
         }) { (err) in
             print("카페 디테일 review 실패")
         }
-        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, cafeId: cafeId, latitude: 0.0, longitude: 0.0, completion: { (res) in
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, token: token, cafeId: cafeId, latitude: 0.0, longitude: 0.0, completion: { (res) in
             self.nearByCafes = res
             print("주변 카페 성공")
         }) { (err) in

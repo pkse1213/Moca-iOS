@@ -13,12 +13,14 @@ class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
     @IBOutlet var currentLocationButton: UIButton!
-    
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var selectedByMarker = false
     var mapView: MTMapView!
-    let locationManager = CLLocationManager()
+    let locationManager: CLLocationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
+    var first = true
     var selectedIndex = 0 {
-        didSet{ cafeCollectionView.reloadData() }
+        didSet{  }
     }
     var nearByCafes: [NearByCafe]? {
         didSet {
@@ -26,6 +28,7 @@ class LocationMainVC: UIViewController{
             addMarkerInMap()
         } // collectionview , marker
     }
+    var startLocation: Location?
     var myLocation: Location? {
         didSet { initData() } //통신
     }
@@ -40,6 +43,7 @@ class LocationMainVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        
     }
     
     func isAuthorizedtoGetUserLocation() {
@@ -50,10 +54,12 @@ class LocationMainVC: UIViewController{
     
     private func initData() {
         guard let location = myLocation else { return }
-        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 0, cafeId: 1, latitude: location.latitude , longitude: location.longitute, completion: { (res) in
+        let loc = Location.init(longitute: 126.9036, latitude: 37.55048)
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 0, token: token, cafeId: 1, latitude: loc.latitude , longitude: loc.longitute, completion: { (res) in
             self.nearByCafes = res
             print("주변 카페 성공")
         }) { (err) in
+            print("\(err)dfd")
             print("주변 카페 실패")
         }
     }
@@ -125,11 +131,14 @@ class LocationMainVC: UIViewController{
 
 extension LocationMainVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
         let currentLocation = locations[locations.count-1]
         let lat = currentLocation.coordinate.latitude
         let long = currentLocation.coordinate.longitude
         let location = Location(longitute: lat, latitude: long)
         myLocation = location
+       
+        // 주소로 보여주기
         geoCoder.reverseGeocodeLocation(currentLocation) { (placemark, error) in
             if error != nil {
                 print("Error")
@@ -153,12 +162,30 @@ extension LocationMainVC: CLLocationManagerDelegate {
                 }
             }
         }
-        updateCurrentLocation(latitude: lat, longitude: long)
+//        updateCurrentLocation(latitude: lat, longitude: long)
+        let loc = Location.init(longitute: 126.9036, latitude: 37.55048)
+        
+        updateCurrentLocation(latitude: loc.latitude, longitude: loc.longitute)
     }
     
 }
 
 extension LocationMainVC: MTMapViewDelegate {
+    // 마커 눌렀을 때
+    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+        print("select:")
+        if selectedByMarker {
+            selectedByMarker = false
+            selectedIndex = poiItem.tag
+            mapView.select(poiItem, animated: true)
+            cafeCollectionView.reloadData()
+            cafeCollectionView.scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: .centeredHorizontally, animated: true)
+        } else {
+            selectedByMarker = true
+        }
+        return false
+    }
+    
     func initMap() {
         // 위치 사용 동의 알람창 최초
         isAuthorizedtoGetUserLocation()
@@ -173,8 +200,6 @@ extension LocationMainVC: MTMapViewDelegate {
         mapView = MTMapView(frame: self.mapParentView.frame)
         mapView.delegate = self
         mapView.baseMapType = .standard
-        
-//        addMarkerInMap()
         
         mapParentView.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -203,7 +228,6 @@ extension LocationMainVC: MTMapViewDelegate {
         item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 30)    // 마커 위치 조정
         self.mapView?.add(item)
         // 추적 멈춤
-        locationManager.stopUpdatingLocation()
     }
     
     // 주소 설정 기반으로 업데이트
@@ -212,7 +236,6 @@ extension LocationMainVC: MTMapViewDelegate {
         removeAllObjectInMap()
         // 원 생성
         makeCircleInMap(latitude: latitude, longitude: longitude)
-        
     }
     
     // 지도 위 객체 모두 삭제
@@ -235,15 +258,11 @@ extension LocationMainVC: MTMapViewDelegate {
         self.mapView.setMapCenter(mapPoint, zoomLevel: 3, animated: true)
     }
     
-    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
-        selectedIndex = poiItem.tag
-        mapView.select(poiItem, animated: true)
-        return false
-    }
-    
+    // 주변 카페들 마커 추가
     func addMarkerInMap() {
         guard let nearByCafes = nearByCafes else { return }
-        for i in 0..<nearByCafes.count {
+        selectedByMarker = false
+        for i in 0...nearByCafes.count-1 {
             let cafe = nearByCafes[i]
             let item = MTMapPOIItem()
             item.tag = i
@@ -256,7 +275,7 @@ extension LocationMainVC: MTMapViewDelegate {
             item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
             self.mapView.addPOIItems([item])
         }
-        let item = self.mapView.findPOIItem(byTag: 0)
+        let item = self.mapView.findPOIItem(byTag: selectedIndex)
         self.mapView.setMapCenter(item?.mapPoint, animated: true)
         self.mapView.setZoomLevel(2, animated: true)
         self.mapView.select(item, animated: true)
@@ -268,6 +287,7 @@ extension LocationMainVC: MTMapViewDelegate {
 extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let cafe = nearByCafes else { return 0 }
+        print("collectionview")
         return cafe.count
     }
     
@@ -294,17 +314,21 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if let cell = cafeCollectionView.cellForItem(at: indexPath) as? LocationMapCafeCell {
             if cell.selectedFlag == true {
                 if let dialogVC = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationMapDialogVC") as? LocationMapDialogVC {
+                    guard let cafe = nearByCafes?[indexPath.item] else { return }
+                    dialogVC.startLocation = startLocation
+                    dialogVC.cafe = cafe
                     self.addChild(dialogVC)
                     dialogVC.view.frame = self.view.frame
                     self.view.addSubview(dialogVC.view)
                     dialogVC.didMove(toParent: self )
                 }
             } else {
+                selectedByMarker = false
                 let item = self.mapView.findPOIItem(byTag: indexPath.item)
                 self.mapView.setMapCenter(item?.mapPoint, animated: true)
                 self.mapView.select(item, animated: true)
-                
                 selectedIndex = indexPath.item
+                cafeCollectionView.reloadData()
             }
         }
     }

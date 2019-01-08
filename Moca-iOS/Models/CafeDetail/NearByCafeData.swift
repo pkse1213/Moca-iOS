@@ -17,7 +17,9 @@ struct NearByCafeData: Codable {
 struct NearByCafe: Codable {
     let cafeID: Int
     let cafeLatitude, cafeLongitude: Double
-    let cafeName, cafeImgURL, addressDistrictName: String
+    let cafeName: String
+    let cafeImgURL: String
+    let addressDistrictName: String
     let cafeRatingAvg: Int
     let distance: String
     

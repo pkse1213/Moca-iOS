@@ -16,8 +16,9 @@ struct NearByCafeService: APIService, RequestService{
     let URL = url("/cafe/nearbycafe")
     typealias NetworkData = NearByCafeData
     
-    func getNearByCafe(isCafeDetail: Int, cafeId: Int, latitude: Double, longitude: Double, completion: @escaping ([NearByCafe]) -> Void, error: @escaping (Int) -> Void) {
+    func getNearByCafe(isCafeDetail: Int, token: String, cafeId: Int, latitude: Double, longitude: Double, completion: @escaping ([NearByCafe]) -> Void, error: @escaping (Int) -> Void) {
         let header: HTTPHeaders = [
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         let body: [String: Any] = [
