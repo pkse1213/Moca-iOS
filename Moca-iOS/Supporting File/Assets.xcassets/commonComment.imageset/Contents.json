@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "commonComment.png",
       "scale" : "1x",
-      "filename" : "commonComment.png"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "commonComment@2x.png",
       "scale" : "2x",
-      "filename" : "commonComment@2x.png"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
+      "filename" : "commonComment@3x.png",
       "scale" : "3x",
-      "filename" : "commonComment@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

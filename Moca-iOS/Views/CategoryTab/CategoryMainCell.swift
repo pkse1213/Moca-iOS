@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class CategoryMainCell: UITableViewCell {
     @IBOutlet weak var conceptCollectionView: UICollectionView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
@@ -18,10 +17,12 @@ class CategoryMainCell: UITableViewCell {
     let menuSelectedImages = [#imageLiteral(resourceName: "filterCoffeeRed"),#imageLiteral(resourceName: "filterTeaRed"),#imageLiteral(resourceName: "filterBakeryRed"),#imageLiteral(resourceName: "filterFruitRed"),#imageLiteral(resourceName: "filterDessertRed"),#imageLiteral(resourceName: "filterEtcRed")]
     let conceptDefaultImaeges = [#imageLiteral(resourceName: "filterMood"),#imageLiteral(resourceName: "filterHanok"),#imageLiteral(resourceName: "filterRooftop"),#imageLiteral(resourceName: "filterFlower"),#imageLiteral(resourceName: "filterBook"),#imageLiteral(resourceName: "filterDrive"),#imageLiteral(resourceName: "filterPet"),#imageLiteral(resourceName: "filterEtc")]
     let conceptSelectedImages = [#imageLiteral(resourceName: "filterMoodRed"),#imageLiteral(resourceName: "filterHanokRed"),#imageLiteral(resourceName: "filterRooftopRed"),#imageLiteral(resourceName: "filterFlowerRed"),#imageLiteral(resourceName: "filterBookRed"),#imageLiteral(resourceName: "filterDriveRed"),#imageLiteral(resourceName: "filterPetRed"),#imageLiteral(resourceName: "filterEtcRed")]
-    var navigationController: UINavigationController?
+    weak var delegate: ListViewCellDelegate?
+    
     var unit: CGFloat = 0.0
     var conceptSelectedId: Set<Int> = []
     var menuSelectedId: Set<Int> = []
+    var locationId = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,15 +35,21 @@ class CategoryMainCell: UITableViewCell {
     @IBAction func locationSelectAction(_ sender: UIButton) {
         applyButton.isEnabled = true
         pinImageView.isHidden = false
+        applyButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        applyButton.backgroundColor = #colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1)
+        locationId = sender.tag
         pinImageView.center.x = sender.center.x
         pinImageView.center.y = sender.center.y-19
     }
     
     @IBAction func applyAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "CategoryTab", bundle: nil).instantiateViewController(withIdentifier: "CategoryResultVC") as? CategoryResultVC {
+            vc.menuId = Array(menuSelectedId)
+            vc.conceptId = Array(conceptSelectedId)
+            vc.locationId = locationId
             print(menuSelectedId)
             print(conceptSelectedId)
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
     

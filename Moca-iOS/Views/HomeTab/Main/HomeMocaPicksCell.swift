@@ -9,8 +9,8 @@
 import UIKit
 
 class HomeMocaPicksCell: UITableViewCell {
-
-    var navigationController: UINavigationController?
+    var mocaPicks: [MocaPicks]?
+    weak var delegate: ListViewCellDelegate?
     @IBOutlet weak var mocaPickCollectionView: UICollectionView!
     @IBOutlet var moreBtnImageView: UIImageView!
     
@@ -32,7 +32,7 @@ class HomeMocaPicksCell: UITableViewCell {
     
     @objc func moreAction(_:UIImageView) {
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksListVC") as? MocaPicksListVC {
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
     
@@ -54,7 +54,7 @@ extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksCafeVC") as? MocaPicksCafeVC {
-            self.navigationController?.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
     

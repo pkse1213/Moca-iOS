@@ -9,7 +9,8 @@
 import UIKit
 
 class LocationMapDialogVC: UIViewController {
-
+    var cafe: NearByCafe?
+    var startLocation: Location?
     @IBOutlet var dialogParentView: UIView!
     @IBOutlet weak var dialogBackgroundView: UIView!
     @IBOutlet weak var searchButton: UIButton!
@@ -18,14 +19,19 @@ class LocationMapDialogVC: UIViewController {
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var cafeLocationLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpData()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setUpView()
+    }
+    private func setUpData() {
+        guard let cafe = cafe else { return }
+        cafeNameLabel.text = cafe.cafeName
+        cafeLocationLabel.text = "\(cafe.distance) 이내"
     }
     
     private func setUpView() {
@@ -42,7 +48,8 @@ class LocationMapDialogVC: UIViewController {
     
     @IBAction func detailLookAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
-            
+            guard let cafe = cafe else { return }
+            vc.cafeId = cafe.cafeID
             self.navigationController?.pushViewController(vc, animated: true)
             self.view.removeFromSuperview()
             
@@ -50,14 +57,9 @@ class LocationMapDialogVC: UIViewController {
     }
     
     @IBAction func searchLocationAction(_ sender: Any) {
-        guard let schemeURL = URL(string: "daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT")else {
-            return
-        }
-        if UIApplication.shared.canOpenURL(schemeURL) {
-            UIApplication.shared.open(schemeURL, options: [:]) { (bool) in
-                print(bool)
-            }
-        }
+        guard let cafe = cafe, let startLocation = startLocation else { return }
+        let cafeLocation = Location(longitute: cafe.cafeLongitude, latitude: cafe.cafeLatitude)
+        goToKaKaoMapApp(start: startLocation, end: cafeLocation)
     }
     
 }
