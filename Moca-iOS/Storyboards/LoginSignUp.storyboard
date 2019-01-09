@@ -332,6 +332,9 @@
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupAction:" destination="yme-Lz-YEe" eventType="touchUpInside" id="grJ-qf-n66"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxN-oT-z5p">
                                 <rect key="frame" x="55" y="703" width="265" height="37"/>

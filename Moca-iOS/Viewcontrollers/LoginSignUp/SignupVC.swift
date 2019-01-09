@@ -55,6 +55,24 @@ class SignupVC: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func signupAction(_ sender: Any) {
+//        let body = [
+//            "user_id" : gsno(idTxt.text),
+//            "user_password" : gsno(pwTxt.text),
+//            "user_name" : gsno(nameTxt.text),
+//            "user_phone" : gsno(phoneTxt.text),
+//            "user_img" : ""
+//        ]
+        
+        print("회원가입")
+//        SignupService.shared.signup(user_id: gsno(idTxt.text), user_password: gsno(pwTxt.text), user_name: gsno(nameTxt.text), user_phone: gsno(phoneTxt.text), user_img: profileImage.image ?? #imageLiteral(resourceName: "commonDefaultimage")) {
+//            self.simpleAlert(title: "회원가입 성공", message: "회원가입이 완료되었습니다.")
+        SignupService.shared.signup(user_id: gsno(idTxt.text), user_password: gsno(pwTxt.text), user_name: gsno(nameTxt.text), user_phone: gsno(phoneTxt.text), user_img: profileImage.image ?? #imageLiteral(resourceName: "commonDefaultimage")) {
+            self.simpleAlert(title: "회원가입 성공", message: "회원가입이 완료되었습니다.")
+        }
+        
+    }
+    
     // 이미지 선택
     private func setUpImageSelect() {
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
