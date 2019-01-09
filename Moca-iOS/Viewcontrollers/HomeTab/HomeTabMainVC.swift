@@ -9,14 +9,27 @@
 import UIKit
 
 class HomeTabMainVC: UIViewController {
-    
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTabTableView: UITableView!
     @IBOutlet weak var noticeImageView: UIImageView!
+    var mocaPicks: [MocaPicks]? {
+        didSet { homeTabTableView.reloadData() }
+    }
+    var hotPlaceNames: [HotPlaceName]? {
+        didSet { homeTabTableView.reloadData() }
+    }
+    var rankingCafes: [RankingCafe]? {
+        didSet { homeTabTableView.reloadData() }
+    }
+    var mocaPlusSubject: [MocaPlusSubject]? {
+        didSet { homeTabTableView.reloadData() }
+    }
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        initData()
         setUpTableView()
         registerGesture()
     }
@@ -35,6 +48,29 @@ class HomeTabMainVC: UIViewController {
     private func setUpTableView() {
         self.homeTabTableView.delegate = self
         self.homeTabTableView.dataSource = self
+    }
+    
+    private func initData() {
+        MocaPicksCafeService.shareInstance.getMocaPicksCafe(length: 3, token: token, completion: { (res) in
+            self.mocaPicks = res
+        }) { (err) in
+            print("홈 모카픽스 실패 \(err)")
+        }
+        HotPlaceNameService.shareInstance.getRankingCafe(token: token, completion: { (res) in
+            self.hotPlaceNames = res
+        }) { (err) in
+            print("홈 핫플레이스 실패 \(err)")
+        }
+        RankingCafeService.shareInstance.getRankingCafe(length: 3, token: token, completion: { (res) in
+            self.rankingCafes = res
+        }) { (err) in
+            print("홈 랭킹 실패 \(err)")
+        }
+        MocaPlusSubjectService.shareInstance.getMocaPlusSubject(length: 3, token: token, completion: { (res) in
+            self.mocaPlusSubject = res
+        }) { (err) in
+            print("홈 모카플러스 실패 \(err)")
+        }
     }
     
     private func registerGesture() {
@@ -60,32 +96,51 @@ class HomeTabMainVC: UIViewController {
 }
 
 extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        //let _ = mocaPicks,
+        guard let _ = hotPlaceNames, let _ = rankingCafes, let _ = mocaPlusSubject else { return 0 }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // moca picks
         var cell = UITableViewCell()
-        if indexPath.row == 0 {
+        //let _ = mocaPicks,
+        guard let hotPlaceNames = hotPlaceNames, let rankingCafes = rankingCafes, let mocaPlusSubject = mocaPlusSubject else { return cell }
+        
+        switch indexPath.section {
+        case 0:
+            return cell
             if let mocaPicksCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as? HomeMocaPicksCell {
+                mocaPicksCell.mocaPicks = mocaPicks
                 mocaPicksCell.delegate = self
                 cell = mocaPicksCell
             }
-            
-        } else if indexPath.row == 1 {
-            if let conceptCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeConceptCell") as? HomeConceptCell {
-                conceptCell.parentVC = self
-                
-                cell = conceptCell
+        case 1:
+            if let hotPlaceCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeHotPlaceCell") as? HomeHotPlaceCell {
+                hotPlaceCell.hotPlaceNames = hotPlaceNames
+                hotPlaceCell.delegate = self
+                cell = hotPlaceCell
             }
-            
-        } else {
+        case 2:
             if let rankingCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeRankingCell") as? HomeRankingCell {
+                rankingCell.rankingCafes = rankingCafes
                 rankingCell.delegate = self
                 cell = rankingCell
             }
+        case 3:
+            if let mocaPlusCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPlusCell") as? HomeMocaPlusCell {
+                mocaPlusCell.mocaPlusSubject = mocaPlusSubject
+                mocaPlusCell.delegate = self
+                cell = mocaPlusCell
+            }
+        default:
+            return cell
         }
+        
         return cell
     }
     

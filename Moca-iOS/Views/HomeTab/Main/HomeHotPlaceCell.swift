@@ -1,5 +1,5 @@
 //
-//  MocaPicksCell.swift
+//  CenceptCell.swift
 //  Moca-iOS
 //
 //  Created by 박세은 on 2018. 12. 25..
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeMocaPicksCell: UITableViewCell {
-    var mocaPicks: [MocaPicks]?
-    weak var delegate: ListViewCellDelegate?
-    @IBOutlet weak var mocaPickCollectionView: UICollectionView!
+class HomeHotPlaceCell: UITableViewCell {
     @IBOutlet var moreBtnImageView: UIImageView!
+    @IBOutlet weak var hotPlaceCollectionView: UICollectionView!
+    var hotPlaceNames: [HotPlaceName]?
+    var delegate: ListViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +21,8 @@ class HomeMocaPicksCell: UITableViewCell {
     }
     
     private func setUpCollectionView() {
-        self.mocaPickCollectionView.delegate = self
-        self.mocaPickCollectionView.dataSource = self
+        self.hotPlaceCollectionView.delegate = self
+        self.hotPlaceCollectionView.dataSource = self
     }
     
     private func registerGesture() {
@@ -31,31 +31,30 @@ class HomeMocaPicksCell: UITableViewCell {
     }
     
     @objc func moreAction(_:UIImageView) {
-        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksListVC") as? MocaPicksListVC {
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
             delegate?.goToViewController(vc: vc)
         }
     }
-    
 }
 
-extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeHotPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        guard let hotPlaceNames = hotPlaceNames else { return 0 }
+        return hotPlaceNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
-        if let cafeCell = mocaPickCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeMocaPicksCafeListCell", for: indexPath) as? HomeMocaPicksCafeListCell {
-            cell = cafeCell
+        guard let hotPlaceName = hotPlaceNames?[indexPath.item] else { return cell }
+        if let hotPlaceCell = hotPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeHotPlaceNameCell", for: indexPath) as? HomeHotPlaceNameCell {
+            hotPlaceCell.hotPlaceName = hotPlaceName
+            cell = hotPlaceCell
         }
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksCafeVC") as? MocaPicksCafeVC {
-            delegate?.goToViewController(vc: vc)
-        }
     }
-    
 }

@@ -49,9 +49,8 @@
 		77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13FC21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift */; };
 		77FA13FF21E123F7006C8E20 /* SavingHistoryFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13FE21E123F7006C8E20 /* SavingHistoryFooterTableViewCell.swift */; };
 		77FA140121E1387F006C8E20 /* HotPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA140021E1387F006C8E20 /* HotPlaceVC.swift */; };
-		77FA141021E1404D006C8E20 /* ConceptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA140F21E1404D006C8E20 /* ConceptTableViewCell.swift */; };
-		77FA141221E142FA006C8E20 /* ConceptImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA141121E142FA006C8E20 /* ConceptImageCollectionViewCell.swift */; };
-		77FA141421E15110006C8E20 /* HomeTabConcept.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FA141321E15110006C8E20 /* HomeTabConcept.storyboard */; };
+		77FA141021E1404D006C8E20 /* HotPlaceCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA140F21E1404D006C8E20 /* HotPlaceCafeCell.swift */; };
+		77FA141221E142FA006C8E20 /* HotPlaceCafeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA141121E142FA006C8E20 /* HotPlaceCafeImageCell.swift */; };
 		77FAE6D121D5441B006C24F4 /* HomeSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */; };
 		8517728C6C50F34105911A84 /* Pods_Moca_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */; };
 		CB00664521E0954000F53D61 /* CategoryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB00664421E0954000F53D61 /* CategoryTab.storyboard */; };
@@ -80,6 +79,8 @@
 		CB2A5F2921E5DF440001E4DA /* MocaPicksDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */; };
 		CB2A5F2E21E5E2690001E4DA /* RankingCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2D21E5E2690001E4DA /* RankingCafeData.swift */; };
 		CB2A5F3021E5E2900001E4DA /* RankingCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2F21E5E2900001E4DA /* RankingCafeService.swift */; };
+		CB2A5F3421E5E85A0001E4DA /* HotPlaceNameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F3321E5E85A0001E4DA /* HotPlaceNameData.swift */; };
+		CB2A5F3621E5E8840001E4DA /* HotPlaceNameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F3521E5E8840001E4DA /* HotPlaceNameService.swift */; };
 		CB2ACCE021D7F7AD004DBF2E /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCDF21D7F7AD004DBF2E /* DaumMap.framework */; };
 		CB2ACCE221D7F881004DBF2E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCE121D7F881004DBF2E /* OpenGLES.framework */; };
 		CB2ACCE421D7F888004DBF2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCE321D7F888004DBF2E /* SystemConfiguration.framework */; };
@@ -114,6 +115,10 @@
 		CB2DE22921E4F24E009C2683 /* CommunityReviewDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE22821E4F24E009C2683 /* CommunityReviewDetailService.swift */; };
 		CB2DE22B21E519B4009C2683 /* CommunityFollowUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE22A21E519B4009C2683 /* CommunityFollowUserData.swift */; };
 		CB2DE22D21E51A41009C2683 /* CommunityFollowUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DE22C21E51A41009C2683 /* CommunityFollowUserService.swift */; };
+		CB2E781F21E6030000619139 /* HomeMocaPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E781E21E6030000619139 /* HomeMocaPlusCell.swift */; };
+		CB2E782121E6030E00619139 /* HomeMocaPlusListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782021E6030E00619139 /* HomeMocaPlusListCell.swift */; };
+		CB2E782421E6061000619139 /* MocaPlusSubjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782321E6061000619139 /* MocaPlusSubjectData.swift */; };
+		CB2E782721E6067100619139 /* MocaPlusSubjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782621E6067100619139 /* MocaPlusSubjectService.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -123,8 +128,8 @@
 		CB32A08421D249A1004796F7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08321D249A1004796F7 /* UIView+Extension.swift */; };
 		CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */; };
 		CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */; };
-		CB32A08F21D259B8004796F7 /* HomeConceptListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08E21D259B8004796F7 /* HomeConceptListCell.swift */; };
-		CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09021D259CB004796F7 /* HomeConceptCell.swift */; };
+		CB32A08F21D259B8004796F7 /* HomeHotPlaceNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A08E21D259B8004796F7 /* HomeHotPlaceNameCell.swift */; };
+		CB32A09121D259CB004796F7 /* HomeHotPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09021D259CB004796F7 /* HomeHotPlaceCell.swift */; };
 		CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */; };
 		CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */; };
 		CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */; };
@@ -222,9 +227,8 @@
 		77FA13FC21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		77FA13FE21E123F7006C8E20 /* SavingHistoryFooterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryFooterTableViewCell.swift; sourceTree = "<group>"; };
 		77FA140021E1387F006C8E20 /* HotPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceVC.swift; sourceTree = "<group>"; };
-		77FA140F21E1404D006C8E20 /* ConceptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptTableViewCell.swift; sourceTree = "<group>"; };
-		77FA141121E142FA006C8E20 /* ConceptImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		77FA141321E15110006C8E20 /* HomeTabConcept.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTabConcept.storyboard; sourceTree = "<group>"; };
+		77FA140F21E1404D006C8E20 /* HotPlaceCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceCafeCell.swift; sourceTree = "<group>"; };
+		77FA141121E142FA006C8E20 /* HotPlaceCafeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceCafeImageCell.swift; sourceTree = "<group>"; };
 		77FAE6D021D5441B006C24F4 /* HomeSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchVC.swift; sourceTree = "<group>"; };
 		8870235A62FE8FFCFDF56460 /* Pods-Moca-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moca-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A5CF79CAADD817390D13AB0A /* Pods_Moca_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moca_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +263,8 @@
 		CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksDetailService.swift; sourceTree = "<group>"; };
 		CB2A5F2D21E5E2690001E4DA /* RankingCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeData.swift; sourceTree = "<group>"; };
 		CB2A5F2F21E5E2900001E4DA /* RankingCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeService.swift; sourceTree = "<group>"; };
+		CB2A5F3321E5E85A0001E4DA /* HotPlaceNameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceNameData.swift; sourceTree = "<group>"; };
+		CB2A5F3521E5E8840001E4DA /* HotPlaceNameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceNameService.swift; sourceTree = "<group>"; };
 		CB2ACCDF21D7F7AD004DBF2E /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		CB2ACCE121D7F881004DBF2E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		CB2ACCE321D7F888004DBF2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -294,6 +300,10 @@
 		CB2DE22821E4F24E009C2683 /* CommunityReviewDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewDetailService.swift; sourceTree = "<group>"; };
 		CB2DE22A21E519B4009C2683 /* CommunityFollowUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowUserData.swift; sourceTree = "<group>"; };
 		CB2DE22C21E51A41009C2683 /* CommunityFollowUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowUserService.swift; sourceTree = "<group>"; };
+		CB2E781E21E6030000619139 /* HomeMocaPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPlusCell.swift; sourceTree = "<group>"; };
+		CB2E782021E6030E00619139 /* HomeMocaPlusListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPlusListCell.swift; sourceTree = "<group>"; };
+		CB2E782321E6061000619139 /* MocaPlusSubjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPlusSubjectData.swift; sourceTree = "<group>"; };
+		CB2E782621E6067100619139 /* MocaPlusSubjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPlusSubjectService.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -303,8 +313,8 @@
 		CB32A08321D249A1004796F7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCell.swift; sourceTree = "<group>"; };
 		CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMocaPicksCafeListCell.swift; sourceTree = "<group>"; };
-		CB32A08E21D259B8004796F7 /* HomeConceptListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConceptListCell.swift; sourceTree = "<group>"; };
-		CB32A09021D259CB004796F7 /* HomeConceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConceptCell.swift; sourceTree = "<group>"; };
+		CB32A08E21D259B8004796F7 /* HomeHotPlaceNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotPlaceNameCell.swift; sourceTree = "<group>"; };
+		CB32A09021D259CB004796F7 /* HomeHotPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotPlaceCell.swift; sourceTree = "<group>"; };
 		CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingCell.swift; sourceTree = "<group>"; };
 		CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListCell.swift; sourceTree = "<group>"; };
 		CB32A09621D2A27C004796F7 /* CommunityTabMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabMainVC.swift; sourceTree = "<group>"; };
@@ -467,13 +477,13 @@
 			path = MocaPlus;
 			sourceTree = "<group>";
 		};
-		77FA140E21E14026006C8E20 /* Concept */ = {
+		77FA140E21E14026006C8E20 /* HotPlace */ = {
 			isa = PBXGroup;
 			children = (
-				77FA140F21E1404D006C8E20 /* ConceptTableViewCell.swift */,
-				77FA141121E142FA006C8E20 /* ConceptImageCollectionViewCell.swift */,
+				77FA140F21E1404D006C8E20 /* HotPlaceCafeCell.swift */,
+				77FA141121E142FA006C8E20 /* HotPlaceCafeImageCell.swift */,
 			);
-			path = Concept;
+			path = HotPlace;
 			sourceTree = "<group>";
 		};
 		CB08314721D0E4B0000F5D67 = {
@@ -524,7 +534,6 @@
 				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
 				7729030021D533F800C19416 /* HomeSearch.storyboard */,
 				7723437D21DEB57000E5E070 /* LoginSignUp.storyboard */,
-				77FA141321E15110006C8E20 /* HomeTabConcept.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -594,6 +603,7 @@
 		CB2A5F1F21E5DB0C0001E4DA /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E782521E6066700619139 /* MocaPlus */,
 				CB2A5F3121E5E7FD0001E4DA /* HotPlace */,
 				CB2A5F2A21E5E24C0001E4DA /* Ranking */,
 				CB2A5F2521E5DD660001E4DA /* MocaPicks */,
@@ -604,7 +614,8 @@
 		CB2A5F2021E5DB1E0001E4DA /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				CB2A5F3221E5E8090001E4DA /* New Group */,
+				CB2E782221E6060500619139 /* MocaPlus */,
+				CB2A5F3221E5E8090001E4DA /* HotPlace */,
 				CB2A5F2C21E5E2600001E4DA /* Ranking */,
 				CB2A5F2B21E5E2540001E4DA /* MocaPicks */,
 			);
@@ -648,15 +659,17 @@
 		CB2A5F3121E5E7FD0001E4DA /* HotPlace */ = {
 			isa = PBXGroup;
 			children = (
+				CB2A5F3521E5E8840001E4DA /* HotPlaceNameService.swift */,
 			);
 			path = HotPlace;
 			sourceTree = "<group>";
 		};
-		CB2A5F3221E5E8090001E4DA /* New Group */ = {
+		CB2A5F3221E5E8090001E4DA /* HotPlace */ = {
 			isa = PBXGroup;
 			children = (
+				CB2A5F3321E5E85A0001E4DA /* HotPlaceNameData.swift */,
 			);
-			path = "New Group";
+			path = HotPlace;
 			sourceTree = "<group>";
 		};
 		CB2ACCF021D7FC1F004DBF2E /* LocationTab */ = {
@@ -728,6 +741,22 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		CB2E782221E6060500619139 /* MocaPlus */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E782321E6061000619139 /* MocaPlusSubjectData.swift */,
+			);
+			path = MocaPlus;
+			sourceTree = "<group>";
+		};
+		CB2E782521E6066700619139 /* MocaPlus */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E782621E6067100619139 /* MocaPlusSubjectService.swift */,
+			);
+			path = MocaPlus;
+			sourceTree = "<group>";
+		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,7 +797,7 @@
 		CB32A08821D24CBA004796F7 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				77FA140E21E14026006C8E20 /* Concept */,
+				77FA140E21E14026006C8E20 /* HotPlace */,
 				7757B4CE21D5DB77004613BD /* HomeSearch */,
 				7780ED5A21D4F29300CC2BA7 /* MocaPlus */,
 				CB8DDB8921D3C26E001D8191 /* Main */,
@@ -833,11 +862,13 @@
 			children = (
 				CB32A08621D24CB7004796F7 /* HomeMocaPicksCell.swift */,
 				CB32A08C21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift */,
-				CB32A08E21D259B8004796F7 /* HomeConceptListCell.swift */,
-				CB32A09021D259CB004796F7 /* HomeConceptCell.swift */,
+				CB32A08E21D259B8004796F7 /* HomeHotPlaceNameCell.swift */,
+				CB32A09021D259CB004796F7 /* HomeHotPlaceCell.swift */,
 				CB32A09221D28C8C004796F7 /* HomeRankingCell.swift */,
 				CB32A09421D28E30004796F7 /* HomeRankingListCell.swift */,
 				CB2D78FA21DD247C0033C2A0 /* HomeNoticeCell.swift */,
+				CB2E781E21E6030000619139 /* HomeMocaPlusCell.swift */,
+				CB2E782021E6030E00619139 /* HomeMocaPlusListCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1060,7 +1091,6 @@
 				CB24777121DB8D94003F6569 /* LocationTab.storyboard in Resources */,
 				CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */,
 				CBF2FC2F21D4B5EC00DFC50A /* NanumGothicBold.ttf in Resources */,
-				77FA141421E15110006C8E20 /* HomeTabConcept.storyboard in Resources */,
 				772A954221D7D4F2009114FC /* MyPageTab.storyboard in Resources */,
 				CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */,
 				CB8DDB7621D363C2001D8191 /* CommunityTab.storyboard in Resources */,
@@ -1135,6 +1165,7 @@
 				CBF2FC3A21D616DA00DFC50A /* MocaPicksBaristaDetailCell.swift in Sources */,
 				CB32A08721D24CB7004796F7 /* HomeMocaPicksCell.swift in Sources */,
 				CB25AC9621D3DC0500636DFE /* CommunityFollowCell.swift in Sources */,
+				CB2A5F3621E5E8840001E4DA /* HotPlaceNameService.swift in Sources */,
 				CBD4C7BF21E1F756008BE065 /* CategoryCafeService.swift in Sources */,
 				7735356921D80BA800FB914C /* CouponAlertVC.swift in Sources */,
 				CB2C592121DFD22F00CDB39F /* CategoryMenuCell.swift in Sources */,
@@ -1148,6 +1179,7 @@
 				CB2E8F0621DC0FA20087EFE2 /* CafeDetailImageListCell.swift in Sources */,
 				772A953421D793A9009114FC /* MyPageInfoCell.swift in Sources */,
 				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
+				CB2E781F21E6030000619139 /* HomeMocaPlusCell.swift in Sources */,
 				CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */,
 				CB0AAD7C21D8B22B0007E174 /* LocationMapCafeCell.swift in Sources */,
 				7723437521DE8F6200E5E070 /* CommunitySearchVC.swift in Sources */,
@@ -1184,6 +1216,7 @@
 				CB2CA70D21E0AF76004DA344 /* SelectedLocationCell.swift in Sources */,
 				7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */,
 				CB2D78F121DCFE150033C2A0 /* AddressData.swift in Sources */,
+				CB2E782121E6030E00619139 /* HomeMocaPlusListCell.swift in Sources */,
 				CBD4C7CA21E22791008BE065 /* CafeDetailInfoService.swift in Sources */,
 				CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */,
 				CB2DE22D21E51A41009C2683 /* CommunityFollowUserService.swift in Sources */,
@@ -1209,24 +1242,27 @@
 				CBD4C7D821E28404008BE065 /* CafeScrapService.swift in Sources */,
 				772A953E21D7C06A009114FC /* MembershipCouponCollectionCell.swift in Sources */,
 				CBD4C7C421E22684008BE065 /* CafeDetailInfoData.swift in Sources */,
-				77FA141221E142FA006C8E20 /* ConceptImageCollectionViewCell.swift in Sources */,
+				77FA141221E142FA006C8E20 /* HotPlaceCafeImageCell.swift in Sources */,
 				77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */,
+				CB2E782721E6067100619139 /* MocaPlusSubjectService.swift in Sources */,
 				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
 				CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
 				CB2C591A21DFCE7D00CDB39F /* CategoryMainVC.swift in Sources */,
-				CB32A08F21D259B8004796F7 /* HomeConceptListCell.swift in Sources */,
-				77FA141021E1404D006C8E20 /* ConceptTableViewCell.swift in Sources */,
+				CB32A08F21D259B8004796F7 /* HomeHotPlaceNameCell.swift in Sources */,
+				77FA141021E1404D006C8E20 /* HotPlaceCafeCell.swift in Sources */,
 				7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */,
 				CBD4C7CC21E2279C008BE065 /* CafeDetailSignitureService.swift in Sources */,
+				CB2A5F3421E5E85A0001E4DA /* HotPlaceNameData.swift in Sources */,
 				CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */,
 				CB2DE22B21E519B4009C2683 /* CommunityFollowUserData.swift in Sources */,
 				CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */,
 				CB2DE22321E4AD00009C2683 /* ListViewCellDelegate.swift in Sources */,
 				CB2A5F2E21E5E2690001E4DA /* RankingCafeData.swift in Sources */,
+				CB2E782421E6061000619139 /* MocaPlusSubjectData.swift in Sources */,
 				774B596D21DB837900B10989 /* ProfileModifyVC.swift in Sources */,
 				7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */,
 				77CD53E921E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift in Sources */,
@@ -1264,7 +1300,7 @@
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
 				CB2D78EE21DCFDD40033C2A0 /* HTTPStatusCode.swift in Sources */,
-				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
+				CB32A09121D259CB004796F7 /* HomeHotPlaceCell.swift in Sources */,
 				CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */,
 				CB00664721E09D7900F53D61 /* CategoryResultVC.swift in Sources */,
 				77FA140121E1387F006C8E20 /* HotPlaceVC.swift in Sources */,

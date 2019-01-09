@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConceptTableViewCell: UITableViewCell {
+class HotPlaceCafeCell: UITableViewCell {
     
     @IBOutlet var conceptCafeImg: UIImageView!
     @IBOutlet var conceptCafeName: UILabel!
@@ -42,7 +42,7 @@ class ConceptTableViewCell: UITableViewCell {
 
 }
 
-extension ConceptTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource {
+extension HotPlaceCafeCell : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -50,7 +50,7 @@ extension ConceptTableViewCell : UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         
-        if let imgCell = imageCollection.dequeueReusableCell(withReuseIdentifier: "ConceptImageCollectionViewCell", for: indexPath) as? ConceptImageCollectionViewCell {
+        if let imgCell = imageCollection.dequeueReusableCell(withReuseIdentifier: "HotPlaceCafeImageCell", for: indexPath) as? HotPlaceCafeImageCell {
             cell = imgCell
         }
         

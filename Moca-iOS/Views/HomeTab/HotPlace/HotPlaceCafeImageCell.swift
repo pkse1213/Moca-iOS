@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConceptImageCollectionViewCell: UICollectionViewCell {
+class HotPlaceCafeImageCell: UICollectionViewCell {
     @IBOutlet var cafeMenuImgs: UIImageView!
     
 }
