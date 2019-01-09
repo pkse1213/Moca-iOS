@@ -16,7 +16,7 @@ struct MocaPicksDetailService: APIService, RequestService {
     let URL = url("/cafe/pick")
     typealias NetworkData = MocaPicksDetailData
     
-    func getMocaPicksCafe(cafeId: Int, token: String, completion: @escaping (MocaPicksDetail) -> Void, error: @escaping (Int) -> Void) {
+    func getMocaPicksCafeDetail(cafeId: Int, token: String, completion: @escaping (MocaPicksDetail) -> Void, error: @escaping (Int) -> Void) {
         let mocaPicksURL = URL + "/\(cafeId)/detail"
         let header: HTTPHeaders = [
             "Authorization" : token ,
