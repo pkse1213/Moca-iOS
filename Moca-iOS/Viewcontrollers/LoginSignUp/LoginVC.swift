@@ -66,7 +66,17 @@ class LoginVC: UIViewController {
     
     // 로그인
     @IBAction func loginAction(_ sender: Any) {
+        let body = [
+            "user_id" : gsno(idTxt.text),
+            "user_password" : gsno(pwTxt.text)
+        ]
         
+        LoginService.shared.login(body: body, completion: { (token) in
+            
+            print("로그인 성공")
+        }) { (error) in
+            self.simpleAlert(title: "로그인 실패", message: "로그인에 실패했습니다.")
+        }
     }
     
     // 회원가입 화면으로
