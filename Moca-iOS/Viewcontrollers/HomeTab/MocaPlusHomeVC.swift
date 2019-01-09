@@ -61,8 +61,11 @@ extension MocaPlusHomeVC : UITableViewDelegate, UITableViewDataSource {
     
     // delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 상세보기 띄우기
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "MocaPlusDetailVC") as! MocaPlusDetailVC
-        navigationController?.pushViewController(nextVC, animated: true)
+        guard let mocaPlusSubject = mocaPlusSubject?[indexPath.row] else { return }
+        if let vc = UIStoryboard(name: "MocaPlus", bundle: nil).instantiateViewController(withIdentifier: "MocaPlusDetailVC") as? MocaPlusDetailVC {
+            vc.mocaPlusSubject = mocaPlusSubject
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 }

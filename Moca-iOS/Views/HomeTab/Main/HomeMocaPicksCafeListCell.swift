@@ -28,6 +28,6 @@ class HomeMocaPicksCafeListCell: UICollectionViewCell {
     private func setUpData() {
         guard let cafe = cafe else { return }
         cafeNameLabel.text = cafe.cafeName
-        cafeAddressLabel.text = cafe.addressDistrictName
+        cafeAddressLabel.text = "서울 \(cafe.addressDistrictName)"
     }
 }

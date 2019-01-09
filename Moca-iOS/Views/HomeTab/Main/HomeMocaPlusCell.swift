@@ -60,4 +60,11 @@ extension HomeMocaPlusCell: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let mocaPlusSubject = mocaPlusSubject?[indexPath.row] else { return }
+        if let vc = UIStoryboard(name: "MocaPlus", bundle: nil).instantiateViewController(withIdentifier: "MocaPlusDetailVC") as? MocaPlusDetailVC {
+            vc.mocaPlusSubject = mocaPlusSubject
+            delegate?.goToViewController(vc: vc)
+        }
+    }
 }

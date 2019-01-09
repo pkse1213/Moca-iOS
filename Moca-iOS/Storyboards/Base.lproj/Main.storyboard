@@ -82,8 +82,8 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마포구 연남" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhC-wm-0BH">
-                                                                        <rect key="frame" x="6" y="234.66666666666666" width="64.666666666666671" height="16.333333333333343"/>
-                                                                        <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="14"/>
+                                                                        <rect key="frame" x="6" y="236.66666666666666" width="70" height="15.666666666666657"/>
+                                                                        <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -93,7 +93,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="IhC-wm-0BH" firstAttribute="leading" secondItem="R1F-m3-a9z" secondAttribute="leading" id="0Tk-Tn-ueY"/>
                                                                 <constraint firstItem="QTA-Wc-HpP" firstAttribute="leading" secondItem="Dak-kq-IzZ" secondAttribute="leading" id="1Yo-Mz-7kw"/>
-                                                                <constraint firstItem="IhC-wm-0BH" firstAttribute="top" secondItem="R1F-m3-a9z" secondAttribute="bottom" constant="1" id="Wdt-54-Eo1"/>
+                                                                <constraint firstItem="IhC-wm-0BH" firstAttribute="top" secondItem="R1F-m3-a9z" secondAttribute="bottom" constant="3" id="Wdt-54-Eo1"/>
                                                                 <constraint firstItem="R1F-m3-a9z" firstAttribute="top" secondItem="QTA-Wc-HpP" secondAttribute="bottom" constant="10" id="c5g-Yj-KqU"/>
                                                                 <constraint firstItem="R1F-m3-a9z" firstAttribute="leading" secondItem="Dak-kq-IzZ" secondAttribute="leading" constant="6" id="i2V-ht-Q7n"/>
                                                                 <constraint firstItem="QTA-Wc-HpP" firstAttribute="top" secondItem="Dak-kq-IzZ" secondAttribute="top" id="n47-YM-HvT"/>
