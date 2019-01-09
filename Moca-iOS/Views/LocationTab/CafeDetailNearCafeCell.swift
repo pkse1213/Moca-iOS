@@ -9,8 +9,11 @@
 import UIKit
 
 class CafeDetailNearCafeCell: UITableViewCell {
-
+    var nearByCafes: [NearByCafe]?
+    weak var delegate: ListViewCellDelegate?
+    
     @IBOutlet var nearCafeCollectionView: UICollectionView!
+    @IBOutlet var moreLookButton: UIButton!
     var unit: CGFloat = 0
     
     override func awakeFromNib() {
@@ -18,9 +21,17 @@ class CafeDetailNearCafeCell: UITableViewCell {
         unit = (nearCafeCollectionView.frame.width/2-3)/173
         setUpCollectionView()
     }
+    
     private func setUpCollectionView() {
         nearCafeCollectionView.delegate = self
         nearCafeCollectionView.dataSource = self
+    }
+    
+    @IBAction func moreLookAction(_ sender: UIButton) {
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "NearByCafeListVC") as? NearByCafeListVC {
+            vc.nearByCafes = nearByCafes
+            delegate?.goToViewController(vc: vc)
+        }
     }
 }
 
@@ -31,13 +42,23 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        guard let cafes = nearByCafes else { return 0 }
+        if cafes.count < 5 {
+            moreLookButton.isHidden = true
+            return cafes.count
+        } else {
+            return 4
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let cafes = nearByCafes else { return cell }
+        
         if let cafeCell = nearCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
-            cafeCell.rankNumLabel.text = "\(indexPath.row+1)"
+            let cafe = cafes[indexPath.item]
+            cafeCell.cafeNameLabel.text = cafe.cafeName
+            cafeCell.cafeAddressLabel.text = cafe.addressDistrictName
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
             cell = cafeCell
         }
@@ -45,6 +66,10 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            guard let cafe = nearByCafes?[indexPath.item] else { return }
+            vc.cafeId = cafe.cafeID
+            delegate?.goToViewController(vc: vc)
+        }
     }
 }

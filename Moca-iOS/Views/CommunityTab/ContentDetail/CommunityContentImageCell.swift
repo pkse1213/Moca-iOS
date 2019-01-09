@@ -9,7 +9,14 @@
 import UIKit
 
 class CommunityContentImageCell: UICollectionViewCell {
+    var image: ReviewImage? {
+        didSet{ setImage() }
+    }
     @IBOutlet weak var contentImageView: UIImageView!
-    
     @IBOutlet weak var gradationImageView: UIImageView!
+    
+    private func setImage() {
+        guard let image = image else { return }
+//        contentImageView.image = image
+    }
 }

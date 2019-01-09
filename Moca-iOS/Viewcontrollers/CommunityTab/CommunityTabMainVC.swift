@@ -9,36 +9,101 @@
 import UIKit
 
 class CommunityTabMainVC: UIViewController {
-    let selectMenus = ["내 피드", "소셜 피드"]
-    var selectIndex = 0 {
-        didSet {
-            changeFeedKind()
-        }
-    }
+    var first = true
+    @IBOutlet var searchBarButtonItem: UIBarButtonItem!
     
+    // 피드 종류 선택
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectFeedView: UIView!
     @IBOutlet weak var feedMenuTableView: UITableView!
    
-    // 상단 프로필 뷰
-    @IBOutlet weak var profileBackgroundView: UIView!
-    @IBOutlet weak var profileSquareView: UIView!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var profileButton: UIButton!
-    
     // 피드 테이블 뷰
+    let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
     
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var selectIndex = 0 {
+        didSet {
+            changeFeedKind()
+            initReviewData()
+        }
+    }
+    
+    var user: CommunityUser? {
+        didSet { communityTableView.reloadData() }
+    }
+    
+    var reviews: [CommunityReview]? {
+        didSet { communityTableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpView()
+        initUserData()
+        initReviewData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if first {
+            first = false
+        } else {
+            initUserData()
+            initReviewData()
+        }
+        
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @IBAction func followerAction(_ sender: UIButton) {
+        guard let user = user else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityFollowVC") as? CommunityFollowVC {
+            vc.path = "follower"
+            vc.userId = user.userID
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func followingAction(_ sender: UIButton) {
+        guard let user = user else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityFollowVC") as? CommunityFollowVC {
+            vc.path = "following"
+            vc.userId = user.userID
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    private func initUserData() {
+        CommunityUserService.shareInstance.getUser(userId: "-1", token: token, completion: { (res) in
+            self.user = res
+            print("내 프로필 성공")
+        }) { (err) in
+            print("내 프로필 실패")
+        }
+    }
+    
+    private func initReviewData() {
+        switch selectIndex {
+        case 0:
+            CommunityReviewService.shareInstance.getSocialReview(token: token, completion: { (res) in
+                self.reviews = res
+                print("소셜 피드 성공")
+            }) { (err) in
+                print("소셜 피드 실패")
+            }
+        case 1:
+            CommunityReviewService.shareInstance.getUserReview(userId: "-1", token: token, completion: { (res) in
+                self.reviews = res
+                print("내 피드 성공")
+            }) { (err) in
+                print("내 피드 실패")
+            }
+        default:
+            return
+        }
     }
     
     private func setUpView() {
@@ -49,19 +114,15 @@ class CommunityTabMainVC: UIViewController {
         
         communityTableView.delegate = self
         communityTableView.dataSource = self
-        
-        profileImageView.applyRadius(radius: 24)
-        profileSquareView.applyRadius(radius: 3)
-        profileSquareView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     }
     
     private func changeFeedKind() {
-        feedMenuTableView.reloadData()
         dropUpandDropDown()
+        feedMenuTableView.reloadData()
     }
     
     private func dropUpandDropDown() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.selectFeedView.isHidden = !self.selectFeedView.isHidden
             
             if self.tableViewTopConstraint.constant == 0 {
@@ -82,31 +143,47 @@ class CommunityTabMainVC: UIViewController {
             self.present(vc, animated: true)
         }
     }
-    
-    @IBAction func goToSearch(_ sender: Any) {
-        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunitySearchVC") as? CommunitySearchVC {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
 }
 
 extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if tableView == feedMenuTableView {
+            return 1
+        } else {
+            return 2
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == feedMenuTableView {
             return 2
         } else {
-            return 8
+            if section == 0 {
+                return selectIndex
+            } else {
+                guard let reviews = reviews else { return 0 }
+                return reviews.count
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        
         if tableView == communityTableView {
-            if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                feedCell.navigationController = self.navigationController
-                cell = feedCell
+//            guard let reviews = reviews, let user = user else { return cell }
+            if indexPath.section == 0 {
+                guard let user = user else { return cell }
+                if let userCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityUserProfileCell") as? CommunityUserProfileCell {
+                    userCell.user = user
+                    cell = userCell
+                }
+            } else if indexPath.section == 1 {
+                guard let reviews = reviews else { return cell }
+                if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    feedCell.review = reviews[indexPath.row]
+                    feedCell.delegate = self
+                    cell = feedCell
+                }
             }
             
         } else if tableView == feedMenuTableView {
@@ -120,7 +197,6 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                 cell = selectCell
             }
         }
-        
         return cell
     }
     
@@ -129,4 +205,24 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
             selectIndex = indexPath.row
         }
     }
+}
+
+extension CommunityTabMainVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "게시글 신고", style: .default, handler: { result in
+            //doSomething
+        }))
+        actionSheet.addAction(UIAlertAction(title: "사용자 신고", style: .default, handler: { result in
+            //doSomething
+        }))
+        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+            
+    }
+    
 }

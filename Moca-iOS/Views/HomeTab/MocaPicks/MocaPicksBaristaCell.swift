@@ -9,8 +9,7 @@
 import UIKit
 
 class MocaPicksBaristaCell: UITableViewCell {
-    
-    var navigationController: UINavigationController?
+    weak var delegate: ListViewCellDelegate?
     @IBOutlet weak var baristaImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -23,11 +22,9 @@ class MocaPicksBaristaCell: UITableViewCell {
     }
     
     @IBAction func pushBaristaDetailAction(_ sender: UIButton) {
-        guard let navi = navigationController else {
-            return
-        }
+        
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksBaristaDetailVC") as? MocaPicksBaristaDetailVC {
-            navi.pushViewController(vc, animated: true)
+            delegate?.goToViewController(vc: vc)
         }
     }
 }

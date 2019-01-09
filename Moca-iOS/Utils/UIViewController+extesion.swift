@@ -8,6 +8,16 @@
 import UIKit
 
 extension UIViewController {
+    func goToKaKaoMapApp(start: Location, end: Location) {
+        guard let schemeURL = URL(string: "daummaps://route?sp=\(start.latitude),\(start.longitute)&ep=\(end.latitude),\(end.longitute)&by=FOOT")else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(schemeURL) {
+            UIApplication.shared.open(schemeURL, options: [:]) { (bool) in
+                print(bool)
+            }
+        }
+    }
     
     func simpleAlertWithCompletion(title: String, message: String, okCompletion: ((UIAlertAction) -> Void)?, cancelCompletion: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

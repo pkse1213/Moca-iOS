@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Picks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBZ-Wp-PU9">
-                                                    <rect key="frame" x="26" y="12" width="108" height="24"/>
+                                                    <rect key="frame" x="26" y="12" width="110" height="24"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마포구 연남" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhC-wm-0BH">
-                                                                        <rect key="frame" x="6" y="234.66666666666666" width="70" height="14.333333333333343"/>
+                                                                        <rect key="frame" x="6" y="234.66666666666666" width="64.666666666666671" height="16.333333333333343"/>
                                                                         <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -127,19 +127,22 @@
                                             <outlet property="moreBtnImageView" destination="BQe-Ml-4zY" id="qPy-1v-sEV"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeConceptCell" rowHeight="137" id="4kE-yB-Og0" customClass="HomeConceptCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeHotPlaceCell" rowHeight="137" id="4kE-yB-Og0" customClass="HomeHotPlaceCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="349" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4kE-yB-Og0" id="7y5-WD-bvp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjb-Eh-DJn">
-                                                    <rect key="frame" x="26" y="12" width="77" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjb-Eh-DJn">
+                                                    <rect key="frame" x="26" y="12" width="88" height="24"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="homeAll" translatesAutoresizingMaskIntoConstraints="NO" id="1gR-mi-s8T">
+                                                    <rect key="frame" x="292" y="10.666666666666664" width="67" height="27"/>
+                                                </imageView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EOw-ad-gdo">
                                                     <rect key="frame" x="46" y="45" width="329" height="80"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +156,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeConceptListCell" id="HDr-ZE-ZmM" customClass="HomeConceptListCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeHotPlaceNameCell" id="HDr-ZE-ZmM" customClass="HomeHotPlaceNameCell" customModule="Moca_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -164,7 +167,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#감성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-8p-8Ln">
-                                                                        <rect key="frame" x="22.666666666666671" y="32" width="35" height="16.333333333333329"/>
+                                                                        <rect key="frame" x="24.000000000000004" y="32" width="32.333333333333343" height="16.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -180,8 +183,8 @@
                                                                 <constraint firstAttribute="trailing" secondItem="ILV-Vo-rEv" secondAttribute="trailing" id="uE0-dT-Oxi"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="conceptImageView" destination="ILV-Vo-rEv" id="6VF-wb-Cnr"/>
-                                                                <outlet property="conceptNameLabel" destination="tiQ-8p-8Ln" id="RC3-w1-Ade"/>
+                                                                <outlet property="hotPlaceImageView" destination="ILV-Vo-rEv" id="6VF-wb-Cnr"/>
+                                                                <outlet property="hotPlaceNameLabel" destination="tiQ-8p-8Ln" id="RC3-w1-Ade"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rC1-Gh-gzT">
@@ -213,6 +216,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Pjb-Eh-DJn" firstAttribute="top" secondItem="7y5-WD-bvp" secondAttribute="top" constant="12" id="Dd6-88-V0s"/>
+                                                <constraint firstAttribute="trailing" secondItem="1gR-mi-s8T" secondAttribute="trailing" constant="16" id="Kda-9a-3K9"/>
+                                                <constraint firstItem="1gR-mi-s8T" firstAttribute="centerY" secondItem="Pjb-Eh-DJn" secondAttribute="centerY" id="m9c-Yv-vPv"/>
                                                 <constraint firstItem="EOw-ad-gdo" firstAttribute="top" secondItem="Pjb-Eh-DJn" secondAttribute="bottom" constant="9" id="per-c9-J6t"/>
                                                 <constraint firstAttribute="bottom" secondItem="EOw-ad-gdo" secondAttribute="bottom" constant="12" id="s8x-oP-vHb"/>
                                                 <constraint firstAttribute="trailing" secondItem="EOw-ad-gdo" secondAttribute="trailing" id="sdX-oM-sHP"/>
@@ -221,7 +226,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="conceptListCollectionView" destination="EOw-ad-gdo" id="owS-1A-scC"/>
+                                            <outlet property="hotPlaceCollectionView" destination="EOw-ad-gdo" id="owS-1A-scC"/>
+                                            <outlet property="moreBtnImageView" destination="1gR-mi-s8T" id="D4T-eg-zlq"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeRankingCell" rowHeight="297" id="B2P-Aw-5Vt" customClass="HomeRankingCell" customModule="Moca_iOS" customModuleProvider="target">
@@ -232,7 +238,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9h-Ee-eFd">
-                                                    <rect key="frame" x="26" y="11.999999999999998" width="75" height="31.333333333333329"/>
+                                                    <rect key="frame" x="26" y="11.999999999999998" width="73" height="31.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -260,7 +266,7 @@
                                                                         <rect key="frame" x="1" y="20.666666666666664" width="36" height="36"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jc-V0-PPe">
-                                                                        <rect key="frame" x="15.666666666666666" y="32.333333333333336" width="6.6666666666666661" height="12.666666666666664"/>
+                                                                        <rect key="frame" x="16" y="31.999999999999993" width="6.3333333333333321" height="13"/>
                                                                         <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="11"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -273,22 +279,22 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Anw-vO-FDa">
-                                                                        <rect key="frame" x="130" y="22.666666666666664" width="84.333333333333314" height="29.666666666666664"/>
+                                                                        <rect key="frame" x="130" y="22.666666666666664" width="79.333333333333314" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OX8-NW-Ixa">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="12.666666666666666"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="13"/>
                                                                                 <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="11"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="sf4-65-lSJ">
-                                                                                <rect key="frame" x="0.0" y="16.666666666666668" width="84.333333333333329" height="13"/>
+                                                                                <rect key="frame" x="0.0" y="17.000000000000004" width="79.333333333333329" height="13"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icCommunityLocation" translatesAutoresizingMaskIntoConstraints="NO" id="G9w-6c-Xa9">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVd-xG-OJw">
-                                                                                        <rect key="frame" x="19" y="0.0" width="65.333333333333329" height="13"/>
+                                                                                        <rect key="frame" x="19.000000000000004" y="0.0" width="60.333333333333343" height="13"/>
                                                                                         <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                                                         <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
@@ -374,25 +380,95 @@
                                             <outlet property="rankTableView" destination="6ZN-HY-y0Y" id="GOA-G7-YvZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="500" id="F51-aM-jm6">
-                                        <rect key="frame" x="0.0" y="783" width="375" height="500"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeMocaPlusCell" rowHeight="563" id="F51-aM-jm6" customClass="HomeMocaPlusCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="783" width="375" height="563"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F51-aM-jm6" id="hGA-G1-Wvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="499.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="562.66666666666663"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-Cl-9m1">
-                                                    <rect key="frame" x="26.000000000000007" y="12" width="94.666666666666686" height="22"/>
+                                                    <rect key="frame" x="26.000000000000007" y="12.000000000000002" width="94.666666666666686" height="22.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPR-g5-dtY">
+                                                    <rect key="frame" x="46" y="42.666666666666686" width="329" height="520"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="520" id="ujb-14-nFN"/>
+                                                    </constraints>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeMocaPlusListCell" rowHeight="160" id="GBK-ge-Qe4" customClass="HomeMocaPlusListCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="28" width="329" height="160"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GBK-ge-Qe4" id="V1f-gH-8db">
+                                                                <rect key="frame" x="0.0" y="0.0" width="329" height="160"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-5k-uZw">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="329" height="150.33333333333334"/>
+                                                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="X7d-5k-uZw" secondAttribute="height" multiplier="329:150" id="jz9-F1-2aV"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xm2-Aa-HZv">
+                                                                        <rect key="frame" x="11" y="105.66666666666666" width="202" height="35.666666666666657"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크리스마스! 여기면 충분할 거에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-lx-VMv">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="202" height="17.666666666666668"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김정환 에디터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOw-A1-hbf">
+                                                                                <rect key="frame" x="0.0" y="22.666666666666671" width="60.333333333333336" height="13"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="X7d-5k-uZw" firstAttribute="top" secondItem="V1f-gH-8db" secondAttribute="top" id="MZV-Cr-iRy"/>
+                                                                    <constraint firstItem="X7d-5k-uZw" firstAttribute="leading" secondItem="V1f-gH-8db" secondAttribute="leading" id="Qjw-Rw-ddZ"/>
+                                                                    <constraint firstItem="X7d-5k-uZw" firstAttribute="centerX" secondItem="V1f-gH-8db" secondAttribute="centerX" id="Upu-4V-FL7"/>
+                                                                    <constraint firstItem="Xm2-Aa-HZv" firstAttribute="leading" secondItem="X7d-5k-uZw" secondAttribute="leading" constant="11" id="Wft-cs-z4c"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="X7d-5k-uZw" secondAttribute="bottom" constant="10" id="fEe-eN-Dio"/>
+                                                                    <constraint firstItem="Xm2-Aa-HZv" firstAttribute="bottom" secondItem="X7d-5k-uZw" secondAttribute="bottom" constant="-9" id="gft-hN-tjJ"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="X7d-5k-uZw" secondAttribute="trailing" id="uUE-1B-jbz"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="editorLabel" destination="OOw-A1-hbf" id="Ezn-oJ-k3v"/>
+                                                                <outlet property="subjectImageView" destination="X7d-5k-uZw" id="Pn2-Fz-Znx"/>
+                                                                <outlet property="subjectNameLabel" destination="sQX-lx-VMv" id="FKz-Y8-RYj"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                </tableView>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="homeAll" translatesAutoresizingMaskIntoConstraints="NO" id="Qxy-cM-zJm">
+                                                    <rect key="frame" x="292" y="10" width="67" height="27"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YlH-Cl-9m1" firstAttribute="leading" secondItem="hGA-G1-Wvl" secondAttribute="leading" constant="26" id="33F-Sx-vHn"/>
+                                                <constraint firstAttribute="bottom" secondItem="jPR-g5-dtY" secondAttribute="bottom" id="Dq2-NW-rdM"/>
+                                                <constraint firstItem="jPR-g5-dtY" firstAttribute="leading" secondItem="hGA-G1-Wvl" secondAttribute="leading" constant="46" id="HRs-4X-t5Q"/>
+                                                <constraint firstItem="Qxy-cM-zJm" firstAttribute="centerY" secondItem="YlH-Cl-9m1" secondAttribute="centerY" id="JXv-cH-H8e"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qxy-cM-zJm" secondAttribute="trailing" constant="16" id="S3s-ER-aRj"/>
+                                                <constraint firstItem="jPR-g5-dtY" firstAttribute="top" secondItem="YlH-Cl-9m1" secondAttribute="bottom" constant="8" id="ujh-N5-eCa"/>
                                                 <constraint firstItem="YlH-Cl-9m1" firstAttribute="top" secondItem="hGA-G1-Wvl" secondAttribute="top" constant="12" id="zXk-OO-F3e"/>
+                                                <constraint firstAttribute="trailing" secondItem="jPR-g5-dtY" secondAttribute="trailing" id="zzQ-b0-gtV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mocaPlusTableView" destination="jPR-g5-dtY" id="eQ5-yh-WiD"/>
+                                            <outlet property="moreBtnImageView" destination="Qxy-cM-zJm" id="YUx-BW-n9c"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -413,7 +489,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 한옥카페 어때요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-Y8-FD5">
-                                        <rect key="frame" x="78.666666666666686" y="20" width="115" height="12"/>
+                                        <rect key="frame" x="78.666666666666686" y="19" width="107" height="14"/>
                                         <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="12"/>
                                         <color key="textColor" red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -457,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="134"/>
+            <point key="canvasLocation" x="1912.8" y="133.74384236453201"/>
         </scene>
         <!--카테고리-->
         <scene sceneID="wEF-rJ-dfj">
@@ -484,7 +560,7 @@
                                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="categoryMap" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7A-dzj">
                                                             <rect key="frame" x="0.0" y="0.0" width="347" height="284"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-xu-po0">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-xu-po0">
                                                             <rect key="frame" x="158.66666666666666" y="114" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="종로">
@@ -494,7 +570,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="kuc-5t-7CP"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-75-JOD">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lel-75-JOD">
                                                             <rect key="frame" x="177.66666666666666" y="138" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="중구">
@@ -504,7 +580,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="FQp-CO-zpE"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-3w-NLh">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-3w-NLh">
                                                             <rect key="frame" x="162" y="166" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="용산">
@@ -514,7 +590,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Hzp-7f-fqh"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btx-GV-64I">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btx-GV-64I">
                                                             <rect key="frame" x="213.33333333333334" y="146.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="성동">
@@ -524,7 +600,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="MAU-lK-h9L"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-le-5BI">
+                                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4e-le-5BI">
                                                             <rect key="frame" x="222.66666666666666" y="117.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="동대문">
@@ -534,7 +610,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Jg6-sk-KRm"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-aq-P5N">
+                                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-aq-P5N">
                                                             <rect key="frame" x="254" y="100.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="중랑">
@@ -544,7 +620,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="zEu-Zy-ykd"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ab-ek-Jrh">
+                                                        <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ab-ek-Jrh">
                                                             <rect key="frame" x="294.66666666666669" y="151.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강동">
@@ -554,7 +630,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="VNQ-8P-Zb4"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-76-VRU">
+                                                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-76-VRU">
                                                             <rect key="frame" x="191.66666666666666" y="97.666666666666657" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="성북">
@@ -564,7 +640,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Xhe-Sk-eLY"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-rg-80f">
+                                                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-rg-80f">
                                                             <rect key="frame" x="186.66666666666666" y="56" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강북">
@@ -574,7 +650,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="its-1Z-XDY"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em7-lM-B9e">
+                                                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em7-lM-B9e">
                                                             <rect key="frame" x="240" y="50.333333333333329" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="노원">
@@ -584,7 +660,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="9D3-4o-hyE"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-jt-kAi">
+                                                        <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-jt-kAi">
                                                             <rect key="frame" x="118.33333333333334" y="77.333333333333329" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="은평">
@@ -594,7 +670,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="zX5-8Y-YHU"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Bh-Jye">
+                                                        <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Bh-Jye">
                                                             <rect key="frame" x="126" y="120" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="서대문">
@@ -604,7 +680,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="2Le-RS-nxn"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mO-ArV">
+                                                        <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofS-mO-ArV">
                                                             <rect key="frame" x="100.66666666666667" y="139.66666666666666" width="30.000000000000014" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="마포">
@@ -614,7 +690,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="UrO-ha-IzC"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-Vc-sY1">
+                                                        <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYs-Vc-sY1">
                                                             <rect key="frame" x="28.333333333333336" y="130.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강서">
@@ -624,7 +700,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="G3D-P4-Zj8"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-HL-dPZ">
+                                                        <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEl-HL-dPZ">
                                                             <rect key="frame" x="104.66666666666667" y="175.33333333333334" width="30.000000000000014" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="영등포">
@@ -634,7 +710,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="Kzh-Rf-ABz"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-Wm-m4E">
+                                                        <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-Wm-m4E">
                                                             <rect key="frame" x="138.66666666666666" y="197.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="동작">
@@ -644,7 +720,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ve5-bY-6A2"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-oq-xqB">
+                                                        <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-oq-xqB">
                                                             <rect key="frame" x="54.333333333333329" y="180.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="양천">
@@ -654,7 +730,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="KVs-pH-gCT"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rs0-Se-TzC">
+                                                        <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rs0-Se-TzC">
                                                             <rect key="frame" x="47" y="207" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="구로">
@@ -664,7 +740,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="ag5-jk-s53"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-aa-eXU">
+                                                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXq-aa-eXU">
                                                             <rect key="frame" x="207.33333333333334" y="31.666666666666671" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="도봉">
@@ -674,7 +750,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="hyQ-Yb-vRh"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK5-GN-BUP">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK5-GN-BUP">
                                                             <rect key="frame" x="250" y="151.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="광진">
@@ -684,7 +760,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="e6K-8u-tvQ"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-Bw-dCS">
+                                                        <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-Bw-dCS">
                                                             <rect key="frame" x="136" y="233.33333333333331" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="관악">
@@ -694,7 +770,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="bsZ-BH-fAg"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-zu-AYb">
+                                                        <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-zu-AYb">
                                                             <rect key="frame" x="97" y="237.66666666666669" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="금천">
@@ -704,7 +780,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="bP2-kh-GKg"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hx-MVU">
+                                                        <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-hx-MVU">
                                                             <rect key="frame" x="189" y="217.66666666666666" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="서초">
@@ -714,7 +790,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="A0e-OY-Ndc"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcZ-CN-BAC">
+                                                        <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcZ-CN-BAC">
                                                             <rect key="frame" x="226" y="207" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="강남">
@@ -724,7 +800,7 @@
                                                                 <action selector="locationSelectAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="3YP-Vp-pGU"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-IB-Aib">
+                                                        <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogf-IB-Aib">
                                                             <rect key="frame" x="279" y="197.33333333333334" width="30" height="23"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="10"/>
                                                             <state key="normal" title="송파">
@@ -828,7 +904,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryConceptCell" id="Mbg-mn-erK" customClass="CategoryConceptCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryConceptCell" id="Mbg-mn-erK" customClass="CategoryMenuCell" customModule="Moca_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -847,7 +923,7 @@
                                                                 <constraint firstAttribute="trailing" secondItem="XMj-zn-8kJ" secondAttribute="trailing" id="pdK-Yn-BCG"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="conceptImageView" destination="XMj-zn-8kJ" id="u69-3l-38s"/>
+                                                                <outlet property="menuImageView" destination="XMj-zn-8kJ" id="EEa-Iv-vAW"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -898,14 +974,17 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crh-BQ-Xuw">
                                                     <rect key="frame" x="15" y="574.66666666666663" width="345" height="48"/>
-                                                    <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="crh-BQ-Xuw" secondAttribute="height" multiplier="115:16" id="PP0-jd-dgH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="15"/>
                                                     <state key="normal" title="적용">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="applyAction:" destination="xFW-NS-7rk" eventType="touchUpInside" id="WRd-bK-Zxw"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -996,13 +1075,16 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qs-Js-znK">
                                 <rect key="frame" x="316" y="109" width="43" height="43"/>
-                                <state key="normal" image="locationLocationPink"/>
+                                <state key="normal" image="locationLocationGray"/>
                                 <connections>
                                     <action selector="currentLocationAction:" destination="dA4-oN-ZKf" eventType="touchUpInside" id="z3x-RX-uUX"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="locationGradationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-UG-kz0">
-                                <rect key="frame" x="0.0" y="465" width="375" height="264"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="locationGradationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-UG-kz0">
+                                <rect key="frame" x="0.0" y="554" width="375" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CmE-UG-kz0" secondAttribute="height" multiplier="15:7" id="HWR-Be-0NF"/>
+                                </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-nw-aOD">
                                 <rect key="frame" x="0.0" y="583" width="375" height="130"/>
@@ -1113,143 +1195,172 @@
         <!--Community Tab MainVC-->
         <scene sceneID="PWJ-se-IgH">
             <objects>
-                <viewController id="5dy-aw-F6V" customClass="CommunityTabMainVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunityTabMainVC" id="5dy-aw-F6V" customClass="CommunityTabMainVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mAq-RR-zHW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-P6-97G">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b7E-P6-97G">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="57" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="ZSX-pm-YK9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LM8-56-9gg">
-                                            <rect key="frame" x="21" y="9" width="369" height="115"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AUU-d8-XPa">
-                                                    <rect key="frame" x="12" y="16" width="48" height="48"/>
-                                                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="48" id="KUZ-2s-PBR"/>
-                                                        <constraint firstAttribute="width" constant="48" id="PW8-hP-dqJ"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Te-Xn-YwU">
-                                                    <rect key="frame" x="73" y="23.333333333333332" width="36.666666666666657" height="33.333333333333343"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebS-TJ-4yT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="14.333333333333334"/>
-                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ei-tr-I7e">
-                                                            <rect key="frame" x="0.0" y="22.333333333333329" width="36.666666666666664" height="11"/>
-                                                            <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="icF-hC-qtb">
-                                                    <rect key="frame" x="28.333333333333343" y="86.666666666666671" width="282.33333333333326" height="12.333333333333329"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WQX-2E-Tep">
-                                                            <rect key="frame" x="0.0" y="0.0" width="59.666666666666664" height="12.333333333333334"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="게시글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-yq-GIU">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9R-rz-7hF">
-                                                                    <rect key="frame" x="46.333333333333336" y="0.0" width="13.333333333333336" height="12.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gnG-6Q-KII">
-                                                            <rect key="frame" x="104.66666666666666" y="0.0" width="66.333333333333343" height="12.333333333333334"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팔로워" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4f-AQ-k1F">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydf-xS-XfV">
-                                                                    <rect key="frame" x="46.333333333333343" y="0.0" width="20" height="12.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qT9-89-Wa9">
-                                                            <rect key="frame" x="215.99999999999997" y="0.0" width="66.333333333333343" height="12.333333333333334"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팔로잉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPK-md-RCi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="124" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2t-eE-xkS">
-                                                                    <rect key="frame" x="46.333333333333371" y="0.0" width="20" height="12.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPr-0C-rY7">
-                                                    <rect key="frame" x="319" y="28" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="3lc-UT-Bty"/>
-                                                        <constraint firstAttribute="width" constant="24" id="teE-Gg-j4U"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button" image="communityMyAddreview"/>
-                                                    <connections>
-                                                        <action selector="profileButtonAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="nNN-ni-a6e"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="icF-hC-qtb" firstAttribute="centerX" secondItem="LM8-56-9gg" secondAttribute="centerX" constant="-15" id="AB2-RH-PgF"/>
-                                                <constraint firstItem="kPr-0C-rY7" firstAttribute="top" secondItem="LM8-56-9gg" secondAttribute="top" constant="28" id="AK4-Kh-JHz"/>
-                                                <constraint firstItem="AUU-d8-XPa" firstAttribute="top" secondItem="LM8-56-9gg" secondAttribute="top" constant="16" id="OkB-Kz-rPU"/>
-                                                <constraint firstItem="AUU-d8-XPa" firstAttribute="leading" secondItem="LM8-56-9gg" secondAttribute="leading" constant="12" id="X0n-V1-gVu"/>
-                                                <constraint firstItem="9Te-Xn-YwU" firstAttribute="leading" secondItem="AUU-d8-XPa" secondAttribute="trailing" constant="13" id="j76-17-nrU"/>
-                                                <constraint firstAttribute="bottom" secondItem="icF-hC-qtb" secondAttribute="bottom" constant="16" id="n75-r9-fk1"/>
-                                                <constraint firstItem="9Te-Xn-YwU" firstAttribute="centerY" secondItem="AUU-d8-XPa" secondAttribute="centerY" id="qfI-oF-Q1U"/>
-                                                <constraint firstAttribute="trailing" secondItem="kPr-0C-rY7" secondAttribute="trailing" constant="26" id="uMK-b8-odD"/>
-                                                <constraint firstAttribute="height" constant="115" id="yGx-8d-dfV"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="LM8-56-9gg" secondAttribute="bottom" constant="2" id="mwK-Ib-CrB"/>
-                                        <constraint firstItem="LM8-56-9gg" firstAttribute="leading" secondItem="ZSX-pm-YK9" secondAttribute="leading" constant="21" id="nTV-6g-aCO"/>
-                                        <constraint firstAttribute="trailing" secondItem="LM8-56-9gg" secondAttribute="trailing" constant="-15" id="qta-ky-ZEt"/>
-                                        <constraint firstItem="LM8-56-9gg" firstAttribute="top" secondItem="ZSX-pm-YK9" secondAttribute="top" constant="9" id="waB-pi-TUK"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityUserProfileCell" rowHeight="126" id="z9J-nf-ai3" customClass="CommunityUserProfileCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="126"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9J-nf-ai3" id="Ko8-We-11i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmY-Xy-ec1">
+                                                    <rect key="frame" x="21" y="9" width="369" height="115"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-M2-AI5">
+                                                            <rect key="frame" x="12" y="16" width="48" height="48"/>
+                                                            <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="48" id="cyQ-hS-b4c"/>
+                                                                <constraint firstAttribute="height" constant="48" id="sfo-C1-SCS"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zi9-eI-ekO">
+                                                            <rect key="frame" x="73" y="22.000000000000004" width="34" height="36.333333333333343"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fun-J9-Owv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="34" height="15.333333333333334"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zi-Sf-smh">
+                                                                    <rect key="frame" x="0.0" y="23.333333333333336" width="34" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="0Gw-bt-3Sq">
+                                                            <rect key="frame" x="21.666666666666657" y="74" width="296" height="25"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wkm-CN-UKU">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="56" height="25"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="게시글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjC-7M-j3w">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="28.666666666666668" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-rb-owq">
+                                                                            <rect key="frame" x="43.666666666666664" y="0.0" width="12.333333333333336" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZUF-7G-SQV">
+                                                                    <rect key="frame" x="101" y="0.0" width="75" height="25"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guR-77-qsw">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
+                                                                            <state key="normal" title="팔로워">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followerAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="FhU-i4-kTL"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vd-oc-xqS">
+                                                                            <rect key="frame" x="45" y="0.0" width="30" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                            <state key="normal" title="300">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followerAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="TSd-uJ-hal"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6Ea-sT-iXE">
+                                                                    <rect key="frame" x="221" y="0.0" width="75" height="25"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TE-pP-djz">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="11"/>
+                                                                            <state key="normal" title="팔로잉">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followingAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="j6w-Lt-nac"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lu-41-K5M">
+                                                                            <rect key="frame" x="45" y="0.0" width="30" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                            <state key="normal" title="300">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="followingAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="E0U-mt-5KR"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjb-cK-ckx">
+                                                            <rect key="frame" x="319" y="28" width="24" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="dAw-RP-SSa"/>
+                                                                <constraint firstAttribute="width" constant="24" id="f6g-ZP-RFE"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="communityMyAddreview"/>
+                                                            <connections>
+                                                                <action selector="profileButtonAction:" destination="5dy-aw-F6V" eventType="touchUpInside" id="Stz-we-jwu"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ncq-M2-AI5" firstAttribute="leading" secondItem="NmY-Xy-ec1" secondAttribute="leading" constant="12" id="0dG-it-oT9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0Gw-bt-3Sq" secondAttribute="bottom" constant="16" id="3Eo-vi-wfa"/>
+                                                        <constraint firstItem="Zi9-eI-ekO" firstAttribute="leading" secondItem="ncq-M2-AI5" secondAttribute="trailing" constant="13" id="K2f-qi-5Qd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xjb-cK-ckx" secondAttribute="trailing" constant="26" id="Kve-UX-mav"/>
+                                                        <constraint firstItem="0Gw-bt-3Sq" firstAttribute="centerX" secondItem="NmY-Xy-ec1" secondAttribute="centerX" constant="-15" id="Myd-mX-pJ7"/>
+                                                        <constraint firstItem="xjb-cK-ckx" firstAttribute="top" secondItem="NmY-Xy-ec1" secondAttribute="top" constant="28" id="iXV-fd-ufx"/>
+                                                        <constraint firstAttribute="height" constant="115" id="qLK-d3-OdH"/>
+                                                        <constraint firstItem="Zi9-eI-ekO" firstAttribute="centerY" secondItem="ncq-M2-AI5" secondAttribute="centerY" id="zQf-Ef-ynv"/>
+                                                        <constraint firstItem="ncq-M2-AI5" firstAttribute="top" secondItem="NmY-Xy-ec1" secondAttribute="top" constant="16" id="zsj-TM-kZH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NmY-Xy-ec1" firstAttribute="top" secondItem="Ko8-We-11i" secondAttribute="top" constant="9" id="FBM-Ve-6V7"/>
+                                                <constraint firstAttribute="trailing" secondItem="NmY-Xy-ec1" secondAttribute="trailing" constant="-15" id="HHi-4K-zz4"/>
+                                                <constraint firstAttribute="bottom" secondItem="NmY-Xy-ec1" secondAttribute="bottom" constant="2" id="I7t-33-Htz"/>
+                                                <constraint firstItem="NmY-Xy-ec1" firstAttribute="leading" secondItem="Ko8-We-11i" secondAttribute="leading" constant="21" id="aa0-vH-rYK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentCntLabel" destination="YwJ-rb-owq" id="YfD-9D-Bhf"/>
+                                            <outlet property="follingCntLabel" destination="8lu-41-K5M" id="0sX-hc-qbK"/>
+                                            <outlet property="followerCntLabel" destination="2Vd-oc-xqS" id="Ke9-4i-bvy"/>
+                                            <outlet property="profileButton" destination="xjb-cK-ckx" id="HbA-Ci-4Js"/>
+                                            <outlet property="profileImageView" destination="ncq-M2-AI5" id="qpW-dR-cRp"/>
+                                            <outlet property="profileSquareView" destination="NmY-Xy-ec1" id="r0k-ts-i0h"/>
+                                            <outlet property="userMessageLabel" destination="8zi-Sf-smh" id="AuP-jC-mpv"/>
+                                            <outlet property="userNameLabel" destination="Fun-J9-Owv" id="2nY-IR-o3m"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommunityFeedCell" rowHeight="555" id="om7-D9-OGj" customClass="CommunityFeedCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="154" width="375" height="555"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="om7-D9-OGj" id="yQF-ye-poa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="554.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kV4-tI-IlO">
@@ -1305,16 +1416,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="mpB-WS-3WJ">
-                                                    <rect key="frame" x="76" y="27" width="59" height="26.333333333333329"/>
+                                                    <rect key="frame" x="76" y="26.666666666666671" width="59" height="27"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5Y-J4-rug">
-                                                            <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="12.333333333333334"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="28.666666666666668" height="13"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3mh-3h-gUb">
-                                                            <rect key="frame" x="0.0" y="15.333333333333336" width="59" height="11"/>
+                                                            <rect key="frame" x="0.0" y="15.999999999999996" width="59" height="11"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="4WD-1u-t0Q">
                                                                     <rect key="frame" x="0.0" y="0.0" width="11" height="11"/>
@@ -1335,23 +1446,23 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="evP-Iy-fUV">
-                                                    <rect key="frame" x="48.999999999999993" y="417" width="84.333333333333314" height="32.666666666666686"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="evP-Iy-fUV">
+                                                    <rect key="frame" x="48.999999999999993" y="417" width="79.333333333333314" height="32.666666666666686"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-YA-Fqf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-YA-Fqf">
                                                             <rect key="frame" x="0.0" y="0.0" width="24.666666666666668" height="15.666666666666666"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Sgg-6k-s06">
-                                                            <rect key="frame" x="0.0" y="19.666666666666686" width="84.333333333333329" height="13"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Sgg-6k-s06">
+                                                            <rect key="frame" x="0.0" y="19.666666666666686" width="79.333333333333329" height="13"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icCommunityLocation" translatesAutoresizingMaskIntoConstraints="NO" id="1i6-Pe-q9n">
                                                                     <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqG-I0-azF">
-                                                                    <rect key="frame" x="19" y="0.0" width="65.333333333333329" height="13"/>
+                                                                    <rect key="frame" x="19.000000000000004" y="0.0" width="60.333333333333343" height="13"/>
                                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1360,22 +1471,35 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오께~이 간만에 커필 마셨는데 음~ 가격~이… 잘 모르겠이 간만에 커필 마셨는데 음~ 가격~이… 잘 모르겠" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idn-bS-bA8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="오께~이 간만에 커필 마셨는데 음~ 가격~이… 잘 모르겠이 간만에 커필 마셨는데 음~ 가격~이… 잘 모르겠" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idn-bS-bA8">
                                                     <rect key="frame" x="49" y="481.66666666666669" width="310" height="26"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicLight" family="NanumGothic" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-TS-Mse">
-                                                    <rect key="frame" x="297" y="28" width="54" height="24"/>
+                                                    <rect key="frame" x="267" y="28" width="84" height="24"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAe-K1-Dj3">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAe-K1-Dj3">
                                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                            <state key="normal" backgroundImage="commonHeartBlank"/>
+                                                            <state key="normal" image="commonHeartBlank"/>
+                                                            <connections>
+                                                                <action selector="likeAction:" destination="om7-D9-OGj" eventType="touchUpInside" id="1h6-re-aes"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVr-OQ-qAd">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVr-OQ-qAd">
                                                             <rect key="frame" x="30" y="0.0" width="24" height="24"/>
-                                                            <state key="normal" backgroundImage="commonComment"/>
+                                                            <state key="normal" image="commonComment"/>
+                                                            <connections>
+                                                                <action selector="goToCommentAction:" destination="om7-D9-OGj" eventType="touchUpInside" id="7Xa-GQ-pK3"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0o-ky-mao">
+                                                            <rect key="frame" x="60" y="0.0" width="24" height="24"/>
+                                                            <state key="normal" image="communityNotify"/>
+                                                            <connections>
+                                                                <action selector="moreNotifyAction:" destination="om7-D9-OGj" eventType="touchUpInside" id="Oxo-qg-Z5j"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -1383,10 +1507,10 @@
                                                     </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ux9-rc-FSP">
-                                                    <rect key="frame" x="306.66666666666669" y="371.66666666666669" width="42.333333333333314" height="24.333333333333314"/>
+                                                    <rect key="frame" x="308.66666666666669" y="371" width="40.333333333333314" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9B9-Vb-xn3">
-                                                            <rect key="frame" x="8.9999999999999982" y="6.0000000000000009" width="24.333333333333329" height="12.333333333333336"/>
+                                                            <rect key="frame" x="8.9999999999999982" y="6" width="22.333333333333329" height="13"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1400,37 +1524,37 @@
                                                         <constraint firstItem="9B9-Vb-xn3" firstAttribute="top" secondItem="Ux9-rc-FSP" secondAttribute="top" constant="6" id="aXA-tg-Vt5"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813-u0-3VU">
-                                                    <rect key="frame" x="39.666666666666657" y="517.66666666666663" width="329" height="28"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813-u0-3VU">
+                                                    <rect key="frame" x="39.666666666666657" y="517.66666666666652" width="329" height="28.333333333333371"/>
                                                     <state key="normal" image="communityMore"/>
                                                     <connections>
                                                         <action selector="moreLookAction:" destination="om7-D9-OGj" eventType="touchUpInside" id="3PK-lD-akh"/>
                                                     </connections>
                                                 </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rdi-8x-GLV">
-                                                    <rect key="frame" x="45" y="453.66666666666669" width="99" height="24"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rdi-8x-GLV">
+                                                    <rect key="frame" x="44.999999999999993" y="453.66666666666669" width="96.333333333333314" height="24"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-hJ-WkQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="24"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonHeartBlankSmall" translatesAutoresizingMaskIntoConstraints="NO" id="yy7-rQ-06L">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huE-mh-FXg">
-                                                                    <rect key="frame" x="27" y="0.0" width="20" height="24"/>
+                                                                    <rect key="frame" x="27" y="0.0" width="18.666666666666671" height="24"/>
                                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="MZn-Lm-N19">
-                                                            <rect key="frame" x="52" y="0.0" width="47" height="24"/>
+                                                            <rect key="frame" x="50.666666666666671" y="0.0" width="45.666666666666671" height="24"/>
                                                             <subviews>
                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonCommentSmall" translatesAutoresizingMaskIntoConstraints="NO" id="oPQ-Ul-GTZ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-bN-CxY">
-                                                                    <rect key="frame" x="27" y="0.0" width="20" height="24"/>
+                                                                    <rect key="frame" x="27" y="0.0" width="18.666666666666671" height="24"/>
                                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1438,11 +1562,18 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20시간 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW4-oD-dym">
+                                                    <rect key="frame" x="308" y="420" width="44" height="13"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                    <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Idn-bS-bA8" firstAttribute="leading" secondItem="evP-Iy-fUV" secondAttribute="leading" id="2vC-S5-nov"/>
                                                 <constraint firstAttribute="trailing" secondItem="Pfk-TS-Mse" secondAttribute="trailing" constant="24" id="5iP-EF-amd"/>
                                                 <constraint firstAttribute="trailing" secondItem="kV4-tI-IlO" secondAttribute="trailing" id="8uo-s9-RPO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dW4-oD-dym" secondAttribute="trailing" constant="8" id="GFN-w7-3x5"/>
                                                 <constraint firstItem="Pfk-TS-Mse" firstAttribute="centerY" secondItem="mpB-WS-3WJ" secondAttribute="centerY" id="GX1-3T-SbN"/>
                                                 <constraint firstItem="Ux9-rc-FSP" firstAttribute="bottom" secondItem="kV4-tI-IlO" secondAttribute="bottom" constant="-12" id="QWa-us-UMR"/>
                                                 <constraint firstItem="Idn-bS-bA8" firstAttribute="top" secondItem="rdi-8x-GLV" secondAttribute="bottom" constant="4" id="RZQ-MU-V05"/>
@@ -1456,6 +1587,7 @@
                                                 <constraint firstItem="kV4-tI-IlO" firstAttribute="leading" secondItem="yQF-ye-poa" secondAttribute="leading" constant="39" id="i0i-sl-fHR"/>
                                                 <constraint firstItem="evP-Iy-fUV" firstAttribute="leading" secondItem="yQF-ye-poa" secondAttribute="leading" constant="49" id="lcA-jP-Mnh"/>
                                                 <constraint firstItem="kV4-tI-IlO" firstAttribute="top" secondItem="Pm9-D5-QoE" secondAttribute="bottom" constant="12" id="mZ4-RN-Tk7"/>
+                                                <constraint firstItem="dW4-oD-dym" firstAttribute="top" secondItem="kV4-tI-IlO" secondAttribute="bottom" constant="12" id="nj8-Nh-jy8"/>
                                                 <constraint firstAttribute="trailing" secondItem="Idn-bS-bA8" secondAttribute="trailing" constant="16" id="tS4-HF-ylg"/>
                                                 <constraint firstItem="Ux9-rc-FSP" firstAttribute="trailing" secondItem="kV4-tI-IlO" secondAttribute="trailing" constant="-26" id="wlX-9d-Dy4"/>
                                                 <constraint firstItem="rdi-8x-GLV" firstAttribute="leading" secondItem="evP-Iy-fUV" secondAttribute="leading" constant="-4" id="zId-EH-QXZ"/>
@@ -1467,14 +1599,15 @@
                                             <outlet property="cafeAddressLabel" destination="CqG-I0-azF" id="6oz-JX-Psv"/>
                                             <outlet property="cafeNameLabel" destination="lkn-YA-Fqf" id="TwE-IU-i59"/>
                                             <outlet property="cntBackgroundView" destination="Ux9-rc-FSP" id="iZU-nH-rJN"/>
-                                            <outlet property="commentLabel" destination="h9W-bN-CxY" id="KIk-6w-ydb"/>
+                                            <outlet property="commentCntLabel" destination="h9W-bN-CxY" id="xfc-tp-B0L"/>
                                             <outlet property="imageCntLabel" destination="9B9-Vb-xn3" id="fXh-eN-krD"/>
                                             <outlet property="imageCollectionView" destination="kV4-tI-IlO" id="4MO-fa-PIx"/>
-                                            <outlet property="likeAndCommentCntStackView" destination="rdi-8x-GLV" id="HdM-ug-MtF"/>
+                                            <outlet property="likeButton" destination="wAe-K1-Dj3" id="zhq-8u-z1t"/>
                                             <outlet property="likeCntLabel" destination="huE-mh-FXg" id="lV5-Fu-fva"/>
                                             <outlet property="nameLabel" destination="h5Y-J4-rug" id="1KT-gX-ocT"/>
                                             <outlet property="profileImageView" destination="Pm9-D5-QoE" id="Srl-0f-nA4"/>
                                             <outlet property="reviewContentLabel" destination="Idn-bS-bA8" id="Y4t-lK-QUd"/>
+                                            <outlet property="timeLabel" destination="dW4-oD-dym" id="h40-mJ-yU6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1498,7 +1631,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbP-UV-6J5">
-                                                    <rect key="frame" x="27.000000000000004" y="18.333333333333332" width="34.333333333333343" height="13"/>
+                                                    <rect key="frame" x="27" y="18.333333333333332" width="31.666666666666671" height="13"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
                                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1541,12 +1674,8 @@
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
                     </view>
                     <navigationItem key="navigationItem" id="HBe-po-uXl">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="LLM-IR-K2d">
-                            <connections>
-                                <action selector="goToSearch:" destination="5dy-aw-F6V" id="VwA-8Y-bDS"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="40E-OF-lrn">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="commonSearch" id="40E-OF-lrn">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="chooseFeedKindAction:" destination="5dy-aw-F6V" id="kch-1m-B0U"/>
                             </connections>
@@ -1555,10 +1684,7 @@
                     <connections>
                         <outlet property="communityTableView" destination="b7E-P6-97G" id="DtT-fz-kai"/>
                         <outlet property="feedMenuTableView" destination="jwd-ij-4bw" id="tDC-GA-Iry"/>
-                        <outlet property="profileBackgroundView" destination="ZSX-pm-YK9" id="9yK-kb-gAY"/>
-                        <outlet property="profileButton" destination="kPr-0C-rY7" id="YJ5-Yd-O9g"/>
-                        <outlet property="profileImageView" destination="AUU-d8-XPa" id="pGp-YG-Ahy"/>
-                        <outlet property="profileSquareView" destination="LM8-56-9gg" id="4cp-B8-hsV"/>
+                        <outlet property="searchBarButtonItem" destination="40E-OF-lrn" id="5oM-xi-AhF"/>
                         <outlet property="selectFeedView" destination="Bmd-i8-ydi" id="oIV-WB-V6B"/>
                         <outlet property="tableViewTopConstraint" destination="TdV-IA-bIZ" id="1gd-oS-tvN"/>
                     </connections>
@@ -2001,7 +2127,7 @@
     </scenes>
     <resources>
         <image name="category" width="25" height="25"/>
-        <image name="categoryMap" width="346.66665649414062" height="283.66665649414062"/>
+        <image name="categoryMap" width="346" height="283"/>
         <image name="categoryPoint" width="21" height="26"/>
         <image name="commonComment" width="24" height="24"/>
         <image name="commonCommentSmall" width="24" height="24"/>
@@ -2014,6 +2140,7 @@
         <image name="communityGradation" width="336" height="336"/>
         <image name="communityMore" width="329" height="28"/>
         <image name="communityMyAddreview" width="24" height="24"/>
+        <image name="communityNotify" width="24" height="24"/>
         <image name="communityStarGray" width="11" height="11"/>
         <image name="communityStarYellow" width="11" height="11"/>
         <image name="filterPet" width="60" height="60"/>
@@ -2025,7 +2152,7 @@
         <image name="icCommunityLocation" width="12" height="13"/>
         <image name="location" width="25" height="25"/>
         <image name="locationGradationWhite" width="377" height="264"/>
-        <image name="locationLocationPink" width="43" height="43.333332061767578"/>
+        <image name="locationLocationGray" width="43" height="43"/>
         <image name="mypage" width="25" height="25"/>
         <image name="mypageArrowRight" width="24" height="24"/>
         <image name="mypageSetting" width="36" height="36"/>

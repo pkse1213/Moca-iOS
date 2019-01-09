@@ -10,17 +10,14 @@ import UIKit
 
 class CategoryCafeCell: UITableViewCell {
     let options = ["한옥", "드라이브", "커피", "디저트"]
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var optionCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
-        setUpView()
-    }
-    
-    private func setUpView() {
-        cafeImageView.applyRadius(radius: 5)
     }
 
     private func setUpCollectionView() {
@@ -32,7 +29,7 @@ class CategoryCafeCell: UITableViewCell {
 
 extension CategoryCafeCell: UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:11*options[indexPath.row].count+10 , height: 18)
+        return CGSize(width:11*options[indexPath.row].count+22 , height: 22)
         
     }
     

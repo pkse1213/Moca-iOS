@@ -10,14 +10,13 @@ import UIKit
 
 class HotPlaceVC: UIViewController {
     
-    @IBOutlet var conceptTableView: UITableView!
+    @IBOutlet var HotPlaceTableView: UITableView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        conceptTableView.delegate = self
-        conceptTableView.dataSource = self
+        HotPlaceTableView.delegate = self
+        HotPlaceTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +36,7 @@ extension HotPlaceVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
-        if let conceptCell = conceptTableView.dequeueReusableCell(withIdentifier: "ConceptTableViewCell", for: indexPath) as? ConceptTableViewCell {
+        if let conceptCell = HotPlaceTableView.dequeueReusableCell(withIdentifier: "HotPlaceCafeCell", for: indexPath) as? HotPlaceCafeCell {
             cell = conceptCell
         }
         

@@ -13,5 +13,6 @@ class RankingCafeCell: UICollectionViewCell {
     @IBOutlet var cafeImageView: UIImageView!
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var cafeAddressLabel: UILabel!
+    @IBOutlet var rankBackgroundView: UIImageView!
     
 }

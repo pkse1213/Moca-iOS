@@ -11,17 +11,39 @@ import UIKit
 class CategoryResultVC: UIViewController {
     let location: String = "강서구"
     let options = ["한옥", "드라이브", "커피", "디저트"]
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var conceptId: [Int] = [1,2]
+    var menuId: [Int] = [1]
+    var locationId = 0
     @IBOutlet weak var optionCollectionView: UICollectionView!
     @IBOutlet weak var cafeTableView: UITableView!
- 
+    var cafes:[CategoryCafe]? {
+        didSet{
+            cafeTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpListView()
+        initData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func initData() {
+        let parameter: [String: Any] = ["concept" : conceptId,
+                                        "menu" : menuId ]
+        
+        CategoryCafeService.shareInstance.getCategoryCafe(locationId: locationId, parameter: parameter, token: token, completion: { (cafeList) in
+            self.cafes = cafeList
+            print("카테고리 카페 리스트 성공")
+        }) { (err) in
+            print("카테고리 카페 리스트 실패")
+        }
     }
     
     private func setUpListView() {
@@ -52,7 +74,7 @@ extension CategoryResultVC: UICollectionViewDelegate, UICollectionViewDataSource
         if section == 0 {
             return 1
         } else {
-            return options.count
+            return menuId.count + conceptId.count
         }
     }
     
@@ -71,19 +93,22 @@ extension CategoryResultVC: UICollectionViewDelegate, UICollectionViewDataSource
         }
         return cell
     }
-    
-    
 }
 
 extension CategoryResultVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        guard let cafeNum = cafes?.count else { return 0 }
+        return cafeNum
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
+        guard let cafe = cafes?[indexPath.row] else { return cell }
+        
         if let cafeCell = cafeTableView.dequeueReusableCell(withIdentifier: "CategoryCafeCell") as? CategoryCafeCell {
             cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
+            cafeCell.cafeNameLabel.text = cafe.cafeName
+            cafeCell.cafeAddressLabel.text = cafe.cafeAddressDetail
             cell = cafeCell
         }
         return cell

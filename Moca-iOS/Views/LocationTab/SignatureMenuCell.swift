@@ -9,5 +9,8 @@
 import UIKit
 
 class SignatureMenuCell: UICollectionViewCell {
+    @IBOutlet var menuImageView: UIImageView!
+    @IBOutlet var menuNameLabel: UILabel!
+    @IBOutlet var menuPriceLabel: UILabel!
     
 }

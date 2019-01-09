@@ -53,7 +53,7 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 2 {
             if let baristaCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksBaristaCell") as? MocaPicksBaristaCell {
-                baristaCell.navigationController = self.navigationController
+                baristaCell.delegate = self
                 cell = baristaCell
             }
         } else if indexPath.section == 3 {
@@ -69,3 +69,10 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+extension MocaPicksCafeVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+

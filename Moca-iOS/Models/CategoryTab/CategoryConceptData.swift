@@ -11,10 +11,10 @@ import Foundation
 struct CategoryConceptData: Codable {
     let status: Int
     let message: String
-    let data: [Concept]
+    let data: [CategoryConcept]
 }
 
-struct Concept: Codable {
+struct CategoryConcept: Codable {
     let cafeConceptID: Int
     let cafeConceptName: String
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class CafeDetailImageListCell: UITableViewCell {
-    
+    var images = [CafeDetailImage]()
     @IBOutlet var squareView: UIView!
     @IBOutlet var imageCollectionView: UICollectionView!
     @IBOutlet var scrollProgressView: UIProgressView!
@@ -22,7 +22,7 @@ class CafeDetailImageListCell: UITableViewCell {
     }
     
     private func setUpView() {
-        progressUnit = Float(1)/Float(8)
+        progressUnit = Float(1)/Float(images.count)
         scrollProgressView.progress = progressUnit
         squareView.applyRadius(radius: 10)
     }
@@ -39,7 +39,7 @@ extension CafeDetailImageListCell: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +57,7 @@ extension CafeDetailImageListCell: UICollectionViewDelegate, UICollectionViewDat
 extension CafeDetailImageListCell: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView is UICollectionView {
-            scrollProgressView.progress = Float(scrollView.contentOffset.x+scrollView.frame.width) / Float(scrollView.frame.width*CGFloat(8))
+            scrollProgressView.progress = Float(scrollView.contentOffset.x+scrollView.frame.width) / Float(scrollView.frame.width*CGFloat(images.count))
         }
     }
 }
