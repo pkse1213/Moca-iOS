@@ -13,6 +13,15 @@ class RankingCafeCell: UICollectionViewCell {
     @IBOutlet var cafeImageView: UIImageView!
     @IBOutlet var cafeNameLabel: UILabel!
     @IBOutlet var cafeAddressLabel: UILabel!
-    @IBOutlet var rankBackgroundView: UIImageView!
+    
+    var cafe: RankingCafe? {
+        didSet { setUpData() }
+    }
+    
+    private func setUpData() {
+        guard let cafe = cafe else { return }
+        cafeNameLabel.text = cafe.cafeName
+        cafeAddressLabel.text = cafe.addressDistrictName
+    }
     
 }

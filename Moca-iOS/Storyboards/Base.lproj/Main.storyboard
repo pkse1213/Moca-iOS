@@ -266,7 +266,7 @@
                                                                         <rect key="frame" x="1" y="20.666666666666664" width="36" height="36"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jc-V0-PPe">
-                                                                        <rect key="frame" x="15.666666666666666" y="32.333333333333336" width="6.6666666666666661" height="12.666666666666664"/>
+                                                                        <rect key="frame" x="16" y="31.999999999999993" width="6.3333333333333321" height="13"/>
                                                                         <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="11"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -279,23 +279,23 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Anw-vO-FDa">
-                                                                        <rect key="frame" x="130" y="22.666666666666664" width="84.333333333333314" height="29.666666666666664"/>
+                                                                        <rect key="frame" x="130" y="21.000000000000004" width="84.666666666666686" height="33.333333333333343"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OX8-NW-Ixa">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="12.666666666666666"/>
-                                                                                <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="11"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="15.333333333333334"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="sf4-65-lSJ">
-                                                                                <rect key="frame" x="0.0" y="16.666666666666668" width="84.333333333333329" height="13"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333332" width="84.666666666666671" height="13.999999999999996"/>
                                                                                 <subviews>
                                                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icCommunityLocation" translatesAutoresizingMaskIntoConstraints="NO" id="G9w-6c-Xa9">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="12" height="13"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="12" height="14"/>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVd-xG-OJw">
-                                                                                        <rect key="frame" x="19" y="0.0" width="65.333333333333329" height="13"/>
-                                                                                        <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                                        <rect key="frame" x="19" y="0.0" width="65.666666666666671" height="14"/>
+                                                                                        <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                                         <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
@@ -384,7 +384,7 @@
                                         <rect key="frame" x="0.0" y="783" width="375" height="563"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F51-aM-jm6" id="hGA-G1-Wvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="562.66666666666663"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-Cl-9m1">
@@ -414,7 +414,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xm2-Aa-HZv">
-                                                                        <rect key="frame" x="11" y="106.66666666666666" width="223" height="34.666666666666657"/>
+                                                                        <rect key="frame" x="11" y="105.66666666666666" width="223" height="35.666666666666657"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크리스마스! 여기면 충분할 거에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-lx-VMv">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="17.333333333333332"/>
@@ -423,8 +423,8 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김정환 에디터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOw-A1-hbf">
-                                                                                <rect key="frame" x="0.0" y="22.333333333333329" width="65.333333333333329" height="12.333333333333336"/>
-                                                                                <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                                <rect key="frame" x="0.0" y="22.333333333333343" width="71.333333333333329" height="13.333333333333336"/>
+                                                                                <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>

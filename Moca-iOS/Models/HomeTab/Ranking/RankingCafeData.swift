@@ -17,7 +17,7 @@ struct RankingCafeData: Codable {
 struct RankingCafe: Codable {
     let cafeID: Int
     let cafeName: String
-    let cafeMenuImgURL: String
+    let cafeMenuImgURL: String?
     let addressDistrictName: String
     let cafeRatingAvg: Int
     let evaluatedCafeIs: Bool
