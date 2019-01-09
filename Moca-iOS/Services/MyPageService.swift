@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct MyPageService : APIService, RequestService {
-    typealias NetworkData = <#type#>
-
-}
+//struct MyPageService : APIService, RequestService {
+////    typealias NetworkData = <#type#>
+//
+//}

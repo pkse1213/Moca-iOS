@@ -33,7 +33,7 @@
 		7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */; };
 		776211A321D6AC1900F90D8A /* Unwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776211A221D6AC1900F90D8A /* Unwind.swift */; };
 		7773212E21E6303E006AD209 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773212D21E6303E006AD209 /* MyPageService.swift */; };
-		7773213121E630F5006AD209 /* ScrapCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773213021E630F5006AD209 /* ScrapCafeData.swift */; };
+		7773213121E630F5006AD209 /* ScrapCafeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773213021E630F5006AD209 /* ScrapCafeResponse.swift */; };
 		7780ED5921D4F25200CC2BA7 /* MocaPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */; };
 		7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5B21D4F29E00CC2BA7 /* MocaPlusHomeListCell.swift */; };
 		7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5C21D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift */; };
@@ -175,7 +175,7 @@
 		7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRightToLeft.swift; sourceTree = "<group>"; };
 		776211A221D6AC1900F90D8A /* Unwind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwind.swift; sourceTree = "<group>"; };
 		7773212D21E6303E006AD209 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
-		7773213021E630F5006AD209 /* ScrapCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrapCafeData.swift; path = "Moca-iOS/ScrapCafeData.swift"; sourceTree = SOURCE_ROOT; };
+		7773213021E630F5006AD209 /* ScrapCafeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrapCafeResponse.swift; path = "Moca-iOS/ScrapCafeResponse.swift"; sourceTree = SOURCE_ROOT; };
 		7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MocaPlus.storyboard; sourceTree = "<group>"; };
 		7780ED5B21D4F29E00CC2BA7 /* MocaPlusHomeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeListCell.swift; sourceTree = "<group>"; };
 		7780ED5C21D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusDetailTopicCell.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		7773212F21E630AA006AD209 /* MyPageTab */ = {
 			isa = PBXGroup;
 			children = (
-				7773213021E630F5006AD209 /* ScrapCafeData.swift */,
+				7773213021E630F5006AD209 /* ScrapCafeResponse.swift */,
 			);
 			path = MyPageTab;
 			sourceTree = "<group>";
@@ -1026,7 +1026,7 @@
 				774B597121DBC3C900B10989 /* LikeCafeDetailTableViewCell.swift in Sources */,
 				7723438121DEB68600E5E070 /* LoginVC.swift in Sources */,
 				CB2C591F21DFD21E00CDB39F /* CategoryConceptCell.swift in Sources */,
-				7773213121E630F5006AD209 /* ScrapCafeData.swift in Sources */,
+				7773213121E630F5006AD209 /* ScrapCafeResponse.swift in Sources */,
 				CB2D78F321DCFE3D0033C2A0 /* LocationSearchCell.swift in Sources */,
 				CB2C591D21DFCF2F00CDB39F /* CategoryMainCell.swift in Sources */,
 				77B2900E21E35FDC00E8677F /* LoginService.swift in Sources */,
