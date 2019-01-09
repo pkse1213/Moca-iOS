@@ -33,7 +33,7 @@
 		7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */; };
 		776211A321D6AC1900F90D8A /* Unwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776211A221D6AC1900F90D8A /* Unwind.swift */; };
 		7773212E21E6303E006AD209 /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773212D21E6303E006AD209 /* MyPageService.swift */; };
-		7773213121E630F5006AD209 /* ScrapCafeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773213021E630F5006AD209 /* ScrapCafeResponse.swift */; };
+		7773213121E630F5006AD209 /* ScrapCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7773213021E630F5006AD209 /* ScrapCafeData.swift */; };
 		7780ED5921D4F25200CC2BA7 /* MocaPlus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */; };
 		7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5B21D4F29E00CC2BA7 /* MocaPlusHomeListCell.swift */; };
 		7780ED6021D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7780ED5C21D4F29F00CC2BA7 /* MocaPlusDetailTopicCell.swift */; };
@@ -125,6 +125,8 @@
 		CB2E782F21E637D700619139 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782B21E637D700619139 /* HTTPStatusCode.swift */; };
 		CB2E783021E637D700619139 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782C21E637D700619139 /* RequestService.swift */; };
 		CB2E783121E637D700619139 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782D21E637D700619139 /* APIService.swift */; };
+		CB2E783421E65C0500619139 /* HotPlaceCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783321E65C0500619139 /* HotPlaceCafeData.swift */; };
+		CB2E783621E65C5800619139 /* HotPlaceListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783521E65C5800619139 /* HotPlaceListService.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -217,7 +219,6 @@
 		7762119E21D6A42200F90D8A /* SegueFromRightToLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRightToLeft.swift; sourceTree = "<group>"; };
 		776211A221D6AC1900F90D8A /* Unwind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwind.swift; sourceTree = "<group>"; };
 		7773212D21E6303E006AD209 /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
-		7773213021E630F5006AD209 /* ScrapCafeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrapCafeResponse.swift; path = "Moca-iOS/ScrapCafeResponse.swift"; sourceTree = SOURCE_ROOT; };
 		7773213021E630F5006AD209 /* ScrapCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScrapCafeData.swift; path = "Moca-iOS/Models/MyPageTab/ScrapCafeData.swift"; sourceTree = SOURCE_ROOT; };
 		7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MocaPlus.storyboard; sourceTree = "<group>"; };
 		7780ED5B21D4F29E00CC2BA7 /* MocaPlusHomeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MocaPlusHomeListCell.swift; sourceTree = "<group>"; };
@@ -317,6 +318,8 @@
 		CB2E782B21E637D700619139 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		CB2E782C21E637D700619139 /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		CB2E782D21E637D700619139 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CB2E783321E65C0500619139 /* HotPlaceCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceCafeData.swift; sourceTree = "<group>"; };
+		CB2E783521E65C5800619139 /* HotPlaceListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceListService.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -477,14 +480,6 @@
 				7723437021DE491900E5E070 /* RecommendCollectionViewCell.swift */,
 			);
 			path = HomeSearch;
-			sourceTree = "<group>";
-		};
-		7773212F21E630AA006AD209 /* MyPageTab */ = {
-			isa = PBXGroup;
-			children = (
-				7773213021E630F5006AD209 /* ScrapCafeResponse.swift */,
-			);
-			path = MyPageTab;
 			sourceTree = "<group>";
 		};
 		7780ED5A21D4F29300CC2BA7 /* MocaPlus */ = {
@@ -690,6 +685,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2A5F3521E5E8840001E4DA /* HotPlaceNameService.swift */,
+				CB2E783521E65C5800619139 /* HotPlaceListService.swift */,
 			);
 			path = HotPlace;
 			sourceTree = "<group>";
@@ -698,6 +694,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2A5F3321E5E85A0001E4DA /* HotPlaceNameData.swift */,
+				CB2E783321E65C0500619139 /* HotPlaceCafeData.swift */,
 			);
 			path = HotPlace;
 			sourceTree = "<group>";
@@ -1293,6 +1290,7 @@
 				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
 				CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
+				CB2E783621E65C5800619139 /* HotPlaceListService.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
 				CB2C591A21DFCE7D00CDB39F /* CategoryMainVC.swift in Sources */,
 				CB32A08F21D259B8004796F7 /* HomeHotPlaceNameCell.swift in Sources */,
@@ -1303,6 +1301,7 @@
 				CBD4C7CC21E2279C008BE065 /* CafeDetailSignitureService.swift in Sources */,
 				CB2A5F3421E5E85A0001E4DA /* HotPlaceNameData.swift in Sources */,
 				CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */,
+				CB2E783421E65C0500619139 /* HotPlaceCafeData.swift in Sources */,
 				CB2DE22B21E519B4009C2683 /* CommunityFollowUserData.swift in Sources */,
 				77B2901121E366AF00E8677F /* AccountData.swift in Sources */,
 				CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */,
@@ -1331,7 +1330,7 @@
 				CBD4C7BD21E1F722008BE065 /* CategoryCafeData.swift in Sources */,
 				7723438121DEB68600E5E070 /* LoginVC.swift in Sources */,
 				CB2C591F21DFD21E00CDB39F /* CategoryConceptCell.swift in Sources */,
-				7773213121E630F5006AD209 /* ScrapCafeResponse.swift in Sources */,
+				7773213121E630F5006AD209 /* ScrapCafeData.swift in Sources */,
 				CB2D78F321DCFE3D0033C2A0 /* LocationSearchCell.swift in Sources */,
 				CB2C591D21DFCF2F00CDB39F /* CategoryMainCell.swift in Sources */,
 				CB6F130821E523570051126C /* CommunityFollowService.swift in Sources */,

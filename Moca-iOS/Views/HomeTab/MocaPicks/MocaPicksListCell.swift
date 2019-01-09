@@ -13,6 +13,11 @@ class MocaPicksListCell: UITableViewCell {
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    
+    var mocaPicks: MocaPicks? {
+        didSet { setUpData() }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +27,12 @@ class MocaPicksListCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func setUpData() {
+        guard let mocaPicks = mocaPicks else { return }
+        nameLabel.text = mocaPicks.cafeName
+        addressLabel.text = mocaPicks.addressDistrictName
     }
 
 }
