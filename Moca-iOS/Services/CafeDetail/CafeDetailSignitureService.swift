@@ -25,6 +25,7 @@ struct CafeDetailSignitureService: APIService, RequestService {
         gettable(signitureURL, body: nil, header: header) { res in
             switch res {
             case .success(let CafeDetailSignitureData):
+                print(CafeDetailSignitureData.message)
                 let data = CafeDetailSignitureData.data
                 completion(data)
             case .successWithNil(_):

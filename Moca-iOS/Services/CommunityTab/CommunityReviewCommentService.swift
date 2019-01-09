@@ -24,6 +24,7 @@ struct CommunityReviewCommentService: APIService, RequestService {
         gettable(commentURL, body: nil, header: header) { res in
             switch res {
             case .success(let CommunityReviewCommentData):
+                print(CommunityReviewCommentData.message)
                 let data = CommunityReviewCommentData.data
                 completion(data)
             case .successWithNil(_):

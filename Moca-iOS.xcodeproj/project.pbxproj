@@ -74,6 +74,10 @@
 		CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */; };
 		CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */; };
 		CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */; };
+		CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */; };
+		CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */; };
+		CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */; };
+		CB2A5F2921E5DF440001E4DA /* MocaPicksDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */; };
 		CB2ACCE021D7F7AD004DBF2E /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCDF21D7F7AD004DBF2E /* DaumMap.framework */; };
 		CB2ACCE221D7F881004DBF2E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCE121D7F881004DBF2E /* OpenGLES.framework */; };
 		CB2ACCE421D7F888004DBF2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2ACCE321D7F888004DBF2E /* SystemConfiguration.framework */; };
@@ -247,6 +251,10 @@
 		CB28595921E0FE3600E691A9 /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunitySearchPeopleTableViewCell.swift; path = "/Downloads/아카이브/CommunitySearchPeopleTableViewCell.swift"; sourceTree = "<absolute>"; };
 		CB28595A21E0FE3600E691A9 /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopularReviewCollectionViewCell.swift; path = "/Downloads/아카이브/PopularReviewCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageCell.swift; sourceTree = "<group>"; };
+		CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksData.swift; sourceTree = "<group>"; };
+		CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeService.swift; sourceTree = "<group>"; };
+		CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksDetailData.swift; sourceTree = "<group>"; };
+		CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksDetailService.swift; sourceTree = "<group>"; };
 		CB2ACCDF21D7F7AD004DBF2E /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		CB2ACCE121D7F881004DBF2E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		CB2ACCE321D7F888004DBF2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -579,6 +587,32 @@
 			path = MocaPicks;
 			sourceTree = "<group>";
 		};
+		CB2A5F1F21E5DB0C0001E4DA /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				CB2A5F2521E5DD660001E4DA /* MocaPicks */,
+			);
+			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		CB2A5F2021E5DB1E0001E4DA /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */,
+				CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */,
+			);
+			path = HomeTab;
+			sourceTree = "<group>";
+		};
+		CB2A5F2521E5DD660001E4DA /* MocaPicks */ = {
+			isa = PBXGroup;
+			children = (
+				CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */,
+				CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */,
+			);
+			path = MocaPicks;
+			sourceTree = "<group>";
+		};
 		CB2ACCF021D7FC1F004DBF2E /* LocationTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,8 +653,9 @@
 			children = (
 				CBD4C7E121E35707008BE065 /* Base */,
 				CBD4C7AE21E1501A008BE065 /* CafeDetail */,
-				CBD4C7E221E3571E008BE065 /* LocationTab */,
+				CB2A5F1F21E5DB0C0001E4DA /* HomeTab */,
 				CBD4C7B621E15609008BE065 /* CategoryTab */,
+				CBD4C7E221E3571E008BE065 /* LocationTab */,
 				CBD4C7E321E35731008BE065 /* CommunityTab */,
 			);
 			path = Services;
@@ -630,10 +665,11 @@
 			isa = PBXGroup;
 			children = (
 				CBD4C7D921E28481008BE065 /* Base */,
-				CBD4C7DE21E354A0008BE065 /* CommunityTab */,
 				CBD4C7C221E22676008BE065 /* CafeDetail */,
+				CB2A5F2021E5DB1E0001E4DA /* HomeTab */,
 				CBD4C7B021E15360008BE065 /* CategoryTab */,
 				CBD4C7AF21E15350008BE065 /* LocationTab */,
+				CBD4C7DE21E354A0008BE065 /* CommunityTab */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -674,11 +710,11 @@
 		CB32A08521D24C8F004796F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB32A08821D24CBA004796F7 /* HomeTab */,
 				CB2C591B21DFCF1500CDB39F /* CategoryTab */,
 				CB0AAD7A21D8B1A50007E174 /* LocationTab */,
-				CB32A08821D24CBA004796F7 /* HomeTab */,
-				772A953221D79362009114FC /* MyPageTab */,
 				CB32A09921D2A2B9004796F7 /* CommunityTab */,
+				772A953221D79362009114FC /* MyPageTab */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1066,6 +1102,7 @@
 				CB2E8F0621DC0FA20087EFE2 /* CafeDetailImageListCell.swift in Sources */,
 				772A953421D793A9009114FC /* MyPageInfoCell.swift in Sources */,
 				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
+				CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */,
 				CB0AAD7C21D8B22B0007E174 /* LocationMapCafeCell.swift in Sources */,
 				7723437521DE8F6200E5E070 /* CommunitySearchVC.swift in Sources */,
 				CB2E8F0821DC0FC60087EFE2 /* CafeDetailImageCell.swift in Sources */,
@@ -1075,6 +1112,7 @@
 				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
 				774B597321DBCF5A00B10989 /* UITextField+Extension.swift in Sources */,
 				CB2D78E321DC86A70033C2A0 /* LocationMapDialogVC.swift in Sources */,
+				CB2A5F2921E5DF440001E4DA /* MocaPicksDetailService.swift in Sources */,
 				CBD4C7D021E23ECA008BE065 /* NearByCafeData.swift in Sources */,
 				CB909BB121DBF14A0040F4A5 /* CafeDetailInfoCell.swift in Sources */,
 				CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */,
@@ -1172,12 +1210,14 @@
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
 				CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */,
 				CBD4C7D221E23F6B008BE065 /* NearByCafeService.swift in Sources */,
+				CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */,
 				CB2DE22521E4B1C7009C2683 /* CommunityReviewLikeService.swift in Sources */,
 				772A953621D79517009114FC /* MyPageCell.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
 				CB2D78EE21DCFDD40033C2A0 /* HTTPStatusCode.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeConceptCell.swift in Sources */,
+				CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */,
 				CB00664721E09D7900F53D61 /* CategoryResultVC.swift in Sources */,
 				77FA140121E1387F006C8E20 /* HotPlaceVC.swift in Sources */,
 				77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift in Sources */,

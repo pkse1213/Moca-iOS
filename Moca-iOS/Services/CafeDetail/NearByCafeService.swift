@@ -30,6 +30,7 @@ struct NearByCafeService: APIService, RequestService{
         postable(URL, body: body, header: header) { (res) in
             switch res {
             case .success(let NearByCafeData):
+                print(NearByCafeData.message)
                 completion(NearByCafeData.data)
             case .successWithNil(_):
                 break

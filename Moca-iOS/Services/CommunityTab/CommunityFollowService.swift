@@ -25,6 +25,7 @@ struct CommunityFollowService: APIService, RequestService{
         postable(likeURL, body: nil, header: header) { (res) in
             switch res {
             case .success(let data):
+                print(data.message)
                 completion(data.message)
             case .successWithNil(_):
                 break

@@ -25,6 +25,7 @@ struct CommunityFollowUserService: APIService, RequestService {
         gettable(followURL, body: nil, header: header) { res in
             switch res {
             case .success(let CommunityFollowUserData):
+                print(CommunityFollowUserData.message)
                 let data = CommunityFollowUserData.data
                 completion(data)
             case .successWithNil(_):

@@ -20,6 +20,7 @@ struct CategoryConceptService: APIService, RequestService {
         gettable(URL, body: nil, header: nil) { res in
             switch res {
             case .success(let CategoryConceptData):
+                print(CategoryConceptData.message)
                 let data = CategoryConceptData.data
                 completion(data)
             case .successWithNil(_):

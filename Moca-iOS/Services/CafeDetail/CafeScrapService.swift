@@ -25,6 +25,7 @@ struct CafeScrapService: APIService, RequestService{
         postable(scrapURL, body: nil, header: header) { (res) in
             switch res {
             case .success(let data):
+                print(data.message)
                 completion(data.message)
             case .successWithNil(_):
                 break
@@ -44,6 +45,7 @@ struct CafeScrapService: APIService, RequestService{
         deletable(scrapURL, body: nil, header: header) { (res) in
             switch res {
             case .success(let data):
+                print(data.message)
                 completion(data.message)
             case .successWithNil(_):
                 break

@@ -25,6 +25,7 @@ struct CafeDetailInfoService: APIService, RequestService {
         gettable(infoURL, body: nil, header: header) { res in
             switch res {
             case .success(let CafeDetailInfoData):
+                print(CafeDetailInfoData.message)
                 let data = CafeDetailInfoData.data
                 completion(data)
             case .successWithNil(_):
