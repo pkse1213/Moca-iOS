@@ -101,19 +101,18 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let _ = mocaPicks,
-        guard let _ = hotPlaceNames, let _ = rankingCafes, let _ = mocaPlusSubject else { return 0 }
+        
+        guard let _ = mocaPicks, let _ = hotPlaceNames, let _ = rankingCafes, let _ = mocaPlusSubject else { return 0 }
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        //let _ = mocaPicks,
-        guard let hotPlaceNames = hotPlaceNames, let rankingCafes = rankingCafes, let mocaPlusSubject = mocaPlusSubject else { return cell }
+        
+        guard let _ = mocaPicks, let hotPlaceNames = hotPlaceNames, let rankingCafes = rankingCafes, let mocaPlusSubject = mocaPlusSubject else { return cell }
         
         switch indexPath.section {
         case 0:
-            return cell
             if let mocaPicksCell = homeTabTableView.dequeueReusableCell(withIdentifier: "HomeMocaPicksCell") as? HomeMocaPicksCell {
                 mocaPicksCell.mocaPicks = mocaPicks
                 mocaPicksCell.delegate = self
