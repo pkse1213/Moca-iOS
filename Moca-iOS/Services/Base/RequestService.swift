@@ -25,6 +25,9 @@ extension RequestService {
             switch status {
             case .OK:
                 print("200")
+            switch res.result {
+            case .success:
+//                print("200")
                 if let value = res.result.value {
                     let decoder = JSONDecoder()
                     do {
@@ -70,10 +73,10 @@ extension RequestService {
         Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseData { (res) in
             guard let statusCode = res.response?.statusCode else { return }
             guard let status: HTTPStatusCode = HTTPStatusCode(rawValue: statusCode) else { return }
-            print(statusCode)
+//            print(statusCode)
             switch status {
             case .OK:
-                print("200")
+//                print("200")
                 if let value = res.result.value {
                     let decoder = JSONDecoder()
                     do {
