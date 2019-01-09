@@ -9,7 +9,9 @@
 import UIKit
 
 class HomeMocaPicksCell: UITableViewCell {
-    var mocaPicks: [MocaPicks]?
+    var mocaPicks: [MocaPicks]? {
+        didSet {  }
+    }
     weak var delegate: ListViewCellDelegate?
     @IBOutlet weak var mocaPickCollectionView: UICollectionView!
     @IBOutlet var moreBtnImageView: UIImageView!
@@ -40,12 +42,15 @@ class HomeMocaPicksCell: UITableViewCell {
 
 extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        guard let mocaPicks = mocaPicks else { return 0 }
+        return mocaPicks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let mocaPicks = mocaPicks?[indexPath.item] else { return cell }
         if let cafeCell = mocaPickCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeMocaPicksCafeListCell", for: indexPath) as? HomeMocaPicksCafeListCell {
+            cafeCell.cafe = mocaPicks
             cell = cafeCell
         }
         return cell

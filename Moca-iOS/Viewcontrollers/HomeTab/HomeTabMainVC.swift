@@ -101,7 +101,6 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard let _ = mocaPicks, let _ = hotPlaceNames, let _ = rankingCafes, let _ = mocaPlusSubject else { return 0 }
         return 1
     }
@@ -139,7 +138,6 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
         default:
             return cell
         }
-        
         return cell
     }
     

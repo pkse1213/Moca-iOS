@@ -11,17 +11,24 @@ import UIKit
 class HomeMocaPlusCell: UITableViewCell {
     @IBOutlet weak var moreBtnImageView: UIImageView!
     @IBOutlet weak var mocaPlusTableView: UITableView!
+    
     var mocaPlusSubject: [MocaPlusSubject]?
     weak var delegate: ListViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUpTableView()
         registerGesture()
     }
 
     private func registerGesture() {
         let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
         moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+    }
+    
+    private func setUpTableView() {
+        mocaPlusTableView.delegate = self
+        mocaPlusTableView.dataSource = self
     }
     
     @objc func moreAction(_:UIImageView) {

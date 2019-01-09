@@ -40,12 +40,16 @@ class HomeRankingCell: UITableViewCell {
 
 extension HomeRankingCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        guard let rankingCafes = rankingCafes else { return 0 }
+        return rankingCafes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
+        guard let cafe = rankingCafes?[indexPath.row] else { return cell }
         if let rankingCell = rankTableView.dequeueReusableCell(withIdentifier: "HomeRankingListCell") as? HomeRankingListCell {
+            rankingCell.rankNumLabel.text = "\(indexPath.row+1)"
+            rankingCell.cafe = cafe
             cell = rankingCell
         }
         return cell

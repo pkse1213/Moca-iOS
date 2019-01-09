@@ -9,22 +9,28 @@
 import UIKit
 
 class HomeRankingListCell: UITableViewCell {
-
     @IBOutlet weak var rankNumLabel: UILabel!
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var starStackView: UIStackView!
     
+    var cafe: RankingCafe? {
+        didSet { setUpData() }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    private func setUpData() {
+        guard let cafe = cafe else { return }
+        cafeNameLabel.text = cafe.cafeName
+        cafeAddressLabel.text = cafe.addressDistrictName
     }
 
 }
