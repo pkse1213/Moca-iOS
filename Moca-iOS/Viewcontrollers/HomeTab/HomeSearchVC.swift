@@ -27,7 +27,9 @@ class HomeSearchVC: UIViewController {
     @IBOutlet weak var beforeSearchView: UIView!
     @IBOutlet weak var hotCafeCollectionView: UICollectionView!
     @IBOutlet weak var recommendCollectionView: UICollectionView!
-    
+    var keyword = "" {
+        didSet { initSearchData() }
+    }
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xknd"
     var bestCafes: [BestCafe]? {
         didSet { hotCafeCollectionView.reloadData() }
@@ -35,9 +37,15 @@ class HomeSearchVC: UIViewController {
     var hotPlaces: [RecommendHotPlace]? {
         didSet { recommendCollectionView.reloadData() }
     }
-    
+    var searchResults: [HomeSearchResult]? {
+        didSet { searchResultTableView.reloadData() }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+                                  for: UIControl.Event.editingChanged)
+        
+        
         initBeforeData()
         setUpTableView()
         setUpTextField()
@@ -45,6 +53,32 @@ class HomeSearchVC: UIViewController {
         searchTextField.delegate = self
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        beforeSearchView.isHidden = true
+        guard let keyword = textField.text else { return }
+        if keyword == "" {
+            beforeSearchView.isHidden = false
+            return
+        } else {
+             self.keyword = keyword
+        }
+    }
+    
+    private func initSearchData() {
+        HomeSearchResultService.shareInstance.getHomeSearchResult(keyword: keyword, token: token, completion: { (res) in
+            if self.selectTabPosition == 1 {
+                self.searchResults = res.filter({ $0.type == false })
+            } else if self.selectTabPosition == 2 {
+                self.searchResults = res.filter({ $0.type == true })
+            } else {
+                self.searchResults = res
+            }
+        }) { (err) in
+            self.searchResults = []
+            print("검색 결과 실패\(err)")
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
@@ -101,6 +135,8 @@ class HomeSearchVC: UIViewController {
         allTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
         cafeTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
         locationTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+        
+        initSearchData()
     }
     
     @IBAction func cafeTabAction(_ sender: Any) {
@@ -114,7 +150,7 @@ class HomeSearchVC: UIViewController {
         cafeTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
         locationTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
         
-        
+        initSearchData()
     }
     
     @IBAction func locationTabAction(_ sender: Any) {
@@ -127,17 +163,26 @@ class HomeSearchVC: UIViewController {
         allTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
         cafeTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
         locationTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
+        
+        initSearchData()
     }
     
 }
 
 extension HomeSearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        guard let searchResults = searchResults else { return 0 }
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeSearchResultCell", for: indexPath) as! HomeSearchResultCell
+        var cell = UITableViewCell()
+        guard let searchResults = searchResults else { return cell }
+        
+        if let resultCell = tableView.dequeueReusableCell(withIdentifier: "HomeSearchResultCell", for: indexPath) as?  HomeSearchResultCell {
+            resultCell.searchResult = searchResults[indexPath.row]
+            cell = resultCell
+        }
         
         return cell
     }
@@ -180,6 +225,26 @@ extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 extension HomeSearchVC : UITextFieldDelegate {
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+////        guard let keyword = textField.text else { return true }
+//
+//        let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
+//        guard let keyword = updatedString else { return true }
+//        print("--\(keyword)")
+//        HomeSearchResultService.shareInstance.getHomeSearchResult(keyword: keyword, token: token, completion: { (res) in
+//            if self.selectTabPosition == 1 {
+//                self.searchResults = res.filter({ $0.type == false })
+//            } else if self.selectTabPosition == 2 {
+//                self.searchResults = res.filter({ $0.type == true })
+//            } else {
+//                self.searchResults = res
+//            }
+//        }) { (err) in
+//            print("검색 결과 실패\(err)")
+//        }
+//        return true
+//    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         beforeSearchView.isHidden = true
         
