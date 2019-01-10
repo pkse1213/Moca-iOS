@@ -22,7 +22,7 @@ class TutorialVC: UIViewController {
     
     private func setUpImage() {
         UIView.animate(withDuration: 0.2) {
-            self.tutorialImageView.backgroundColor = UIImage(named: "\(tutorial\(selectedIndex))")
+            self.tutorialImageView.image = UIImage(named: "tutorial\(self.selectedIndex)")
             self.view.layoutIfNeeded()
         }
     }
@@ -41,7 +41,7 @@ class TutorialVC: UIViewController {
     {
         switch gesture.direction {
         case UISwipeGestureRecognizer.Direction.right:
-            if selectedIndex != 0 {
+            if selectedIndex != 1 {
                 selectedIndex = selectedIndex - 1
             }
         case UISwipeGestureRecognizer.Direction.left:
