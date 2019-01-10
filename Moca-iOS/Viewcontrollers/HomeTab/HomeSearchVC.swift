@@ -24,24 +24,29 @@ class HomeSearchVC: UIViewController {
     @IBOutlet weak var cafeTabButton: UIButton!
     @IBOutlet weak var locationTabButton: UIButton!
     
-    @IBOutlet var beforeSearchView: UIView!
-    @IBOutlet var hotCafeCollectionView: UICollectionView!
-    @IBOutlet var recommendCollectionView: UICollectionView!
+    @IBOutlet weak var beforeSearchView: UIView!
+    @IBOutlet weak var hotCafeCollectionView: UICollectionView!
+    @IBOutlet weak var recommendCollectionView: UICollectionView!
     
-    
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xknd"
+    var bestCafes: [BestCafe]? {
+        didSet { hotCafeCollectionView.reloadData() }
+    }
+    var hotPlaces: [RecommendHotPlace]? {
+        didSet { recommendCollectionView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initBeforeData()
         setUpTableView()
         setUpTextField()
-        setUpHotCafeCollectionView()
-        setUpRecommendCollectionView()
-        
+        setUpCollectionView()
         searchTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     }
 
@@ -53,28 +58,35 @@ class HomeSearchVC: UIViewController {
     }
     
     // 이번주 인기 카페 설정
-    private func setUpHotCafeCollectionView() {
+    private func setUpCollectionView() {
         hotCafeCollectionView.dataSource = self
         hotCafeCollectionView.delegate = self
-    }
-    
-    // 모카 추천 플레이스 설정
-    private func setUpRecommendCollectionView() {
         recommendCollectionView.delegate = self
         recommendCollectionView.dataSource = self
     }
     
-    // tableView delegate랑 dataSource 설정
     private func setUpTableView() {
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
+    }
+    
+    private func initBeforeData() {
+        BestReviewService.shareInstance.getBestReview(flag: 0, token: token, completion: { (res) in
+            self.bestCafes = res
+        }) { (err) in
+            print("인기 리뷰 조회 실패 \(err)")
+        }
+        RecommendHotPlaceService.shareInstance.getCommandHotPlace(token: token, completion: { (res) in
+            self.hotPlaces = res
+        }) { (err) in
+            print("모카 추천 플레이스 조회 실패 \(err)")
+        }
     }
     
     // back action
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
     
     // Tab Action
     @IBAction func allTabAction(_ sender: Any) {
@@ -127,8 +139,6 @@ extension HomeSearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeSearchResultCell", for: indexPath) as! HomeSearchResultCell
         
-        
-        
         return cell
     }
     
@@ -141,26 +151,31 @@ extension HomeSearchVC : UITableViewDelegate, UITableViewDataSource {
 // 검색 전 화면 설정
 extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.hotCafeCollectionView {
-            return 8
-        }
-        else {
-            return 7
+        if collectionView == recommendCollectionView {
+            guard let hotPlaces = hotPlaces else { return 0 }
+            return hotPlaces.count
+        } else {
+            guard let bestCafes = bestCafes else { return 0 }
+            return bestCafes.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if collectionView == self.hotCafeCollectionView {
-            let cell = hotCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "HotCafeCollectionViewCell", for: indexPath) as! HotCafeCollectionViewCell
-            
-            return cell
+        var cell = UICollectionViewCell()
+        if collectionView == hotCafeCollectionView {
+            guard let bestCafe = bestCafes?[indexPath.item] else { return cell }
+            if let cafeCell = hotCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "HotCafeCollectionViewCell", for: indexPath) as? HotCafeCollectionViewCell {
+                cafeCell.bestCafe = bestCafe
+                cell = cafeCell
+            }
+        } else {
+            guard let hotPlace = hotPlaces?[indexPath.item] else { return cell }
+            if let placecell = recommendCollectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCollectionViewCell", for: indexPath) as? RecommendCollectionViewCell {
+                placecell.recommendHotPlace = hotPlace
+                cell = placecell
+            }
         }
-        else {
-            let cell = recommendCollectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCollectionViewCell", for: indexPath) as! RecommendCollectionViewCell
-            
-            return cell
-        }
+        return cell
     }
 }
 

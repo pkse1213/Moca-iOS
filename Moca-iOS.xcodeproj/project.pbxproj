@@ -130,6 +130,12 @@
 		CB2E783821E6899000619139 /* MocaPlusContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783721E6899000619139 /* MocaPlusContentData.swift */; };
 		CB2E783A21E689F500619139 /* MocaPlusContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783921E689F500619139 /* MocaPlusContentService.swift */; };
 		CB2E783C21E6A11900619139 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783B21E6A11900619139 /* UILabel+LineSpacing.swift */; };
+		CB2E783F21E6AD2E00619139 /* BestCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783E21E6AD2E00619139 /* BestCafeData.swift */; };
+		CB2E784121E6AD9E00619139 /* RecommendHotPlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784021E6AD9E00619139 /* RecommendHotPlaceData.swift */; };
+		CB2E784421E6ADCB00619139 /* CommandHotPlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784321E6ADCB00619139 /* CommandHotPlaceService.swift */; };
+		CB2E784621E6AE6C00619139 /* BestReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784521E6AE6C00619139 /* BestReviewService.swift */; };
+		CB2E784821E6CCD600619139 /* HomeSearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */; };
+		CB2E784A21E6CCF800619139 /* HomeSearchResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -326,6 +332,12 @@
 		CB2E783721E6899000619139 /* MocaPlusContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPlusContentData.swift; sourceTree = "<group>"; };
 		CB2E783921E689F500619139 /* MocaPlusContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPlusContentService.swift; sourceTree = "<group>"; };
 		CB2E783B21E6A11900619139 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
+		CB2E783E21E6AD2E00619139 /* BestCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestCafeData.swift; sourceTree = "<group>"; };
+		CB2E784021E6AD9E00619139 /* RecommendHotPlaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendHotPlaceData.swift; sourceTree = "<group>"; };
+		CB2E784321E6ADCB00619139 /* CommandHotPlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHotPlaceService.swift; sourceTree = "<group>"; };
+		CB2E784521E6AE6C00619139 /* BestReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewService.swift; sourceTree = "<group>"; };
+		CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultData.swift; sourceTree = "<group>"; };
+		CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultService.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -634,6 +646,7 @@
 		CB2A5F1F21E5DB0C0001E4DA /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E784221E6ADBB00619139 /* Search */,
 				CB2E782521E6066700619139 /* MocaPlus */,
 				CB2A5F3121E5E7FD0001E4DA /* HotPlace */,
 				CB2A5F2A21E5E24C0001E4DA /* Ranking */,
@@ -645,6 +658,7 @@
 		CB2A5F2021E5DB1E0001E4DA /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E783D21E6AD2200619139 /* Search */,
 				CB2E782221E6060500619139 /* MocaPlus */,
 				CB2A5F3221E5E8090001E4DA /* HotPlace */,
 				CB2A5F2C21E5E2600001E4DA /* Ranking */,
@@ -803,6 +817,26 @@
 				7773213021E630F5006AD209 /* ScrapCafeData.swift */,
 			);
 			path = MyPageTab;
+			sourceTree = "<group>";
+		};
+		CB2E783D21E6AD2200619139 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E783E21E6AD2E00619139 /* BestCafeData.swift */,
+				CB2E784021E6AD9E00619139 /* RecommendHotPlaceData.swift */,
+				CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CB2E784221E6ADBB00619139 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E784321E6ADCB00619139 /* CommandHotPlaceService.swift */,
+				CB2E784521E6AE6C00619139 /* BestReviewService.swift */,
+				CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
@@ -1279,6 +1313,7 @@
 				7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */,
 				77EFC31921E48778006D78AB /* SignupResponse.swift in Sources */,
 				772A953821D79C88009114FC /* LikeCafeImageCell.swift in Sources */,
+				CB2E784421E6ADCB00619139 /* CommandHotPlaceService.swift in Sources */,
 				77FA13FF21E123F7006C8E20 /* SavingHistoryFooterTableViewCell.swift in Sources */,
 				CB2DE22921E4F24E009C2683 /* CommunityReviewDetailService.swift in Sources */,
 				CBD4C7F521E4032A008BE065 /* CommunityReviewCommentService.swift in Sources */,
@@ -1298,6 +1333,7 @@
 				77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */,
 				CB2E782721E6067100619139 /* MocaPlusSubjectService.swift in Sources */,
 				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
+				CB2E784821E6CCD600619139 /* HomeSearchResultData.swift in Sources */,
 				CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
 				CB2E783621E65C5800619139 /* HotPlaceListService.swift in Sources */,
@@ -1306,6 +1342,8 @@
 				CB32A08F21D259B8004796F7 /* HomeHotPlaceNameCell.swift in Sources */,
 				77FA141021E1404D006C8E20 /* HotPlaceCafeCell.swift in Sources */,
 				7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */,
+				CB2E783F21E6AD2E00619139 /* BestCafeData.swift in Sources */,
+				CB2E784121E6AD9E00619139 /* RecommendHotPlaceData.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */,
 				CBD4C7CC21E2279C008BE065 /* CafeDetailSignitureService.swift in Sources */,
@@ -1329,6 +1367,7 @@
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				CB2E782F21E637D700619139 /* HTTPStatusCode.swift in Sources */,
 				7723437321DE8F1000E5E070 /* PopularCollectionViewCell.swift in Sources */,
+				CB2E784A21E6CCF800619139 /* HomeSearchResultService.swift in Sources */,
 				CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
 				CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */,
@@ -1360,6 +1399,7 @@
 				CB2E782921E637CA00619139 /* KakaoAddressService.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
+				CB2E784621E6AE6C00619139 /* BestReviewService.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeHotPlaceCell.swift in Sources */,
 				CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */,
 				CB00664721E09D7900F53D61 /* CategoryResultVC.swift in Sources */,
