@@ -1,43 +1,38 @@
 //
-//  PopularCollectionViewCell.swift
+//  CommunitySearchPeopleTableViewCell.swift
 //  Moca-iOS
 //
-//  Created by 조수민 on 04/01/2019.
+//  Created by 조수민 on 06/01/2019.
 //  Copyright © 2019 박세은. All rights reserved.
 //
 
 import UIKit
 
-class PopularCollectionViewCell: UICollectionViewCell {
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    @IBOutlet var popularView: UIView!
-    @IBOutlet var popularPofileImage: UIImageView!
-    @IBOutlet var popularNameLabel: UILabel!
+class CommunitySearchPeopleCell: UITableViewCell {
+    
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var statusLabel: UILabel!
     @IBOutlet var followButton: UIButton!
-    var user: BestUser? {
+    var user: SearchUser? {
         didSet { setUpData() }
     }
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        popularPofileImage.layer.borderWidth = 0.3
-        popularPofileImage.layer.borderColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1)
-        popularPofileImage.layer.masksToBounds = false
-        popularPofileImage.layer.cornerRadius = popularPofileImage.frame.height/2
-        popularPofileImage.clipsToBounds = true
-        
-        popularView.layer.borderWidth = 0.3
-        popularView.layer.borderColor = #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1)
-        popularView.layer.masksToBounds = false
-        popularView.layer.cornerRadius = 5.0
-        popularView.clipsToBounds = true
+
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
     }
+
     
     private func setUpData() {
         guard let user = user else { return }
-        popularNameLabel.text = user.userName
-        switch user.follow {
+        nameLabel.text = user.userName
+        statusLabel.text = user.userStatusComment ?? ""
+        switch user.followIs {
         case true:
             followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow.png"), for: .normal)
         case false:

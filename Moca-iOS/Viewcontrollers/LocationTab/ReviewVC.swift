@@ -49,12 +49,12 @@ extension ReviewVC : UICollectionViewDelegateFlowLayout, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.popularReviewCollection {
-            let cell = popularReviewCollection.dequeueReusableCell(withReuseIdentifier: "PopularReviewCollectionViewCell", for: indexPath) as! PopularReviewCollectionViewCell
+            let cell = popularReviewCollection.dequeueReusableCell(withReuseIdentifier: "PopularReviewCell", for: indexPath) as! PopularReviewCell
             
             return cell
         }
         else {
-            let cell = recentReviewCollection.dequeueReusableCell(withReuseIdentifier: "RecentReviewCollectionViewCell", for: indexPath) as! RecentReviewCollectionViewCell
+            let cell = recentReviewCollection.dequeueReusableCell(withReuseIdentifier: "RecentReviewCell", for: indexPath) as! RecentReviewCell
             
             return cell
         }

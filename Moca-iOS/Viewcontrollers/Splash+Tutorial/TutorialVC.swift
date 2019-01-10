@@ -12,7 +12,6 @@ class TutorialVC: UIViewController {
 
     
     @IBOutlet var tutorialImageView: UIImageView!
-    let colors = [#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1),#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1),#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1),#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),]
     var selectedIndex = 1 {
         didSet { setUpImage() }
     }
@@ -23,7 +22,7 @@ class TutorialVC: UIViewController {
     
     private func setUpImage() {
         UIView.animate(withDuration: 0.2) {
-            self.tutorialImageView.backgroundColor = self.colors[self.selectedIndex]
+            self.tutorialImageView.backgroundColor = UIImage(named: "\(tutorial\(selectedIndex))")
             self.view.layoutIfNeeded()
         }
     }

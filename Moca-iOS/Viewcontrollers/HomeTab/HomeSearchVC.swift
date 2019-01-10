@@ -40,17 +40,18 @@ class HomeSearchVC: UIViewController {
     var searchResults: [HomeSearchResult]? {
         didSet { searchResultTableView.reloadData() }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
-                                  for: UIControl.Event.editingChanged)
-        
-        
         initBeforeData()
         setUpTableView()
         setUpTextField()
         setUpCollectionView()
-        searchTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -79,12 +80,10 @@ class HomeSearchVC: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-
     private func setUpTextField() {
+        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+                                  for: UIControl.Event.editingChanged)
         // TextField paddingLeft 설정
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: searchTextField.frame.height))
         searchTextField.leftView = paddingView
@@ -123,49 +122,42 @@ class HomeSearchVC: UIViewController {
     }
     
     // Tab Action
-    @IBAction func allTabAction(_ sender: Any) {
-        selectTabPosition = 0
-        
-        // Tab 아래 선택바 부분 색상 변경
-        allTabView.backgroundColor = UIColor(red: 225/255, green: 178/255, blue: 163/255, alpha: 1.0)
-        cafeTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        locationTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        
-        // Tab 버튼 글씨 색상 변경
-        allTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
-        cafeTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
-        locationTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
-        
+    @IBAction func tabAction(_ sender: UIButton) {
+        selectTabPosition = sender.tag
+        switch selectTabPosition {
+        case 0:
+            // Tab 아래 선택바 부분 색상 변경
+            allTabView.backgroundColor = UIColor(red: 225/255, green: 178/255, blue: 163/255, alpha: 1.0)
+            cafeTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            locationTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            
+            // Tab 버튼 글씨 색상 변경
+            allTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
+            cafeTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+            locationTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+        case 1:
+            allTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            cafeTabView.backgroundColor = UIColor(red: 225/255, green: 178/255, blue: 163/255, alpha: 1.0)
+            locationTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            
+            allTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+            cafeTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
+            locationTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+        case 2:
+            allTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            cafeTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            locationTabView.backgroundColor = UIColor(red: 225/255, green: 178/255, blue: 163/255, alpha: 1.0)
+            
+            allTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+            cafeTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
+            locationTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
+            
+        default:
+            break
+        }
         initSearchData()
     }
-    
-    @IBAction func cafeTabAction(_ sender: Any) {
-        selectTabPosition = 1
-        
-        allTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        cafeTabView.backgroundColor = UIColor(red: 225/255, green: 178/255, blue: 163/255, alpha: 1.0)
-        locationTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        
-        allTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
-        cafeTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
-        locationTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
-        
-        initSearchData()
-    }
-    
-    @IBAction func locationTabAction(_ sender: Any) {
-        selectTabPosition = 2
-        
-        allTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        cafeTabView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-        locationTabView.backgroundColor = UIColor(red: 225/255, green: 178/255, blue: 163/255, alpha: 1.0)
-        
-        allTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
-        cafeTabButton.setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
-        locationTabButton.setTitleColor(#colorLiteral(red: 0.8823529412, green: 0.6980392157, blue: 0.6392156863, alpha: 1), for: .normal)
-        
-        initSearchData()
-    }
+ 
     
 }
 
@@ -225,26 +217,6 @@ extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 extension HomeSearchVC : UITextFieldDelegate {
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-////        guard let keyword = textField.text else { return true }
-//
-//        let updatedString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
-//        guard let keyword = updatedString else { return true }
-//        print("--\(keyword)")
-//        HomeSearchResultService.shareInstance.getHomeSearchResult(keyword: keyword, token: token, completion: { (res) in
-//            if self.selectTabPosition == 1 {
-//                self.searchResults = res.filter({ $0.type == false })
-//            } else if self.selectTabPosition == 2 {
-//                self.searchResults = res.filter({ $0.type == true })
-//            } else {
-//                self.searchResults = res
-//            }
-//        }) { (err) in
-//            print("검색 결과 실패\(err)")
-//        }
-//        return true
-//    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         beforeSearchView.isHidden = true
         
