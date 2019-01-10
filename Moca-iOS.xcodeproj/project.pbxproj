@@ -136,6 +136,8 @@
 		CB2E784621E6AE6C00619139 /* BestReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784521E6AE6C00619139 /* BestReviewService.swift */; };
 		CB2E784821E6CCD600619139 /* HomeSearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */; };
 		CB2E784A21E6CCF800619139 /* HomeSearchResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */; };
+		CB2E784C21E6DDE400619139 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2E784B21E6DDE400619139 /* Tutorial.storyboard */; };
+		CB2E784F21E6DE3800619139 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784E21E6DE3800619139 /* TutorialVC.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -338,6 +340,8 @@
 		CB2E784521E6AE6C00619139 /* BestReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewService.swift; sourceTree = "<group>"; };
 		CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultData.swift; sourceTree = "<group>"; };
 		CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultService.swift; sourceTree = "<group>"; };
+		CB2E784B21E6DDE400619139 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		CB2E784E21E6DE3800619139 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -567,6 +571,7 @@
 		CB08316521D0E4C5000F5D67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E784B21E6DDE400619139 /* Tutorial.storyboard */,
 				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 				CB08315721D0E4B0000F5D67 /* Main.storyboard */,
 				CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */,
@@ -584,6 +589,7 @@
 		CB08316621D0E4CE000F5D67 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E784D21E6DE1300619139 /* Splash+Tutorial */,
 				7723437F21DEB65300E5E070 /* LoginSignUp */,
 				CB32A08921D24CCA004796F7 /* HomeTab */,
 				CB2C591821DFC85100CDB39F /* CategoryTab */,
@@ -837,6 +843,14 @@
 				CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		CB2E784D21E6DE1300619139 /* Splash+Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E784E21E6DE3800619139 /* TutorialVC.swift */,
+			);
+			path = "Splash+Tutorial";
 			sourceTree = "<group>";
 		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
@@ -1176,6 +1190,7 @@
 				CBF2FC2F21D4B5EC00DFC50A /* NanumGothicBold.ttf in Resources */,
 				772A954221D7D4F2009114FC /* MyPageTab.storyboard in Resources */,
 				CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */,
+				CB2E784C21E6DDE400619139 /* Tutorial.storyboard in Resources */,
 				CB8DDB7621D363C2001D8191 /* CommunityTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1330,6 +1345,7 @@
 				772A953E21D7C06A009114FC /* MembershipCouponCollectionCell.swift in Sources */,
 				CBD4C7C421E22684008BE065 /* CafeDetailInfoData.swift in Sources */,
 				77FA141221E142FA006C8E20 /* HotPlaceCafeImageCell.swift in Sources */,
+				CB2E784F21E6DE3800619139 /* TutorialVC.swift in Sources */,
 				77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */,
 				CB2E782721E6067100619139 /* MocaPlusSubjectService.swift in Sources */,
 				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
