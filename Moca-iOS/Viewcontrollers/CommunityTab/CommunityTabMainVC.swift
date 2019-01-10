@@ -24,6 +24,7 @@ class CommunityTabMainVC: UIViewController {
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var selectIndex = 0 {
         didSet {
+            setUpNavgationItem()
             changeFeedKind()
             initReviewData()
         }
@@ -39,7 +40,7 @@ class CommunityTabMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        setUpNavgationItem()
         setUpView()
         initUserData()
         initReviewData()
@@ -134,8 +135,41 @@ class CommunityTabMainVC: UIViewController {
         }
     }
     
-    @IBAction func chooseFeedKindAction(_ sender: Any) {
+    @IBAction func searchAction(_ sender: Any) {
+        if let vc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "CommunitySearchVC") as? CommunitySearchVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @objc func menuAction(_:UITapGestureRecognizer) {
         dropUpandDropDown()
+    }
+    
+    func setUpNavgationItem() {
+        let navView = UIView()
+        let label = UILabel()
+        label.text = selectMenus[selectIndex]
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.sizeToFit()
+        label.center = navView.center
+        label.textAlignment = NSTextAlignment.center
+        label.isUserInteractionEnabled = true
+        let image = UIImageView()
+        image.image = #imageLiteral(resourceName: "communityUnder")
+        
+        let imageAspect = image.image!.size.width/image.image!.size.height
+        image.frame = CGRect(x: label.frame.width/2, y: label.frame.origin.y, width: label.frame.size.height*imageAspect, height: label.frame.size.height)
+        image.contentMode = UIView.ContentMode.scaleAspectFit
+        
+        navView.addSubview(label)
+        navView.addSubview(image)
+        navigationItem.titleView = navView
+        
+        navView.sizeToFit()
+        
+//        let menuTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuAction(_:)))
+//        navigationController?.view.addGestureRecognizer(menuTapGestureRecognizer)
+        
     }
     
     @IBAction func profileButtonAction(_ sender: Any) {

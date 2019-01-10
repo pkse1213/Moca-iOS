@@ -37,7 +37,7 @@ struct CafeScrapService: APIService, RequestService{
     }
     
     func deleteCafeScrap(cafeId: Int, token: String, completion: @escaping (String) -> Void, error: @escaping (Int) -> Void) {
-        let scrapURL = URL + "\(cafeId)/scrap"
+        let scrapURL = URL + "/\(cafeId)/scrap"
         let header: HTTPHeaders = [
             "Authorization" : token ,
             "Content-Type" : "application/json"

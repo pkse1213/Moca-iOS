@@ -12,7 +12,7 @@ class CommunitySearchRecentReviewCell: UITableViewCell {
 
    
     @IBOutlet weak var reviewCollectionView: UICollectionView!
-    
+    var delegate: ListViewCellDelegate?
     var reviews: [SearchReview]? {
         didSet { reviewCollectionView.reloadData() }
     }
@@ -47,4 +47,11 @@ extension CommunitySearchRecentReviewCell: UICollectionViewDelegate, UICollectio
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let review = reviews?[indexPath.row] else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+            vc.reviewId = review.reviewID
+            delegate?.goToViewController(vc: vc)
+        }
+    }
 }

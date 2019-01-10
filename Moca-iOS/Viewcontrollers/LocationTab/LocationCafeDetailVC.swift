@@ -13,16 +13,24 @@ class LocationCafeDetailVC: UIViewController {
     @IBOutlet weak var cafeDetailTableView: UITableView!
     @IBOutlet weak var scrapButton: UIButton!
     let locationManager = CLLocationManager()
-    var cafeId = 1
+    var cafeId = 3
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
     var cafeInfo: CafeDetailInfo? {
         didSet { setScrapButtonImage() }
     }
-    var cafeImages: [CafeDetailImage]?
-    var cafeSignitures: [CafeDetailSigniture]?
-    var cafeReviews: [CommunityReview]?
-    var nearByCafes: [NearByCafe]?
+    var cafeImages: [CafeDetailImage]? {
+        didSet { cafeDetailTableView.reloadData() }
+    }
+    var cafeSignitures: [CafeDetailSigniture]? {
+        didSet { cafeDetailTableView.reloadData() }
+    }
+    var cafeReviews: [CommunityReview]? {
+        didSet { cafeDetailTableView.reloadData() }
+    }
+    var nearByCafes: [NearByCafe]? {
+        didSet { cafeDetailTableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +41,13 @@ class LocationCafeDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
     }
     
     
     private func initInfoData() {
         CafeDetailInfoService.shareInstance.getCafeDetailInfo(cafeId: cafeId, token: token, completion: { (res) in
-            print("카페 디테일 info 성공")
             self.cafeInfo = res
         }) { (err) in
             print("카페 디테일 info 실패")
@@ -48,28 +56,24 @@ class LocationCafeDetailVC: UIViewController {
     
     private func initData() {
         CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafeId, token: token, completion: { (res) in
-            print("카페 디테일 imaeg 성공")
             self.cafeImages = res
         }) { (err) in
-            print("카페 디테일 imgae 실패")
+            print("카페 디테일 imgae 실패 \(err)")
         }
         CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (res) in
-            print("카페 디테일 signiture 성공")
             self.cafeSignitures = res
         }) { (err) in
-            print("카페 디테일 signiture 실패")
+            print("카페 디테일 signiture 실패 \(err)")
         }
-        CafeDetailReviewService.shareInstance.getCafeDetailReview(cafeId: cafeId, token: token, completion: { (res) in
-            print("카페 디테일 review 성공")
+        CafeDetailReviewService.shareInstance.getCafeDetailReview(cafeId: 1, token: token, completion: { (res) in
             self.cafeReviews = res
         }) { (err) in
-            print("카페 디테일 review 실패")
+            print("카페 디테일 review 실패 \(err)")
         }
-        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, token: token, cafeId: cafeId, latitude: 0.0, longitude: 0.0, completion: { (res) in
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, token: token, cafeId: cafeId, latitude: 37.55048, longitude: 126.9036, completion: { (res) in
             self.nearByCafes = res
-            print("주변 카페 성공")
         }) { (err) in
-            print("주변 카페 실패")
+            print("주변 카페 실패 \(err)")
         }
     }
     
@@ -78,7 +82,7 @@ class LocationCafeDetailVC: UIViewController {
         
         switch cafe.cafeScrabIs {
         case true:
-            self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapFilled"), for: .normal)
+            self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrapRed"), for: .normal)
         case false:
             self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrap"), for: .normal)
         default:
@@ -108,14 +112,12 @@ class LocationCafeDetailVC: UIViewController {
         case true:
             CafeScrapService.shareInstance.deleteCafeScrap(cafeId: cafeId, token: token, completion: { (message) in
                 self.initInfoData()
-                print("스크랩 취소 성공")
             }) { (err) in
                 print("스크랩 취소 실패")
             }
         case false:
             CafeScrapService.shareInstance.postCafeScrap(cafeId: cafeId, token: token, completion: { (message) in
                 self.initInfoData()
-                print("스크랩 성공")
             }) { (err) in
                 print("스크랩 실패")
             }
@@ -138,7 +140,7 @@ class LocationCafeDetailVC: UIViewController {
     }
     
     @objc func reviewLookActin(_:UIButton) {
-        cafeDetailTableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
+        cafeDetailTableView.scrollToRow(at: IndexPath(row: 0, section: 2), at: .top, animated: true)
     }
 }
 
@@ -158,7 +160,7 @@ extension LocationCafeDetailVC: CLLocationManagerDelegate {
 
 extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -177,7 +179,7 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        guard let info = cafeInfo, let images = cafeImages, let reviews = cafeReviews, let nearCafes = nearByCafes else { return cell }
+        guard let info = cafeInfo, let images = cafeImages, let reviews = cafeReviews, let nearCafes = nearByCafes , let cafeSignitures = cafeSignitures else { return cell }
         
         switch indexPath.section {
         case 0:
@@ -195,6 +197,8 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
                 infoCell.timeLabel.text = info.cafeTimes
                 infoCell.phoneNumLabel.text = info.cafePhone
                 infoCell.etcFlag = [info.cafeOptionParking, info.cafeOptionWifi, info.cafeOptionSmokingarea, info.cafeOptionAllnight, info.cafeOptionReservation]
+                infoCell.signitureMenus = cafeSignitures
+                
                 cell = infoCell
             }
         case 2:

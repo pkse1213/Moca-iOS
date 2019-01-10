@@ -11,6 +11,7 @@ import UIKit
 class CommunitySearchPopularReviewCell: UITableViewCell {
 
     @IBOutlet weak var reviewCollectionView: UICollectionView!
+    var delegate: ListViewCellDelegate?
     
     var reviews: [SearchReview]? {
         didSet { reviewCollectionView.reloadData() }
@@ -42,8 +43,14 @@ extension CommunitySearchPopularReviewCell: UICollectionViewDelegate, UICollecti
         if let reviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularReviewCell", for: indexPath) as? PopularReviewCell {
             cell = reviewCell
         }
-        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let review = reviews?[indexPath.row] else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+            vc.reviewId = review.reviewID
+            delegate?.goToViewController(vc: vc)
+        }
+    }
 }

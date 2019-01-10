@@ -20,10 +20,13 @@ class MocaPicksCafeVC: UIViewController {
         baristaTableView.dataSource = self
         
     }
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.isNavigationBarHidden = false
     }
+    
     
 }
 

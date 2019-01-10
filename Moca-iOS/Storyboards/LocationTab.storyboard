@@ -881,6 +881,7 @@
                                             <outlet property="commentCntLabel" destination="4w5-SG-oLm" id="H8P-Au-Ps3"/>
                                             <outlet property="imageCntLabel" destination="SPT-Iq-qXR" id="MHc-Eq-QcL"/>
                                             <outlet property="imageCollectionView" destination="GNY-Xe-gfV" id="8P5-qM-oEi"/>
+                                            <outlet property="likeButton" destination="wQH-xa-6eQ" id="M5v-Gs-0zU"/>
                                             <outlet property="likeCntLabel" destination="38a-UU-kgo" id="epE-z1-exo"/>
                                             <outlet property="nameLabel" destination="Emm-67-O70" id="UvW-Gd-ckD"/>
                                             <outlet property="profileImageView" destination="HIJ-S0-N4d" id="6aH-7e-mrs"/>
@@ -1039,7 +1040,6 @@
                                                                 <outlet property="cafeAddressLabel" destination="Pz3-ja-A3T" id="3DT-WZ-5Hf"/>
                                                                 <outlet property="cafeImageView" destination="prV-5t-Bhu" id="BhL-Ry-vhd"/>
                                                                 <outlet property="cafeNameLabel" destination="cRT-Dg-dNj" id="i6v-pM-yfN"/>
-                                                                <outlet property="rankBackgroundView" destination="L0b-pR-ThK" id="pYU-ux-s4M"/>
                                                                 <outlet property="rankNumLabel" destination="ERg-fD-i1c" id="Jcl-nA-KMJ"/>
                                                             </connections>
                                                         </collectionViewCell>
@@ -1086,7 +1086,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFc-Qf-jwe">
                                                 <rect key="frame" x="61" y="0.0" width="36" height="36"/>
-                                                <state key="normal" image="detailviewScrap"/>
+                                                <state key="normal" image="detailviewScrapRed"/>
                                                 <connections>
                                                     <action selector="scrapAction:" destination="ae4-gI-qin" eventType="touchUpInside" id="aIH-sw-JAz"/>
                                                 </connections>
@@ -1663,7 +1663,7 @@
         <image name="detailviewReview" width="55" height="16"/>
         <image name="detailviewReviewMore" width="323" height="48"/>
         <image name="detailviewReviewWrite" width="67" height="25"/>
-        <image name="detailviewScrap" width="36" height="36"/>
+        <image name="detailviewScrapRed" width="36" height="36"/>
         <image name="detailviewShare" width="36" height="36"/>
         <image name="detailviewSmoke" width="30" height="30"/>
         <image name="detailviewSurroundMore" width="60" height="30"/>

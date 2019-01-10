@@ -19,7 +19,7 @@ struct CafeDetailInfo: Codable {
     let cafeName: String
     let cafeLatitude, cafeLongitude: Double
     let cafePhone: String
-    let cafeMenuImgURL: String
+    let cafeMenuImgURL: String?
     let addressDistrictName, cafeAddressDetail: String
     let cafeRatingAvg: Int
     let cafeTimes, cafeDays: String

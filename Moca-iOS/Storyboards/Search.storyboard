@@ -130,7 +130,6 @@
                                                     <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="locationTabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="xic-ny-yhR"/>
                                                     <action selector="tabAction:" destination="UVH-XW-eSz" eventType="touchUpInside" id="3F1-kd-bP3"/>
                                                 </connections>
                                             </button>
@@ -420,18 +419,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fff-Jh-oXm"/>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="mY9-xm-2dU">
-                        <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="pzS-tU-pZR">
-                            <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="zSH-tW-71y">
-                                <rect key="frame" x="145" y="7" width="214" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="allTabButton" destination="a1a-m3-0d9" id="duh-mP-xRC"/>
                         <outlet property="allTabView" destination="u8p-93-NqO" id="KYU-8V-czi"/>
@@ -1041,18 +1028,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rFr-hz-dti"/>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="Rad-sL-ca6">
-                        <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="hPL-wu-Wui">
-                            <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="HhF-sl-O4H">
-                                <rect key="frame" x="145" y="7" width="214" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="allTabButton" destination="8me-BR-O2G" id="PIB-6c-clb"/>
                         <outlet property="allTabView" destination="WjG-JX-2iR" id="cu5-pe-wSq"/>

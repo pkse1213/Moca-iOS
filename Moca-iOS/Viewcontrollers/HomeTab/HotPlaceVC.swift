@@ -24,10 +24,10 @@ class HotPlaceVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
+    
     
     private func initData() {
         HotPlaceListService.shareInstance.getHotPlaceList(hotPlaceId: placeId, token: token, completion: { (res) in

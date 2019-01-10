@@ -39,10 +39,10 @@ class CafeDetailInfoCell: UITableViewCell {
         for i in 0...etcFlag.count-1 {
             if etcFlag[i]{
                 etcImageCollection[i].image = etcAbleImages[i]
-                etcLabelCollection[i].tintColor = #colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1)
+                etcLabelCollection[i].textColor = #colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1)
             } else {
                 etcImageCollection[i].image = etcEnAbleImages[i]
-                etcLabelCollection[i].tintColor = #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1)
+                etcLabelCollection[i].textColor = #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1)
             }
         }
     }
@@ -68,7 +68,7 @@ extension CafeDetailInfoCell: UICollectionViewDelegate, UICollectionViewDataSour
             let menu = signitureMenus[indexPath.item]
 //            menuCell.menuImageView.image =
             menuCell.menuNameLabel.text = menu.cafeSignitureMenu
-            menuCell.menuPriceLabel.text = menu.cafeSigniturePrice
+            menuCell.menuPriceLabel.text = "\(menu.cafeSigniturePrice).0"
             cell = menuCell
         }
         return cell

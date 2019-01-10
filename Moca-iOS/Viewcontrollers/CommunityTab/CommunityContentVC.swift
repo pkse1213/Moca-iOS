@@ -10,12 +10,21 @@ import UIKit
 
 class CommunityContentVC: UIViewController {
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    var review: CommunityReview?
-    var images: [ReviewImage]?
+    var review: CommunityReview? {
+        didSet {
+            setUpReviewData()
+            initCommentData()
+        }
+    }
+    var images: [ReviewImage]? {
+        didSet { imageCollectionView.reloadData() }
+    }
     var comments: [ReviewComment]? {
         didSet { contentTableView.reloadData() }
     }
-    
+    var reviewId = 0 {
+        didSet { initReviewData() }
+    }
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
@@ -35,16 +44,15 @@ class CommunityContentVC: UIViewController {
         setUpView()
         registerGesture()
         checkVersion()
-        initReviewData()
-        initCommentData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
     
-    private func initReviewData() {
+    private func setUpReviewData() {
         guard let review = review else { return }
         
         cafeNameLabel.text = review.cafeName
@@ -53,6 +61,15 @@ class CommunityContentVC: UIViewController {
             likeButton.setImage(#imageLiteral(resourceName: "commonHeartRed"), for: .normal)
         } else {
             likeButton.setImage(#imageLiteral(resourceName: "commonHeartBlank"), for: .normal)
+        }
+    }
+    
+    private func initReviewData() {
+        CommunityReviewDetailService.shareInstance.getReviewDetail(reviewId: reviewId, token: token , completion: { (res) in
+            self.review = res
+            self.images = res.image
+        }) { (err) in
+            print("리뷰 상세 실패 \(err)")
         }
     }
     

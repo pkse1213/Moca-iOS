@@ -29,7 +29,7 @@ class CommunitySearchVC: UIViewController {
     @IBOutlet weak var hotCafeCollectionView: UICollectionView!
     @IBOutlet weak var popularUserCollectionView: UICollectionView!
     
-    @IBOutlet var searchResultTableView: UITableView!
+    @IBOutlet weak var searchResultTableView: UITableView!
     
     var unit : CGFloat = 0
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
@@ -57,7 +57,7 @@ class CommunitySearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
     }
     
     // 카페명 검색 결과 설정 - 최신 리뷰 설정하기 위해
@@ -141,6 +141,7 @@ class CommunitySearchVC: UIViewController {
         guard let keyword = textField.text else { return }
         if keyword == "" {
             beforeSearchView.isHidden = false
+            self.initBeforeData()
             return
         } else {
             beforeSearchView.isHidden = true
@@ -224,11 +225,13 @@ extension CommunitySearchVC : UITableViewDelegate, UITableViewDataSource {
         case 0:
             if let reviewCell = tableView.dequeueReusableCell(withIdentifier: "CommunitySearchPopularReviewCell") as? CommunitySearchPopularReviewCell {
                 reviewCell.reviews = searchResult.popularReviewList
+                reviewCell.delegate = self
                 cell = reviewCell
             }
         case 1:
             if let reviewCell = tableView.dequeueReusableCell(withIdentifier: "CommunitySearchRecentReviewCell") as? CommunitySearchRecentReviewCell {
                 reviewCell.reviews = searchResult.reviewListOrderByLatest
+                reviewCell.delegate = self
                 cell = reviewCell
             }
         case 2:
@@ -250,9 +253,14 @@ extension CommunitySearchVC : UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    // delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 카페 이름 검색했을 떄랑 위치 검색했을 때 다른 데로 이동
+        if indexPath.section == 2 {
+            guard let user = searchResults?.searchUserList[indexPath.row-1] else { return }
+            if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
+                vc.userId = user.userID
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 
@@ -293,7 +301,6 @@ extension CommunitySearchVC : UICollectionViewDelegate, UICollectionViewDataSour
         var cell = UICollectionViewCell()
         if collectionView == hotCafeCollectionView {
             guard let bestCafes = bestCafes else { return cell }
-            
             if let bestCafecell = hotCafeCollectionView.dequeueReusableCell(withReuseIdentifier: "HotCafeCollectionViewCell", for: indexPath) as? HotCafeCollectionViewCell {
                 bestCafecell.bestCafe = bestCafes[indexPath.item]
                 cell = bestCafecell
@@ -307,6 +314,29 @@ extension CommunitySearchVC : UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == hotCafeCollectionView {
+            guard let bestCafe = bestCafes?[indexPath.item] else { return }
+            if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+                vc.cafeId = bestCafe.cafeID
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        else if collectionView == popularUserCollectionView {
+            guard let bestUser = bestUsers?[indexPath.item] else { return }
+            if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
+                vc.userId = bestUser.userID
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+}
+
+extension CommunitySearchVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

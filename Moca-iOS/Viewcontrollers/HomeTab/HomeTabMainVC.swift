@@ -89,7 +89,7 @@ class HomeTabMainVC: UIViewController {
     }
     
     @objc func goToSearchAction(_: UIImageView) {
-        if let vc = UIStoryboard(name: "HomeSearch", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
+        if let vc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
             navigationController?.pushViewController(vc, animated: true)
         }
     }

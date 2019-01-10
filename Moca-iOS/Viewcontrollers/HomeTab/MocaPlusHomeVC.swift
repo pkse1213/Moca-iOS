@@ -24,8 +24,10 @@ class MocaPlusHomeVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.isNavigationBarHidden = false
     }
+    
     
     private func setUpTableView() {
         mocaPlusTableView.dataSource = self

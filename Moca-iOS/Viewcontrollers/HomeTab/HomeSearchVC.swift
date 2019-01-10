@@ -181,6 +181,11 @@ extension HomeSearchVC : UITableViewDelegate, UITableViewDataSource {
     
     // delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let bestCafe = searchResults?[indexPath.item] else { return }
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            vc.cafeId = bestCafe.cafeID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         // 카페 이름 검색했을 떄랑 위치 검색했을 때 다른 데로 이동
     }
 }
@@ -213,6 +218,16 @@ extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == hotCafeCollectionView {
+            guard let bestCafe = bestCafes?[indexPath.item] else { return }
+            if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+                vc.cafeId = bestCafe.cafeID
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 

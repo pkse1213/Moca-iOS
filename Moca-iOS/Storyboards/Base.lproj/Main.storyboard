@@ -1046,7 +1046,7 @@
                         <segue destination="Axv-Dk-h3A" kind="relationship" relationship="viewControllers" id="ejc-xf-XIn"/>
                         <segue destination="rw5-8Y-0lD" kind="relationship" relationship="viewControllers" id="kes-Od-gRh"/>
                         <segue destination="HhV-cw-Xdo" kind="relationship" relationship="viewControllers" id="xMJ-UN-oV1"/>
-                        <segue destination="iG6-zR-Pqr" kind="relationship" relationship="viewControllers" id="4oM-N6-fnJ"/>
+                        <segue destination="nVj-vj-rk4" kind="relationship" relationship="viewControllers" id="5Dh-gV-LGf"/>
                         <segue destination="tD9-rr-bYX" kind="relationship" relationship="viewControllers" id="noK-8S-k6E"/>
                     </connections>
                 </tabBarController>
@@ -1667,24 +1667,23 @@
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
                     </view>
                     <navigationItem key="navigationItem" id="HBe-po-uXl">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="commonSearch" id="40E-OF-lrn">
+                        <barButtonItem key="rightBarButtonItem" image="commonSearch" id="PZb-tY-IeP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="chooseFeedKindAction:" destination="5dy-aw-F6V" id="kch-1m-B0U"/>
+                                <action selector="searchAction:" destination="5dy-aw-F6V" id="WGs-DI-ScL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="communityTableView" destination="b7E-P6-97G" id="DtT-fz-kai"/>
                         <outlet property="feedMenuTableView" destination="jwd-ij-4bw" id="tDC-GA-Iry"/>
-                        <outlet property="searchBarButtonItem" destination="40E-OF-lrn" id="5oM-xi-AhF"/>
                         <outlet property="selectFeedView" destination="Bmd-i8-ydi" id="oIV-WB-V6B"/>
                         <outlet property="tableViewTopConstraint" destination="TdV-IA-bIZ" id="1gd-oS-tvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAI-Or-NGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912.8" y="2167.9802955665027"/>
+            <point key="canvasLocation" x="1873" y="2168"/>
         </scene>
         <!--My PageVC-->
         <scene sceneID="MeF-fy-mDT">
@@ -2021,26 +2020,6 @@
             <point key="canvasLocation" x="1913" y="2887"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="yjA-sg-gPU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iG6-zR-Pqr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="community" id="5hH-Xh-G1X"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2AW-Af-9dk">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5dy-aw-F6V" kind="relationship" relationship="rootViewController" id="qBU-Xb-joF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i0K-1b-n53" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1079" y="2168"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="6H7-oh-abj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Axv-Dk-h3A" sceneMemberID="viewController">
@@ -2116,6 +2095,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKx-fO-iBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="774.38423645320199"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KlO-x3-3Ek">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nVj-vj-rk4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="community" id="6lw-tj-eZp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bcx-qC-N8Y">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5dy-aw-F6V" kind="relationship" relationship="rootViewController" id="Eup-Vg-FI0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ce6-F3-CWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="2168"/>
         </scene>
     </scenes>
     <resources>
