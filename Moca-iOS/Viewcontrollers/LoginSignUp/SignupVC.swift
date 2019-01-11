@@ -56,48 +56,22 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func signupAction(_ sender: Any) {
-//        let body = [
-//            "user_id" : gsno(idTxt.text),
-//            "user_password" : gsno(pwTxt.text),
-//            "user_name" : gsno(nameTxt.text),
-//            "user_phone" : gsno(phoneTxt.text),
-//            "user_img" : ""
-//        ]
-        
-        print("회원가입")
-//        SignupService.shared.signup(user_id: gsno(idTxt.text), user_password: gsno(pwTxt.text), user_name: gsno(nameTxt.text), user_phone: gsno(phoneTxt.text), user_img: profileImage.image ?? #imageLiteral(resourceName: "commonDefaultimage")) {
-//            self.simpleAlert(title: "회원가입 성공", message: "회원가입이 완료되었습니다.")
-//        SignupService.shared.signup(user_id: gsno(idTxt.text), user_password: gsno(pwTxt.text), user_name: gsno(nameTxt.text), user_phone: gsno(phoneTxt.text), user_img: profileImage.image ?? #imageLiteral(resourceName: "commonDefaultimage")) {
-//            self.simpleAlert(title: "회원가입 성공", message: "회원가입이 완료되었습니다.")
-//        }
-        
-//        SignupService.shared.signup(user_id: gsno(idTxt.text), user_password: gsno(pwTxt.text), user_name: gsno(nameTxt.text), user_phone: gsno(phoneTxt.text), user_img: profileImage.image ?? #imageLiteral(resourceName: "commonDefaultimage"), completion: { (str) in
-//            print(str)
-//            self.simpleAlert(title: "회원가입 성공", message: "회원가입이 완료되었습니다.")
-//        }) { (errCode) in
-//            self.simpleAlert(title: "회원가입 실패", message: "회원가입에 실패하였습니다. errCode = \(errCode)")
-//        }
-        
-//        if let getImage = self.profileImage.image {
-//            //                //이미지를 멀티파트를 이용해 서버로 보내기 위한 data 형식으로 변환시켜줍니다
-//            let imageData = getImage.jpegData(compressionQuality: 0.5)
-//        
-//        SignupService.shared.signup(userId: gsno(idTxt.text), userPassword: gsno(pwTxt.text), userName: gsno(nameTxt.text), userPhone: gsno(phoneTxt.text), userImg: imageData, completion: { (str) in
-//            print("signup success || \(str)")
-//            self.simpleAlert(title: "회원가입 성공", message: "회원가입이 완료되었습니다.")
-//        }) { (errCode) in
-//            print("signupfail || \(errCode)")
-//        }
-//        
-//        }
-//        else {
-//            SignupService.shared.signup(userId: gsno(idTxt.text), userPassword: gsno(pwTxt.text), userName: gsno(nameTxt.text), userPhone: gsno(phoneTxt.text), userImg: nil, completion: { (str) in
-//                self.simpleAlert(title: "회원가입 성공", message: str)
-//            }) { (errCode) in
-//                print("signup faile || \(errCode)")
-//            }
-//        }
-//        
+        SignupService.shared.signup(userId: gsno(idTxt.text), userPassword: gsno(pwTxt.text), userName: gsno(nameTxt.text), userPhone: gsno(phoneTxt.text), userImg: nil, completion: {
+            
+            let alert = UIAlertController(title: "회원가입", message: "회원가입 성공", preferredStyle: UIAlertController.Style.alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (action) in
+                
+                self.dismiss(animated: true)
+            }
+            
+            alert.addAction(defaultAction)
+            
+            self.present(alert, animated: false, completion: nil)
+            
+        }) { (errCode) in
+            self.simpleAlert(title: "회원가입", message: "회원가입 실패 \(errCode)")
+        }
     }
     
     // 이미지 선택
