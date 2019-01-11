@@ -27,6 +27,7 @@ class CommunityCommentCell: UITableViewCell {
         nameLabel.text = comment.userID
         contentLabel.text = comment.reviewCommentContent
         timeLabel.text = comment.time
+        profileImageView.imageFromUrl(comment.userImgURL, defaultImgPath: "commonDefaultimage")
     }
     
     private func setUpView() {

@@ -41,6 +41,7 @@ class CommunityFollowCell: UITableViewCell {
     private func setUpData() {
         guard let user = followUser else { return }
         nameLabel.text = user.userName
+        profileImageView.imageFromUrl(user.userImgURL, defaultImgPath: "commonDefaultimage")
         if user.follow {
             followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow"), for: .normal)
         } else {

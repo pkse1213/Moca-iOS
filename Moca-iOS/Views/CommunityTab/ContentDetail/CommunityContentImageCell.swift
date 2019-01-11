@@ -18,6 +18,6 @@ class CommunityContentImageCell: UICollectionViewCell {
     private func setImage() {
         guard let image = image else { return }
         print("리뷰 이미지")
-        contentImageView.imageFromUrl(image.reviewImgURL, defaultImgPath: "")
+        contentImageView.imageFromUrl(image.reviewImgURL, defaultImgPath: "tutorial1")
     }
 }

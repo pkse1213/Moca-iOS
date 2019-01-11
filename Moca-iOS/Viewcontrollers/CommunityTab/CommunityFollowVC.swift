@@ -11,7 +11,7 @@ import UIKit
 class CommunityFollowVC: UIViewController {
     @IBOutlet weak var followTableView: UITableView!
     
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     var followUsers: [FollowUser]? {
         didSet { followTableView.reloadData() }
     }
@@ -34,6 +34,7 @@ class CommunityFollowVC: UIViewController {
             self.followUsers = res
             print("팔로잉/팔로우 조회 성공")
         }) { (err) in
+            self.followUsers = []
             print("팔로잉/팔로우 조회 실패")
         }
     }
@@ -46,16 +47,33 @@ class CommunityFollowVC: UIViewController {
 extension CommunityFollowVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let followUsers = followUsers else { return 0 }
-        return followUsers.count
+        if followUsers.count == 0 {
+            return 1
+        } else {
+             return followUsers.count
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        guard let followUser = followUsers?[indexPath.row] else { return cell }
-        if let followCell = followTableView.dequeueReusableCell(withIdentifier: "CommunityFollowCell") as? CommunityFollowCell {
-            followCell.followUser = followUser
-            cell = followCell
+        guard let followUser = followUsers else { return cell }
+        if followUser.count == 0 {
+            if let emptyCell = followTableView.dequeueReusableCell(withIdentifier: "CommunityEmptyCell") as? CommunityEmptyCell {
+                if path == "follower" {
+                    emptyCell.messageLabel.text = "팔로워가 없습니다"
+                } else if path == "following" {
+                    emptyCell.messageLabel.text = "팔로잉한 유저가 없습니다"
+                }
+                cell = emptyCell
+            }
+        } else {
+            if let followCell = followTableView.dequeueReusableCell(withIdentifier: "CommunityFollowCell") as? CommunityFollowCell {
+                followCell.followUser = followUser[indexPath.row]
+                cell = followCell
+            }
         }
+        
         return cell
     }
     

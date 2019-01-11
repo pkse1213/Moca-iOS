@@ -32,7 +32,7 @@ class CommunitySearchVC: UIViewController {
     @IBOutlet weak var searchResultTableView: UITableView!
     
     var unit : CGFloat = 0
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     var keyword = "" {
         didSet { initSearchData() }
     }

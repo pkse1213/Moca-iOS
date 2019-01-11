@@ -19,7 +19,7 @@ class CommunityTabMainVC: UIViewController {
     let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
     var err = 0
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     var selectIndex = 0 {
         didSet {
             setUpNavgationItem()
@@ -192,6 +192,7 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
             return 2
         } else {
             if section == 0 {
+                print("selectIndex\(selectIndex)")
                 return selectIndex
             } else {
                 guard let reviews = reviews else { return 0 }
@@ -225,6 +226,11 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                     }
                 } else {
                     if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                        if selectIndex == 0 {
+                            feedCell.profileImageView.isUserInteractionEnabled = true
+                        } else if selectIndex == 1 {
+//                            feedCell.profileImageView.isUserInteractionEnabled = false
+                        }
                         feedCell.review = review[indexPath.row]
                         feedCell.images = review[indexPath.row].image
                         feedCell.delegate = self

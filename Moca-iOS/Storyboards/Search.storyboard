@@ -765,7 +765,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2PN-BV-9xn">
-                                                    <rect key="frame" x="89" y="16.666666666666668" width="56.333333333333343" height="33.666666666666657"/>
+                                                    <rect key="frame" x="89" y="16.666666666666668" width="173" height="33.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정화니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7O-jr-IDi">
                                                             <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="14.333333333333334"/>
@@ -801,6 +801,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Vsf-e1-CYO" firstAttribute="leading" secondItem="2PN-BV-9xn" secondAttribute="trailing" constant="15" id="12i-nj-YaX"/>
                                                 <constraint firstItem="5hI-by-Iuh" firstAttribute="leading" secondItem="qaY-Tc-raN" secondAttribute="leading" constant="87" id="BL1-Uh-NXl"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vsf-e1-CYO" secondAttribute="trailing" constant="28" id="FJR-QY-d1d"/>
                                                 <constraint firstItem="cHA-0w-cwu" firstAttribute="leading" secondItem="qaY-Tc-raN" secondAttribute="leading" constant="26" id="OHb-wX-Oov"/>

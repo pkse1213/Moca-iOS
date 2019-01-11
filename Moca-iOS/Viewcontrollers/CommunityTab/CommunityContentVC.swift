@@ -54,9 +54,9 @@ class CommunityContentVC: UIViewController {
     
     private func setUpReviewData() {
         guard let review = review else { return }
-        
-        cafeNameLabel.text = review.cafeName
+        print("setUpReviewData()")
         cafeAddressLabel.text = review.cafeAddress
+        cafeNameLabel.text = review.cafeName
         if review.like {
             likeButton.setImage(#imageLiteral(resourceName: "commonHeartRed"), for: .normal)
         } else {
@@ -65,6 +65,7 @@ class CommunityContentVC: UIViewController {
     }
     
     private func initReviewData() {
+        print("initReviewData()")
         CommunityReviewDetailService.shareInstance.getReviewDetail(reviewId: reviewId, token: token , completion: { (res) in
             self.review = res
             self.images = res.image
@@ -75,12 +76,11 @@ class CommunityContentVC: UIViewController {
     
     private func initCommentData() {
         guard let review = review else { return }
-        
         CommunityReviewCommentService.shareInstance.getReviewComment(reviewId: review.reviewID, completion: { (res) in
             self.comments = res
             
-            print("리뷰 댓글 성공")
         }) { (err) in
+            self.comments = []
             print("리뷰 댓글 실패")
         }
     }
@@ -153,8 +153,6 @@ class CommunityContentVC: UIViewController {
             gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
         }
     }
-    
-    
 }
 
 extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
@@ -166,8 +164,9 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            guard let comments = comments else { return 1 }
-            return comments.count
+            guard let comments = comments else { return 0 }
+            if comments.count == 0 { return 1 }
+            else { return comments.count }
         }
     }
     
@@ -181,15 +180,17 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             // 댓글이 없을 때
-            guard let comments = comments else {
+            guard let comments = comments else { return cell }
+            if comments.count == 0 {
                 if let emptyCell = contentTableView.dequeueReusableCell(withIdentifier: "EmptyCommentCell") {
                     cell = emptyCell
                 }
                 return cell
-            }
-            if let commentCell = contentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
-                commentCell.comment = comments[indexPath.row]
-                cell = commentCell
+            } else {
+                if let commentCell = contentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
+                    commentCell.comment = comments[indexPath.row]
+                    cell = commentCell
+                }
             }
         }
         return cell
