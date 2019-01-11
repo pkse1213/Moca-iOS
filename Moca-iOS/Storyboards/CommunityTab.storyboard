@@ -257,30 +257,40 @@
                                             <outlet property="timeLabel" destination="29U-iB-x45" id="sJu-1R-7zR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyCommentCell" rowHeight="92" id="yxx-JI-tk2">
-                                        <rect key="frame" x="0.0" y="126" width="375" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyCommentCell" rowHeight="127" id="yxx-JI-tk2">
+                                        <rect key="frame" x="0.0" y="126" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yxx-JI-tk2" id="jOI-6X-HNf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commonEmptydata" translatesAutoresizingMaskIntoConstraints="NO" id="Dtf-OE-I0m">
-                                                    <rect key="frame" x="150" y="18.666666666666671" width="75" height="55"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="55" id="aP6-Pw-vf2"/>
-                                                        <constraint firstAttribute="width" constant="75" id="sUS-c1-WQP"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-81-VFc">
+                                                    <rect key="frame" x="122.66666666666667" y="24.333333333333336" width="129.66666666666663" height="78.333333333333314"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="commonEmptydata" translatesAutoresizingMaskIntoConstraints="NO" id="Dz1-Uc-5jc">
+                                                            <rect key="frame" x="39.999999999999986" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="QzO-o8-4pV"/>
+                                                                <constraint firstAttribute="width" constant="50" id="i00-9r-YUt"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 댓글이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsK-af-id8">
+                                                            <rect key="frame" x="0.0" y="64" width="129.66666666666666" height="14.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
+                                                            <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dtf-OE-I0m" secondAttribute="bottom" constant="7.3300000000000001" id="NMU-3k-SmP"/>
-                                                <constraint firstItem="Dtf-OE-I0m" firstAttribute="centerX" secondItem="jOI-6X-HNf" secondAttribute="centerX" id="eB4-Yh-df4"/>
-                                                <constraint firstItem="Dtf-OE-I0m" firstAttribute="top" secondItem="jOI-6X-HNf" secondAttribute="topMargin" constant="7.6699999999999999" id="t4E-Z1-A4V"/>
+                                                <constraint firstItem="eLf-81-VFc" firstAttribute="centerY" secondItem="jOI-6X-HNf" secondAttribute="centerY" id="2yu-Dn-MkJ"/>
+                                                <constraint firstItem="eLf-81-VFc" firstAttribute="centerX" secondItem="jOI-6X-HNf" secondAttribute="centerX" id="tVj-jU-wvt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommunityCommentCell" rowHeight="88" id="JbK-0I-ovw" customClass="CommunityCommentCell" customModule="Moca_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="218" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="253" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JbK-0I-ovw" id="eYh-J5-yeK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
@@ -405,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cM9-Lk-u2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="-231"/>
+            <point key="canvasLocation" x="189.59999999999999" y="-231.2807881773399"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y1C-Of-fSw">
@@ -1689,6 +1699,43 @@
                                             <outlet property="profileImageView" destination="fTA-gF-8DD" id="Nbq-hj-dSc"/>
                                             <outlet property="reviewContentLabel" destination="JSg-z1-3u1" id="sIW-kX-O4C"/>
                                             <outlet property="timeLabel" destination="aIE-dw-gRU" id="XtB-Vn-P96"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommunityEmptyCell" rowHeight="400" id="blr-7V-y8U" customClass="CommunityEmptyCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="709" width="375" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="blr-7V-y8U" id="L0I-qf-1lR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="q3I-KP-HoP">
+                                                    <rect key="frame" x="102.66666666666669" y="141.66666666666666" width="170" height="116.33333333333334"/>
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="commonEmptydata" translatesAutoresizingMaskIntoConstraints="NO" id="lK5-Yw-7gz">
+                                                            <rect key="frame" x="49.999999999999986" y="0.0" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="MVM-pU-Jwy"/>
+                                                                <constraint firstAttribute="height" constant="70" id="nNs-W9-kLE"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 작성한 리뷰가 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUr-Sw-Cm0">
+                                                            <rect key="frame" x="0.0" y="95" width="170" height="21.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
+                                                            <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="q3I-KP-HoP" secondAttribute="bottom" constant="133.66999999999999" id="Rv0-QH-mYu"/>
+                                                <constraint firstItem="q3I-KP-HoP" firstAttribute="centerX" secondItem="L0I-qf-1lR" secondAttribute="centerX" id="aM2-zx-amO"/>
+                                                <constraint firstItem="q3I-KP-HoP" firstAttribute="centerY" secondItem="L0I-qf-1lR" secondAttribute="centerY" id="lUe-NZ-rur"/>
+                                                <constraint firstItem="q3I-KP-HoP" firstAttribute="top" secondItem="L0I-qf-1lR" secondAttribute="topMargin" constant="133.66999999999999" id="xtq-hZ-aEG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="GUr-Sw-Cm0" id="70u-b8-2n0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

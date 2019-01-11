@@ -18,7 +18,7 @@ class CommunityTabMainVC: UIViewController {
     // 피드 테이블 뷰
     let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
-    
+    var err = 0
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var selectIndex = 0 {
         didSet {
@@ -91,6 +91,7 @@ class CommunityTabMainVC: UIViewController {
                 print("소셜 피드 성공")
             }) { (err) in
                 self.reviews = []
+                self.err = err
                 print("소셜 피드 실패")
             }
         case 1:
@@ -194,6 +195,7 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                 return selectIndex
             } else {
                 guard let reviews = reviews else { return 0 }
+                if reviews.count == 0 { return 1 }
                 return reviews.count
             }
         }
@@ -210,13 +212,26 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                     cell = userCell
                 }
             } else if indexPath.section == 1 {
-                guard let review = reviews?[indexPath.row] else { return cell }
-                if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    feedCell.review = review
-                    feedCell.images = review.image
-                    feedCell.delegate = self
-                    cell = feedCell
+                guard let review = reviews else { return cell }
+                
+                if review.count == 0 {
+                    if let emptyCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityEmptyCell") as? CommunityEmptyCell {
+                        if selectIndex == 0 {
+                            emptyCell.messageLabel.text = "팔로잉한 유저 또는 팔로잉한 유저가\n\n작성한 리뷰가 없습니다"
+                        } else {
+                            emptyCell.messageLabel.text = "내가 작성한 리뷰가 없습니다"
+                        }
+                        cell = emptyCell
+                    }
+                } else {
+                    if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                        feedCell.review = review[indexPath.row]
+                        feedCell.images = review[indexPath.row].image
+                        feedCell.delegate = self
+                        cell = feedCell
+                    }
                 }
+                
             }
             
         } else if tableView == feedMenuTableView {
