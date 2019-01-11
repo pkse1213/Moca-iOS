@@ -37,6 +37,8 @@ class CommunityContentVC: UIViewController {
     
     @IBOutlet weak var textBackgroundView: UIView!
     @IBOutlet weak var textSquareView: UIView!
+    @IBOutlet weak var messageSenderButton: UIButton!
+    @IBOutlet weak var messageTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,7 @@ class CommunityContentVC: UIViewController {
         setUpView()
         registerGesture()
         checkVersion()
+        setupTextView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,6 +106,8 @@ class CommunityContentVC: UIViewController {
         contentTableView.applyRadius(radius: 10)
     }
     
+    
+    
     private func checkVersion() {
         if #available(iOS 11.0, tvOS 11.0, *) {
             if let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 24 {
@@ -127,6 +132,9 @@ class CommunityContentVC: UIViewController {
         }
     }
     
+    @IBAction func senderMessageAction(_ sender: UIButton) {
+        messageTextView.resignFirstResponder()
+    }
     private func registerGesture() {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.wasDragged(_:)))
         contentTableView.addGestureRecognizer(gesture)
@@ -257,5 +265,27 @@ extension CommunityContentVC: UIScrollViewDelegate {
 extension CommunityContentVC: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+}
+
+extension CommunityContentVC: UITextViewDelegate {
+    private func setupTextView() {
+        messageTextView.delegate = self
+//        let tapDidsmiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        self.messageTableView.addGestureRecognizer(tapDidsmiss)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ sender: Notification) {
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.textFieldViewBottomConstraint.constant = keyboardHeight - 34
+        }
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.textFieldViewBottomConstraint.constant = 0
     }
 }
