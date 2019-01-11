@@ -20,6 +20,8 @@ class ProfileModifyVC: UIViewController {
     
     @IBOutlet var selectButton: UIButton!
     
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,12 +59,23 @@ class ProfileModifyVC: UIViewController {
     
     // 완료 버튼
     @IBAction func completeAction(_ sender: Any) {
+//        MyPageEditService.shared.postMyPageEdit(token: token, user_name: gsno(nicknameTxt.text), user_password: "aaaaa", user_phone: gsno(phoneNumTxt.text), user_status_comment: gsno(stateMessageTxt.text), user_img: gsno(profileImageView.image?.accessibilityIdentifier), completion: { (myPageEditData) in
+//            print("수정 성공")
+//        }) { (errCode) in
+//            print("수정 실패 || \(errCode)")
+//        }
         
-    }
-    
-    // 취소 버튼
-    @IBAction func cancelAction(_ sender: Any) {
-        dismiss(animated: true)
+//        if let getImage = self.profileImageView.image {
+//            //                //이미지를 멀티파트를 이용해 서버로 보내기 위한 data 형식으로 변환시켜줍니다
+//            let imageData = getImage.jpegData(compressionQuality: 0.5)
+//
+//            MyPageEditService.shared.postMyPageEdit(token: token, userName: gsno(nicknameTxt.text), userPassword: gsno("aaaaa"), userPhone: gsno(phoneNumTxt.text), userStatusComment: gsno(stateMessageTxt.text), userImg: imageData, completion: { (myPageEditData) in
+//                self.simpleAlert(title: "수정", message: "수정 성공")
+//            }) { (errCode) in
+//                self.simpleAlert(title: "수정실패", message: "수정 실패했습니다.")
+//            }
+//        }
+        
     }
     
     // 이미지 선택

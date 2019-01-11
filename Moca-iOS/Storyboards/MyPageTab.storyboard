@@ -104,6 +104,9 @@
                                                 <constraint firstItem="ZXH-gn-6Lo" firstAttribute="leading" secondItem="dg6-GX-y90" secondAttribute="leading" constant="113" id="yDl-Ji-74P"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="h38-zI-MNg" id="FbU-H3-Rce"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
