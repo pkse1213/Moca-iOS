@@ -15,7 +15,7 @@ struct MocaPicksImageData: Codable {
 }
 
 struct MocaPicksImage: Codable {
-    let evaluatedCafeImgURL: String
+    let evaluatedCafeImgURL: String?
     let evaluatedCafeMainImg: Bool
     
     enum CodingKeys: String, CodingKey {

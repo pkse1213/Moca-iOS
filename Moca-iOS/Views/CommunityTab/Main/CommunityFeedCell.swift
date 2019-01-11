@@ -49,6 +49,7 @@ class CommunityFeedCell: UITableViewCell {
         
         images = review.image
         
+        profileImageView.imageFromUrl(review.userImgURL, defaultImgPath: "commonDefaultimage")
         if review.like {
             likeButton.setImage(#imageLiteral(resourceName: "commonHeartRed"), for: .normal)
         } else {

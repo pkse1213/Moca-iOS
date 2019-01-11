@@ -37,6 +37,8 @@ class PopularCollectionViewCell: UICollectionViewCell {
     private func setUpData() {
         guard let user = user else { return }
         popularNameLabel.text = user.userName
+        popularPofileImage.imageFromUrl(user.userImgURL, defaultImgPath: "commonDefaultimage")
+        
         switch user.follow {
         case true:
             followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow.png"), for: .normal)

@@ -51,7 +51,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-YT-NcT">
                                                     <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
-                                                    <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fWm-YT-NcT" secondAttribute="height" multiplier="1:1" id="vKC-xZ-JyZ"/>
                                                     </constraints>
@@ -416,7 +415,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="17" minY="0.0" maxX="17" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MocaPicksImageCell" rowHeight="292.00000000000011" id="Yeg-Eg-mYN" customClass="MocaPicksImageCell" customModule="Moca_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MocaPicksImageCell" rowHeight="292.00000000000011" id="Yeg-Eg-mYN" customClass="MocaPicksImageCell" customModule="Moca_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="292"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yeg-Eg-mYN" id="oNp-ag-sFb">
@@ -1388,7 +1387,6 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8F-XW-tbf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>

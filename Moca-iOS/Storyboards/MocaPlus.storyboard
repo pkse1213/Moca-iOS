@@ -39,7 +39,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wtv-Pg-LS7">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
-                                                    <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Wtv-Pg-LS7" secondAttribute="height" multiplier="75:44" id="cAq-ev-z3y"/>
                                                     </constraints>
@@ -140,7 +139,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bnS-qr-ngH">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
-                                                    <color key="backgroundColor" red="0.81622766359999999" green="0.73386545160000005" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bnS-qr-ngH" secondAttribute="height" multiplier="25:26" id="eSp-pg-TZm"/>
                                                     </constraints>
@@ -270,7 +268,6 @@
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
-                                                            <color key="backgroundColor" red="0.81622766359999999" green="0.73386545160000005" blue="0.92145264149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="lmL-Vu-RxU" firstAttribute="top" secondItem="mcw-RI-dLe" secondAttribute="top" id="9sy-q8-Pbh"/>
                                                                 <constraint firstAttribute="trailing" secondItem="lmL-Vu-RxU" secondAttribute="trailing" id="Cka-Ut-lQl"/>

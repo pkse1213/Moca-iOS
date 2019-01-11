@@ -59,7 +59,7 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
             let cafe = cafes[indexPath.item]
             cafeCell.cafeNameLabel.text = cafe.cafeName
             cafeCell.cafeAddressLabel.text = cafe.addressDistrictName
-            cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
+            cafeCell.cafeImageView.imageFromUrl(cafe.cafeImgURL ?? "", defaultImgPath: "")
             cell = cafeCell
         }
         return cell

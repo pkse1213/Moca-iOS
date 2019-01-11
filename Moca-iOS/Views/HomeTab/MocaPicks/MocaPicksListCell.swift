@@ -10,7 +10,7 @@ import UIKit
 
 class MocaPicksListCell: UITableViewCell {
 
-    @IBOutlet var scrapButton: UIButton!
+    @IBOutlet weak var scrapButton: UIButton!
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -56,6 +56,7 @@ class MocaPicksListCell: UITableViewCell {
         nameLabel.text = mocaPicks.cafeName
         addressLabel.text = mocaPicks.addressDistrictName
         self.isScrap = mocaPicks.scrabIs
+        cafeImageView.imageFromUrl(mocaPicks.evaluatedCafeImgURL, defaultImgPath: "")
         switch mocaPicks.scrabIs {
         case true:
             self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapFilled"), for: .normal)

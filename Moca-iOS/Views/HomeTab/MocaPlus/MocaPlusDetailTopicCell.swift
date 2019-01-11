@@ -24,6 +24,6 @@ class MocaPlusDetailTopicCell: UITableViewCell {
         guard let mocaPlusSubject = mocaPlusSubject else { return }
         topicTitleLabel.text = mocaPlusSubject.plusSubjectTitle
         editorNameLabel.text = "by \(mocaPlusSubject.editorName) 에디터"
-        
+        topicImageView.imageFromUrl(mocaPlusSubject.plusSubjectImgURL, defaultImgPath: "")
     }
 }

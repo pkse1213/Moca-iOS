@@ -32,6 +32,7 @@ class LocationMapDialogVC: UIViewController {
         guard let cafe = cafe else { return }
         cafeNameLabel.text = cafe.cafeName
         cafeLocationLabel.text = "\(cafe.distance) 이내"
+        cafeImageView.imageFromUrl(cafe.cafeImgURL, defaultImgPath: "")
     }
     
     private func setUpView() {

@@ -15,9 +15,11 @@ struct CafeDetailImageData: Codable {
 }
 
 struct CafeDetailImage: Codable {
-    let cafeImgURL: String
+    let cafeImgURL: String?
+    let cafeImgMain: Bool
     
     enum CodingKeys: String, CodingKey {
         case cafeImgURL = "cafe_img_url"
+        case cafeImgMain = "cafe_img_main"
     }
 }

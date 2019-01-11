@@ -28,5 +28,6 @@ class HomeHotPlaceNameCell: UICollectionViewCell {
     private func setUpData() {
         guard let hotPlaceName = hotPlaceName else { return }
         hotPlaceNameLabel.text = hotPlaceName.hotPlaceName
+        hotPlaceImageView.imageFromUrl(hotPlaceName.hotPlaceImg, defaultImgPath: "")
     }
 }

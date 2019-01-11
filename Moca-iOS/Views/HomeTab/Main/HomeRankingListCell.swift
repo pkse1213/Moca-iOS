@@ -31,6 +31,7 @@ class HomeRankingListCell: UITableViewCell {
         guard let cafe = cafe else { return }
         cafeNameLabel.text = cafe.cafeName
         cafeAddressLabel.text = "서울 \(cafe.addressDistrictName)"
+        cafeImageView.imageFromUrl(cafe.cafeMenuImgURL, defaultImgPath: "")
     }
 
 }

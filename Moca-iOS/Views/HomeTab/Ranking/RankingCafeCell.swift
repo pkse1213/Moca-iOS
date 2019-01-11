@@ -22,6 +22,7 @@ class RankingCafeCell: UICollectionViewCell {
         guard let cafe = cafe else { return }
         cafeNameLabel.text = cafe.cafeName
         cafeAddressLabel.text = cafe.addressDistrictName
+        cafeImageView.imageFromUrl(cafe.cafeMenuImgURL, defaultImgPath: "")
     }
     
 }

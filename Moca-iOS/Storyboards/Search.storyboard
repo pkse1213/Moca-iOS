@@ -642,6 +642,9 @@
                                                                 <constraint firstAttribute="bottom" secondItem="IDg-SW-opd" secondAttribute="bottom" id="vVO-pu-59s"/>
                                                             </constraints>
                                                             <size key="customSize" width="170" height="170"/>
+                                                            <connections>
+                                                                <outlet property="reviewImageView" destination="IDg-SW-opd" id="ZAe-Yn-1mJ"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -682,7 +685,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecentReviewCell" id="i8H-42-ZnU" customClass="RecentReviewCell" customModule="Moca_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecentReviewCell" id="i8H-42-ZnU" customClass="PopularReviewCell" customModule="Moca_iOS" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -822,8 +825,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyg-G9-gXX">
                                 <rect key="frame" x="0.0" y="128.33333333333331" width="375" height="649.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 인기 카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGH-mO-LU4">
-                                        <rect key="frame" x="28.999999999999993" y="28" width="107.33333333333331" height="16.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 리뷰 많은 카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGH-mO-LU4">
+                                        <rect key="frame" x="29" y="28" width="139.66666666666666" height="16.666666666666671"/>
                                         <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -870,14 +873,14 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pAG-ut-2OW">
-                                                                    <rect key="frame" x="86" y="170" width="44" height="24"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pAG-ut-2OW">
+                                                                    <rect key="frame" x="94" y="180" width="36" height="14"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commonScrapGrayLine" translatesAutoresizingMaskIntoConstraints="NO" id="7sV-CE-8JT">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="communityReviewcount" translatesAutoresizingMaskIntoConstraints="NO" id="7sV-CE-8JT">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="14"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="124" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC7-Kf-TUm">
-                                                                            <rect key="frame" x="24" y="6.0000000000000009" width="20" height="12.333333333333336"/>
+                                                                            <rect key="frame" x="16" y="1" width="20" height="12.333333333333334"/>
                                                                             <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="11"/>
                                                                             <color key="textColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -1054,6 +1057,7 @@
         <image name="communityFollower" width="70" height="24"/>
         <image name="communityFollowingSearchField" width="450" height="37"/>
         <image name="communityFollowinglistFollow" width="70" height="24"/>
+        <image name="communityReviewcount" width="13" height="14"/>
         <image name="icCommunityLocation" width="12" height="13"/>
     </resources>
 </document>

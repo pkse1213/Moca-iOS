@@ -32,6 +32,7 @@ class CommunitySearchPeopleCell: UITableViewCell {
         guard let user = user else { return }
         nameLabel.text = user.userName
         statusLabel.text = user.userStatusComment ?? ""
+        profileImage.imageFromUrl(user.userImgURL, defaultImgPath: "commonDefaultimage")
         switch user.followIs {
         case true:
             followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow.png"), for: .normal)

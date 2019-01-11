@@ -90,6 +90,8 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("소셜 피드 성공")
             }) { (err) in
+                
+                self.reviews = []
                 print("소셜 피드 실패")
             }
         case 1:
@@ -97,6 +99,7 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("내 피드 성공")
             }) { (err) in
+                self.reviews = []
                 print("내 피드 실패")
             }
         default:

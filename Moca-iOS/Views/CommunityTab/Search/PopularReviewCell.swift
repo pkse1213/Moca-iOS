@@ -9,5 +9,6 @@
 import UIKit
 
 class PopularReviewCell: UICollectionViewCell {
+    @IBOutlet var reviewImageView: UIImageView!
     
 }

@@ -40,7 +40,9 @@ extension CommunitySearchPopularReviewCell: UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let review = reviews?[indexPath.item] else { return cell }
         if let reviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularReviewCell", for: indexPath) as? PopularReviewCell {
+            reviewCell.reviewImageView.imageFromUrl(review.reviewImgURL, defaultImgPath: "")
             cell = reviewCell
         }
         return cell

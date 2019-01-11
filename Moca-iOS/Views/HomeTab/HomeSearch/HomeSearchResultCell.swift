@@ -29,6 +29,7 @@ class HomeSearchResultCell: UITableViewCell {
         guard let searchResult = searchResult else { return }
         cafeNameLabel.text = searchResult.cafeName
         cafeLocationLabel.text = searchResult.cafeAddressDetail
+        resultImageView.imageFromUrl(searchResult.cafeImgURL, defaultImgPath: "")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

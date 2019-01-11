@@ -30,5 +30,6 @@ class HotCafeCollectionViewCell: UICollectionViewCell {
         guard let bestCafe = bestCafe else { return }
         hotcafeNameLabel.text = bestCafe.cafeName
         hotcafeLikeNumber.text = "\(bestCafe.scrapCount)"
+        hotcafeImageView.imageFromUrl(bestCafe.cafeImgURL, defaultImgPath: "")
     }
 }

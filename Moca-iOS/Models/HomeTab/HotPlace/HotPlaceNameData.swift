@@ -17,7 +17,7 @@ struct HotPlaceNameData: Codable {
 struct HotPlaceName: Codable {
     let hotPlaceID: Int
     let hotPlaceName: String
-    let hotPlaceImg: String
+    let hotPlaceImg: String?
     
     enum CodingKeys: String, CodingKey {
         case hotPlaceID = "hot_place_id"

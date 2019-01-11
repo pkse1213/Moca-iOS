@@ -40,12 +40,16 @@ class MocaPlusContentCell: UITableViewCell {
 
 extension MocaPlusContentCell : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        guard let mocaPlusContent = mocaPlusContent else { return 0 }
+        return mocaPlusContent.contentImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let image = mocaPlusContent?.contentImages[indexPath.item] else { return cell }
+        
         if let imageCell = cafeMenuImageCollectionView.dequeueReusableCell(withReuseIdentifier: "MocaPlusCafeImageCell", for: indexPath) as? MocaPlusCafeImageCell {
+            imageCell.cafeMenuImageView.imageFromUrl(image.plusDefaultImgURL, defaultImgPath: "")
             cell = imageCell
         }
         return cell
