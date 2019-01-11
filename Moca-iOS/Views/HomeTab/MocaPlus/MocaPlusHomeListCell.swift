@@ -33,5 +33,7 @@ class MocaPlusHomeListCell: UITableViewCell {
         titleLabel.text = mocaPlusSubject.plusSubjectTitle
         nameLabel.text = mocaPlusSubject.editorName
         profileImageView.applyRadius(radius: profileImageView.frame.width/2)
+        profileImageView.imageFromUrl(mocaPlusSubject.editorImgURL, defaultImgPath: "commonDefaultimage")
+        contentsImageView.imageFromUrl(mocaPlusSubject.plusSubjectImgURL, defaultImgPath: "")
     }
 }

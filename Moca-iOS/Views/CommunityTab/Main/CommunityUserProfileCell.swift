@@ -34,8 +34,9 @@ class CommunityUserProfileCell: UITableViewCell {
         userMessageLabel.text = user.userStatusComment
         contentCntLabel.text = "\(user.reviewCount)"
         follingCntLabel.setTitle("\(user.followingCount)", for: .normal)
-        
         followerCntLabel.setTitle("\(user.followerCount)", for: .normal)
+        print(user.userImgURL)
+        profileImageView.imageFromUrl(user.userImgURL, defaultImgPath: "commonDefaultimage")
     }
     
     private func setUpView() {

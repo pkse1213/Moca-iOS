@@ -82,7 +82,7 @@ extension CategoryResultVC: UICollectionViewDelegate, UICollectionViewDataSource
         var cell = UICollectionViewCell()
         if indexPath.section == 0 {
             if let locationCell = optionCollectionView.dequeueReusableCell(withReuseIdentifier: "SelectedLocationCell", for: indexPath) as? SelectedLocationCell{
-                locationCell.locationLabel.text = location
+                locationCell.locationLabel.text = location + "구"
                 cell = locationCell
             }
         } else {
@@ -106,7 +106,7 @@ extension CategoryResultVC: UITableViewDelegate, UITableViewDataSource {
         guard let cafe = cafes?[indexPath.row] else { return cell }
         
         if let cafeCell = cafeTableView.dequeueReusableCell(withIdentifier: "CategoryCafeCell") as? CategoryCafeCell {
-            cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.row+1)")
+            cafeCell.cafeImageView.imageFromUrl(cafe.cafeImgURL, defaultImgPath: "")
             cafeCell.cafeNameLabel.text = cafe.cafeName
             cafeCell.cafeAddressLabel.text = cafe.cafeAddressDetail
             cell = cafeCell
@@ -115,7 +115,9 @@ extension CategoryResultVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cafe = cafes?[indexPath.row] else { return }
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            vc.cafeId = cafe.cafeID
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

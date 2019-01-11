@@ -9,14 +9,13 @@
 import UIKit
 
 class CommunityContentCell: UITableViewCell {
-    var review: CommunityReview? {
-        didSet { setUpData() }
-    }
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
+    var review: CommunityReview? {
+        didSet { setUpData() }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpView()
@@ -24,9 +23,10 @@ class CommunityContentCell: UITableViewCell {
     
     private func setUpData() {
         guard let review = review else { return }
-//        nameLabel.text = review.
+        nameLabel.text = review.userName
         contentLabel.text = review.reviewContent
         timeLabel.text = review.time
+        profileImageView.imageFromUrl(review.userImgURL, defaultImgPath: "commonDefaultimage")
     }
     
     private func setUpView() {

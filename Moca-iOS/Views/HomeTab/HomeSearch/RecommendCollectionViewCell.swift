@@ -37,6 +37,7 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     private func initData() {
         guard let recommendHotPlace = recommendHotPlace else { return }
         recommendCafeLocation.text = "#" + recommendHotPlace.hotPlaceName
+        recommendCafeImage.imageFromUrl(recommendHotPlace.hotPlaceImg, defaultImgPath: "")
     }
     
 }

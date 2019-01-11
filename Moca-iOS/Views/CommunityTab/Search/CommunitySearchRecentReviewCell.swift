@@ -40,10 +40,11 @@ extension CommunitySearchRecentReviewCell: UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
-        if let reviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentReviewCell", for: indexPath) as? RecentReviewCell {
+        guard let review = reviews?[indexPath.item] else { return cell }
+        if let reviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularReviewCell", for: indexPath) as? PopularReviewCell {
+            reviewCell.reviewImageView.imageFromUrl(review.reviewImgURL, defaultImgPath: "")
             cell = reviewCell
         }
-        
         return cell
     }
     

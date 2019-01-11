@@ -9,7 +9,7 @@
 import UIKit
 
 class PopularCollectionViewCell: UICollectionViewCell {
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     @IBOutlet var popularView: UIView!
     @IBOutlet var popularPofileImage: UIImageView!
     @IBOutlet var popularNameLabel: UILabel!
@@ -37,6 +37,8 @@ class PopularCollectionViewCell: UICollectionViewCell {
     private func setUpData() {
         guard let user = user else { return }
         popularNameLabel.text = user.userName
+        popularPofileImage.imageFromUrl(user.userImgURL, defaultImgPath: "commonDefaultimage")
+        
         switch user.follow {
         case true:
             followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow.png"), for: .normal)

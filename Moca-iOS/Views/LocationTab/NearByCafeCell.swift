@@ -26,6 +26,7 @@ class NearByCafeCell: UITableViewCell {
         guard let cafe = cafe else { return }
         cafeNameLabel.text = cafe.cafeName
         cafeAddressLabel.text = cafe.addressDistrictName
+        cafeImageView.imageFromUrl(cafe.cafeImgURL, defaultImgPath: "")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

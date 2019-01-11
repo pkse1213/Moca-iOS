@@ -16,7 +16,7 @@ struct MocaPicksEvaluateData: Codable {
 struct MocaPicksEvaluate: Codable {
     let baristaID: Int
     let baristaName, baristaTitle: String
-    let baristaImgURL: String
+    let baristaImgURL: String?
     let evaluationBeanCondition: Int
     let evaluationBeanConditionComment: String
     let evaluationRoasting: Int

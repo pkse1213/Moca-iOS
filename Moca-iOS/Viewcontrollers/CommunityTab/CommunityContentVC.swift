@@ -37,6 +37,8 @@ class CommunityContentVC: UIViewController {
     
     @IBOutlet weak var textBackgroundView: UIView!
     @IBOutlet weak var textSquareView: UIView!
+    @IBOutlet weak var messageSenderButton: UIButton!
+    @IBOutlet weak var messageTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,7 @@ class CommunityContentVC: UIViewController {
         setUpView()
         registerGesture()
         checkVersion()
+        setupTextView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,9 +57,9 @@ class CommunityContentVC: UIViewController {
     
     private func setUpReviewData() {
         guard let review = review else { return }
-        
-        cafeNameLabel.text = review.cafeName
+        print("setUpReviewData()")
         cafeAddressLabel.text = review.cafeAddress
+        cafeNameLabel.text = review.cafeName
         if review.like {
             likeButton.setImage(#imageLiteral(resourceName: "commonHeartRed"), for: .normal)
         } else {
@@ -65,6 +68,7 @@ class CommunityContentVC: UIViewController {
     }
     
     private func initReviewData() {
+        print("initReviewData()")
         CommunityReviewDetailService.shareInstance.getReviewDetail(reviewId: reviewId, token: token , completion: { (res) in
             self.review = res
             self.images = res.image
@@ -75,12 +79,11 @@ class CommunityContentVC: UIViewController {
     
     private func initCommentData() {
         guard let review = review else { return }
-        
         CommunityReviewCommentService.shareInstance.getReviewComment(reviewId: review.reviewID, completion: { (res) in
             self.comments = res
             
-            print("리뷰 댓글 성공")
         }) { (err) in
+            self.comments = []
             print("리뷰 댓글 실패")
         }
     }
@@ -102,6 +105,8 @@ class CommunityContentVC: UIViewController {
         contentTableView.dataSource = self
         contentTableView.applyRadius(radius: 10)
     }
+    
+    
     
     private func checkVersion() {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -127,6 +132,9 @@ class CommunityContentVC: UIViewController {
         }
     }
     
+    @IBAction func senderMessageAction(_ sender: UIButton) {
+        messageTextView.resignFirstResponder()
+    }
     private func registerGesture() {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(self.wasDragged(_:)))
         contentTableView.addGestureRecognizer(gesture)
@@ -153,8 +161,6 @@ class CommunityContentVC: UIViewController {
             gestureRecognizer.setTranslation(CGPoint(x: 0, y: 0), in: self.view)
         }
     }
-    
-    
 }
 
 extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
@@ -166,8 +172,9 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            guard let comments = comments else { return 1 }
-            return comments.count
+            guard let comments = comments else { return 0 }
+            if comments.count == 0 { return 1 }
+            else { return comments.count }
         }
     }
     
@@ -181,15 +188,17 @@ extension CommunityContentVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             // 댓글이 없을 때
-            guard let comments = comments else {
+            guard let comments = comments else { return cell }
+            if comments.count == 0 {
                 if let emptyCell = contentTableView.dequeueReusableCell(withIdentifier: "EmptyCommentCell") {
                     cell = emptyCell
                 }
                 return cell
-            }
-            if let commentCell = contentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
-                commentCell.comment = comments[indexPath.row]
-                cell = commentCell
+            } else {
+                if let commentCell = contentTableView.dequeueReusableCell(withIdentifier: "CommunityCommentCell") as? CommunityCommentCell {
+                    commentCell.comment = comments[indexPath.row]
+                    cell = commentCell
+                }
             }
         }
         return cell
@@ -256,5 +265,27 @@ extension CommunityContentVC: UIScrollViewDelegate {
 extension CommunityContentVC: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
+    }
+}
+
+extension CommunityContentVC: UITextViewDelegate {
+    private func setupTextView() {
+        messageTextView.delegate = self
+//        let tapDidsmiss = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+//        self.messageTableView.addGestureRecognizer(tapDidsmiss)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ sender: Notification) {
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.textFieldViewBottomConstraint.constant = keyboardHeight - 34
+        }
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.textFieldViewBottomConstraint.constant = 0
     }
 }

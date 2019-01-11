@@ -22,13 +22,16 @@ class MocaPicksImageCell: UITableViewCell {
     var cafeId = 0
     var isScrap = true
     var cafeImages: [MocaPicksImage]? {
-        didSet { cafeImageCollectionView.reloadData() }
+        didSet {
+            setUpProgress()
+            cafeImageCollectionView.reloadData()
+            
+        }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpListView()
-        
         
         switch isScrap {
         case true:
@@ -88,8 +91,9 @@ extension MocaPicksImageCell: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let cafeImage = cafeImages?[indexPath.item] else { return cell }
         if let imageCell = cafeImageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
+            imageCell.contentImageView.imageFromUrl(cafeImage.evaluatedCafeImgURL, defaultImgPath: "")
             cell = imageCell
         }
         return cell

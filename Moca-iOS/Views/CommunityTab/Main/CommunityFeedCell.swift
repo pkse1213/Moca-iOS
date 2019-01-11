@@ -9,12 +9,6 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
-    weak var delegate: ListViewCellDelegate?
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    var review: CommunityReview? {
-        didSet { setUpData() }
-    }
-    var images: [ReviewImage]?
     
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -29,12 +23,33 @@ class CommunityFeedCell: UITableViewCell {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var imageCntLabel: UILabel!
+    weak var delegate: ListViewCellDelegate?
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
+    var review: CommunityReview? {
+        didSet { setUpData() }
+    }
+    var images: [ReviewImage]? {
+        didSet { setUpImage() }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
         setUpView()
         registerGesture()
+    }
+    
+    private func setUpImage() {
+        imageCollectionView.reloadData()
+        if let images = images {
+            if images.count <= 1 {
+                cntBackgroundView.isHidden = true
+            } else {
+                cntBackgroundView.isHidden = false
+                imageCntLabel.text = "1/\(images.count)"
+            }
+            
+        }
     }
     
     private func setUpData() {
@@ -49,6 +64,7 @@ class CommunityFeedCell: UITableViewCell {
         
         images = review.image
         
+        profileImageView.imageFromUrl(review.userImgURL, defaultImgPath: "commonDefaultimage")
         if review.like {
             likeButton.setImage(#imageLiteral(resourceName: "commonHeartRed"), for: .normal)
         } else {
@@ -66,9 +82,7 @@ class CommunityFeedCell: UITableViewCell {
         profileImageView.applyRadius(radius: 20)
         cntBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.5141925812, green: 0.5142051578, blue: 0.5141984224, alpha: 1))
         cntBackgroundView.applyRadius(radius: cntBackgroundView.frame.height/2)
-        if let images = images {
-            imageCntLabel.text = "1/\(images.count)"
-        }
+        
     }
     
     private func initReviewData() {
@@ -93,8 +107,8 @@ class CommunityFeedCell: UITableViewCell {
     
     @IBAction func goToCommentAction(_ sender: UIButton) {
         guard let review = review else { return }
-        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
-            vc.userId = review.userID
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
+            vc.reviewId = review.reviewID
             delegate?.goToViewController(vc: vc)
         }
     }
@@ -104,15 +118,9 @@ class CommunityFeedCell: UITableViewCell {
     }
     
     @IBAction func moreLookAction(_ sender: UIButton) {
+        guard let review = review else { return }
         if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
-            vc.review = review
-            vc.images = images
-            delegate?.goToViewController(vc: vc)
-        }
-    }
-    
-    @objc func goToUserFeedAction(_: UIImageView) {
-        if let vc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
+            vc.reviewId = review.reviewID
             delegate?.goToViewController(vc: vc)
         }
     }
@@ -120,6 +128,14 @@ class CommunityFeedCell: UITableViewCell {
     private func registerGesture() {
         let searchTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToUserFeedAction(_:)))
         profileImageView.addGestureRecognizer(searchTapGestureRecognizer)
+    }
+    
+    @objc func goToUserFeedAction(_: UIImageView) {
+        guard let review = review else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
+            vc.userId = review.userID
+            delegate?.goToViewController(vc: vc)
+        }
     }
 }
 

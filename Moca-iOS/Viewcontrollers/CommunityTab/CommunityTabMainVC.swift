@@ -18,8 +18,8 @@ class CommunityTabMainVC: UIViewController {
     // 피드 테이블 뷰
     let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
-    
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var err = 0
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     var selectIndex = 0 {
         didSet {
             setUpNavgationItem()
@@ -90,6 +90,8 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("소셜 피드 성공")
             }) { (err) in
+                self.reviews = []
+                self.err = err
                 print("소셜 피드 실패")
             }
         case 1:
@@ -97,6 +99,7 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("내 피드 성공")
             }) { (err) in
+                self.reviews = []
                 print("내 피드 실패")
             }
         default:
@@ -189,9 +192,11 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
             return 2
         } else {
             if section == 0 {
+                print("selectIndex\(selectIndex)")
                 return selectIndex
             } else {
                 guard let reviews = reviews else { return 0 }
+                if reviews.count == 0 { return 1 }
                 return reviews.count
             }
         }
@@ -208,12 +213,31 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                     cell = userCell
                 }
             } else if indexPath.section == 1 {
-                guard let reviews = reviews else { return cell }
-                if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    feedCell.review = reviews[indexPath.row]
-                    feedCell.delegate = self
-                    cell = feedCell
+                guard let review = reviews else { return cell }
+                
+                if review.count == 0 {
+                    if let emptyCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityEmptyCell") as? CommunityEmptyCell {
+                        if selectIndex == 0 {
+                            emptyCell.messageLabel.text = "팔로잉한 유저 또는 팔로잉한 유저가\n\n작성한 리뷰가 없습니다"
+                        } else {
+                            emptyCell.messageLabel.text = "내가 작성한 리뷰가 없습니다"
+                        }
+                        cell = emptyCell
+                    }
+                } else {
+                    if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                        if selectIndex == 0 {
+                            feedCell.profileImageView.isUserInteractionEnabled = true
+                        } else if selectIndex == 1 {
+//                            feedCell.profileImageView.isUserInteractionEnabled = false
+                        }
+                        feedCell.review = review[indexPath.row]
+                        feedCell.images = review[indexPath.row].image
+                        feedCell.delegate = self
+                        cell = feedCell
+                    }
                 }
+                
             }
             
         } else if tableView == feedMenuTableView {

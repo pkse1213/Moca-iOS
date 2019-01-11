@@ -32,7 +32,7 @@ class CommunitySearchVC: UIViewController {
     @IBOutlet weak var searchResultTableView: UITableView!
     
     var unit : CGFloat = 0
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     var keyword = "" {
         didSet { initSearchData() }
     }
@@ -57,7 +57,7 @@ class CommunitySearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-//        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     // 카페명 검색 결과 설정 - 최신 리뷰 설정하기 위해
@@ -69,6 +69,7 @@ class CommunitySearchVC: UIViewController {
     private func initBeforeData() {
         BestReviewService.shareInstance.getBestReview(flag: 1, token: token, completion: { (res) in
             self.bestCafes = res
+            print("-----\(res.count)")
         }) { (err) in
             print("인기 리뷰 조회 실패 \(err)")
         }
@@ -288,6 +289,7 @@ extension CommunitySearchVC : UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.hotCafeCollectionView {
             guard let bestCafes = bestCafes else { return 0 }
+            print("bestCafes.count\(bestCafes.count)")
             return bestCafes.count
         }
         else if collectionView == self.popularUserCollectionView {

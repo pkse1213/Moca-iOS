@@ -30,5 +30,6 @@ class HomeMocaPlusListCell: UITableViewCell {
         guard let mocaPlus = mocaPlus else { return }
         subjectNameLabel.text = mocaPlus.plusSubjectTitle
         editorLabel.text = "\(mocaPlus.editorName) 애디터"
+        subjectImageView.imageFromUrl(mocaPlus.editorImgURL, defaultImgPath: "")
     }
 }

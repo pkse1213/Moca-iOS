@@ -27,6 +27,7 @@ class HomeMocaPicksCafeListCell: UICollectionViewCell {
     
     private func setUpData() {
         guard let cafe = cafe else { return }
+        cafeImageView.imageFromUrl(cafe.evaluatedCafeImgURL, defaultImgPath: "")
         cafeNameLabel.text = cafe.cafeName
         cafeAddressLabel.text = "서울 \(cafe.addressDistrictName)"
     }

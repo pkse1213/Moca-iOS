@@ -66,7 +66,7 @@ extension CafeDetailInfoCell: UICollectionViewDelegate, UICollectionViewDataSour
         var cell = UICollectionViewCell()
         if let menuCell = signatureMenuCollectionView.dequeueReusableCell(withReuseIdentifier: "SignatureMenuCell", for: indexPath) as? SignatureMenuCell {
             let menu = signitureMenus[indexPath.item]
-//            menuCell.menuImageView.image =
+            menuCell.menuImageView.imageFromUrl(menu.cafeSignitureImg, defaultImgPath: "")
             menuCell.menuNameLabel.text = menu.cafeSignitureMenu
             menuCell.menuPriceLabel.text = "\(menu.cafeSigniturePrice).0"
             cell = menuCell

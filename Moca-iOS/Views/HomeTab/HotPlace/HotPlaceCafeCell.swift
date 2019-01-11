@@ -68,9 +68,10 @@ extension HotPlaceCafeCell : UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
-        
-        if let imgCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "HotPlaceCafeImageCell", for: indexPath) as? HotPlaceCafeImageCell {
-            cell = imgCell
+        guard let image = images?[indexPath.item] else { return cell }
+        if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "HotPlaceCafeImageCell", for: indexPath) as? HotPlaceCafeImageCell {
+            imageCell.cafeMenuImgs.imageFromUrl(image.cafeImgURL, defaultImgPath: "")
+            cell = imageCell
         }
         
         return cell

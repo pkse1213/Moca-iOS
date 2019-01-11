@@ -29,6 +29,7 @@ class MocaPicksBaristaCell: UITableViewCell {
     
     private func setUpData() {
         guard let barista = barista else { return }
+        baristaImageView.imageFromUrl(barista.baristaImgURL, defaultImgPath: "commonDefaultimage")
         baristaNameLabel.text = barista.baristaName
         baristaInfoLabel.text = barista.baristaTitle
     }

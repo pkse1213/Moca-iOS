@@ -201,7 +201,11 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
             }
         case 1:
             if let infoCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailInfoCell") as? CafeDetailInfoCell {
-                infoCell.reviewLookButton.addTarget(self, action: #selector(reviewLookActin(_:)), for: .touchUpInside)
+                if reviews.count == 0 {
+                    infoCell.reviewLookButton.isHidden = true
+                } else {
+                    infoCell.reviewLookButton.addTarget(self, action: #selector(reviewLookActin(_:)), for: .touchUpInside)
+                }
                 infoCell.nameLabel.text = info.cafeName
                 infoCell.addressLabel.text = info.addressDistrictName
                 infoCell.detailAddressLabel.text = info.cafeAddressDetail

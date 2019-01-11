@@ -96,7 +96,11 @@ extension CommunityUserFeedVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return reviews.count
+            if reviews.count == 0 {
+                return 1
+            } else {
+                return reviews.count
+            }
         }
     }
     
@@ -110,10 +114,19 @@ extension CommunityUserFeedVC: UITableViewDelegate, UITableViewDataSource {
                 cell = userCell
             }
         } else if indexPath.section == 1 {
-            if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                feedCell.review = reviews[indexPath.row]
-                cell = feedCell
+            if reviews.count == 0 {
+                if let emptyCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityEmptyCell") as? CommunityEmptyCell {
+                    emptyCell.messageLabel.text = "작성한 리뷰가 없습니다"
+                    cell = emptyCell
+                }
+            } else {
+                if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
+                    feedCell.review = reviews[indexPath.row]
+                    cell = feedCell
+                }
             }
+            
+            
         }
         
         return cell

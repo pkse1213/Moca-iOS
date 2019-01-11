@@ -57,7 +57,8 @@ extension MocaPicksBaristaDetailVC: UITableViewDelegate, UITableViewDataSource {
             baristaCell.newLabel.applyLineSpacing(lineSpacing: 5, text: evaluateDetail.evaluationCreativityComment)
             baristaCell.priceLabel.applyLineSpacing(lineSpacing: 5, text: evaluateDetail.evaluationReasonableComment)
             baristaCell.tasteLabel.applyLineSpacing(lineSpacing: 5, text: evaluateDetail.evaluationConsistancyComment)
-            baristaCell.totalLabel.applyLineSpacing(lineSpacing: 7, text: "evaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummaryevaluateDetail.evaluationSummary")
+            baristaCell.totalLabel.applyLineSpacing(lineSpacing: 7, text: evaluateDetail.evaluationSummary)
+            baristaCell.profileImageView.imageFromUrl(evaluateDetail.baristaImgURL, defaultImgPath: "commonDefaultimage")
                 cell = baristaCell
         }
         return cell
