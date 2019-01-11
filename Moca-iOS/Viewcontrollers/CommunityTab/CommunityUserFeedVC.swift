@@ -30,7 +30,7 @@ class CommunityUserFeedVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
-        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     private func initUserData() {
@@ -39,6 +39,7 @@ class CommunityUserFeedVC: UIViewController {
             self.title = res.userName
             print("유저 프로필 성공")
         }) { (err) in
+            print(self.userId)
             print("유저 프로필 실패")
         }
     }
@@ -48,6 +49,8 @@ class CommunityUserFeedVC: UIViewController {
             self.reviews = res
             print("유저 피드 성공")
         }) { (err) in
+            print(self.userId)
+            self.reviews = []
             print("유저 피드 실패")
         }
     }

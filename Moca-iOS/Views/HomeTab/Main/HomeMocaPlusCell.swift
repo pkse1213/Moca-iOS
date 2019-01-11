@@ -11,17 +11,24 @@ import UIKit
 class HomeMocaPlusCell: UITableViewCell {
     @IBOutlet weak var moreBtnImageView: UIImageView!
     @IBOutlet weak var mocaPlusTableView: UITableView!
+    
     var mocaPlusSubject: [MocaPlusSubject]?
     weak var delegate: ListViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUpTableView()
         registerGesture()
     }
 
     private func registerGesture() {
         let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
         moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
+    }
+    
+    private func setUpTableView() {
+        mocaPlusTableView.delegate = self
+        mocaPlusTableView.dataSource = self
     }
     
     @objc func moreAction(_:UIImageView) {
@@ -53,4 +60,11 @@ extension HomeMocaPlusCell: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let mocaPlusSubject = mocaPlusSubject?[indexPath.row] else { return }
+        if let vc = UIStoryboard(name: "MocaPlus", bundle: nil).instantiateViewController(withIdentifier: "MocaPlusDetailVC") as? MocaPlusDetailVC {
+            vc.mocaPlusSubject = mocaPlusSubject
+            delegate?.goToViewController(vc: vc)
+        }
+    }
 }

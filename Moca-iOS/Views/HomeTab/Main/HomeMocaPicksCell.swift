@@ -40,12 +40,15 @@ class HomeMocaPicksCell: UITableViewCell {
 
 extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        guard let mocaPicks = mocaPicks else { return 0 }
+        return mocaPicks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let mocaPicks = mocaPicks?[indexPath.item] else { return cell }
         if let cafeCell = mocaPickCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeMocaPicksCafeListCell", for: indexPath) as? HomeMocaPicksCafeListCell {
+            cafeCell.cafe = mocaPicks
             cell = cafeCell
         }
         return cell
@@ -54,6 +57,8 @@ extension HomeMocaPicksCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksCafeVC") as? MocaPicksCafeVC {
+            guard let mocaPicks = mocaPicks?[indexPath.item] else { return }
+            vc.cafeInfo = mocaPicks
             delegate?.goToViewController(vc: vc)
         }
     }

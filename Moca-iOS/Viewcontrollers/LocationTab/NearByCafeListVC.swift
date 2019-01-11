@@ -9,7 +9,7 @@
 import UIKit
 
 class NearByCafeListVC: UIViewController {
-    var nearByCafes: [NearByCafe]?
+    var nearByCafes: [NearByCafe]? 
     @IBOutlet var nearCafeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

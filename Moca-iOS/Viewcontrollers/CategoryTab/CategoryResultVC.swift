@@ -9,7 +9,7 @@
 import UIKit
 
 class CategoryResultVC: UIViewController {
-    let location: String = "강서구"
+    var location: String = ""
     let options = ["한옥", "드라이브", "커피", "디저트"]
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var conceptId: [Int] = [1,2]

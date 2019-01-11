@@ -29,6 +29,6 @@ class HomeMocaPlusListCell: UITableViewCell {
     private func setUpData() {
         guard let mocaPlus = mocaPlus else { return }
         subjectNameLabel.text = mocaPlus.plusSubjectTitle
-        editorLabel.text = mocaPlus.editorName
+        editorLabel.text = "\(mocaPlus.editorName) 애디터"
     }
 }

@@ -19,13 +19,15 @@ struct MocaPicks: Codable {
     let cafeName: String
     let evaluatedCafeRating: Int
     let addressDistrictName: String
-    let cafeImgMain: String?
+    let evaluatedCafeImgURL: String
+    let scrabIs: Bool
     
     enum CodingKeys: String, CodingKey {
         case cafeID = "cafe_id"
         case cafeName = "cafe_name"
         case evaluatedCafeRating = "evaluated_cafe_rating"
         case addressDistrictName = "address_district_name"
-        case cafeImgMain = "cafe_img_main"
+        case evaluatedCafeImgURL = "evaluated_cafe_img_url"
+        case scrabIs = "scrab_is"
     }
 }

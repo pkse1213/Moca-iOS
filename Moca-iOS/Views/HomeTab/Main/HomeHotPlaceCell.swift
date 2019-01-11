@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeHotPlaceCell: UITableViewCell {
-    @IBOutlet var moreBtnImageView: UIImageView!
     @IBOutlet weak var hotPlaceCollectionView: UICollectionView!
     var hotPlaceNames: [HotPlaceName]?
     var delegate: ListViewCellDelegate?
@@ -17,23 +16,11 @@ class HomeHotPlaceCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
-        registerGesture()
     }
     
     private func setUpCollectionView() {
         self.hotPlaceCollectionView.delegate = self
         self.hotPlaceCollectionView.dataSource = self
-    }
-    
-    private func registerGesture() {
-        let moreBtnTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction(_:)))
-        moreBtnImageView.addGestureRecognizer(moreBtnTapGestureRecognizer)
-    }
-    
-    @objc func moreAction(_:UIImageView) {
-        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
-            delegate?.goToViewController(vc: vc)
-        }
     }
 }
 
@@ -46,6 +33,7 @@ extension HomeHotPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         guard let hotPlaceName = hotPlaceNames?[indexPath.item] else { return cell }
+        
         if let hotPlaceCell = hotPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "HomeHotPlaceNameCell", for: indexPath) as? HomeHotPlaceNameCell {
             hotPlaceCell.hotPlaceName = hotPlaceName
             cell = hotPlaceCell
@@ -53,8 +41,13 @@ extension HomeHotPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let hotPlaceName = hotPlaceNames?[indexPath.item] else { return }
         
+        if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
+            vc.title = hotPlaceName.hotPlaceName
+            vc.placeId = hotPlaceName.hotPlaceID
+            delegate?.goToViewController(vc: vc)
+        }
     }
 }

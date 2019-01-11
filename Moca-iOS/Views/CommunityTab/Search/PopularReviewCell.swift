@@ -8,6 +8,6 @@
 
 import UIKit
 
-class PopularReviewCollectionViewCell: UICollectionViewCell {
+class PopularReviewCell: UICollectionViewCell {
     
 }

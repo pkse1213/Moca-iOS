@@ -89,7 +89,7 @@ class HomeTabMainVC: UIViewController {
     }
     
     @objc func goToSearchAction(_: UIImageView) {
-        if let vc = UIStoryboard(name: "HomeSearch", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
+        if let vc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -101,7 +101,6 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard let _ = mocaPicks, let _ = hotPlaceNames, let _ = rankingCafes, let _ = mocaPlusSubject else { return 0 }
         return 1
     }
@@ -139,7 +138,6 @@ extension HomeTabMainVC: UITableViewDelegate, UITableViewDataSource {
         default:
             return cell
         }
-        
         return cell
     }
     

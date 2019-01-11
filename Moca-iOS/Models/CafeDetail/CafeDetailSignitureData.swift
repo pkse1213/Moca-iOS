@@ -15,7 +15,9 @@ struct CafeDetailSignitureData: Codable {
 }
 
 struct CafeDetailSigniture: Codable {
-    let cafeSignitureMenu, cafeSigniturePrice, cafeSignitureImg: String
+    let cafeSignitureMenu: String
+    let cafeSigniturePrice: Int
+    let cafeSignitureImg: String
     
     enum CodingKeys: String, CodingKey {
         case cafeSignitureMenu = "cafe_signiture_menu"

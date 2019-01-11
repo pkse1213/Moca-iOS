@@ -23,7 +23,7 @@ class CategoryMainCell: UITableViewCell {
     var conceptSelectedId: Set<Int> = []
     var menuSelectedId: Set<Int> = []
     var locationId = 0
-    
+    var locationName = ""
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
@@ -38,6 +38,7 @@ class CategoryMainCell: UITableViewCell {
         applyButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         applyButton.backgroundColor = #colorLiteral(red: 0.9088876247, green: 0.7525063157, blue: 0.6986940503, alpha: 1)
         locationId = sender.tag
+        locationName = sender.currentTitle ?? ""
         pinImageView.center.x = sender.center.x
         pinImageView.center.y = sender.center.y-19
     }
@@ -47,6 +48,7 @@ class CategoryMainCell: UITableViewCell {
             vc.menuId = Array(menuSelectedId)
             vc.conceptId = Array(conceptSelectedId)
             vc.locationId = locationId
+            vc.location = locationName
             print(menuSelectedId)
             print(conceptSelectedId)
             delegate?.goToViewController(vc: vc)

@@ -10,19 +10,54 @@ import UIKit
 
 class MocaPicksCafeVC: UIViewController {
     @IBOutlet weak var baristaTableView: UITableView!
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    
+    var cafeInfo: MocaPicks? 
+    var cafeImages: [MocaPicksImage]? {
+        didSet { baristaTableView.reloadData() }
+    }
+    var cafeDetail: MocaPicksDetail? {
+        didSet { baristaTableView.reloadData() }
+    }
+    var cafeEvaluate: [MocaPicksEvaluate]? {
+        didSet { baristaTableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpListView()
+        initData()
     }
+    
     private func setUpListView() {
         baristaTableView.delegate = self
         baristaTableView.dataSource = self
-        
     }
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func initData() {
+        guard let cafeInfo = cafeInfo else { return }
+       print(cafeInfo.cafeID)
+        MocaPicksDetailService.shareInstance.getMocaPicksCafeDetail(cafeId: cafeInfo.cafeID, token: token, completion: { (res) in
+            self.cafeDetail = res
+        }) { (err) in
+            print("모카픽스 디테일 실패 \(err)")
+        }
+        MocaPicksImageService.shareInstance.getMocaPicksImage(cafeId: cafeInfo.cafeID, token: token, completion: { (res) in
+            self.cafeImages = res
+        }) { (err) in
+            print("모카픽스 이미지 실패 \(err)")
+        }
+        MocaPicksEvaluateService.shareInstance.getMocaPicksEvaluate(cafeId: cafeInfo.cafeID, token: token, completion: { (res) in
+            self.cafeEvaluate = res
+        }) { (err) in
+            print("모카픽스 평가 실패 \(err)")
+        }
     }
     
 }
@@ -33,8 +68,9 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let _ = cafeDetail, let _ = cafeImages, let cafeEvaluate = cafeEvaluate else { return 0 }
         if section == 2 {
-            return 3
+            return cafeEvaluate.count
         } else {
             return 1
         }
@@ -42,9 +78,14 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        
+        guard let cafeInfo = cafeInfo, let cafeDetail = cafeDetail, let cafeImages = cafeImages, let cafeEvaluate = cafeEvaluate else { return cell }
         if indexPath.section == 0 {
             if let imageCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksImageCell") as? MocaPicksImageCell {
+                imageCell.cafeId = cafeInfo.cafeID
+                imageCell.cafeImages = cafeImages
+                imageCell.cafeNameLabel.text = cafeDetail.cafeName
+                imageCell.isScrap = cafeInfo.scrabIs
+                imageCell.cafeAddressLabel.text = cafeInfo.addressDistrictName
                 cell = imageCell
             }
         } else if indexPath.section == 1 {
@@ -53,6 +94,8 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 2 {
             if let baristaCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksBaristaCell") as? MocaPicksBaristaCell {
+                baristaCell.cafeId = cafeInfo.cafeID
+                baristaCell.barista = cafeEvaluate[indexPath.row]
                 baristaCell.delegate = self
                 cell = baristaCell
             }
@@ -62,6 +105,8 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 4 {
             if let allEvaluationCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksAllEvaluationCell") as? MocaPicksAllEvaluationCell {
+                let evaluation = cafeDetail.evaluatedCafeTotalEvaluation
+                allEvaluationCell.evalutionLabel.applyLineSpacing(lineSpacing: 7, text: evaluation)
                 cell = allEvaluationCell
             }
         }
