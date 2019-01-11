@@ -71,59 +71,59 @@ struct SignupService : APIService, RequestService {
                 }
             }
         }
-//        else {
-//            if let profileImg = userImg {
-//                let profileImageData = UIImage.jpegData(profileImg)
-//
-//                Alamofire.upload(multipartFormData: { (multipart) in
-//                    multipart.append(userId.data(using: .utf8)!, withName: "user_id")
-//                    multipart.append(userPassword.data(using: .utf8)!, withName: "user_password")
-//                    multipart.append(userName.data(using: .utf8)!, withName: "user_name")
-//                    multipart.append(userPhone.data(using: .utf8)!, withName: "user_phone")
-//                    multipart.append(profileImageData.(0.5), withName: "user_img", fileName: "photo.jpg", mimeType: "image/jpeg")
-//                }, usingThreshold: UInt64.init(), to: signupUrl, method: .post, headers: nil) { (encodingResult) in
-//                    print(encodingResult)
-//
-//                    switch encodingResult {
-//                    case .failure(let err) :
-//                        print("network error : \(err)")
-//                        break
-//                    case .success(let upload, _, _) :
-//                        upload.responseData(completionHandler: { (res) in
-//                            print("회원가입 성공여부")
-//
-//                            switch res.result {
-//                            case .success :
-//                                if let value =  res.result.value {
-//                                    var status = JSON(value)["status"]
-//                                    print("update 접근\(status)")
-//
-//
-//
-//                                    do {
-//                                        let status = JSON(value)["status"]
-//
-//                                        if status == 200 {
-//                                            let message = JSON(value)["message"].string
-//                                            print(message)
-//
-//
-//                                        }
-//                                    }
-//                                }
-//                                completion()
-//
-//                            case .failure(let err) :
-//                                print(err.localizedDescription)
-//                                break
-//                            }
-//
-//
-//                        })
-//                    }
-//                }
-//            }
-//        }
+        else {
+            if let profileImg = userImg {
+                let profileImageData = profileImg.jpegData(compressionQuality: 0.5)
+
+                Alamofire.upload(multipartFormData: { (multipart) in
+                    multipart.append(userId.data(using: .utf8)!, withName: "user_id")
+                    multipart.append(userPassword.data(using: .utf8)!, withName: "user_password")
+                    multipart.append(userName.data(using: .utf8)!, withName: "user_name")
+                    multipart.append(userPhone.data(using: .utf8)!, withName: "user_phone")
+                    multipart.append(profileImageData!, withName: "user_img", fileName: "photo.jpg", mimeType: "image/jpeg")
+                }, usingThreshold: UInt64.init(), to: signupUrl, method: .post, headers: nil) { (encodingResult) in
+                    print(encodingResult)
+
+                    switch encodingResult {
+                    case .failure(let err) :
+                        print("network error : \(err)")
+                        break
+                    case .success(let upload, _, _) :
+                        upload.responseData(completionHandler: { (res) in
+                            print("회원가입 성공여부")
+
+                            switch res.result {
+                            case .success :
+                                if let value =  res.result.value {
+                                    var status = JSON(value)["status"]
+                                    print("update 접근\(status)")
+
+
+
+                                    do {
+                                        let status = JSON(value)["status"]
+
+                                        if status == 200 {
+                                            let message = JSON(value)["message"].string
+                                            print(message)
+
+
+                                        }
+                                    }
+                                }
+                                completion()
+
+                            case .failure(let err) :
+                                print(err.localizedDescription)
+                                break
+                            }
+
+
+                        })
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -56,7 +56,7 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func signupAction(_ sender: Any) {
-        SignupService.shared.signup(userId: gsno(idTxt.text), userPassword: gsno(pwTxt.text), userName: gsno(nameTxt.text), userPhone: gsno(phoneTxt.text), userImg: nil, completion: {
+        SignupService.shared.signup(userId: gsno(idTxt.text), userPassword: gsno(pwTxt.text), userName: gsno(nameTxt.text), userPhone: gsno(phoneTxt.text), userImg: profileImage.image, completion: {
             
             let alert = UIAlertController(title: "회원가입", message: "회원가입 성공", preferredStyle: UIAlertController.Style.alert)
             
