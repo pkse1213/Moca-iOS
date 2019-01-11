@@ -90,7 +90,6 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("소셜 피드 성공")
             }) { (err) in
-                
                 self.reviews = []
                 print("소셜 피드 실패")
             }
@@ -211,9 +210,10 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                     cell = userCell
                 }
             } else if indexPath.section == 1 {
-                guard let reviews = reviews else { return cell }
+                guard let review = reviews?[indexPath.row] else { return cell }
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
-                    feedCell.review = reviews[indexPath.row]
+                    feedCell.review = review
+                    feedCell.images = review.image
                     feedCell.delegate = self
                     cell = feedCell
                 }

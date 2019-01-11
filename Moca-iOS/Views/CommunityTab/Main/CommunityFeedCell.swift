@@ -9,12 +9,6 @@
 import UIKit
 
 class CommunityFeedCell: UITableViewCell {
-    weak var delegate: ListViewCellDelegate?
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    var review: CommunityReview? {
-        didSet { setUpData() }
-    }
-    var images: [ReviewImage]?
     
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -29,12 +23,33 @@ class CommunityFeedCell: UITableViewCell {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var imageCntLabel: UILabel!
+    weak var delegate: ListViewCellDelegate?
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var review: CommunityReview? {
+        didSet { setUpData() }
+    }
+    var images: [ReviewImage]? {
+        didSet { setUpImage() }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
         setUpView()
         registerGesture()
+    }
+    
+    private func setUpImage() {
+        imageCollectionView.reloadData()
+        if let images = images {
+            if images.count <= 1 {
+                cntBackgroundView.isHidden = true
+            } else {
+                cntBackgroundView.isHidden = false
+                imageCntLabel.text = "1/\(images.count)"
+            }
+            
+        }
     }
     
     private func setUpData() {
@@ -67,9 +82,7 @@ class CommunityFeedCell: UITableViewCell {
         profileImageView.applyRadius(radius: 20)
         cntBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.5141925812, green: 0.5142051578, blue: 0.5141984224, alpha: 1))
         cntBackgroundView.applyRadius(radius: cntBackgroundView.frame.height/2)
-        if let images = images {
-            imageCntLabel.text = "1/\(images.count)"
-        }
+        
     }
     
     private func initReviewData() {
