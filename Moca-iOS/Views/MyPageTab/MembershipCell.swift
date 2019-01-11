@@ -17,6 +17,9 @@ class MembershipCell: UITableViewCell {
     
     var parentVC = UIViewController()
     
+    var membershipList : [MembershipData]? {
+        didSet { couponCollectionView.reloadData() }
+    }
     
     var unit : CGFloat = 0
     
@@ -78,6 +81,20 @@ extension MembershipCell :  UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = couponCollectionView.dequeueReusableCell(withReuseIdentifier: "MembershipCouponCollectionCell", for: indexPath) as! MembershipCouponCollectionCell
+        
+        
+        if let memberList = membershipList {
+            
+            if (indexPath.row < memberList.count) {
+                cell.couponImageView.image = #imageLiteral(resourceName: "mypageStampPink")
+            }
+            else {
+                cell.couponImageView.image = UIImage(named: "mypageStampGray")
+            }
+            
+            return cell
+        }
+        cell.couponImageView.image = UIImage(named: "mypageStampGray")
         
         return cell
     }

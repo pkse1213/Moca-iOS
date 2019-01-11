@@ -12,10 +12,15 @@ class LikeCafeDetailVC: UIViewController {
     
     
     @IBOutlet var likeCafeListTableView: UITableView!
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var dataList : [ScrapCafeData]? {
+        didSet { likeCafeListTableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getLikeCafeData()
         setUpTableView()
     }
     
@@ -30,18 +35,35 @@ class LikeCafeDetailVC: UIViewController {
         likeCafeListTableView.delegate = self
         likeCafeListTableView.dataSource = self
     }
+    
+    // 통신
+    private func getLikeCafeData() {
+        MyPageScrapService.shared.getScrap(token: token, completion: { (scrapDataList) in
+            self.dataList = scrapDataList
+        }) { (errCode) in
+            print("스크랩 카페 조회 실패 || \(errCode)")
+        }
+    }
 }
 
 extension LikeCafeDetailVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        guard let dataList = dataList else { return 1 }
+        return dataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = likeCafeListTableView.dequeueReusableCell(withIdentifier: "LikeCafeDetailTableViewCell", for: indexPath) as! LikeCafeDetailTableViewCell
         
+        var image = dataList?[indexPath.row].cafeImgUrl
+//        let imageUrl = image?[0].cafeImgUrl
+        
+//        cell.cafeBackImageView.imageFromUrl(imageUrl, defaultImgPath: "")
+        cell.cafeNameLabel.text = dataList?[indexPath.row].cafeName
+        cell.cafeLocationLabel.text = dataList?[indexPath.row].cafeAddressDetail
+        
+        
+        
         return cell
     }
-    
-    
 }
