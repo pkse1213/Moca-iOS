@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xwh-Ax-ibl">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,35 +9,55 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumGothic.otf">
+            <string>NanumGothicOTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--TutorialVC-->
         <scene sceneID="wak-Lf-TUG">
             <objects>
                 <viewController storyboardIdentifier="TutorialVC" id="Xwh-Ax-ibl" customClass="TutorialVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iG4-u7-dKS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial1" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-nb-BFj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial1" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-nb-BFj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLs-fa-JST">
+                                <rect key="frame" x="273" y="44" width="79" height="30"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.93333333333333335" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="RuR-ls-jCH"/>
+                                    <constraint firstAttribute="height" constant="30" id="eva-lu-20c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" red="0.71372549019607845" green="0.62745098039215685" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="h9S-nb-BFj" secondAttribute="bottom" id="EgC-Oh-5bT"/>
                             <constraint firstItem="h9S-nb-BFj" firstAttribute="leading" secondItem="SGL-I6-uXB" secondAttribute="leading" id="M4V-yF-LqI"/>
+                            <constraint firstItem="SGL-I6-uXB" firstAttribute="trailing" secondItem="YLs-fa-JST" secondAttribute="trailing" constant="23" id="T4X-aK-zfs"/>
                             <constraint firstItem="h9S-nb-BFj" firstAttribute="trailing" secondItem="SGL-I6-uXB" secondAttribute="trailing" id="avm-v2-iQ5"/>
+                            <constraint firstItem="YLs-fa-JST" firstAttribute="top" secondItem="SGL-I6-uXB" secondAttribute="top" id="ogK-AO-6r0"/>
                             <constraint firstItem="h9S-nb-BFj" firstAttribute="top" secondItem="iG4-u7-dKS" secondAttribute="top" id="sSD-Wv-hWg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SGL-I6-uXB"/>
                     </view>
                     <connections>
+                        <outlet property="startButton" destination="YLs-fa-JST" id="khd-5o-FHA"/>
                         <outlet property="tutorialImageView" destination="h9S-nb-BFj" id="oSE-bh-Hn2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bb-KA-qUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="-46.551724137931039"/>
+            <point key="canvasLocation" x="108" y="-47.290640394088669"/>
         </scene>
     </scenes>
     <resources>

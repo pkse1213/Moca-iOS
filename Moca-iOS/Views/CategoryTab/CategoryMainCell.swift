@@ -17,11 +17,14 @@ class CategoryMainCell: UITableViewCell {
     let menuSelectedImages = [#imageLiteral(resourceName: "filterCoffeeRed"),#imageLiteral(resourceName: "filterTeaRed"),#imageLiteral(resourceName: "filterBakeryRed"),#imageLiteral(resourceName: "filterFruitRed"),#imageLiteral(resourceName: "filterDessertRed"),#imageLiteral(resourceName: "filterEtcRed")]
     let conceptDefaultImaeges = [#imageLiteral(resourceName: "filterMood"),#imageLiteral(resourceName: "filterHanok"),#imageLiteral(resourceName: "filterRooftop"),#imageLiteral(resourceName: "filterFlower"),#imageLiteral(resourceName: "filterBook"),#imageLiteral(resourceName: "filterDrive"),#imageLiteral(resourceName: "filterPet"),#imageLiteral(resourceName: "filterEtc")]
     let conceptSelectedImages = [#imageLiteral(resourceName: "filterMoodRed"),#imageLiteral(resourceName: "filterHanokRed"),#imageLiteral(resourceName: "filterRooftopRed"),#imageLiteral(resourceName: "filterFlowerRed"),#imageLiteral(resourceName: "filterBookRed"),#imageLiteral(resourceName: "filterDriveRed"),#imageLiteral(resourceName: "filterPetRed"),#imageLiteral(resourceName: "filterEtcRed")]
+    let conceptNames = ["감성",  "한옥",  "루프탑", "플라워", "북카페", "드라이브", "애견", "기타"]
+    let menuNames = ["커피", "차", "베이커리", "생과일", "디저트", "기타"]
     weak var delegate: ListViewCellDelegate?
     
     var unit: CGFloat = 0.0
     var conceptSelectedId: Set<Int> = []
     var menuSelectedId: Set<Int> = []
+    var optionSelected: Set<String> = []
     var locationId = 0
     var locationName = ""
     override func awakeFromNib() {
@@ -45,6 +48,13 @@ class CategoryMainCell: UITableViewCell {
     
     @IBAction func applyAction(_ sender: UIButton) {
         if let vc = UIStoryboard(name: "CategoryTab", bundle: nil).instantiateViewController(withIdentifier: "CategoryResultVC") as? CategoryResultVC {
+            if optionSelected.count == 0 {
+                vc.options.append(contentsOf: menuNames)
+                vc.options.append(contentsOf: conceptNames)
+            } else {
+                vc.options = Array(optionSelected)
+            }
+            
             vc.menuId = Array(menuSelectedId)
             vc.conceptId = Array(conceptSelectedId)
             vc.locationId = locationId
@@ -111,14 +121,18 @@ extension CategoryMainCell: UICollectionViewDelegate, UICollectionViewDataSource
             if collectionView == conceptCollectionView {
                 if cell.selectedFlag {
                     conceptSelectedId.insert(indexPath.item+1)
+                    optionSelected.insert(conceptNames[indexPath.row])
                 } else {
                     conceptSelectedId.remove(indexPath.item+1)
+                    optionSelected.remove(conceptNames[indexPath.row])
                 }
             } else if collectionView == menuCollectionView {
                 if cell.selectedFlag {
                     menuSelectedId.insert(indexPath.item+1)
+                    optionSelected.insert(menuNames[indexPath.row])
                 } else {
                     menuSelectedId.remove(indexPath.item+1)
+                    optionSelected.remove(menuNames[indexPath.row])
                 }
             }
         }

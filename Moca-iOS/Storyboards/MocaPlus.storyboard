@@ -45,7 +45,6 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NWH-ba-V4z">
                                                     <rect key="frame" x="26" y="236" width="37" height="37"/>
-                                                    <color key="backgroundColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="NWH-ba-V4z" secondAttribute="height" multiplier="1:1" id="e2p-Af-eFE"/>
                                                     </constraints>
@@ -144,7 +143,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="6ic-YG-rhi">
-                                                    <rect key="frame" x="26" y="29" width="259.66666666666669" height="83"/>
+                                                    <rect key="frame" x="26" y="29" width="308" height="83"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CL-e8-TZL">
                                                             <rect key="frame" x="0.0" y="0.0" width="259.66666666666669" height="57.666666666666664"/>
@@ -165,6 +164,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6ic-YG-rhi" firstAttribute="leading" secondItem="tpt-GA-L29" secondAttribute="leading" constant="26" id="0sn-Sp-l4j"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6ic-YG-rhi" secondAttribute="trailing" constant="26" id="6Vz-ht-ciU"/>
                                                 <constraint firstItem="6ic-YG-rhi" firstAttribute="top" secondItem="tpt-GA-L29" secondAttribute="top" constant="29" id="Faj-as-nri"/>
                                                 <constraint firstAttribute="trailing" secondItem="bnS-qr-ngH" secondAttribute="trailing" id="HRv-m9-bHh"/>
                                                 <constraint firstItem="bnS-qr-ngH" firstAttribute="top" secondItem="tpt-GA-L29" secondAttribute="top" id="dJ7-o1-3mm"/>

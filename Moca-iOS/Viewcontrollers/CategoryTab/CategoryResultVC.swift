@@ -10,10 +10,10 @@ import UIKit
 
 class CategoryResultVC: UIViewController {
     var location: String = ""
-    let options = ["한옥", "드라이브", "커피", "디저트"]
+    var options:[String] = []
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    var conceptId: [Int] = [1,2]
-    var menuId: [Int] = [1]
+    var conceptId: [Int] = []
+    var menuId: [Int] = []
     var locationId = 0
     @IBOutlet weak var optionCollectionView: UICollectionView!
     @IBOutlet weak var cafeTableView: UITableView!
@@ -25,13 +25,17 @@ class CategoryResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(options)
+        print(conceptId)
+        print(menuId)
+        
         setUpListView()
         initData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     private func initData() {
@@ -74,7 +78,7 @@ extension CategoryResultVC: UICollectionViewDelegate, UICollectionViewDataSource
         if section == 0 {
             return 1
         } else {
-            return menuId.count + conceptId.count
+            return options.count
         }
     }
     
@@ -109,6 +113,8 @@ extension CategoryResultVC: UITableViewDelegate, UITableViewDataSource {
             cafeCell.cafeImageView.imageFromUrl(cafe.cafeImgURL, defaultImgPath: "")
             cafeCell.cafeNameLabel.text = cafe.cafeName
             cafeCell.cafeAddressLabel.text = cafe.cafeAddressDetail
+            cafeCell.options.append(cafe.cafeConceptName)
+            cafeCell.options.append(cafe.cafeMainMenuName)
             cell = cafeCell
         }
         return cell

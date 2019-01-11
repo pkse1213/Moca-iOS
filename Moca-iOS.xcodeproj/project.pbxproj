@@ -97,6 +97,7 @@
 		CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */; };
 		CB2993F821E8DC71009772E3 /* CommunityEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2993F721E8DC71009772E3 /* CommunityEmptyCell.swift */; };
 		CB2993FA21E90A8A009772E3 /* CommunityCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2993F921E90A8A009772E3 /* CommunityCommentService.swift */; };
+		CB2993FC21E93C80009772E3 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2993FB21E93C80009772E3 /* Splash.storyboard */; };
 		CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */; };
 		CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */; };
 		CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */; };
@@ -330,6 +331,7 @@
 		CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageCell.swift; sourceTree = "<group>"; };
 		CB2993F721E8DC71009772E3 /* CommunityEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityEmptyCell.swift; sourceTree = "<group>"; };
 		CB2993F921E90A8A009772E3 /* CommunityCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCommentService.swift; sourceTree = "<group>"; };
+		CB2993FB21E93C80009772E3 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksData.swift; sourceTree = "<group>"; };
 		CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeService.swift; sourceTree = "<group>"; };
 		CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksDetailData.swift; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
 				7729030021D533F800C19416 /* Search.storyboard */,
 				7723437D21DEB57000E5E070 /* LoginSignUp.storyboard */,
+				CB2993FB21E93C80009772E3 /* Splash.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1297,6 +1300,7 @@
 				7729030121D533F800C19416 /* Search.storyboard in Resources */,
 				7780ED5921D4F25200CC2BA7 /* MocaPlus.storyboard in Resources */,
 				CBF2FC3021D4B5EC00DFC50A /* NanumGothicExtraBold.otf in Resources */,
+				CB2993FC21E93C80009772E3 /* Splash.storyboard in Resources */,
 				CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */,
 				CB08315921D0E4B0000F5D67 /* Main.storyboard in Resources */,
 				CB24777121DB8D94003F6569 /* LocationTab.storyboard in Resources */,
@@ -1718,7 +1722,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZSYSQK89LC;
+				DEVELOPMENT_TEAM = N6JH7RBUA4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1743,7 +1747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZSYSQK89LC;
+				DEVELOPMENT_TEAM = N6JH7RBUA4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -11,12 +11,18 @@ import UIKit
 class TutorialVC: UIViewController {
 
     
+    @IBOutlet var startButton: UIButton!
     @IBOutlet var tutorialImageView: UIImageView!
     var selectedIndex = 1 {
         didSet { setUpImage() }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startButton.applyRadius(radius: 15)
+        startButton.isHidden = true
+//        startButton.applyBorder(width: 0.7, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
         registerGesture()
     }
     
@@ -50,6 +56,11 @@ class TutorialVC: UIViewController {
             }
         default:
             break
+        }
+        if selectedIndex == 4 {
+            startButton.isHidden = false
+        } else {
+            startButton.isHidden = true
         }
     }
 }

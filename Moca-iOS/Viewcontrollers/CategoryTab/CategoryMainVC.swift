@@ -16,6 +16,12 @@ class CategoryMainVC: UIViewController {
         setUpTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     private func setUpTableView() {
         categoryTableView.delegate = self
         categoryTableView.dataSource = self

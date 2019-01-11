@@ -9,7 +9,7 @@
 import UIKit
 
 class CommunityContentVC: UIViewController {
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
     var review: CommunityReview? {
         didSet {
             setUpReviewData()
@@ -133,6 +133,13 @@ class CommunityContentVC: UIViewController {
     }
     
     @IBAction func senderMessageAction(_ sender: UIButton) {
+        guard let review = review else { return }
+        CommunityCommentService.shareInstance.postWriteComment(reviewId: review.reviewID, token: token, content: messageTextView.text, completion: { (message) in
+            self.initCommentData()
+            self.messageTextView.text = ""
+        }) { (err) in
+            print("댓글 달기 실패\(err)")
+        }
         messageTextView.resignFirstResponder()
     }
     private func registerGesture() {
@@ -282,6 +289,8 @@ extension CommunityContentVC: UITextViewDelegate {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
             self.textFieldViewBottomConstraint.constant = keyboardHeight - 34
+            self.reviewContentViewTopConstraint.constant = 0
+            
         }
     }
     

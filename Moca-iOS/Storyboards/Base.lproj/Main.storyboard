@@ -163,6 +163,10 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample1" translatesAutoresizingMaskIntoConstraints="NO" id="ILV-Vo-rEv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                     </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZg-Hb-iP0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.208257299270073" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#감성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-8p-8Ln">
                                                                         <rect key="frame" x="22.666666666666671" y="32" width="35" height="16.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="14"/>
@@ -172,14 +176,19 @@
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
+                                                                <constraint firstItem="IZg-Hb-iP0" firstAttribute="top" secondItem="HDr-ZE-ZmM" secondAttribute="top" id="4Lb-ua-oUo"/>
+                                                                <constraint firstItem="IZg-Hb-iP0" firstAttribute="leading" secondItem="HDr-ZE-ZmM" secondAttribute="leading" id="BeT-Qw-OOy"/>
+                                                                <constraint firstAttribute="bottom" secondItem="IZg-Hb-iP0" secondAttribute="bottom" id="dep-IT-K5n"/>
                                                                 <constraint firstItem="ILV-Vo-rEv" firstAttribute="top" secondItem="HDr-ZE-ZmM" secondAttribute="top" id="e6E-Sp-y9R"/>
                                                                 <constraint firstItem="tiQ-8p-8Ln" firstAttribute="centerY" secondItem="HDr-ZE-ZmM" secondAttribute="centerY" id="fIJ-8r-ZAG"/>
                                                                 <constraint firstAttribute="bottom" secondItem="ILV-Vo-rEv" secondAttribute="bottom" id="kmy-4m-glT"/>
                                                                 <constraint firstItem="ILV-Vo-rEv" firstAttribute="leading" secondItem="HDr-ZE-ZmM" secondAttribute="leading" id="mHs-YZ-LdS"/>
+                                                                <constraint firstAttribute="trailing" secondItem="IZg-Hb-iP0" secondAttribute="trailing" id="ne0-ak-3KM"/>
                                                                 <constraint firstItem="tiQ-8p-8Ln" firstAttribute="centerX" secondItem="HDr-ZE-ZmM" secondAttribute="centerX" id="t0K-iR-AZj"/>
                                                                 <constraint firstAttribute="trailing" secondItem="ILV-Vo-rEv" secondAttribute="trailing" id="uE0-dT-Oxi"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="boolerImageView" destination="IZg-Hb-iP0" id="fO7-Yx-R6Y"/>
                                                                 <outlet property="hotPlaceImageView" destination="ILV-Vo-rEv" id="6VF-wb-Cnr"/>
                                                                 <outlet property="hotPlaceNameLabel" destination="tiQ-8p-8Ln" id="RC3-w1-Ade"/>
                                                             </connections>
@@ -1671,8 +1680,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 피드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbP-UV-6J5">
-                                                    <rect key="frame" x="27.000000000000004" y="18.333333333333332" width="34.333333333333343" height="13"/>
-                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                    <rect key="frame" x="27.000000000000004" y="17.666666666666668" width="40.333333333333343" height="14.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
                                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1712,11 +1721,6 @@
                             <constraint firstItem="ZNp-9i-tiW" firstAttribute="bottom" secondItem="Bmd-i8-ydi" secondAttribute="bottom" id="uU1-jx-IdG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZNp-9i-tiW"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Bmd-i8-ydi"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="HBe-po-uXl">
                         <barButtonItem key="rightBarButtonItem" image="commonSearch" id="PZb-tY-IeP">

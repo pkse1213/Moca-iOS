@@ -53,12 +53,13 @@ class LocationMainVC: UIViewController{
     
     private func initData() {
         guard let location = myLocation else { return }
-        let loc = Location.init(longitute: 126.9036, latitude: 37.55048)
-        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 0, token: token, cafeId: 1, latitude: loc.latitude , longitude: loc.longitute, completion: { (res) in
+        print(location.latitude)
+        print(location.longitute)
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 0, token: token, cafeId: 1, latitude: location.latitude , longitude: location.longitute, completion: { (res) in
             self.nearByCafes = res
             print("주변 카페 성공")
         }) { (err) in
-            print("\(err)dfd")
+            self.nearByCafes = []
             print("주변 카페 실패")
         }
     }
@@ -91,7 +92,7 @@ class LocationMainVC: UIViewController{
         
         if let address = noti.object as? Address{
             if let lat = Double(address.y) , let long = Double(address.x) {
-                let location = Location(longitute: lat, latitude: long)
+                let location = Location(longitute: long, latitude: lat)
                 myLocation = location
                 updateSelectedAddress(latitude: lat, longitude: long)
             }
@@ -161,11 +162,8 @@ extension LocationMainVC: CLLocationManagerDelegate {
                 }
             }
         }
-//        updateCurrentLocation(latitude: lat, longitude: long)
-        let loc = Location.init(longitute: 126.9036, latitude: 37.55048)
-        
-        updateCurrentLocation(latitude: loc.latitude, longitude: loc.longitute)
-    }
+        updateCurrentLocation(latitude: lat, longitude: long)
+   }
     
 }
 
@@ -252,33 +250,36 @@ extension LocationMainVC: MTMapViewDelegate {
         let mapPointGeo = MTMapPointGeo(latitude: latitude, longitude: longitude)
         let mapPoint = MTMapPoint(geoCoord: mapPointGeo)
         circle.circleCenterPoint = mapPoint
-        circle.circleRadius = 1000
+        circle.circleRadius = 2000
         mapView.addCircle(circle)
-        self.mapView.setMapCenter(mapPoint, zoomLevel: 3, animated: true)
+        self.mapView.setMapCenter(mapPoint, zoomLevel: 4, animated: true)
     }
     
     // 주변 카페들 마커 추가
     func addMarkerInMap() {
         guard let nearByCafes = nearByCafes else { return }
-        selectedByMarker = false
-        for i in 0...nearByCafes.count-1 {
-            let cafe = nearByCafes[i]
-            let item = MTMapPOIItem()
-            item.tag = i
-            item.markerType = .customImage
-            item.customImage = #imageLiteral(resourceName: "locationPoint")
-            item.markerSelectedType = .customImage
-            item.customSelectedImage = #imageLiteral(resourceName: "locationPointBig")
-            item.mapPoint = MTMapPoint(geoCoord: .init(latitude: cafe.cafeLatitude, longitude: cafe.cafeLongitude))
-            item.showAnimationType = .springFromGround
-            item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
-            self.mapView.addPOIItems([item])
+        if nearByCafes.count != 0 {
+            selectedByMarker = false
+            for i in 0...nearByCafes.count-1 {
+                let cafe = nearByCafes[i]
+                let item = MTMapPOIItem()
+                item.tag = i
+                item.markerType = .customImage
+                item.customImage = #imageLiteral(resourceName: "locationPoint")
+                item.markerSelectedType = .customImage
+                item.customSelectedImage = #imageLiteral(resourceName: "locationPointBig")
+                item.mapPoint = MTMapPoint(geoCoord: .init(latitude: cafe.cafeLatitude, longitude: cafe.cafeLongitude))
+                item.showAnimationType = .springFromGround
+                item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
+                self.mapView.addPOIItems([item])
+            }
+            let item = self.mapView.findPOIItem(byTag: 0)
+            self.mapView.setMapCenter(item?.mapPoint, animated: true)
+            self.mapView.setZoomLevel(2, animated: true)
+            self.mapView.select(item, animated: true)
+            self.mapView.fitAreaToShowAllPOIItems()
         }
-        let item = self.mapView.findPOIItem(byTag: selectedIndex)
-        self.mapView.setMapCenter(item?.mapPoint, animated: true)
-        self.mapView.setZoomLevel(2, animated: true)
-        self.mapView.select(item, animated: true)
-        self.mapView.fitAreaToShowAllPOIItems()
+        
         
     }
 }

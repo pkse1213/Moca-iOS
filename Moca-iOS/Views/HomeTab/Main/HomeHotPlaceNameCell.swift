@@ -10,6 +10,7 @@ import UIKit
 
 class HomeHotPlaceNameCell: UICollectionViewCell {
     
+    @IBOutlet weak var boolerImageView: UIImageView!
     @IBOutlet weak var hotPlaceImageView: UIImageView!
     @IBOutlet weak var hotPlaceNameLabel: UILabel!
     var hotPlaceName: HotPlaceName? {
@@ -22,12 +23,13 @@ class HomeHotPlaceNameCell: UICollectionViewCell {
     }
     
     private func setupView() {
+        boolerImageView.applyRadius(radius: 40)
         hotPlaceImageView.applyRadius(radius: 40)
     }
     
     private func setUpData() {
         guard let hotPlaceName = hotPlaceName else { return }
-        hotPlaceNameLabel.text = hotPlaceName.hotPlaceName
+        hotPlaceNameLabel.text = "#" + hotPlaceName.hotPlaceName
         hotPlaceImageView.imageFromUrl(hotPlaceName.hotPlaceImg, defaultImgPath: "")
     }
 }
