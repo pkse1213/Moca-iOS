@@ -12,9 +12,17 @@ class CommunityReviewWrittingVC: UIViewController {
 
     @IBOutlet weak var writtingTableView: UITableView!
     
+    var getCafeName = "default"
+    var getCafeLocation = "default"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("getCafeName = \(getCafeName) || getCafeLocation = \(getCafeLocation)")
         setUpView()
     }
     
@@ -22,6 +30,7 @@ class CommunityReviewWrittingVC: UIViewController {
         writtingTableView.delegate = self
         writtingTableView.dataSource = self
     }
+    
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -36,6 +45,10 @@ extension CommunityReviewWrittingVC: UITableViewDataSource, UITableViewDelegate 
         var cell = UITableViewCell()
         if let writtingCell = writtingTableView.dequeueReusableCell(withIdentifier: "ReviewWrittingCell") as? ReviewWrittingCell {
             writtingCell.parentVC = self
+            
+            writtingCell.cafeNameText.text = getCafeName
+            writtingCell.cafeLocationText.text = getCafeLocation
+            
             cell = writtingCell
         }
         return cell

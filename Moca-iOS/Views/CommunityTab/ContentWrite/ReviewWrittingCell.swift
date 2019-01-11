@@ -12,8 +12,13 @@ class ReviewWrittingCell: UITableViewCell {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
     var parentVC = UIViewController()
+    @IBOutlet var cafeNameText: UITextField!
+    @IBOutlet var cafeLocationText: UITextField!
     
     @IBOutlet var completeBtn: UIButton!
+    @IBOutlet var explainText: UITextField!
+    @IBOutlet var reviewContentsText: UITextView!
+    
     
     
     var reviewImageArr: [UIImage] = []
@@ -22,8 +27,11 @@ class ReviewWrittingCell: UITableViewCell {
         super.awakeFromNib()
         setUpCollectionView()
         
+        cafeLocationText.isEnabled = true
+        
         reviewImageArr = [UIImage]()
         setUpButton()
+        registerGesture()
     }
     
     // 버튼 radius
@@ -57,6 +65,20 @@ class ReviewWrittingCell: UITableViewCell {
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         parentVC.present(actionSheet, animated: true)
+    }
+    
+    private func registerGesture() {
+        let inputGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(inputCafeNameAction(_:)))
+        cafeNameText.addGestureRecognizer(inputGestureRecognizer)
+    }
+    
+    @objc func inputCafeNameAction(_: UITextField) {
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "WriteReviewSearchVC") as? WriteReviewSearchVC {
+            
+            vc.parentVC = parentVC
+            
+            parentVC.present(vc, animated: true)
+        }
     }
 }
 

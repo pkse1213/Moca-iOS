@@ -13,6 +13,10 @@ class LikeCafeCell: UITableViewCell {
     @IBOutlet weak var cafeImageCollectionView: UICollectionView!
     var navigationbarController: UINavigationController?
     
+    var scrapCafeList : [ScrapCafeData]? {
+        didSet { cafeImageCollectionView.reloadData() }
+    }
+    
     // 추가
 //    var unit: CGFloat = 0.0
     // 추가
@@ -52,7 +56,8 @@ extension LikeCafeCell : UICollectionViewDelegateFlowLayout, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        guard let scrapCafeList = scrapCafeList else { return 1 }
+        return scrapCafeList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,6 +65,13 @@ extension LikeCafeCell : UICollectionViewDelegateFlowLayout, UICollectionViewDat
         
         if indexPath.row < 4 {
             cell.numberVerticalStack.isHidden = true
+        }
+        else {
+            guard let scrapCafeList = scrapCafeList else { cell.numberLabel.text = "1"
+                
+                return cell
+            }
+            cell.numberLabel.text = String(scrapCafeList.count - 5)
         }
         
         return cell
