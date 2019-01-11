@@ -15,13 +15,11 @@ struct MocaPicksDetailData: Codable {
 }
 
 struct MocaPicksDetail: Codable {
-    let cafeID: Int
-    let cafeName, evaluatedCafeTotalEvaluation: String
-    let evaluatedCafeRating: Int
+    let cafeName, cafeAddressDetail, evaluatedCafeTotalEvaluation, evaluatedCafeRating: String
     
     enum CodingKeys: String, CodingKey {
-        case cafeID = "cafe_id"
         case cafeName = "cafe_name"
+        case cafeAddressDetail = "cafe_address_detail"
         case evaluatedCafeTotalEvaluation = "evaluated_cafe_total_evaluation"
         case evaluatedCafeRating = "evaluated_cafe_rating"
     }

@@ -155,6 +155,12 @@
 		CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */; };
 		CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */; };
 		CB6F130821E523570051126C /* CommunityFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6F130721E523570051126C /* CommunityFollowService.swift */; };
+		CB79865A21E80C1700C5AEE6 /* MocaPicksImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79865921E80C1700C5AEE6 /* MocaPicksImageData.swift */; };
+		CB79865E21E80CD100C5AEE6 /* MocaPicksImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79865D21E80CD100C5AEE6 /* MocaPicksImageService.swift */; };
+		CB79866021E80D1200C5AEE6 /* MocaPicksEvaluateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79865F21E80D1200C5AEE6 /* MocaPicksEvaluateData.swift */; };
+		CB79866221E80D4100C5AEE6 /* MocaPicksEvaluateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79866121E80D4100C5AEE6 /* MocaPicksEvaluateService.swift */; };
+		CB79866421E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79866321E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift */; };
+		CB79866621E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79866521E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift */; };
 		CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */; };
 		CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */; };
 		CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */; };
@@ -365,6 +371,12 @@
 		CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCell.swift; sourceTree = "<group>"; };
 		CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySelectFeedCell.swift; sourceTree = "<group>"; };
 		CB6F130721E523570051126C /* CommunityFollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowService.swift; sourceTree = "<group>"; };
+		CB79865921E80C1700C5AEE6 /* MocaPicksImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageData.swift; sourceTree = "<group>"; };
+		CB79865D21E80CD100C5AEE6 /* MocaPicksImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageService.swift; sourceTree = "<group>"; };
+		CB79865F21E80D1200C5AEE6 /* MocaPicksEvaluateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateData.swift; sourceTree = "<group>"; };
+		CB79866121E80D4100C5AEE6 /* MocaPicksEvaluateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateService.swift; sourceTree = "<group>"; };
+		CB79866321E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateDetailData.swift; sourceTree = "<group>"; };
+		CB79866521E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateDetailService.swift; sourceTree = "<group>"; };
 		CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListVC.swift; sourceTree = "<group>"; };
 		CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeCell.swift; sourceTree = "<group>"; };
@@ -692,6 +704,9 @@
 			children = (
 				CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */,
 				CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */,
+				CB79865D21E80CD100C5AEE6 /* MocaPicksImageService.swift */,
+				CB79866121E80D4100C5AEE6 /* MocaPicksEvaluateService.swift */,
+				CB79866521E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift */,
 			);
 			path = MocaPicks;
 			sourceTree = "<group>";
@@ -709,6 +724,9 @@
 			children = (
 				CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */,
 				CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */,
+				CB79865921E80C1700C5AEE6 /* MocaPicksImageData.swift */,
+				CB79865F21E80D1200C5AEE6 /* MocaPicksEvaluateData.swift */,
+				CB79866321E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift */,
 			);
 			path = MocaPicks;
 			sourceTree = "<group>";
@@ -1315,6 +1333,7 @@
 				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
 				CB2E781F21E6030000619139 /* HomeMocaPlusCell.swift in Sources */,
 				CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */,
+				CB79865A21E80C1700C5AEE6 /* MocaPicksImageData.swift in Sources */,
 				CB0AAD7C21D8B22B0007E174 /* LocationMapCafeCell.swift in Sources */,
 				7723437521DE8F6200E5E070 /* CommunitySearchVC.swift in Sources */,
 				CB2E783C21E6A11900619139 /* UILabel+LineSpacing.swift in Sources */,
@@ -1394,6 +1413,7 @@
 				CB32A08F21D259B8004796F7 /* HomeHotPlaceNameCell.swift in Sources */,
 				77FA141021E1404D006C8E20 /* HotPlaceCafeCell.swift in Sources */,
 				7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */,
+				CB79866421E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift in Sources */,
 				CB2E783F21E6AD2E00619139 /* BestCafeData.swift in Sources */,
 				CBF1ACED21E750E9008B34D1 /* CommunitySearchResultData.swift in Sources */,
 				CB2E784121E6AD9E00619139 /* RecommendHotPlaceData.swift in Sources */,
@@ -1411,6 +1431,7 @@
 				CB2E782421E6061000619139 /* MocaPlusSubjectData.swift in Sources */,
 				774B596D21DB837900B10989 /* ProfileModifyVC.swift in Sources */,
 				7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */,
+				CB79865E21E80CD100C5AEE6 /* MocaPicksImageService.swift in Sources */,
 				CB2E783A21E689F500619139 /* MocaPlusContentService.swift in Sources */,
 				CBF1ACEF21E75CA6008B34D1 /* CommunitySearchResultService.swift in Sources */,
 				77CD53E921E1DF3A007C56A2 /* PopularReviewCell.swift in Sources */,
@@ -1448,6 +1469,7 @@
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
 				CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */,
+				CB79866221E80D4100C5AEE6 /* MocaPicksEvaluateService.swift in Sources */,
 				CBD4C7D221E23F6B008BE065 /* NearByCafeService.swift in Sources */,
 				CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */,
 				CB2DE22521E4B1C7009C2683 /* CommunityReviewLikeService.swift in Sources */,
@@ -1455,6 +1477,7 @@
 				CB2E782921E637CA00619139 /* KakaoAddressService.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
+				CB79866621E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift in Sources */,
 				CB2E784621E6AE6C00619139 /* BestReviewService.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeHotPlaceCell.swift in Sources */,
 				CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */,
@@ -1464,6 +1487,7 @@
 				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
 				7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */,
 				CB2D78F721DD0CF00033C2A0 /* UIViewController+extesion.swift in Sources */,
+				CB79866021E80D1200C5AEE6 /* MocaPicksEvaluateData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,6 +52,7 @@ class HomeSearchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -157,13 +158,12 @@ class HomeSearchVC: UIViewController {
         }
         initSearchData()
     }
- 
-    
 }
 
 extension HomeSearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let searchResults = searchResults else { return 0 }
+        
         return searchResults.count
     }
     
@@ -225,6 +225,12 @@ extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
             guard let bestCafe = bestCafes?[indexPath.item] else { return }
             if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
                 vc.cafeId = bestCafe.cafeID
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        } else if collectionView == recommendCollectionView {
+            guard let hotPlace = hotPlaces?[indexPath.item] else { return }
+            if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
+                vc.placeId = hotPlace.hotPlaceID
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

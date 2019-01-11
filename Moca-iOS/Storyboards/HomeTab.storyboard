@@ -354,27 +354,32 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="commonScrapWhiteLine" translatesAutoresizingMaskIntoConstraints="NO" id="ESV-2v-1yv">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFQ-N6-Hv3">
                                                     <rect key="frame" x="299" y="7" width="36" height="36"/>
-                                                </imageView>
+                                                    <state key="normal" image="commonScrapWhiteLine"/>
+                                                    <connections>
+                                                        <action selector="scrapAction:" destination="Eoh-Py-Ock" eventType="touchUpInside" id="PJh-NY-YMK"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="tY0-Hd-MGi" secondAttribute="trailing" id="2Z9-wT-nfZ"/>
+                                                <constraint firstItem="nFQ-N6-Hv3" firstAttribute="trailing" secondItem="tY0-Hd-MGi" secondAttribute="trailing" constant="-14" id="G5l-wW-CIs"/>
                                                 <constraint firstAttribute="bottom" secondItem="YCU-It-SKX" secondAttribute="bottom" constant="19" id="HOj-yi-PV0"/>
                                                 <constraint firstItem="YCU-It-SKX" firstAttribute="top" secondItem="tY0-Hd-MGi" secondAttribute="bottom" constant="10" id="J93-I2-Dfw"/>
                                                 <constraint firstItem="biD-lx-WnA" firstAttribute="centerY" secondItem="YCU-It-SKX" secondAttribute="centerY" id="RiZ-Sr-ccB"/>
-                                                <constraint firstItem="ESV-2v-1yv" firstAttribute="trailing" secondItem="tY0-Hd-MGi" secondAttribute="trailing" constant="-14" id="SyB-Gh-vgz"/>
                                                 <constraint firstItem="tY0-Hd-MGi" firstAttribute="top" secondItem="lfr-Xy-T8D" secondAttribute="top" id="YA7-y3-fKW"/>
                                                 <constraint firstItem="tY0-Hd-MGi" firstAttribute="leading" secondItem="lfr-Xy-T8D" secondAttribute="leading" id="bmb-bL-qc1"/>
-                                                <constraint firstItem="ESV-2v-1yv" firstAttribute="top" secondItem="tY0-Hd-MGi" secondAttribute="top" constant="7" id="byL-Ra-KHV"/>
                                                 <constraint firstAttribute="trailing" secondItem="biD-lx-WnA" secondAttribute="trailing" constant="21" id="kv7-YF-b79"/>
                                                 <constraint firstItem="YCU-It-SKX" firstAttribute="leading" secondItem="lfr-Xy-T8D" secondAttribute="leading" constant="12" id="oLR-Oi-P0m"/>
+                                                <constraint firstItem="nFQ-N6-Hv3" firstAttribute="top" secondItem="tY0-Hd-MGi" secondAttribute="top" constant="7" id="ua8-XS-cyI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="1De-6c-msB" id="4vB-Bg-Ybf"/>
                                             <outlet property="cafeImageView" destination="tY0-Hd-MGi" id="2Re-eY-Tns"/>
                                             <outlet property="nameLabel" destination="lys-1v-BiI" id="AEU-dQ-VK8"/>
+                                            <outlet property="scrapButton" destination="nFQ-N6-Hv3" id="10n-88-h3D"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -406,7 +411,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TNF-3g-bZl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TNF-3g-bZl">
                                 <rect key="frame" x="0.0" y="44" width="375" height="735"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="17" minY="0.0" maxX="17" maxY="0.0"/>
@@ -467,11 +472,11 @@
                                                         <constraint firstAttribute="height" constant="20" id="nV8-VR-EkS"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AzR-aS-Pmw">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AzR-aS-Pmw">
                                                     <rect key="frame" x="25.999999999999993" y="15" width="90.333333333333314" height="32.666666666666664"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGk-mT-a87">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="15.333333333333334"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="24.666666666666668" height="15.333333333333334"/>
                                                             <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -499,6 +504,9 @@
                                                         <constraint firstAttribute="width" constant="36" id="mau-qw-atn"/>
                                                     </constraints>
                                                     <state key="normal" image="commonScrapGrayLine"/>
+                                                    <connections>
+                                                        <action selector="scrapAction:" destination="Yeg-Eg-mYN" eventType="touchUpInside" id="FMV-NX-38J"/>
+                                                    </connections>
                                                 </button>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="wNr-id-m7H">
                                                     <rect key="frame" x="40" y="259.66666666666669" width="295" height="2"/>
@@ -526,7 +534,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cafeAddressLabel" destination="Xi0-ib-HHe" id="iXA-Jt-Gi7"/>
                                             <outlet property="cafeImageCollectionView" destination="wAi-A8-ZY3" id="b4n-Yg-G9u"/>
+                                            <outlet property="cafeNameLabel" destination="BGk-mT-a87" id="Zul-Tb-5ut"/>
+                                            <outlet property="scrapButton" destination="UxO-Rg-HVE" id="e6p-16-Y9V"/>
                                             <outlet property="scrollProgressView" destination="wNr-id-m7H" id="2Hn-NY-dac"/>
                                             <outlet property="squareView" destination="OxY-9Z-ptL" id="nrW-b2-Ys8"/>
                                         </connections>
@@ -590,10 +601,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="FcJ-mN-vfe">
-                                                    <rect key="frame" x="87.000000000000014" y="19.333333333333332" width="168.33333333333337" height="35.333333333333343"/>
+                                                    <rect key="frame" x="87" y="19.333333333333332" width="120" height="35.333333333333343"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-2h-7hH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="88.666666666666671" height="15"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-2h-7hH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="15"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안재혁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNq-9s-xPH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="15"/>
@@ -602,30 +613,19 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바리스타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kq-j0-mtD">
-                                                                    <rect key="frame" x="39.666666666666671" y="0.0" width="49" height="15"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="13"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mmg-5t-xsR">
-                                                            <rect key="frame" x="0.0" y="22.000000000000004" width="168.33333333333334" height="13.333333333333332"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Latte Art Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-UB-3Z1">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="13.333333333333334"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심사위원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXH-mK-m52">
-                                                                    <rect key="frame" x="122.99999999999999" y="0.0" width="45.333333333333329" height="13.333333333333334"/>
+                                                                    <rect key="frame" x="39.666666666666671" y="1.6666666666666687" width="45.333333333333329" height="13.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Latte Art Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-UB-3Z1">
+                                                            <rect key="frame" x="0.0" y="22.000000000000004" width="120" height="13.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF5-Lp-KxE">
@@ -648,6 +648,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="baristaImageView" destination="nsL-z7-sBP" id="5L5-go-S6x"/>
+                                            <outlet property="baristaInfoLabel" destination="4Ea-UB-3Z1" id="fsT-2B-o88"/>
+                                            <outlet property="baristaNameLabel" destination="JNq-9s-xPH" id="9sh-34-WMk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MocaPicksEvaluationCell" rowHeight="219" id="P11-fB-Fq7" customClass="MocaPicksEvaluationCell" customModule="Moca_iOS" customModuleProvider="target">
@@ -722,7 +724,7 @@
                                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="M3U-VJ-Yqs">
                                                                                     <rect key="frame" x="36" y="0.0" width="11" height="11.666666666666666"/>
                                                                                 </imageView>
-                                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarGray" translatesAutoresizingMaskIntoConstraints="NO" id="RBL-G8-5LT">
+                                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="RBL-G8-5LT">
                                                                                     <rect key="frame" x="48" y="0.0" width="11" height="11.666666666666666"/>
                                                                                 </imageView>
                                                                             </subviews>
@@ -779,7 +781,7 @@
                                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-EV-s27">
                                                                                     <rect key="frame" x="24" y="0.0" width="11" height="11"/>
                                                                                 </imageView>
-                                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarYellow" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-Xt-bSH">
+                                                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarGray" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-Xt-bSH">
                                                                                     <rect key="frame" x="36" y="0.0" width="11" height="11"/>
                                                                                 </imageView>
                                                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="communityStarGray" translatesAutoresizingMaskIntoConstraints="NO" id="rSP-QW-9IW">
@@ -897,24 +899,24 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="23" minY="0.0" maxX="23" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MocaPicksBaristaDetailCell" rowHeight="718" id="2jr-by-fYf" customClass="MocaPicksBaristaDetailCell" customModule="Moca_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="718"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MocaPicksBaristaDetailCell" rowHeight="770" id="2jr-by-fYf" customClass="MocaPicksBaristaDetailCell" customModule="Moca_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="770"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2jr-by-fYf" id="ouk-iv-vDe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="718"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="770"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모카 검증위원 평가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uC-Wu-iu8">
-                                                    <rect key="frame" x="27" y="29" width="112" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="27" y="29" width="129.33333333333334" height="18.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRj-Yo-29m">
-                                                    <rect key="frame" x="27" y="56" width="358" height="93"/>
+                                                    <rect key="frame" x="27" y="56.666666666666657" width="358" height="93"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ajJ-aM-TYe">
-                                                            <rect key="frame" x="18" y="22.666666666666671" width="48" height="48"/>
+                                                            <rect key="frame" x="18" y="22.666666666666664" width="48" height="47.999999999999993"/>
                                                             <color key="backgroundColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="66V-Y4-1WF"/>
@@ -922,36 +924,36 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-td-osp">
-                                                            <rect key="frame" x="79.000000000000014" y="28.666666666666671" width="155.33333333333337" height="36"/>
+                                                            <rect key="frame" x="79.000000000000014" y="29.000000000000004" width="161.33333333333337" height="35.333333333333343"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="JH4-ti-dg7">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="82" height="15.666666666666666"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="15"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안재혁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OE9-Ap-Uiw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="15.666666666666666"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="15"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바리스타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y49-Er-93N">
-                                                                            <rect key="frame" x="37" y="0.0" width="45" height="15.666666666666666"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <rect key="frame" x="39.666666666666657" y="0.0" width="45.333333333333343" height="15"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-TX-xqR">
-                                                                    <rect key="frame" x="0.0" y="22.666666666666657" width="155.33333333333334" height="13.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="161.33333333333334" height="13.333333333333336"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Latte Art Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-9g-MID">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="13.333333333333334"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="13.333333333333334"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심사위원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghx-zU-e8C">
-                                                                            <rect key="frame" x="116.99999999999999" y="0.0" width="38.333333333333329" height="13.333333333333334"/>
+                                                                            <rect key="frame" x="122.99999999999999" y="0.0" width="38.333333333333329" height="13.333333333333334"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -961,8 +963,8 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i40-qO-Q2l">
-                                                            <rect key="frame" x="295.66666666666669" y="38.666666666666671" width="19.333333333333314" height="15.666666666666664"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <rect key="frame" x="290.66666666666669" y="37.333333333333336" width="24.333333333333314" height="18.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="16"/>
                                                             <color key="textColor" red="0.88235294119999996" green="0.69803921570000005" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -978,26 +980,26 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-i3-wXw">
-                                                    <rect key="frame" x="27" y="184" width="322" height="319"/>
+                                                    <rect key="frame" x="27" y="184.66666666666663" width="322" height="385"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가 항목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLj-jA-JaB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="56" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="17.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="vn0-fh-J7p">
-                                                            <rect key="frame" x="0.0" y="32" width="320.33333333333331" height="287"/>
+                                                            <rect key="frame" x="0.0" y="31.333333333333343" width="320.33333333333331" height="353.66666666666663"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="W54-SC-Nmn">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="54"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="67.333333333333329"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ysO-S9-H3u">
                                                                             <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="15.666666666666666"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="원두 품질 및 상태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewc-O3-ieE">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="15.666666666666666"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1027,22 +1029,22 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비되고댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비로 쭉 늘어나면 되고" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvk-iA-DGA">
-                                                                            <rect key="frame" x="0.0" y="27.666666666666657" width="320.33333333333331" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <rect key="frame" x="0.0" y="27.666666666666654" width="320.33333333333331" height="39.666666666666657"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-69-14o">
-                                                                    <rect key="frame" x="0.0" y="68" width="320.33333333333331" height="41"/>
+                                                                    <rect key="frame" x="0.0" y="81.333333333333314" width="320.33333333333331" height="54.333333333333343"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UM-Md-EmF">
                                                                             <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="15.666666666666666"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="로스팅 실력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8X-We-maZ">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="15.666666666666666"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1072,22 +1074,22 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비로 쭉 늘어나면 되고" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctY-Bg-KU2">
-                                                                            <rect key="frame" x="0.0" y="27.666666666666682" width="320.33333333333331" height="13.333333333333332"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <rect key="frame" x="0.0" y="27.666666666666686" width="320.33333333333331" height="26.666666666666671"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UCA-e0-Rio">
-                                                                    <rect key="frame" x="0.0" y="123" width="320.33333333333331" height="54"/>
+                                                                    <rect key="frame" x="0.0" y="149.66666666666669" width="320.33333333333331" height="67.333333333333314"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3O2-ZX-T8S">
                                                                             <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="15.666666666666666"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="창의성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0U-tK-qT4">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="15.666666666666666"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1117,22 +1119,22 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비되고댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비로 쭉 늘어나면 되고" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-jp-ExQ">
-                                                                            <rect key="frame" x="0.0" y="27.666666666666686" width="320.33333333333331" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <rect key="frame" x="0.0" y="27.666666666666625" width="320.33333333333331" height="39.666666666666657"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CED-Vc-S7B">
-                                                                    <rect key="frame" x="0.0" y="191" width="320.33333333333331" height="41"/>
+                                                                    <rect key="frame" x="0.0" y="231.00000000000003" width="320.33333333333331" height="54.333333333333343"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-jH-B4w">
                                                                             <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="15.666666666666666"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="가격에 합당한 가치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XD-yb-U10">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="15.666666666666666"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1162,22 +1164,22 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비로 쭉 늘어나면 되고" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KT-Wu-vyz">
-                                                                            <rect key="frame" x="0.0" y="27.666666666666682" width="320.33333333333331" height="13.333333333333332"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <rect key="frame" x="0.0" y="27.666666666666686" width="320.33333333333331" height="26.666666666666671"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qkQ-fg-vGS">
-                                                                    <rect key="frame" x="0.0" y="246" width="320.33333333333331" height="41"/>
+                                                                    <rect key="frame" x="0.0" y="299.33333333333337" width="320.33333333333331" height="54.333333333333314"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6b6-WZ-bqm">
                                                                             <rect key="frame" x="0.0" y="0.0" width="320.33333333333331" height="15.666666666666666"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="맛 유지력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brm-XV-G36">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="261.33333333333331" height="15.666666666666666"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="14"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -1207,8 +1209,8 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="댓글은 여기까지 이렇게 쓸 수 있고 길어지면 같은 너비로 쭉 늘어나면 되고" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQF-01-Mn1">
-                                                                            <rect key="frame" x="0.0" y="27.666666666666682" width="320.33333333333331" height="13.333333333333332"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                            <rect key="frame" x="0.0" y="27.666666666666629" width="320.33333333333331" height="26.666666666666671"/>
+                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1219,30 +1221,30 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbz-FB-ga9">
-                                                    <rect key="frame" x="23" y="527" width="329" height="1"/>
+                                                    <rect key="frame" x="23" y="593.66666666666663" width="329" height="1"/>
                                                     <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="TxN-qe-NJX"/>
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="3rF-Yp-wwK">
-                                                    <rect key="frame" x="27" y="563" width="322" height="124.33333333333337"/>
+                                                    <rect key="frame" x="27" y="629.66666666666663" width="322" height="109.66666666666663"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가 항목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se1-kw-4CQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="56" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총평" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se1-kw-4CQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="28.333333333333332" height="17.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63Y-iX-uuy">
-                                                            <rect key="frame" x="0.0" y="30.999999999999993" width="288" height="93.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="30.333333333333364" width="287.66666666666669" height="79.333333333333314"/>
                                                             <string key="text">북한강을 바라보다 어느새 시간이 훌쩍, 
 복잡하고 어지럽게 움직이는 서울에서 도망치듯 빠져나와
 따듯한 커피 한 잔 그리고 담백하고 촉촉한 베이커리까지
 즐기며 한 껏 여유를 찾을 수 있던 이 곳. 
 웅장해 보이던 외관 안에는 오히려, 아늑하고 섬세한 
 손길이 가득했다. </string>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1255,7 +1257,7 @@
                                                 <constraint firstItem="3rF-Yp-wwK" firstAttribute="leading" secondItem="bgF-i3-wXw" secondAttribute="leading" id="185-rx-IAu"/>
                                                 <constraint firstItem="6uC-Wu-iu8" firstAttribute="leading" secondItem="ouk-iv-vDe" secondAttribute="leading" constant="27" id="K9D-l8-BCx"/>
                                                 <constraint firstItem="TRj-Yo-29m" firstAttribute="top" secondItem="6uC-Wu-iu8" secondAttribute="bottom" constant="9" id="PcM-rF-1bx"/>
-                                                <constraint firstAttribute="bottom" secondItem="3rF-Yp-wwK" secondAttribute="bottom" constant="30.670000000000002" id="VM4-C0-gV0"/>
+                                                <constraint firstAttribute="bottom" secondItem="3rF-Yp-wwK" secondAttribute="bottom" constant="30.670000000000002" id="Qaw-zK-xJT"/>
                                                 <constraint firstAttribute="trailing" secondItem="bgF-i3-wXw" secondAttribute="trailing" constant="26" id="ZZi-UI-oTo"/>
                                                 <constraint firstItem="bgF-i3-wXw" firstAttribute="top" secondItem="TRj-Yo-29m" secondAttribute="bottom" constant="35" id="hlW-EF-oes"/>
                                                 <constraint firstAttribute="trailing" secondItem="xbz-FB-ga9" secondAttribute="trailing" constant="23" id="j5F-18-qIb"/>
@@ -1295,7 +1297,7 @@
             </objects>
             <point key="canvasLocation" x="3997.5999999999999" y="750.73891625615772"/>
         </scene>
-        <!--망원동-->
+        <!--Hot PlaceVC-->
         <scene sceneID="AEi-zY-aEO">
             <objects>
                 <viewController storyboardIdentifier="HotPlaceVC" id="Ybv-hJ-gkD" customClass="HotPlaceVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -1438,7 +1440,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="va4-pM-rfJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="망원동" id="os9-EY-RjR"/>
+                    <navigationItem key="navigationItem" id="os9-EY-RjR"/>
                     <connections>
                         <outlet property="hotPlaceTableView" destination="8JI-B6-mIj" id="hfb-8J-qEp"/>
                     </connections>

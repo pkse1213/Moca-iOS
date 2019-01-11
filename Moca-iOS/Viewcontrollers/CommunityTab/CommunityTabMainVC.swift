@@ -10,8 +10,6 @@ import UIKit
 
 class CommunityTabMainVC: UIViewController {
     var first = true
-    @IBOutlet var searchBarButtonItem: UIBarButtonItem!
-    
     // 피드 종류 선택
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectFeedView: UIView!
@@ -40,7 +38,7 @@ class CommunityTabMainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setUpNavgationItem()
+        setUpNavgationItem()
         setUpView()
         initUserData()
         initReviewData()
@@ -54,7 +52,6 @@ class CommunityTabMainVC: UIViewController {
             initUserData()
             initReviewData()
         }
-        
         self.navigationController?.isNavigationBarHidden = false
         self.tabBarController?.tabBar.isHidden = false
     }
@@ -166,9 +163,8 @@ class CommunityTabMainVC: UIViewController {
         navigationItem.titleView = navView
         
         navView.sizeToFit()
-        
-//        let menuTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuAction(_:)))
-//        navigationController?.view.addGestureRecognizer(menuTapGestureRecognizer)
+        let menuTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuAction(_:)))
+        navigationController?.navigationBar.addGestureRecognizer(menuTapGestureRecognizer)
         
     }
     

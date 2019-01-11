@@ -14,17 +14,23 @@ class MocaPicksListVC: UIViewController {
     var mocaPicksCafes: [MocaPicks]? {
         didSet { mocaPicksTableView.reloadData() }
     }
-    
+    var first = true
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         initData()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.isNavigationBarHidden = false
+        if !first {
+            first = false
+        } else {
+            initData()
+        }
     }
     
     private func initData() {
@@ -60,7 +66,9 @@ extension MocaPicksListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "MocaPicksCafeVC") as? MocaPicksCafeVC {
-             self.navigationController?.pushViewController(vc, animated: true)
+            guard let mocaPicks = mocaPicksCafes?[indexPath.row] else { return }
+            vc.cafeInfo = mocaPicks
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

@@ -61,5 +61,11 @@ extension HotPlaceVC : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let place = hotPlaces?[indexPath.row] else { return }
+        if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
+            vc.cafeId = place.cafeID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

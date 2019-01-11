@@ -11,7 +11,7 @@ import UIKit
 class MocaPicksBaristaDetailVC: UIViewController {
 
     @IBOutlet weak var baristaDetailTableView: UITableView!
-    
+    var baristaId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()

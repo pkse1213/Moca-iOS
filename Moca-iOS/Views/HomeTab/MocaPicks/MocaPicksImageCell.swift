@@ -9,28 +9,70 @@
 import UIKit
 
 class MocaPicksImageCell: UITableViewCell {
-    var progressUnit: Float = 0
+    
+    @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var cafeImageCollectionView: UICollectionView!
     @IBOutlet weak var scrollProgressView: UIProgressView!
     @IBOutlet weak var squareView: UIView!
+    @IBOutlet weak var scrapButton: UIButton!
     
-    let colors = [#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1),#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1),#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1),#colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1),#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)]
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var progressUnit: Float = 0
+    var cafeId = 0
+    var isScrap = true
+    var cafeImages: [MocaPicksImage]? {
+        didSet { cafeImageCollectionView.reloadData() }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpListView()
+        
+        
+        switch isScrap {
+        case true:
+            self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapFilled"), for: .normal)
+        case false:
+            self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrap"), for: .normal)
+        default:
+            break
+        }
     }
 
     private func setUpListView() {
-        progressUnit = Float(1)/Float(colors.count)
-        scrollProgressView.progress = progressUnit
-        
         cafeImageCollectionView.delegate = self
         cafeImageCollectionView.dataSource = self
         cafeImageCollectionView.isPagingEnabled = true
         squareView.applyRadius(radius: 10)
     }
     
+    private func setUpProgress() {
+        guard let cafeImages = cafeImages else { return }
+        progressUnit = Float(1)/Float(cafeImages.count)
+        scrollProgressView.progress = progressUnit
+    }
+    
+    @IBAction func scrapAction(_ sender: UIButton) {
+        switch isScrap {
+        case true:
+            CafeScrapService.shareInstance.deleteCafeScrap(cafeId: cafeId, token: token, completion: { (message) in
+                self.scrapButton.setImage(#imageLiteral(resourceName: "detailviewScrap"), for: .normal)
+                self.isScrap = !self.isScrap
+            }) { (err) in
+                print("언팔로우 실패 \(err)")
+            }
+        case false:
+            CafeScrapService.shareInstance.postCafeScrap(cafeId: cafeId, token: token, completion: { (message) in
+                self.isScrap = !self.isScrap
+                self.scrapButton.setImage(#imageLiteral(resourceName: "commonScrapFilled"), for: .normal)
+            }) { (err) in
+                print("팔로우 실패 \(err)")
+            }
+        default:
+            break
+        }
+    }
 }
 
 extension MocaPicksImageCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
@@ -40,8 +82,8 @@ extension MocaPicksImageCell: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return colors.count
+        guard let cafeImages = cafeImages else { return 0 }
+        return cafeImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,16 +92,15 @@ extension MocaPicksImageCell: UICollectionViewDelegate, UICollectionViewDataSour
             imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
             cell = imageCell
         }
-        
         return cell
     }
-    
 }
 
 extension MocaPicksImageCell: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let cafeImages = cafeImages else { return }
         if scrollView is UICollectionView {
-            scrollProgressView.progress = Float(scrollView.contentOffset.x+scrollView.frame.width) / Float(scrollView.frame.width*CGFloat(colors.count))
+            scrollProgressView.progress = Float(scrollView.contentOffset.x+scrollView.frame.width) / Float(scrollView.frame.width*CGFloat(cafeImages.count))
         }
     }
 }
