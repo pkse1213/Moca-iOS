@@ -671,7 +671,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t69-i9-XEh">
                                                             <rect key="frame" x="0.0" y="38.333333333333321" width="324" height="123.66666666666669"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-ZT-zoL">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-ZT-zoL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="265" height="123.66666666666667"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원두 품질 및 상태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgK-8N-LWD">
@@ -706,7 +706,7 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-NC-QnF">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-NC-QnF">
                                                                     <rect key="frame" x="265" y="0.0" width="59" height="123.66666666666667"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ij2-xE-5mu">
@@ -810,6 +810,9 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="59" id="5jy-Yo-b5d"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
@@ -924,7 +927,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-td-osp">
-                                                            <rect key="frame" x="79.000000000000014" y="29.000000000000004" width="161.33333333333337" height="35.333333333333343"/>
+                                                            <rect key="frame" x="79" y="29.000000000000004" width="120" height="35.333333333333343"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="JH4-ti-dg7">
                                                                     <rect key="frame" x="0.0" y="0.0" width="85" height="15"/>
@@ -943,23 +946,12 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-TX-xqR">
-                                                                    <rect key="frame" x="0.0" y="22" width="161.33333333333334" height="13.333333333333336"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Latte Art Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-9g-MID">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="13.333333333333334"/>
-                                                                            <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심사위원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghx-zU-e8C">
-                                                                            <rect key="frame" x="122.99999999999999" y="0.0" width="38.333333333333329" height="13.333333333333334"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Latte Art Battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWX-9g-MID">
+                                                                    <rect key="frame" x="0.0" y="22" width="120" height="13.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i40-qO-Q2l">
@@ -1255,6 +1247,7 @@
                                                 <constraint firstItem="bgF-i3-wXw" firstAttribute="leading" secondItem="TRj-Yo-29m" secondAttribute="leading" id="0Vb-Bg-9rC"/>
                                                 <constraint firstItem="3rF-Yp-wwK" firstAttribute="top" secondItem="xbz-FB-ga9" secondAttribute="bottom" constant="35" id="0jw-oA-jwj"/>
                                                 <constraint firstItem="3rF-Yp-wwK" firstAttribute="leading" secondItem="bgF-i3-wXw" secondAttribute="leading" id="185-rx-IAu"/>
+                                                <constraint firstAttribute="trailing" secondItem="W54-SC-Nmn" secondAttribute="trailing" constant="27.666666666666686" id="D4G-FP-I9Y"/>
                                                 <constraint firstItem="6uC-Wu-iu8" firstAttribute="leading" secondItem="ouk-iv-vDe" secondAttribute="leading" constant="27" id="K9D-l8-BCx"/>
                                                 <constraint firstItem="TRj-Yo-29m" firstAttribute="top" secondItem="6uC-Wu-iu8" secondAttribute="bottom" constant="9" id="PcM-rF-1bx"/>
                                                 <constraint firstAttribute="bottom" secondItem="3rF-Yp-wwK" secondAttribute="bottom" constant="30.670000000000002" id="Qaw-zK-xJT"/>
@@ -1271,10 +1264,16 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="baristaNameLabel" destination="OE9-Ap-Uiw" id="TiI-Kj-0wf"/>
+                                            <outlet property="coffebeanLabel" destination="xvk-iA-DGA" id="Fqg-LE-HCN"/>
                                             <outlet property="evaluationNameLabel" destination="vWX-9g-MID" id="c12-2u-mdH"/>
                                             <outlet property="evaluationScoreLabel" destination="i40-qO-Q2l" id="Kub-y9-Rtl"/>
+                                            <outlet property="newLabel" destination="Epl-jp-ExQ" id="LLD-WB-cEK"/>
+                                            <outlet property="priceLabel" destination="6KT-Wu-vyz" id="Hif-j5-iFe"/>
                                             <outlet property="profileBackgroundView" destination="TRj-Yo-29m" id="AuM-uk-PSi"/>
                                             <outlet property="profileImageView" destination="ajJ-aM-TYe" id="KpW-ej-8Fh"/>
+                                            <outlet property="roastingLabel" destination="ctY-Bg-KU2" id="2Eg-KL-1yp"/>
+                                            <outlet property="tasteLabel" destination="oQF-01-Mn1" id="5ki-We-n18"/>
+                                            <outlet property="totalLabel" destination="63Y-iX-uuy" id="WR6-Ko-qT5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

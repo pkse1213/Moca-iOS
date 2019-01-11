@@ -17,10 +17,17 @@ class HotPlaceCafeCell: UITableViewCell {
     @IBOutlet var conceptStar4: UIImageView!
     @IBOutlet var conceptStar5: UIImageView!
     @IBOutlet var imageCollectionView: UICollectionView!
-    
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     var cafe: HotPlaceCafe? {
-        didSet { setUpData() }
+        didSet {
+            setUpData()
+            initImageData()
+        }
     }
+    var images: [CafeDetailImage]? {
+        didSet { imageCollectionView.reloadData() }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCollectionView()
@@ -28,7 +35,16 @@ class HotPlaceCafeCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+    }
+    
+    private func initImageData() {
+        guard let cafe = cafe else { return }
+        CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafe.cafeID, token: token, completion: { (res) in
+            self.images = res
+        }) { (err) in
+            self.images = []
+            print("핫플레이스 카페 이미지 실패 \(err)")
+        }
     }
     
     private func setUpData() {
@@ -46,7 +62,8 @@ class HotPlaceCafeCell: UITableViewCell {
 
 extension HotPlaceCafeCell : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let images = images else { return 0 }
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

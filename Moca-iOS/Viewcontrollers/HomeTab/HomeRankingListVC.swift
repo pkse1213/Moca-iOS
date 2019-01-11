@@ -64,14 +64,16 @@ extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSourc
         if let cafeCell = rankingCollectionView.dequeueReusableCell(withReuseIdentifier: "RankingCafeCell", for: indexPath) as? RankingCafeCell {
             cafeCell.rankNumLabel.text = "\(indexPath.row+1)"
             cafeCell.cafe = cafe
+            
             cell = cafeCell
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cafe = cafes?[indexPath.row] else { return }
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
-            
+            vc.cafeId = cafe.cafeID
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

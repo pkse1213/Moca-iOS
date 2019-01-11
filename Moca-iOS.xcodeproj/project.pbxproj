@@ -79,6 +79,7 @@
 		CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA221D3FDAA00636DFE /* MocaPicksListVC.swift */; };
 		CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB25ACA521D3FE4200636DFE /* MocaPicksListCell.swift */; };
 		CB28595F21E10A9000E691A9 /* MocaPicksImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */; };
+		CB2993F621E8AD44009772E3 /* UIImageVIew+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2993F521E8AD44009772E3 /* UIImageVIew+imageFromUrl.swift */; };
 		CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */; };
 		CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */; };
 		CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */; };
@@ -294,6 +295,7 @@
 		CB28595921E0FE3600E691A9 /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunitySearchPeopleTableViewCell.swift; path = "/Downloads/아카이브/CommunitySearchPeopleTableViewCell.swift"; sourceTree = "<absolute>"; };
 		CB28595A21E0FE3600E691A9 /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopularReviewCollectionViewCell.swift; path = "/Downloads/아카이브/PopularReviewCollectionViewCell.swift"; sourceTree = "<absolute>"; };
 		CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageCell.swift; sourceTree = "<group>"; };
+		CB2993F521E8AD44009772E3 /* UIImageVIew+imageFromUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageVIew+imageFromUrl.swift"; sourceTree = "<group>"; };
 		CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksData.swift; sourceTree = "<group>"; };
 		CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeService.swift; sourceTree = "<group>"; };
 		CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksDetailData.swift; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 				774B597221DBCF5A00B10989 /* UITextField+Extension.swift */,
 				CBD4C7EA21E3CFA4008BE065 /* Location.swift */,
 				CB2E783B21E6A11900619139 /* UILabel+LineSpacing.swift */,
+				CB2993F521E8AD44009772E3 /* UIImageVIew+imageFromUrl.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1439,6 +1442,7 @@
 				CB2E8F0021DC04930087EFE2 /* SignatureMenuCell.swift in Sources */,
 				CBF1ACF321E77DC0008B34D1 /* CommunitySearchRecentReviewCell.swift in Sources */,
 				CB2A5F3021E5E2900001E4DA /* RankingCafeService.swift in Sources */,
+				CB2993F621E8AD44009772E3 /* UIImageVIew+imageFromUrl.swift in Sources */,
 				CB2CA70F21E0AFAC004DA344 /* SelectedOptionCell.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				CB2E782F21E637D700619139 /* HTTPStatusCode.swift in Sources */,

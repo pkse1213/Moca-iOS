@@ -94,6 +94,7 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 2 {
             if let baristaCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksBaristaCell") as? MocaPicksBaristaCell {
+                baristaCell.cafeId = cafeInfo.cafeID
                 baristaCell.barista = cafeEvaluate[indexPath.row]
                 baristaCell.delegate = self
                 cell = baristaCell

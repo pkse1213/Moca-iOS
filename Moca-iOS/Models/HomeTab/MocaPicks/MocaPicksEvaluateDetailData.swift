@@ -15,7 +15,6 @@ struct MocaPicksEvaluateDetailData: Codable {
 }
 
 struct MocaPicksEvaluateDetail: Codable {
-    let baristaID: Int
     let baristaName, baristaTitle: String
     let baristaImgURL: String
     let evaluationBeanCondition: Int
@@ -30,7 +29,6 @@ struct MocaPicksEvaluateDetail: Codable {
     let evaluationConsistancyComment, evaluationSummary: String
     
     enum CodingKeys: String, CodingKey {
-        case baristaID = "barista_id"
         case baristaName = "barista_name"
         case baristaTitle = "barista_title"
         case baristaImgURL = "barista_img_url"

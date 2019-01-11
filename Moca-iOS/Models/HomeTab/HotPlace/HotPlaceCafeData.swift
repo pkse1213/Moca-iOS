@@ -18,7 +18,6 @@ struct HotPlaceCafe: Codable {
     let cafeID: Int
     let cafeName, cafeSubway: String
     let cafeRatingAvg: Int
-    let cafeImgURL: String?
     let evaluatedCafeIs: Bool
     
     enum CodingKeys: String, CodingKey {
@@ -26,7 +25,6 @@ struct HotPlaceCafe: Codable {
         case cafeName = "cafe_name"
         case cafeSubway = "cafe_subway"
         case cafeRatingAvg = "cafe_rating_avg"
-        case cafeImgURL = "cafe_img_url"
         case evaluatedCafeIs = "evaluated_cafe_is"
     }
 }

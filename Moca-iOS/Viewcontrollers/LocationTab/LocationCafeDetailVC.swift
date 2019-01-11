@@ -17,7 +17,10 @@ class LocationCafeDetailVC: UIViewController {
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
     
     var cafeInfo: CafeDetailInfo? {
-        didSet { setScrapButtonImage() }
+        didSet {
+            initNearbyCafe()
+            setScrapButtonImage()
+        }
     }
     var cafeImages: [CafeDetailImage]? {
         didSet { cafeDetailTableView.reloadData() }
@@ -58,21 +61,30 @@ class LocationCafeDetailVC: UIViewController {
         CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeImages = res
         }) { (err) in
+             self.cafeImages = []
             print("카페 디테일 imgae 실패 \(err)")
         }
         CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeSignitures = res
         }) { (err) in
+            self.cafeSignitures = []
             print("카페 디테일 signiture 실패 \(err)")
         }
-        CafeDetailReviewService.shareInstance.getCafeDetailReview(cafeId: 1, token: token, completion: { (res) in
+        CafeDetailReviewService.shareInstance.getCafeDetailReview(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeReviews = res
         }) { (err) in
+            self.cafeReviews = []
             print("카페 디테일 review 실패 \(err)")
         }
-        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, token: token, cafeId: cafeId, latitude: 37.55048, longitude: 126.9036, completion: { (res) in
+        
+    }
+    
+    private func initNearbyCafe() {
+        guard let cafeInfo = cafeInfo else { return }
+        NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, token: token, cafeId: cafeId, latitude: cafeInfo.cafeLatitude, longitude: cafeInfo.cafeLongitude, completion: { (res) in
             self.nearByCafes = res
         }) { (err) in
+            self.nearByCafes = []
             print("주변 카페 실패 \(err)")
         }
     }

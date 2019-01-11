@@ -56,8 +56,9 @@ extension HomeRankingCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cafe = rankingCafes?[indexPath.row] else { return }
         if let vc = UIStoryboard(name: "LocationTab", bundle: nil).instantiateViewController(withIdentifier: "LocationCafeDetailVC") as? LocationCafeDetailVC {
-            
+            vc.cafeId = cafe.cafeID
             delegate?.goToViewController(vc: vc)
         }
     }
