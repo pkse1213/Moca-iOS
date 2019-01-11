@@ -9,10 +9,13 @@
 import UIKit
 
 class RecommendCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet var recommendCafeImage: UIImageView!
     @IBOutlet var recommendCafeLocation: UILabel!
     @IBOutlet var locationView: UIView!
+    
+    var recommendHotPlace: RecommendHotPlace? {
+        didSet { initData() }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,5 +34,9 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         locationView.clipsToBounds = true
     }
     
+    private func initData() {
+        guard let recommendHotPlace = recommendHotPlace else { return }
+        recommendCafeLocation.text = "#" + recommendHotPlace.hotPlaceName
+    }
     
 }

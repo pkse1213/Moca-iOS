@@ -14,6 +14,9 @@ class HomeSearchResultCell: UITableViewCell {
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeLocationLabel: UILabel!
     
+    var searchResult: HomeSearchResult? {
+        didSet { initData() }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -22,6 +25,12 @@ class HomeSearchResultCell: UITableViewCell {
         resultImageView.clipsToBounds = true
     }
 
+    private func initData() {
+        guard let searchResult = searchResult else { return }
+        cafeNameLabel.text = searchResult.cafeName
+        cafeLocationLabel.text = searchResult.cafeAddressDetail
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

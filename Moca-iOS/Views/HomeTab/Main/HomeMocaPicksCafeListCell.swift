@@ -9,6 +9,9 @@
 import UIKit
 
 class HomeMocaPicksCafeListCell: UICollectionViewCell {
+    var cafe: MocaPicks? {
+        didSet { setUpData() }
+    }
     @IBOutlet weak var cafeImageView: UIImageView!
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
@@ -20,5 +23,11 @@ class HomeMocaPicksCafeListCell: UICollectionViewCell {
     
     private func setUpView() {
         self.cafeImageView.applyShadow(radius: 5, color: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), offset: CGSize(width: 3, height: 3), opacity: 0.2)
+    }
+    
+    private func setUpData() {
+        guard let cafe = cafe else { return }
+        cafeNameLabel.text = cafe.cafeName
+        cafeAddressLabel.text = "서울 \(cafe.addressDistrictName)"
     }
 }

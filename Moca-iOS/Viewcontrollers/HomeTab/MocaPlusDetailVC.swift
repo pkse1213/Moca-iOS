@@ -9,48 +9,75 @@
 import UIKit
 
 class MocaPlusDetailVC: UIViewController {
-    
     @IBOutlet weak var mocaPlusDetailTableView: UITableView!
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var mocaPlusSubject: MocaPlusSubject?
+    var mocaPlusContent: [MocaPlusContent]? {
+        didSet { mocaPlusDetailTableView.reloadData() }
+    }
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUpTableView()
+        initData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     private func setUpTableView() {
         mocaPlusDetailTableView.dataSource = self
         mocaPlusDetailTableView.delegate = self
     }
+    
+    private func initData() {
+        guard let mocaPlusSubject = mocaPlusSubject else { return }
+        MocaPlusContentService.shareInstance.getMocaPlusContents(plusId: mocaPlusSubject.plusSubjectID, token: token, completion: { (res) in
+            self.mocaPlusContent = res
+        }) { (err) in
+            print("mocaPlusContent 실패 \(err)")
+        }
+    }
 }
 
 extension MocaPlusDetailVC : UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let mocaPlusContent = mocaPlusContent, let _ = mocaPlusSubject else { return 0 }
+        if section == 0 {
+            return 1
+        } else {
+            return mocaPlusContent.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MocaPlusDetailTopicCell", for: indexPath) as! MocaPlusDetailTopicCell
-            
+        var cell = UITableViewCell()
+        guard let mocaPlusContent = mocaPlusContent?[indexPath.row], let _ = mocaPlusSubject else { return cell }
+        
+        switch indexPath.section {
+        case 0:
+            if let topicCell = tableView.dequeueReusableCell(withIdentifier: "MocaPlusDetailTopicCell", for: indexPath) as? MocaPlusDetailTopicCell {
+                topicCell.mocaPlusSubject = mocaPlusSubject
+                cell = topicCell
+            }
+        case 1:
+            if let contentCell = tableView.dequeueReusableCell(withIdentifier: "MocaPlusContentCell", for: indexPath) as? MocaPlusContentCell {
+                contentCell.mocaPlusContent = mocaPlusContent
+               
+                cell = contentCell
+            }
+        default:
             return cell
         }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MocaPlusCafeCell", for: indexPath) as! MocaPlusCafeCell
-            
-            cell.cafeContentsLabel.text = "북한강을 바라보다 어느새 시간이 훌쩍, 복잡하고 어지럽게 움직이는 서울에서 도망치듯 빠져나와 따듯한 커피 한 잔 그리고 담백하고 촉촉한 베이커리까지 즐기며 한 껏 여유를 찾을 수 있던 이 곳. 웅장해 보이던 외관 안에는 오히려, 아늑하고 섬세한 손길이 가득했다. "
-            
-            // label 간격 조정
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 5
-            let attrString = NSMutableAttributedString(string: cell.cafeContentsLabel?.text ?? "")
-            attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
-            cell.cafeContentsLabel.attributedText = attrString
-            
-            return cell
-        }
+        return cell
+        
     }
     
 }

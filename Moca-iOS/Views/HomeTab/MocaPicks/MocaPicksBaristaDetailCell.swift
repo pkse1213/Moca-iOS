@@ -14,6 +14,12 @@ class MocaPicksBaristaDetailCell: UITableViewCell {
     @IBOutlet weak var baristaNameLabel: UILabel!
     @IBOutlet weak var evaluationNameLabel: UILabel!
     @IBOutlet weak var evaluationScoreLabel: UILabel!
+    @IBOutlet weak var coffebeanLabel: UILabel!
+    @IBOutlet weak var roastingLabel: UILabel!
+    @IBOutlet weak var newLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var tasteLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

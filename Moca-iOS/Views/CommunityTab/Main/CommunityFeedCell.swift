@@ -34,6 +34,7 @@ class CommunityFeedCell: UITableViewCell {
         super.awakeFromNib()
         setUpCollectionView()
         setUpView()
+        registerGesture()
     }
     
     private func setUpData() {
@@ -91,9 +92,9 @@ class CommunityFeedCell: UITableViewCell {
     }
     
     @IBAction func goToCommentAction(_ sender: UIButton) {
-        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityContentVC") as? CommunityContentVC {
-            vc.review = review
-            vc.images = images
+        guard let review = review else { return }
+        if let vc = UIStoryboard(name: "CommunityTab", bundle: nil).instantiateViewController(withIdentifier: "CommunityUserFeedVC") as? CommunityUserFeedVC {
+            vc.userId = review.userID
             delegate?.goToViewController(vc: vc)
         }
     }
@@ -108,6 +109,17 @@ class CommunityFeedCell: UITableViewCell {
             vc.images = images
             delegate?.goToViewController(vc: vc)
         }
+    }
+    
+    @objc func goToUserFeedAction(_: UIImageView) {
+        if let vc = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "HomeSearchVC") as? HomeSearchVC {
+            delegate?.goToViewController(vc: vc)
+        }
+    }
+    
+    private func registerGesture() {
+        let searchTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToUserFeedAction(_:)))
+        profileImageView.addGestureRecognizer(searchTapGestureRecognizer)
     }
 }
 

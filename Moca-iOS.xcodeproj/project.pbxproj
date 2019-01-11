@@ -18,7 +18,7 @@
 		7723437E21DEB57000E5E070 /* LoginSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7723437D21DEB57000E5E070 /* LoginSignUp.storyboard */; };
 		7723438121DEB68600E5E070 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723438021DEB68600E5E070 /* LoginVC.swift */; };
 		7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723438221DEBD9400E5E070 /* SignupVC.swift */; };
-		7729030121D533F800C19416 /* HomeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7729030021D533F800C19416 /* HomeSearch.storyboard */; };
+		7729030121D533F800C19416 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7729030021D533F800C19416 /* Search.storyboard */; };
 		772A953121D78D0C009114FC /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A953021D78D0C009114FC /* MyPageVC.swift */; };
 		772A953421D793A9009114FC /* MyPageInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A953321D793A9009114FC /* MyPageInfoCell.swift */; };
 		772A953621D79517009114FC /* MyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A953521D79517009114FC /* MyPageCell.swift */; };
@@ -61,9 +61,9 @@
 		77B2901121E366AF00E8677F /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2901021E366AF00E8677F /* AccountData.swift */; };
 		77B2901321E3A48600E8677F /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2901221E3A48600E8677F /* SignupService.swift */; };
 		77C669D321DFC09200763441 /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C669D221DFC09200763441 /* ReviewVC.swift */; };
-		77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift */; };
-		77CD53E921E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53E821E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift */; };
-		77CD53EB21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53EA21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift */; };
+		77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleCell.swift */; };
+		77CD53E921E1DF3A007C56A2 /* PopularReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53E821E1DF3A007C56A2 /* PopularReviewCell.swift */; };
+		77CD53EB21E1DF47007C56A2 /* RecentReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CD53EA21E1DF47007C56A2 /* RecentReviewCell.swift */; };
 		77EFC31921E48778006D78AB /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EFC31821E48778006D78AB /* SignupResponse.swift */; };
 		77F445F721DE412200734992 /* HotCafeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */; };
 		77FA13F921E10A7E006C8E20 /* SavingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA13F821E10A7E006C8E20 /* SavingHistoryVC.swift */; };
@@ -141,6 +141,19 @@
 		CB2E782F21E637D700619139 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782B21E637D700619139 /* HTTPStatusCode.swift */; };
 		CB2E783021E637D700619139 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782C21E637D700619139 /* RequestService.swift */; };
 		CB2E783121E637D700619139 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E782D21E637D700619139 /* APIService.swift */; };
+		CB2E783421E65C0500619139 /* HotPlaceCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783321E65C0500619139 /* HotPlaceCafeData.swift */; };
+		CB2E783621E65C5800619139 /* HotPlaceListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783521E65C5800619139 /* HotPlaceListService.swift */; };
+		CB2E783821E6899000619139 /* MocaPlusContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783721E6899000619139 /* MocaPlusContentData.swift */; };
+		CB2E783A21E689F500619139 /* MocaPlusContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783921E689F500619139 /* MocaPlusContentService.swift */; };
+		CB2E783C21E6A11900619139 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783B21E6A11900619139 /* UILabel+LineSpacing.swift */; };
+		CB2E783F21E6AD2E00619139 /* BestCafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E783E21E6AD2E00619139 /* BestCafeData.swift */; };
+		CB2E784121E6AD9E00619139 /* RecommendHotPlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784021E6AD9E00619139 /* RecommendHotPlaceData.swift */; };
+		CB2E784421E6ADCB00619139 /* CommandHotPlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784321E6ADCB00619139 /* CommandHotPlaceService.swift */; };
+		CB2E784621E6AE6C00619139 /* BestReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784521E6AE6C00619139 /* BestReviewService.swift */; };
+		CB2E784821E6CCD600619139 /* HomeSearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */; };
+		CB2E784A21E6CCF800619139 /* HomeSearchResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */; };
+		CB2E784C21E6DDE400619139 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2E784B21E6DDE400619139 /* Tutorial.storyboard */; };
+		CB2E784F21E6DE3800619139 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E784E21E6DE3800619139 /* TutorialVC.swift */; };
 		CB2E8EFA21DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */; };
 		CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */; };
 		CB2E8EFE21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */; };
@@ -158,6 +171,12 @@
 		CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */; };
 		CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */; };
 		CB6F130821E523570051126C /* CommunityFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6F130721E523570051126C /* CommunityFollowService.swift */; };
+		CB79865A21E80C1700C5AEE6 /* MocaPicksImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79865921E80C1700C5AEE6 /* MocaPicksImageData.swift */; };
+		CB79865E21E80CD100C5AEE6 /* MocaPicksImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79865D21E80CD100C5AEE6 /* MocaPicksImageService.swift */; };
+		CB79866021E80D1200C5AEE6 /* MocaPicksEvaluateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79865F21E80D1200C5AEE6 /* MocaPicksEvaluateData.swift */; };
+		CB79866221E80D4100C5AEE6 /* MocaPicksEvaluateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79866121E80D4100C5AEE6 /* MocaPicksEvaluateService.swift */; };
+		CB79866421E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79866321E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift */; };
+		CB79866621E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79866521E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift */; };
 		CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */; };
 		CB8DDB6D21D335A8001D8191 /* HomeRankingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */; };
 		CB8DDB7021D33797001D8191 /* RankingCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */; };
@@ -193,6 +212,12 @@
 		CBD4C7F521E4032A008BE065 /* CommunityReviewCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */; };
 		CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F621E41940008BE065 /* NearByCafeListVC.swift */; };
 		CBD4C7F921E41E22008BE065 /* NearByCafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4C7F821E41E22008BE065 /* NearByCafeCell.swift */; };
+		CBF1ACE821E74F29008B34D1 /* BestUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1ACE721E74F29008B34D1 /* BestUserData.swift */; };
+		CBF1ACEB21E74F5D008B34D1 /* BestUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1ACEA21E74F5D008B34D1 /* BestUserService.swift */; };
+		CBF1ACED21E750E9008B34D1 /* CommunitySearchResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1ACEC21E750E9008B34D1 /* CommunitySearchResultData.swift */; };
+		CBF1ACEF21E75CA6008B34D1 /* CommunitySearchResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1ACEE21E75CA6008B34D1 /* CommunitySearchResultService.swift */; };
+		CBF1ACF121E77DB2008B34D1 /* CommunitySearchPopularReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1ACF021E77DB2008B34D1 /* CommunitySearchPopularReviewCell.swift */; };
+		CBF1ACF321E77DC0008B34D1 /* CommunitySearchRecentReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1ACF221E77DC0008B34D1 /* CommunitySearchRecentReviewCell.swift */; };
 		CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */; };
 		CBF2FC2D21D4B5EC00DFC50A /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */; };
 		CBF2FC2E21D4B5EC00DFC50A /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */; };
@@ -218,7 +243,7 @@
 		7723437D21DEB57000E5E070 /* LoginSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginSignUp.storyboard; sourceTree = "<group>"; };
 		7723438021DEB68600E5E070 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7723438221DEBD9400E5E070 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
-		7729030021D533F800C19416 /* HomeSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeSearch.storyboard; sourceTree = "<group>"; };
+		7729030021D533F800C19416 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		772A953021D78D0C009114FC /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		772A953321D793A9009114FC /* MyPageInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInfoCell.swift; sourceTree = "<group>"; };
 		772A953521D79517009114FC /* MyPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCell.swift; sourceTree = "<group>"; };
@@ -261,9 +286,9 @@
 		77B2901021E366AF00E8677F /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
 		77B2901221E3A48600E8677F /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
 		77C669D221DFC09200763441 /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
-		77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchPeopleTableViewCell.swift; sourceTree = "<group>"; };
-		77CD53E821E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularReviewCollectionViewCell.swift; sourceTree = "<group>"; };
-		77CD53EA21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchPeopleCell.swift; sourceTree = "<group>"; };
+		77CD53E821E1DF3A007C56A2 /* PopularReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularReviewCell.swift; sourceTree = "<group>"; };
+		77CD53EA21E1DF47007C56A2 /* RecentReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentReviewCell.swift; sourceTree = "<group>"; };
 		77EFC31821E48778006D78AB /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
 		77F445F621DE412200734992 /* HotCafeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotCafeCollectionViewCell.swift; sourceTree = "<group>"; };
 		77FA13F821E10A7E006C8E20 /* SavingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHistoryVC.swift; sourceTree = "<group>"; };
@@ -348,6 +373,19 @@
 		CB2E782B21E637D700619139 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		CB2E782C21E637D700619139 /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		CB2E782D21E637D700619139 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CB2E783321E65C0500619139 /* HotPlaceCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceCafeData.swift; sourceTree = "<group>"; };
+		CB2E783521E65C5800619139 /* HotPlaceListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPlaceListService.swift; sourceTree = "<group>"; };
+		CB2E783721E6899000619139 /* MocaPlusContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPlusContentData.swift; sourceTree = "<group>"; };
+		CB2E783921E689F500619139 /* MocaPlusContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPlusContentService.swift; sourceTree = "<group>"; };
+		CB2E783B21E6A11900619139 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
+		CB2E783E21E6AD2E00619139 /* BestCafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestCafeData.swift; sourceTree = "<group>"; };
+		CB2E784021E6AD9E00619139 /* RecommendHotPlaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendHotPlaceData.swift; sourceTree = "<group>"; };
+		CB2E784321E6ADCB00619139 /* CommandHotPlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandHotPlaceService.swift; sourceTree = "<group>"; };
+		CB2E784521E6AE6C00619139 /* BestReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestReviewService.swift; sourceTree = "<group>"; };
+		CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultData.swift; sourceTree = "<group>"; };
+		CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultService.swift; sourceTree = "<group>"; };
+		CB2E784B21E6DDE400619139 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		CB2E784E21E6DE3800619139 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		CB2E8EF921DBF1E50087EFE2 /* CafeDetailReviewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewHeaderCell.swift; sourceTree = "<group>"; };
 		CB2E8EFB21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailReviewFooterCell.swift; sourceTree = "<group>"; };
 		CB2E8EFD21DBF2010087EFE2 /* CafeDetailNearCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeDetailNearCafeCell.swift; sourceTree = "<group>"; };
@@ -365,6 +403,12 @@
 		CB32A09A21D2A2E3004796F7 /* CommunityFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedCell.swift; sourceTree = "<group>"; };
 		CB5E379521D62F8600302D88 /* CommunitySelectFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySelectFeedCell.swift; sourceTree = "<group>"; };
 		CB6F130721E523570051126C /* CommunityFollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFollowService.swift; sourceTree = "<group>"; };
+		CB79865921E80C1700C5AEE6 /* MocaPicksImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageData.swift; sourceTree = "<group>"; };
+		CB79865D21E80CD100C5AEE6 /* MocaPicksImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksImageService.swift; sourceTree = "<group>"; };
+		CB79865F21E80D1200C5AEE6 /* MocaPicksEvaluateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateData.swift; sourceTree = "<group>"; };
+		CB79866121E80D4100C5AEE6 /* MocaPicksEvaluateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateService.swift; sourceTree = "<group>"; };
+		CB79866321E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateDetailData.swift; sourceTree = "<group>"; };
+		CB79866521E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksEvaluateDetailService.swift; sourceTree = "<group>"; };
 		CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
 		CB8DDB6C21D335A8001D8191 /* HomeRankingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingListVC.swift; sourceTree = "<group>"; };
 		CB8DDB6F21D33797001D8191 /* RankingCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCafeCell.swift; sourceTree = "<group>"; };
@@ -400,6 +444,12 @@
 		CBD4C7F421E4032A008BE065 /* CommunityReviewCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReviewCommentService.swift; sourceTree = "<group>"; };
 		CBD4C7F621E41940008BE065 /* NearByCafeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByCafeListVC.swift; sourceTree = "<group>"; };
 		CBD4C7F821E41E22008BE065 /* NearByCafeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByCafeCell.swift; sourceTree = "<group>"; };
+		CBF1ACE721E74F29008B34D1 /* BestUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestUserData.swift; sourceTree = "<group>"; };
+		CBF1ACEA21E74F5D008B34D1 /* BestUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestUserService.swift; sourceTree = "<group>"; };
+		CBF1ACEC21E750E9008B34D1 /* CommunitySearchResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchResultData.swift; sourceTree = "<group>"; };
+		CBF1ACEE21E75CA6008B34D1 /* CommunitySearchResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchResultService.swift; sourceTree = "<group>"; };
+		CBF1ACF021E77DB2008B34D1 /* CommunitySearchPopularReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchPopularReviewCell.swift; sourceTree = "<group>"; };
+		CBF1ACF221E77DC0008B34D1 /* CommunitySearchRecentReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitySearchRecentReviewCell.swift; sourceTree = "<group>"; };
 		CBF2FC2721D4008A00DFC50A /* MocaPicksCafeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeVC.swift; sourceTree = "<group>"; };
 		CBF2FC2921D4B5EC00DFC50A /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
 		CBF2FC2A21D4B5EC00DFC50A /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.ttf; sourceTree = "<group>"; };
@@ -453,9 +503,11 @@
 		771E4EBE21E1722D00FFC8CB /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift */,
-				77CD53E821E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift */,
-				77CD53EA21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift */,
+				77CD53E621E1DF29007C56A2 /* CommunitySearchPeopleCell.swift */,
+				CBF1ACF021E77DB2008B34D1 /* CommunitySearchPopularReviewCell.swift */,
+				CBF1ACF221E77DC0008B34D1 /* CommunitySearchRecentReviewCell.swift */,
+				77CD53E821E1DF3A007C56A2 /* PopularReviewCell.swift */,
+				77CD53EA21E1DF47007C56A2 /* RecentReviewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -590,6 +642,7 @@
 		CB08316521D0E4C5000F5D67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E784B21E6DDE400619139 /* Tutorial.storyboard */,
 				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 				CB08315721D0E4B0000F5D67 /* Main.storyboard */,
 				CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */,
@@ -598,7 +651,7 @@
 				CB8DDB7521D363C2001D8191 /* CommunityTab.storyboard */,
 				772A954121D7D4F2009114FC /* MyPageTab.storyboard */,
 				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
-				7729030021D533F800C19416 /* HomeSearch.storyboard */,
+				7729030021D533F800C19416 /* Search.storyboard */,
 				7723437D21DEB57000E5E070 /* LoginSignUp.storyboard */,
 			);
 			path = Storyboards;
@@ -607,6 +660,7 @@
 		CB08316621D0E4CE000F5D67 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E784D21E6DE1300619139 /* Splash+Tutorial */,
 				7723437F21DEB65300E5E070 /* LoginSignUp */,
 				CB32A08921D24CCA004796F7 /* HomeTab */,
 				CB2C591821DFC85100CDB39F /* CategoryTab */,
@@ -670,6 +724,7 @@
 		CB2A5F1F21E5DB0C0001E4DA /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E784221E6ADBB00619139 /* Search */,
 				CB2E782521E6066700619139 /* MocaPlus */,
 				CB2A5F3121E5E7FD0001E4DA /* HotPlace */,
 				CB2A5F2A21E5E24C0001E4DA /* Ranking */,
@@ -681,6 +736,7 @@
 		CB2A5F2021E5DB1E0001E4DA /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
+				CB2E783D21E6AD2200619139 /* Search */,
 				CB2E782221E6060500619139 /* MocaPlus */,
 				CB2A5F3221E5E8090001E4DA /* HotPlace */,
 				CB2A5F2C21E5E2600001E4DA /* Ranking */,
@@ -694,6 +750,9 @@
 			children = (
 				CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */,
 				CB2A5F2821E5DF440001E4DA /* MocaPicksDetailService.swift */,
+				CB79865D21E80CD100C5AEE6 /* MocaPicksImageService.swift */,
+				CB79866121E80D4100C5AEE6 /* MocaPicksEvaluateService.swift */,
+				CB79866521E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift */,
 			);
 			path = MocaPicks;
 			sourceTree = "<group>";
@@ -711,6 +770,9 @@
 			children = (
 				CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */,
 				CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */,
+				CB79865921E80C1700C5AEE6 /* MocaPicksImageData.swift */,
+				CB79865F21E80D1200C5AEE6 /* MocaPicksEvaluateData.swift */,
+				CB79866321E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift */,
 			);
 			path = MocaPicks;
 			sourceTree = "<group>";
@@ -727,6 +789,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2A5F3521E5E8840001E4DA /* HotPlaceNameService.swift */,
+				CB2E783521E65C5800619139 /* HotPlaceListService.swift */,
 			);
 			path = HotPlace;
 			sourceTree = "<group>";
@@ -735,6 +798,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2A5F3321E5E85A0001E4DA /* HotPlaceNameData.swift */,
+				CB2E783321E65C0500619139 /* HotPlaceCafeData.swift */,
 			);
 			path = HotPlace;
 			sourceTree = "<group>";
@@ -817,6 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2E782321E6061000619139 /* MocaPlusSubjectData.swift */,
+				CB2E783721E6899000619139 /* MocaPlusContentData.swift */,
 			);
 			path = MocaPlus;
 			sourceTree = "<group>";
@@ -825,6 +890,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2E782621E6067100619139 /* MocaPlusSubjectService.swift */,
+				CB2E783921E689F500619139 /* MocaPlusContentService.swift */,
 			);
 			path = MocaPlus;
 			sourceTree = "<group>";
@@ -840,6 +906,34 @@
 				7773214721E6B5B5006AD209 /* PostMyPageEditResponse.swift */,
 			);
 			path = MyPageTab;
+			sourceTree = "<group>";
+		};
+		CB2E783D21E6AD2200619139 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E783E21E6AD2E00619139 /* BestCafeData.swift */,
+				CB2E784021E6AD9E00619139 /* RecommendHotPlaceData.swift */,
+				CB2E784721E6CCD600619139 /* HomeSearchResultData.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CB2E784221E6ADBB00619139 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E784321E6ADCB00619139 /* CommandHotPlaceService.swift */,
+				CB2E784521E6AE6C00619139 /* BestReviewService.swift */,
+				CB2E784921E6CCF800619139 /* HomeSearchResultService.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CB2E784D21E6DE1300619139 /* Splash+Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CB2E784E21E6DE3800619139 /* TutorialVC.swift */,
+			);
+			path = "Splash+Tutorial";
 			sourceTree = "<group>";
 		};
 		CB32A07121D23D13004796F7 /* Fonts */ = {
@@ -863,6 +957,7 @@
 				776211A221D6AC1900F90D8A /* Unwind.swift */,
 				774B597221DBCF5A00B10989 /* UITextField+Extension.swift */,
 				CBD4C7EA21E3CFA4008BE065 /* Location.swift */,
+				CB2E783B21E6A11900619139 /* UILabel+LineSpacing.swift */,
 				7773213B21E67D87006AD209 /* UIImageView+Extension.swift */,
 			);
 			path = Utils;
@@ -1055,6 +1150,7 @@
 		CBD4C7DE21E354A0008BE065 /* CommunityTab */ = {
 			isa = PBXGroup;
 			children = (
+				CBF1ACE621E74F20008B34D1 /* Search */,
 				CBD4C7DF21E354C0008BE065 /* CommunityReviewData.swift */,
 				CB2DE22621E4F22B009C2683 /* CommunityReviewDetailData.swift */,
 				CBD4C7E621E3AF5E008BE065 /* CommunityUserData.swift */,
@@ -1087,6 +1183,7 @@
 		CBD4C7E321E35731008BE065 /* CommunityTab */ = {
 			isa = PBXGroup;
 			children = (
+				CBF1ACE921E74F4B008B34D1 /* Search */,
 				CBD4C7E421E35758008BE065 /* CommunityReviewService.swift */,
 				CB2DE22821E4F24E009C2683 /* CommunityReviewDetailService.swift */,
 				CBD4C7E821E3AF82008BE065 /* CommunityUserService.swift */,
@@ -1098,6 +1195,24 @@
 				771C043C21E7D3A6006D4E29 /* CommunityReviewWriteService.swift */,
 			);
 			path = CommunityTab;
+			sourceTree = "<group>";
+		};
+		CBF1ACE621E74F20008B34D1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1ACE721E74F29008B34D1 /* BestUserData.swift */,
+				CBF1ACEC21E750E9008B34D1 /* CommunitySearchResultData.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CBF1ACE921E74F4B008B34D1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1ACEA21E74F5D008B34D1 /* BestUserService.swift */,
+				CBF1ACEE21E75CA6008B34D1 /* CommunitySearchResultService.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		F22DC76F8604CE1CC745F438 /* Pods */ = {
@@ -1173,7 +1288,7 @@
 				CB08315E21D0E4B1000F5D67 /* LaunchScreen.storyboard in Resources */,
 				7723437E21DEB57000E5E070 /* LoginSignUp.storyboard in Resources */,
 				CB00664521E0954000F53D61 /* CategoryTab.storyboard in Resources */,
-				7729030121D533F800C19416 /* HomeSearch.storyboard in Resources */,
+				7729030121D533F800C19416 /* Search.storyboard in Resources */,
 				7780ED5921D4F25200CC2BA7 /* MocaPlus.storyboard in Resources */,
 				CBF2FC3021D4B5EC00DFC50A /* NanumGothicExtraBold.otf in Resources */,
 				CB08315B21D0E4B1000F5D67 /* Assets.xcassets in Resources */,
@@ -1183,6 +1298,7 @@
 				CBF2FC2F21D4B5EC00DFC50A /* NanumGothicBold.ttf in Resources */,
 				772A954221D7D4F2009114FC /* MyPageTab.storyboard in Resources */,
 				CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */,
+				CB2E784C21E6DDE400619139 /* Tutorial.storyboard in Resources */,
 				CB8DDB7621D363C2001D8191 /* CommunityTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1273,12 +1389,15 @@
 				CB8DDB8821D3C1C8001D8191 /* CommunityContentVC.swift in Sources */,
 				CB2E781F21E6030000619139 /* HomeMocaPlusCell.swift in Sources */,
 				CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */,
+				CB79865A21E80C1700C5AEE6 /* MocaPicksImageData.swift in Sources */,
 				CB0AAD7C21D8B22B0007E174 /* LocationMapCafeCell.swift in Sources */,
 				7723437521DE8F6200E5E070 /* CommunitySearchVC.swift in Sources */,
+				CB2E783C21E6A11900619139 /* UILabel+LineSpacing.swift in Sources */,
 				CB2E8F0821DC0FC60087EFE2 /* CafeDetailImageCell.swift in Sources */,
 				CBD4C7E021E354C0008BE065 /* CommunityReviewData.swift in Sources */,
 				CB909BAD21DBEECC0040F4A5 /* LocationCafeDetailVC.swift in Sources */,
 				CB25AC9221D3CE1600636DFE /* CommunityCommentCell.swift in Sources */,
+				CBF1ACEB21E74F5D008B34D1 /* BestUserService.swift in Sources */,
 				CB32A09721D2A27C004796F7 /* CommunityTabMainVC.swift in Sources */,
 				7773213E21E68FF6006AD209 /* MembershipListResponse.swift in Sources */,
 				774B597321DBCF5A00B10989 /* UITextField+Extension.swift in Sources */,
@@ -1291,7 +1410,7 @@
 				CB25AC9021D3CDF800636DFE /* CommunityContentCell.swift in Sources */,
 				7735356521D8040F00FB914C /* CouponTableViewCell.swift in Sources */,
 				CBD4C7C621E226F6008BE065 /* CafeDetailSignitureData.swift in Sources */,
-				77CD53EB21E1DF47007C56A2 /* RecentReviewCollectionViewCell.swift in Sources */,
+				77CD53EB21E1DF47007C56A2 /* RecentReviewCell.swift in Sources */,
 				7780ED6221D4F29F00CC2BA7 /* MocaPlusCafeImageCell.swift in Sources */,
 				CBD4C7C821E22730008BE065 /* CafeDetailImageData.swift in Sources */,
 				CB2CA71121E0B671004DA344 /* CategoryCafeCell.swift in Sources */,
@@ -1325,6 +1444,7 @@
 				7780ED5F21D4F29F00CC2BA7 /* MocaPlusHomeListCell.swift in Sources */,
 				77EFC31921E48778006D78AB /* SignupResponse.swift in Sources */,
 				772A953821D79C88009114FC /* LikeCafeImageCell.swift in Sources */,
+				CB2E784421E6ADCB00619139 /* CommandHotPlaceService.swift in Sources */,
 				77FA13FF21E123F7006C8E20 /* SavingHistoryFooterTableViewCell.swift in Sources */,
 				CB2DE22921E4F24E009C2683 /* CommunityReviewDetailService.swift in Sources */,
 				CBD4C7F521E4032A008BE065 /* CommunityReviewCommentService.swift in Sources */,
@@ -1338,20 +1458,28 @@
 				7773213421E66A6F006AD209 /* MyPageCouponService.swift in Sources */,
 				CB2E8EFC21DBF1F20087EFE2 /* CafeDetailReviewFooterCell.swift in Sources */,
 				CB32A09B21D2A2E3004796F7 /* CommunityFeedCell.swift in Sources */,
+				CBF1ACE821E74F29008B34D1 /* BestUserData.swift in Sources */,
 				CBD4C7D821E28404008BE065 /* CafeScrapService.swift in Sources */,
 				772A953E21D7C06A009114FC /* MembershipCouponCollectionCell.swift in Sources */,
 				CBD4C7C421E22684008BE065 /* CafeDetailInfoData.swift in Sources */,
 				77FA141221E142FA006C8E20 /* HotPlaceCafeImageCell.swift in Sources */,
+				CB2E784F21E6DE3800619139 /* TutorialVC.swift in Sources */,
 				77FA13FD21E123EA006C8E20 /* SavingHistoryHeaderTableViewCell.swift in Sources */,
 				CB2E782721E6067100619139 /* MocaPlusSubjectService.swift in Sources */,
 				CBF2FC3C21D616EA00DFC50A /* MocaPicksBaristaDetailVC.swift in Sources */,
+				CB2E784821E6CCD600619139 /* HomeSearchResultData.swift in Sources */,
 				CBD4C7F721E41940008BE065 /* NearByCafeListVC.swift in Sources */,
 				CBF2FC2821D4008A00DFC50A /* MocaPicksCafeVC.swift in Sources */,
+				CB2E783621E65C5800619139 /* HotPlaceListService.swift in Sources */,
 				CB25AC9F21D3F0D800636DFE /* ReviewPlusImageCell.swift in Sources */,
 				CB2C591A21DFCE7D00CDB39F /* CategoryMainVC.swift in Sources */,
 				CB32A08F21D259B8004796F7 /* HomeHotPlaceNameCell.swift in Sources */,
 				77FA141021E1404D006C8E20 /* HotPlaceCafeCell.swift in Sources */,
 				7762119F21D6A42200F90D8A /* SegueFromRightToLeft.swift in Sources */,
+				CB79866421E80DA000C5AEE6 /* MocaPicksEvaluateDetailData.swift in Sources */,
+				CB2E783F21E6AD2E00619139 /* BestCafeData.swift in Sources */,
+				CBF1ACED21E750E9008B34D1 /* CommunitySearchResultData.swift in Sources */,
+				CB2E784121E6AD9E00619139 /* RecommendHotPlaceData.swift in Sources */,
 				CB08315621D0E4B0000F5D67 /* HomeTabMainVC.swift in Sources */,
 				7780ED6621D4F2B900CC2BA7 /* MocaPlusHomeVC.swift in Sources */,
 				771C043B21E79507006D4E29 /* CommunityReviewSearchData.swift in Sources */,
@@ -1359,6 +1487,7 @@
 				CBD4C7CC21E2279C008BE065 /* CafeDetailSignitureService.swift in Sources */,
 				CB2A5F3421E5E85A0001E4DA /* HotPlaceNameData.swift in Sources */,
 				CB2D78FB21DD247C0033C2A0 /* HomeNoticeCell.swift in Sources */,
+				CB2E783421E65C0500619139 /* HotPlaceCafeData.swift in Sources */,
 				CB2DE22B21E519B4009C2683 /* CommunityFollowUserData.swift in Sources */,
 				77B2901121E366AF00E8677F /* AccountData.swift in Sources */,
 				CB2D78F921DD23E50033C2A0 /* HomeNoticeVC.swift in Sources */,
@@ -1367,18 +1496,25 @@
 				CB2E782421E6061000619139 /* MocaPlusSubjectData.swift in Sources */,
 				774B596D21DB837900B10989 /* ProfileModifyVC.swift in Sources */,
 				7723438321DEBD9400E5E070 /* SignupVC.swift in Sources */,
+				CB79865E21E80CD100C5AEE6 /* MocaPicksImageService.swift in Sources */,
+				CB2E783A21E689F500619139 /* MocaPlusContentService.swift in Sources */,
+				CBF1ACEF21E75CA6008B34D1 /* CommunitySearchResultService.swift in Sources */,
+				77CD53E921E1DF3A007C56A2 /* PopularReviewCell.swift in Sources */,
 				7773214821E6B5B5006AD209 /* PostMyPageEditResponse.swift in Sources */,
-				77CD53E921E1DF3A007C56A2 /* PopularReviewCollectionViewCell.swift in Sources */,
+				77CD53E921E1DF3A007C56A2 /* PopularReviewCell.swift in Sources */,
 				774B596F21DBBA2B00B10989 /* LikeCafeDetailVC.swift in Sources */,
 				CB2E8F0021DC04930087EFE2 /* SignatureMenuCell.swift in Sources */,
+				CBF1ACF321E77DC0008B34D1 /* CommunitySearchRecentReviewCell.swift in Sources */,
 				CB2A5F3021E5E2900001E4DA /* RankingCafeService.swift in Sources */,
 				CB2CA70F21E0AFAC004DA344 /* SelectedOptionCell.swift in Sources */,
 				CB32A08D21D2520E004796F7 /* HomeMocaPicksCafeListCell.swift in Sources */,
 				7773213C21E67D87006AD209 /* UIImageView+Extension.swift in Sources */,
 				CB2E782F21E637D700619139 /* HTTPStatusCode.swift in Sources */,
 				7723437321DE8F1000E5E070 /* PopularCollectionViewCell.swift in Sources */,
+				CB2E784A21E6CCF800619139 /* HomeSearchResultService.swift in Sources */,
 				CB25ACA321D3FDAA00636DFE /* MocaPicksListVC.swift in Sources */,
 				CB08315421D0E4B0000F5D67 /* AppDelegate.swift in Sources */,
+				CBF1ACF121E77DB2008B34D1 /* CommunitySearchPopularReviewCell.swift in Sources */,
 				CB5E379621D62F8600302D88 /* CommunitySelectFeedCell.swift in Sources */,
 				CBD4C7ED21E3F35A008BE065 /* CommunityUserFeedVC.swift in Sources */,
 				772A953121D78D0C009114FC /* MyPageVC.swift in Sources */,
@@ -1399,9 +1535,11 @@
 				77B2900E21E35FDC00E8677F /* LoginService.swift in Sources */,
 				7780ED6521D4F2B900CC2BA7 /* MocaPlusDetailVC.swift in Sources */,
 				CB2DE22721E4F22B009C2683 /* CommunityReviewDetailData.swift in Sources */,
+				CB2E783821E6899000619139 /* MocaPlusContentData.swift in Sources */,
 				CB32A09321D28C8C004796F7 /* HomeRankingCell.swift in Sources */,
 				CB32A09521D28E30004796F7 /* HomeRankingListCell.swift in Sources */,
 				CBD4C7F321E402E9008BE065 /* CommunityReviewCommentData.swift in Sources */,
+				CB79866221E80D4100C5AEE6 /* MocaPicksEvaluateService.swift in Sources */,
 				CBD4C7D221E23F6B008BE065 /* NearByCafeService.swift in Sources */,
 				CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */,
 				7773213A21E6787F006AD209 /* MyPageResponse.swift in Sources */,
@@ -1410,16 +1548,20 @@
 				CB2E782921E637CA00619139 /* KakaoAddressService.swift in Sources */,
 				CBD4C7B321E153CA008BE065 /* CategoryConceptData.swift in Sources */,
 				CBF2FC3221D4FCC900DFC50A /* MocaPicksBaristaCell.swift in Sources */,
+				CB79866621E80E0C00C5AEE6 /* MocaPicksEvaluateDetailService.swift in Sources */,
+				CB2E784621E6AE6C00619139 /* BestReviewService.swift in Sources */,
 				CB32A09121D259CB004796F7 /* HomeHotPlaceCell.swift in Sources */,
 				CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */,
 				CB00664721E09D7900F53D61 /* CategoryResultVC.swift in Sources */,
 				771C043521E781E8006D4E29 /* WriteReviewSearchVC.swift in Sources */,
 				77FA140121E1387F006C8E20 /* HotPlaceVC.swift in Sources */,
-				77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleTableViewCell.swift in Sources */,
+				77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleCell.swift in Sources */,
+				77CD53E721E1DF29007C56A2 /* CommunitySearchPeopleCell.swift in Sources */,
 				7773214021E69698006AD209 /* MyPageMembershipService.swift in Sources */,
 				CB25AC9421D3DB5200636DFE /* CommunityFollowVC.swift in Sources */,
 				7723437121DE491900E5E070 /* RecommendCollectionViewCell.swift in Sources */,
 				CB2D78F721DD0CF00033C2A0 /* UIViewController+extesion.swift in Sources */,
+				CB79866021E80D1200C5AEE6 /* MocaPicksEvaluateData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

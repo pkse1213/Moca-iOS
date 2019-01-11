@@ -15,15 +15,23 @@ class MocaPlusHomeListCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
 
+    var mocaPlusSubject: MocaPlusSubject? {
+        didSet { setUpData()}
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
 
+    private func setUpData() {
+        guard let mocaPlusSubject = mocaPlusSubject else { return }
+        titleLabel.text = mocaPlusSubject.plusSubjectTitle
+        nameLabel.text = mocaPlusSubject.editorName
+        profileImageView.applyRadius(radius: profileImageView.frame.width/2)
+    }
 }

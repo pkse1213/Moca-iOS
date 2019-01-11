@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecentReviewCollectionViewCell: UICollectionViewCell {
+class RecentReviewCell: UICollectionViewCell {
     
     @IBOutlet var recentReviewImage: UIImageView!
 

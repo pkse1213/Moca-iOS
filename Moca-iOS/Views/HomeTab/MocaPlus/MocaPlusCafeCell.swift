@@ -8,21 +8,28 @@
 
 import UIKit
 
-class MocaPlusCafeCell: UITableViewCell {
-    
+class MocaPlusContentCell: UITableViewCell {
     @IBOutlet weak var cafeLocationLabel: UILabel!
     @IBOutlet weak var cafeNameLabel: UILabel!
+    @IBOutlet weak var smallNameLabel: UILabel!
     @IBOutlet weak var cafeContentsLabel: UILabel!
-    @IBOutlet weak var cafeDetailStackView: UIStackView!
     @IBOutlet weak var cafeMenuImageCollectionView: UICollectionView!
-    
 
+    var mocaPlusContent: MocaPlusContent? {
+        didSet { setUpData() }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
         setUpCollectionView()
-        cafeContentsLabel.numberOfLines = 0
+    }
+    
+    private func setUpData() {
+        guard let mocaPlusContent = mocaPlusContent else { return }
+        cafeNameLabel.text = mocaPlusContent.cafeName
+        smallNameLabel.text = mocaPlusContent.cafeName
+        cafeLocationLabel.text = mocaPlusContent.addressDistrictName
+        cafeContentsLabel.applyLineSpacing(lineSpacing: 12, text: mocaPlusContent.plusContentsContent)
     }
     
     private func setUpCollectionView() {
@@ -31,7 +38,7 @@ class MocaPlusCafeCell: UITableViewCell {
     }
 }
 
-extension MocaPlusCafeCell : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension MocaPlusContentCell : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -42,10 +49,5 @@ extension MocaPlusCafeCell : UICollectionViewDataSource, UICollectionViewDelegat
             cell = imageCell
         }
         return cell
-    }
-    
-    // 셀 사이 거리 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
     }
 }
