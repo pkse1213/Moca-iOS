@@ -14,8 +14,7 @@ class LocationCafeDetailVC: UIViewController {
     @IBOutlet weak var scrapButton: UIButton!
     let locationManager = CLLocationManager()
     var cafeId = 3
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var cafeInfo: CafeDetailInfo? {
         didSet {
             initNearbyCafe()
@@ -40,6 +39,7 @@ class LocationCafeDetailVC: UIViewController {
         initInfoData()
         initData()
         setUpTableView()
+        setupNaviBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,9 +48,24 @@ class LocationCafeDetailVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    private func setupNaviBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        //        self.navigationItem.title = "Ranking"
+        let button: UIButton = UIButton()
+        button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
+        button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backAction(_: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     private func initInfoData() {
         CafeDetailInfoService.shareInstance.getCafeDetailInfo(cafeId: cafeId, token: token, completion: { (res) in
+            self.navigationItem.title = res.cafeName
             self.cafeInfo = res
         }) { (err) in
             print("카페 디테일 info 실패")
@@ -162,7 +177,7 @@ extension LocationCafeDetailVC: CLLocationManagerDelegate {
         let currentLocation = locations[locations.count-1]
         let lat = currentLocation.coordinate.latitude
         let long = currentLocation.coordinate.longitude
-        let location = Location(longitute: lat, latitude: long)
+        let location = Location(longitute: long, latitude: lat)
         
         guard let cafe = cafeInfo else { return }
         let cafeLocation = Location(longitute: cafe.cafeLongitude, latitude: cafe.cafeLatitude)
@@ -239,6 +254,7 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
         case 3:
             if let cafeCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailNearCafeCell") as? CafeDetailNearCafeCell {
                 cafeCell.delegate = self
+                cafeCell.unit = (self.cafeDetailTableView.frame.width/2-2)/175
                 cafeCell.nearByCafes = nearCafes
                 cell = cafeCell
             }

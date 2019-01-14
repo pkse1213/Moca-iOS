@@ -13,7 +13,7 @@ class LocationMainVC: UIViewController{
     @IBOutlet var mapParentView: UIView!
     @IBOutlet var cafeCollectionView: UICollectionView!
     @IBOutlet var currentLocationButton: UIButton!
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var selectedByMarker = false
     var mapView: MTMapView!
     let locationManager: CLLocationManager = CLLocationManager()
@@ -60,6 +60,7 @@ class LocationMainVC: UIViewController{
             print("주변 카페 성공")
         }) { (err) in
             self.nearByCafes = []
+            self.simpleAlert(title: "알림", message: "1km 반경에 카페가 없습니다")
             print("주변 카페 실패")
         }
     }
@@ -96,13 +97,19 @@ class LocationMainVC: UIViewController{
                 myLocation = location
                 updateSelectedAddress(latitude: lat, longitude: long)
             }
-            showAddressInNavgationItem(address: address.roadAddressName)
+            if address.roadAddressName == ""  {
+                showAddressInNavgationItem(address: address.placeName)
+            } else {
+                showAddressInNavgationItem(address: address.roadAddressName)
+            }
         }
     }
     
     func showAddressInNavgationItem(address: String) {
         let navView = UIView()
         let label = UILabel()
+        label.font = UIFont(name: "NanumGothicBold", size: 16)!
+        
         label.text = address
         label.sizeToFit()
         label.center = navView.center
@@ -297,7 +304,7 @@ extension LocationMainVC: UICollectionViewDelegate, UICollectionViewDataSource {
         if let cafeCell = cafeCollectionView.dequeueReusableCell(withReuseIdentifier: "LocationMapCafeCell", for: indexPath) as? LocationMapCafeCell {
             cafeCell.cafeNameLabel.text = cafe.cafeName
             cafeCell.cafeLocationLabel.text = "\(cafe.distance) 이내"
-            cafeCell.cafeImageView.image = UIImage(named: "sample\(indexPath.item+1)")
+            cafeCell.cafeImageView.imageFromUrl(cafe.cafeImgURL, defaultImgPath: "")
             if indexPath.item == selectedIndex {
                 cafeCell.selectedFlag = true
             } else {

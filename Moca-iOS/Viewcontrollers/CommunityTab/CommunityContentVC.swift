@@ -9,7 +9,7 @@
 import UIKit
 
 class CommunityContentVC: UIViewController {
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var review: CommunityReview? {
         didSet {
             setUpReviewData()
@@ -17,14 +17,23 @@ class CommunityContentVC: UIViewController {
         }
     }
     var images: [ReviewImage]? {
-        didSet { imageCollectionView.reloadData() }
+        didSet { imageCollectionView.reloadData()
+            if let images = images {
+                 imageCntLabel.text = "1/\(images.count)"
+                print("images.count\(images.count)")
+                if images.count <= 1 {
+                    cntBackgroundView.isHidden = true
+                } else {
+                    cntBackgroundView.isHidden = false
+                    imageCntLabel.text = "1/\(images.count)"
+                }
+            }
+        }
     }
     var comments: [ReviewComment]? {
         didSet { contentTableView.reloadData() }
     }
-    var reviewId = 0 {
-        didSet { initReviewData() }
-    }
+    var reviewId = 0
     @IBOutlet weak var cafeNameLabel: UILabel!
     @IBOutlet weak var cafeAddressLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
@@ -32,6 +41,7 @@ class CommunityContentVC: UIViewController {
     @IBOutlet weak var textFieldViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var reviewContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageCntLabel: UILabel!
+    @IBOutlet var cntBackgroundView: UIView!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var contentTableView: UITableView!
     
@@ -42,17 +52,36 @@ class CommunityContentVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initReviewData()
         setUpListView()
         setUpView()
         registerGesture()
         checkVersion()
         setupTextView()
+        cntBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.5141925812, green: 0.5142051578, blue: 0.5141984224, alpha: 1))
+        cntBackgroundView.applyRadius(radius: cntBackgroundView.frame.height/2)
+        setupNaviBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func setupNaviBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        //        self.navigationItem.title = "Ranking"
+        let button: UIButton = UIButton()
+        button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
+        button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backAction(_: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setUpReviewData() {
@@ -72,6 +101,7 @@ class CommunityContentVC: UIViewController {
         CommunityReviewDetailService.shareInstance.getReviewDetail(reviewId: reviewId, token: token , completion: { (res) in
             self.review = res
             self.images = res.image
+            self.navigationItem.title = res.cafeName
         }) { (err) in
             print("리뷰 상세 실패 \(err)")
         }
@@ -219,13 +249,16 @@ extension CommunityContentVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        guard let images = images else { return 0 }
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
+        guard let images = images else { return cell }
+        
         if let imageCell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "CommunityContentImageCell", for: indexPath) as? CommunityContentImageCell {
-            imageCell.contentImageView.image = UIImage(named: "sample\(indexPath.item+1)")
+            imageCell.image = images[indexPath.item]
             cell = imageCell
         }
         return cell

@@ -10,7 +10,7 @@ import UIKit
 
 class MocaPicksListVC: UIViewController {
     @IBOutlet weak var mocaPicksTableView: UITableView!
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var mocaPicksCafes: [MocaPicks]? {
         didSet { mocaPicksTableView.reloadData() }
     }
@@ -19,9 +19,8 @@ class MocaPicksListVC: UIViewController {
         super.viewDidLoad()
         setUpTableView()
         initData()
+        setupNaviBar()
     }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
@@ -33,6 +32,20 @@ class MocaPicksListVC: UIViewController {
         }
     }
     
+    private func setupNaviBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationItem.title = "Moca Picks"
+        let button: UIButton = UIButton()
+        button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
+        button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backAction(_: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     private func initData() {
         MocaPicksCafeService.shareInstance.getMocaPicksCafe(length: -1, token: token, completion: { (res) in
             self.mocaPicksCafes = res

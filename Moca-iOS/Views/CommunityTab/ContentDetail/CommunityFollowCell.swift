@@ -14,7 +14,7 @@ class CommunityFollowCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
     
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var followUser: FollowUser? {
         didSet { setUpData() }
     }
@@ -42,11 +42,18 @@ class CommunityFollowCell: UITableViewCell {
         guard let user = followUser else { return }
         nameLabel.text = user.userName
         profileImageView.imageFromUrl(user.userImgURL, defaultImgPath: "commonDefaultimage")
-        if user.follow {
-            followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow"), for: .normal)
+        if user.auth {
+            followButton.isHidden = true
         } else {
-            followButton.setImage(#imageLiteral(resourceName: "communityFollowing"), for: .normal)
+            followButton.isHidden = false
+            if user.follow {
+                followButton.setImage(#imageLiteral(resourceName: "communityFollowinglistFollow"), for: .normal)
+            } else {
+                followButton.setImage(#imageLiteral(resourceName: "communityFollowing"), for: .normal)
+            }
         }
+        
+        
     }
     
     private func setUpView() {

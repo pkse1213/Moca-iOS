@@ -16,7 +16,7 @@ struct CommunityUserData: Codable {
 
 struct CommunityUser: Codable {
     let userID, userName: String
-    let userImgURL: String
+    let userImgURL: String?
     let userStatusComment: String?
     let reviewCount, followerCount, followingCount: Int
     let auth, follow: Bool

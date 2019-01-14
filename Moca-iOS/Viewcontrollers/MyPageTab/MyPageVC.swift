@@ -13,9 +13,10 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var myPageTableView: UITableView!
     
     var unit : CGFloat = 0
-    
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    var myData = MyPageData(userId: "a", userName: "a", userPhone: "01000000000", userImgUrl: nil, userStatusComment: "a", auth: false, follow: false)
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
+    var myData :MyPageData?{
+        didSet { myPageTableView.reloadData() }
+    }
     
     var scrapCafeList : [ScrapCafeData]? {
         didSet { myPageTableView.reloadData() }
@@ -29,19 +30,15 @@ class MyPageVC: UIViewController {
         didSet { myPageTableView.reloadData() }
     }
     
-    
+    var first = true
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // 통신
         getMyPageData()
         getLikeCafeData()
         getCouponData()
         getMembershipData()
         
         self.navigationController?.isNavigationBarHidden = true
-        
-        
         setUpTableView()
         
         myPageTableView.estimatedRowHeight = 293
@@ -51,6 +48,13 @@ class MyPageVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
+        if first {
+            first = false
+        } else {
+            getLikeCafeData()
+            
+        }
+        
     }
     
     private func setUpTableView() {
@@ -79,7 +83,7 @@ class MyPageVC: UIViewController {
     // 통신
     // 마이페이지 회원 조회
     private func getMyPageData() {
-        MyPageCheckService.shared.getMyPageData(token: token, user_id: "coco", completion: { (myPageData) in
+        MyPageCheckService.shared.getMyPageData(token: token, completion: { (myPageData) in
             self.myData = myPageData
         }) { (errCode) in
             print("회원 정보 조회에 실패했습니다.")
@@ -90,8 +94,11 @@ class MyPageVC: UIViewController {
     private func getLikeCafeData() {
         MyPageScrapService.shared.getScrap(token: token, completion: { (scrapCafeList) in
             self.scrapCafeList = scrapCafeList
+             print("찜한 카페 조회에 성공\(scrapCafeList.count)")
+          self.myPageTableView.reloadData()
         }) { (errCode) in
             print("찜한 카페 조회에 실패 || \(errCode)")
+            self.scrapCafeList = []
         }
     }
     
@@ -100,6 +107,7 @@ class MyPageVC: UIViewController {
         MyPageCouponService.shared.getCouponList(token: token, completion: { (couponList) in
             self.couponList = couponList
         }) { (errCode) in
+            self.couponList = []
             print("음료 쿠폰 조회 실패 || \(errCode)")
         }
     }
@@ -109,6 +117,7 @@ class MyPageVC: UIViewController {
         MyPageMembershipService.shared.getMembership(token: token, completion: { (membershipDataList) in
             self.membershipList = membershipDataList
         }) { (errCode) in
+            self.membershipList = []
             print("멤버쉽 리스트 조회 실패 || \(errCode)")
         }
     }
@@ -117,6 +126,7 @@ class MyPageVC: UIViewController {
 extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let _ = myData, let _ = couponList, let _ = membershipList, let _ = scrapCafeList else { return 0 }
         return 4
     }
     
@@ -124,9 +134,11 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         var cell = UITableViewCell()
         
         if indexPath.row == 0 {
+            
+            guard let myData = myData else { return cell }
             if let myPageInfoCell = myPageTableView.dequeueReusableCell(withIdentifier: "MyPageInfoCell", for: indexPath) as? MyPageInfoCell {
                 
-                myPageInfoCell.profileImageView.imageFromUrl(myData.userImgUrl, defaultImgPath: "")
+                myPageInfoCell.profileImageView.imageFromUrl(myData.userImgURL, defaultImgPath: "")
                 myPageInfoCell.nameLabel.text = myData.userName
                 myPageInfoCell.messageLabel.text = myData.userStatusComment
                 
@@ -136,9 +148,12 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         else if indexPath.row == 1 {
             if let likeCafeCell = myPageTableView.dequeueReusableCell(withIdentifier: "LikeCafeCell", for: indexPath) as? LikeCafeCell {
                 likeCafeCell.navigationbarController = self.navigationController
-                
-                likeCafeCell.scrapCafeList = self.scrapCafeList
-                
+                if let scrapCafeLists = scrapCafeList {
+                    
+                    
+                    likeCafeCell.scrapCafeList = scrapCafeLists
+                }
+                likeCafeCell.delegate = self
                 cell = likeCafeCell
             }
         }
@@ -151,8 +166,6 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
                 if let couponCount = couponList?.count {
                     myPageCell.numberLabel.text = String(couponCount)
                 }
-                
-                
                 cell = myPageCell
             }
         }
@@ -167,5 +180,11 @@ extension MyPageVC : UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension MyPageVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

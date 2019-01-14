@@ -10,5 +10,6 @@ pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'ObjectMapper'
-
+pod 'Hero'
+pod 'lottie-ios'
 end

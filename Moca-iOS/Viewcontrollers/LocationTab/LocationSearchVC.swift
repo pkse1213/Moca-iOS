@@ -22,11 +22,28 @@ class LocationSearchVC: UIViewController {
         super.viewDidLoad()
         searchBarTxtFd.becomeFirstResponder()
         setupView()
+        setupNaviBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
+    private func setupNaviBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        //        self.navigationItem.title = "Ranking"
+        let button: UIButton = UIButton()
+        button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
+        button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backAction(_: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setupView() {

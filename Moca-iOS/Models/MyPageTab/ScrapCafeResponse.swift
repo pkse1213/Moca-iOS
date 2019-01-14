@@ -16,20 +16,19 @@ struct ScrapCafeResponse : Codable {
 }
 
 struct ScrapCafeData : Codable {
-    let cafeId : Int
-    let cafeName : String
-    let addressDistrictName : String
-    let cafeAddressDetail : String?
-    let cafeRatingAvg : Int
-    let cafeImgUrl : [ScrapCafeImg]?
+    let cafeID: Int
+    let cafeName, addressDistrictName: String
+    let cafeAddressDetail: String?
+    let cafeRatingAvg: Int
+    let cafeImgURL: [ScrapCafeImg]
     
     enum CodingKeys: String, CodingKey {
-        case cafeId = "cafe_id"
+        case cafeID = "cafe_id"
         case cafeName = "cafe_name"
         case addressDistrictName = "address_district_name"
         case cafeAddressDetail = "cafe_address_detail"
         case cafeRatingAvg = "cafe_rating_avg"
-        case cafeImgUrl = "cafe_img_url"
+        case cafeImgURL = "cafe_img_url"
     }
 }
 

@@ -19,7 +19,7 @@ class CommunityTabMainVC: UIViewController {
     let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
     var err = 0
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var selectIndex = 0 {
         didSet {
             setUpNavgationItem()
@@ -148,6 +148,8 @@ class CommunityTabMainVC: UIViewController {
     func setUpNavgationItem() {
         let navView = UIView()
         let label = UILabel()
+        
+        label.font = UIFont(name: "NanumGothicBold", size: 16)!
         label.text = selectMenus[selectIndex]
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         label.sizeToFit()
@@ -229,7 +231,7 @@ extension CommunityTabMainVC: UITableViewDelegate, UITableViewDataSource {
                         if selectIndex == 0 {
                             feedCell.profileImageView.isUserInteractionEnabled = true
                         } else if selectIndex == 1 {
-//                            feedCell.profileImageView.isUserInteractionEnabled = false
+                            feedCell.profileImageView.isUserInteractionEnabled = false
                         }
                         feedCell.review = review[indexPath.row]
                         feedCell.images = review[indexPath.row].image

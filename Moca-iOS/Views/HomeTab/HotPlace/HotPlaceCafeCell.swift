@@ -17,7 +17,7 @@ class HotPlaceCafeCell: UITableViewCell {
     @IBOutlet var conceptStar4: UIImageView!
     @IBOutlet var conceptStar5: UIImageView!
     @IBOutlet var imageCollectionView: UICollectionView!
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var cafe: HotPlaceCafe? {
         didSet {
             setUpData()

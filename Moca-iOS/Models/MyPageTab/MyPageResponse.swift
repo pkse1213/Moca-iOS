@@ -16,21 +16,18 @@ struct MyPageResponse : Codable {
 }
 
 struct MyPageData : Codable {
-    let userId : String
-    let userName : String
-    let userPhone : String
-    let userImgUrl : String?
-    let userStatusComment : String
-    let auth : Bool
-    let follow : Bool
+    let userID, userName, userPhone: String
+    let userImgURL: String
+    let userStatusComment: String
+    let pushFlag, auth, follow: Bool
     
     enum CodingKeys: String, CodingKey {
-        case userId = "user_id"
+        case userID = "user_id"
         case userName = "user_name"
         case userPhone = "user_phone"
-        case userImgUrl = "user_img_url"
+        case userImgURL = "user_img_url"
         case userStatusComment = "user_status_comment"
-        case auth = "auth"
-        case follow = "follow"
+        case pushFlag = "push_flag"
+        case auth, follow
     }
 }

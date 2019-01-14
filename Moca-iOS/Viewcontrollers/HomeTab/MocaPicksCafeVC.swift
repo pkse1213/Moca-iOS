@@ -10,8 +10,7 @@ import UIKit
 
 class MocaPicksCafeVC: UIViewController {
     @IBOutlet weak var baristaTableView: UITableView!
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
-    
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var cafeInfo: MocaPicks? 
     var cafeImages: [MocaPicksImage]? {
         didSet { baristaTableView.reloadData() }
@@ -27,6 +26,22 @@ class MocaPicksCafeVC: UIViewController {
         super.viewDidLoad()
         setUpListView()
         initData()
+        setupNaviBar()
+    }
+    
+    private func setupNaviBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationItem.title = "Moca Picks"
+        let button: UIButton = UIButton()
+        button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
+        button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backAction(_: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setUpListView() {
@@ -45,6 +60,7 @@ class MocaPicksCafeVC: UIViewController {
        print(cafeInfo.cafeID)
         MocaPicksDetailService.shareInstance.getMocaPicksCafeDetail(cafeId: cafeInfo.cafeID, token: token, completion: { (res) in
             self.cafeDetail = res
+//            self.navigationItem.title = res.cafeName
         }) { (err) in
             print("모카픽스 디테일 실패 \(err)")
         }
@@ -94,6 +110,7 @@ extension MocaPicksCafeVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 2 {
             if let baristaCell = baristaTableView.dequeueReusableCell(withIdentifier: "MocaPicksBaristaCell") as? MocaPicksBaristaCell {
+                baristaCell.cafeName = cafeInfo.cafeName
                 baristaCell.cafeId = cafeInfo.cafeID
                 baristaCell.barista = cafeEvaluate[indexPath.row]
                 baristaCell.delegate = self

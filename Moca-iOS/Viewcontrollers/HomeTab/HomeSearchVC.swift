@@ -30,7 +30,7 @@ class HomeSearchVC: UIViewController {
     var keyword = "" {
         didSet { initSearchData() }
     }
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xknd"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var bestCafes: [BestCafe]? {
         didSet { hotCafeCollectionView.reloadData() }
     }
@@ -231,6 +231,7 @@ extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
             guard let hotPlace = hotPlaces?[indexPath.item] else { return }
             if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
                 vc.placeId = hotPlace.hotPlaceID
+                vc.placeName = hotPlace.hotPlaceName
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -239,8 +240,7 @@ extension HomeSearchVC : UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension HomeSearchVC : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        beforeSearchView.isHidden = true
-        
+        textField.resignFirstResponder()
         return true
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 class CommunityUserFeedVC: UIViewController {
     @IBOutlet weak var communityTableView: UITableView!
     
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY29jbyIsImlzcyI6IkRvSVRTT1BUIn0.Rplge4ISuuCrFzrddjOl55TCeRQ2QUD9yuwSMmOZ5X0"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var userId = "first"
     var user: CommunityUser? {
         didSet { communityTableView.reloadData() }
@@ -25,6 +25,7 @@ class CommunityUserFeedVC: UIViewController {
         setUpView()
         initUserData()
         initReviewData()
+        setupNaviBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,10 +34,26 @@ class CommunityUserFeedVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    private func setupNaviBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        //        self.navigationItem.title = "Ranking"
+        let button: UIButton = UIButton()
+        button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
+        button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backAction(_: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     private func initUserData() {
         CommunityUserService.shareInstance.getUser(userId: userId, token: token, completion: { (res) in
             self.user = res
-            self.title = res.userName
+            self.navigationItem.title = res.userName
+            
             print("유저 프로필 성공")
         }) { (err) in
             print(self.userId)
@@ -110,6 +127,7 @@ extension CommunityUserFeedVC: UITableViewDelegate, UITableViewDataSource {
 
         if indexPath.section == 0 {
             if let userCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityUserProfileCell") as? CommunityUserProfileCell {
+                userCell.delegate = self
                 userCell.user = user
                 cell = userCell
             }
@@ -122,13 +140,19 @@ extension CommunityUserFeedVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 if let feedCell = communityTableView.dequeueReusableCell(withIdentifier: "CommunityFeedCell") as? CommunityFeedCell {
                     feedCell.review = reviews[indexPath.row]
+                    feedCell.delegate = self
                     cell = feedCell
                 }
             }
             
-            
         }
         
         return cell
+    }
+}
+
+extension CommunityUserFeedVC: ListViewCellDelegate {
+    func goToViewController(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -16,14 +16,14 @@ struct MyPageCheckService : APIService, RequestService {
     let baseUrl = url("/user")
     
     // 회원 조회
-    func getMyPageData(token : String, user_id : String, completion : @escaping(MyPageData) -> Void, error : @escaping(Int) -> Void) {
+    func getMyPageData(token : String, completion : @escaping(MyPageData) -> Void, error : @escaping(Int) -> Void) {
         
         let header: HTTPHeaders = [
             "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         
-        let myPageUrl = baseUrl + "/\(user_id)/mypage"
+        let myPageUrl = baseUrl + "/mypage"
         
         gettable(myPageUrl, body: nil, header: header) { (res) in
             switch res {

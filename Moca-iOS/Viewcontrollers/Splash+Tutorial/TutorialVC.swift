@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import Hero
 
 class TutorialVC: UIViewController {
-
-    
     @IBOutlet var startButton: UIButton!
     @IBOutlet var tutorialImageView: UIImageView!
     var selectedIndex = 1 {
@@ -24,6 +23,13 @@ class TutorialVC: UIViewController {
         startButton.isHidden = true
 //        startButton.applyBorder(width: 0.7, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
         registerGesture()
+    }
+    
+    @IBAction func startAction(_ sender: UIButton) {
+        guard let dvc = UIStoryboard(name: "LoginSignUp", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")  as? LoginVC else { return }
+        dvc.hero.modalAnimationType = .zoom
+        dvc.hero.isEnabled = true
+        self.present(dvc, animated: true)
     }
     
     private func setUpImage() {

@@ -11,7 +11,8 @@ import UIKit
 class CommunityFollowVC: UIViewController {
     @IBOutlet weak var followTableView: UITableView!
     
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var followUsers: [FollowUser]? {
         didSet { followTableView.reloadData() }
     }
@@ -22,6 +23,11 @@ class CommunityFollowVC: UIViewController {
         super.viewDidLoad()
         setUpTableView()
         initFollowData()
+        if path == "following" {
+            self.navigationItem.title = "팔로잉"
+        } else {
+            self.navigationItem.title = "팔로워"
+        }
     }
     
     private func setUpTableView() {

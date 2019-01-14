@@ -24,7 +24,7 @@ class CommunityFeedCell: UITableViewCell {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var imageCntLabel: UILabel!
     weak var delegate: ListViewCellDelegate?
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZ29vZCIsImlzcyI6IkRvSVRTT1BUIn0.H5f-jV02HsJcuj-fzOcQgt6XrWmF_M6OdawmMq9bqGM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var review: CommunityReview? {
         didSet { setUpData() }
     }

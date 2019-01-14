@@ -37,6 +37,9 @@
                                 <state key="normal" title="시작하기">
                                     <color key="titleColor" red="0.71372549019607845" green="0.62745098039215685" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startAction:" destination="Xwh-Ax-ibl" eventType="touchUpInside" id="wZk-3Q-Ji7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

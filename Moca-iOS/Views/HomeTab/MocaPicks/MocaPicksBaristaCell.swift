@@ -13,6 +13,7 @@ class MocaPicksBaristaCell: UITableViewCell {
     @IBOutlet weak var baristaNameLabel: UILabel!
     @IBOutlet weak var baristaInfoLabel: UILabel!
     var cafeId = 0
+    var cafeName = ""
     weak var delegate: ListViewCellDelegate?
     var barista: MocaPicksEvaluate? {
         didSet { setUpData() }
@@ -42,6 +43,7 @@ class MocaPicksBaristaCell: UITableViewCell {
             
             vc.baristaId = barista.baristaID
             vc.cafeId = cafeId
+            vc.navigationItem.title = "Moca Picks"
             delegate?.goToViewController(vc: vc)
         }
     }

@@ -28,7 +28,7 @@ class MocaPicksBaristaDetailCell: UITableViewCell {
     
     private func setUpView() {
         profileBackgroundView.applyRadius(radius: 5)
-        profileBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1))
+        profileBackgroundView.applyBorder(width: 0.5, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
         
         profileImageView.applyRadius(radius: 23)
     }

@@ -68,7 +68,7 @@ extension CafeDetailInfoCell: UICollectionViewDelegate, UICollectionViewDataSour
             let menu = signitureMenus[indexPath.item]
             menuCell.menuImageView.imageFromUrl(menu.cafeSignitureImg, defaultImgPath: "")
             menuCell.menuNameLabel.text = menu.cafeSignitureMenu
-            menuCell.menuPriceLabel.text = "\(menu.cafeSigniturePrice).0"
+            menuCell.menuPriceLabel.text = "\(menu.cafeSigniturePrice)"
             cell = menuCell
         }
         return cell

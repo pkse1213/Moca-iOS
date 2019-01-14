@@ -12,7 +12,6 @@ class LikeCafeImageCell: UICollectionViewCell {
     
     @IBOutlet weak var likeCafeImageView: UIImageView!
     @IBOutlet var numberVerticalStack: UIStackView!
-    @IBOutlet var numberLabel: UILabel!
     
 
     override func awakeFromNib() {

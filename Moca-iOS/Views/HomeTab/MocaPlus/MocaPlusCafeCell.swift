@@ -49,9 +49,17 @@ extension MocaPlusContentCell : UICollectionViewDataSource, UICollectionViewDele
         guard let image = mocaPlusContent?.contentImages[indexPath.item] else { return cell }
         
         if let imageCell = cafeMenuImageCollectionView.dequeueReusableCell(withReuseIdentifier: "MocaPlusCafeImageCell", for: indexPath) as? MocaPlusCafeImageCell {
-            imageCell.cafeMenuImageView.imageFromUrl(image.plusDefaultImgURL, defaultImgPath: "")
+            imageCell.defaultImageView.imageFromUrl(image.plusDefaultImgURL, defaultImgPath: "")
+            imageCell.cafeMenuImageView.imageFromUrl(image.plusTaggingImgURL, defaultImgPath: "")
+            imageCell.cafeMenuImageView.isHidden = true
             cell = imageCell
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MocaPlusCafeImageCell {
+            cell.touch = !cell.touch
+        }
     }
 }

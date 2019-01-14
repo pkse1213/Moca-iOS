@@ -98,6 +98,8 @@
 		CB2993F821E8DC71009772E3 /* CommunityEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2993F721E8DC71009772E3 /* CommunityEmptyCell.swift */; };
 		CB2993FA21E90A8A009772E3 /* CommunityCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2993F921E90A8A009772E3 /* CommunityCommentService.swift */; };
 		CB2993FC21E93C80009772E3 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2993FB21E93C80009772E3 /* Splash.storyboard */; };
+		CB2993FE21E93F5D009772E3 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2993FD21E93F5D009772E3 /* SplashVC.swift */; };
+		CB29940121E93FE5009772E3 /* iosSplash.json in Resources */ = {isa = PBXBuildFile; fileRef = CB29940021E93FE5009772E3 /* iosSplash.json */; };
 		CB2A5F2221E5DC3A0001E4DA /* MocaPicksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */; };
 		CB2A5F2421E5DC9A0001E4DA /* MocaPicksCafeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */; };
 		CB2A5F2721E5DF1A0001E4DA /* MocaPicksDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */; };
@@ -332,6 +334,8 @@
 		CB2993F721E8DC71009772E3 /* CommunityEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityEmptyCell.swift; sourceTree = "<group>"; };
 		CB2993F921E90A8A009772E3 /* CommunityCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCommentService.swift; sourceTree = "<group>"; };
 		CB2993FB21E93C80009772E3 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		CB2993FD21E93F5D009772E3 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		CB29940021E93FE5009772E3 /* iosSplash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iosSplash.json; sourceTree = "<group>"; };
 		CB2A5F2121E5DC3A0001E4DA /* MocaPicksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksData.swift; sourceTree = "<group>"; };
 		CB2A5F2321E5DC9A0001E4DA /* MocaPicksCafeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksCafeService.swift; sourceTree = "<group>"; };
 		CB2A5F2621E5DF1A0001E4DA /* MocaPicksDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MocaPicksDetailData.swift; sourceTree = "<group>"; };
@@ -648,6 +652,7 @@
 		CB08316521D0E4C5000F5D67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CB2993FB21E93C80009772E3 /* Splash.storyboard */,
 				CB2E784B21E6DDE400619139 /* Tutorial.storyboard */,
 				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 				CB08315721D0E4B0000F5D67 /* Main.storyboard */,
@@ -659,7 +664,6 @@
 				7780ED5821D4F25200CC2BA7 /* MocaPlus.storyboard */,
 				7729030021D533F800C19416 /* Search.storyboard */,
 				7723437D21DEB57000E5E070 /* LoginSignUp.storyboard */,
-				CB2993FB21E93C80009772E3 /* Splash.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -681,6 +685,7 @@
 		CB08316721D0E4DF000F5D67 /* Supporting File */ = {
 			isa = PBXGroup;
 			children = (
+				CB2993FF21E93FDC009772E3 /* Splash */,
 				CB32A07121D23D13004796F7 /* Fonts */,
 				CB08315A21D0E4B1000F5D67 /* Assets.xcassets */,
 				CB08315321D0E4B0000F5D67 /* AppDelegate.swift */,
@@ -726,6 +731,14 @@
 				CB28595E21E10A9000E691A9 /* MocaPicksImageCell.swift */,
 			);
 			path = MocaPicks;
+			sourceTree = "<group>";
+		};
+		CB2993FF21E93FDC009772E3 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CB29940021E93FE5009772E3 /* iosSplash.json */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		CB2A5F1F21E5DB0C0001E4DA /* HomeTab */ = {
@@ -939,6 +952,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2E784E21E6DE3800619139 /* TutorialVC.swift */,
+				CB2993FD21E93F5D009772E3 /* SplashVC.swift */,
 			);
 			path = "Splash+Tutorial";
 			sourceTree = "<group>";
@@ -1309,6 +1323,7 @@
 				772A954221D7D4F2009114FC /* MyPageTab.storyboard in Resources */,
 				CB8DDB6B21D32FDC001D8191 /* HomeTab.storyboard in Resources */,
 				CB2E784C21E6DDE400619139 /* Tutorial.storyboard in Resources */,
+				CB29940121E93FE5009772E3 /* iosSplash.json in Resources */,
 				CB8DDB7621D363C2001D8191 /* CommunityTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1326,18 +1341,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Moca-iOS/Pods-Moca-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1414,6 +1433,7 @@
 				771C043721E78271006D4E29 /* ReviewSearchCell.swift in Sources */,
 				CB2D78E321DC86A70033C2A0 /* LocationMapDialogVC.swift in Sources */,
 				CB2A5F2921E5DF440001E4DA /* MocaPicksDetailService.swift in Sources */,
+				CB2993FE21E93F5D009772E3 /* SplashVC.swift in Sources */,
 				CBD4C7D021E23ECA008BE065 /* NearByCafeData.swift in Sources */,
 				CB909BB121DBF14A0040F4A5 /* CafeDetailInfoCell.swift in Sources */,
 				CB25ACA621D3FE4200636DFE /* MocaPicksListCell.swift in Sources */,
@@ -1722,7 +1742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N6JH7RBUA4;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1747,7 +1767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N6JH7RBUA4;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

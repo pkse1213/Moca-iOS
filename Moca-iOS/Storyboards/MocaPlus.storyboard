@@ -37,12 +37,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wtv-Pg-LS7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wtv-Pg-LS7">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Wtv-Pg-LS7" secondAttribute="height" multiplier="75:44" id="cAq-ev-z3y"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtH-Vd-3it">
+                                                    <rect key="frame" x="0.0" y="220" width="375" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NWH-ba-V4z">
                                                     <rect key="frame" x="26" y="236" width="37" height="37"/>
                                                     <constraints>
@@ -74,6 +78,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vtH-Vd-3it" secondAttribute="trailing" id="69y-NJ-lZA"/>
                                                 <constraint firstItem="tpn-HO-PPT" firstAttribute="top" secondItem="NWH-ba-V4z" secondAttribute="top" id="7nd-qo-YOL"/>
                                                 <constraint firstItem="Wtv-Pg-LS7" firstAttribute="top" secondItem="gqx-kQ-FX2" secondAttribute="top" id="8KF-N3-SAg"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tlt-U0-vwK" secondAttribute="bottom" constant="34" id="9ub-Al-vcz"/>
@@ -82,10 +87,13 @@
                                                 <constraint firstItem="tlt-U0-vwK" firstAttribute="leading" secondItem="tpn-HO-PPT" secondAttribute="leading" id="NFp-n3-jJf"/>
                                                 <constraint firstItem="Wtv-Pg-LS7" firstAttribute="leading" secondItem="gqx-kQ-FX2" secondAttribute="leading" id="VjL-CV-vPm"/>
                                                 <constraint firstItem="NWH-ba-V4z" firstAttribute="leading" secondItem="gqx-kQ-FX2" secondAttribute="leading" constant="26" id="Wub-XV-7oe"/>
+                                                <constraint firstItem="vtH-Vd-3it" firstAttribute="top" secondItem="Wtv-Pg-LS7" secondAttribute="bottom" id="b7w-KS-khl"/>
                                                 <constraint firstItem="NWH-ba-V4z" firstAttribute="width" secondItem="gqx-kQ-FX2" secondAttribute="width" multiplier="37:375" id="eGn-Xr-FWT"/>
+                                                <constraint firstItem="vtH-Vd-3it" firstAttribute="leading" secondItem="gqx-kQ-FX2" secondAttribute="leading" id="ebo-5K-ZTi"/>
                                                 <constraint firstItem="Wtv-Pg-LS7" firstAttribute="width" secondItem="gqx-kQ-FX2" secondAttribute="width" id="m5X-p2-z8p"/>
                                                 <constraint firstItem="tlt-U0-vwK" firstAttribute="top" secondItem="tpn-HO-PPT" secondAttribute="bottom" constant="10.000000000000085" id="mHD-EI-HXM"/>
                                                 <constraint firstAttribute="trailing" secondItem="Wtv-Pg-LS7" secondAttribute="trailing" id="sVB-LA-7fb"/>
+                                                <constraint firstAttribute="bottom" secondItem="vtH-Vd-3it" secondAttribute="bottom" id="vSM-Qk-on1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -136,7 +144,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bnS-qr-ngH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bnS-qr-ngH">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bnS-qr-ngH" secondAttribute="height" multiplier="25:26" id="eSp-pg-TZm"/>
@@ -266,19 +274,30 @@
                                                                             <constraint firstAttribute="height" constant="208" id="Fgt-sY-b0H"/>
                                                                         </constraints>
                                                                     </imageView>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-nb-bjJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="208" height="208"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="208" id="Asl-Tx-7KP"/>
+                                                                        </constraints>
+                                                                    </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="kcE-nb-bjJ" secondAttribute="trailing" id="1Bb-mU-aIj"/>
                                                                 <constraint firstItem="lmL-Vu-RxU" firstAttribute="top" secondItem="mcw-RI-dLe" secondAttribute="top" id="9sy-q8-Pbh"/>
                                                                 <constraint firstAttribute="trailing" secondItem="lmL-Vu-RxU" secondAttribute="trailing" id="Cka-Ut-lQl"/>
+                                                                <constraint firstItem="kcE-nb-bjJ" firstAttribute="top" secondItem="mcw-RI-dLe" secondAttribute="top" id="KcS-tT-Zf8"/>
                                                                 <constraint firstItem="lmL-Vu-RxU" firstAttribute="leading" secondItem="mcw-RI-dLe" secondAttribute="leading" id="MWs-JP-bTz"/>
+                                                                <constraint firstAttribute="bottom" secondItem="kcE-nb-bjJ" secondAttribute="bottom" id="QGr-63-sVo"/>
                                                                 <constraint firstAttribute="bottom" secondItem="lmL-Vu-RxU" secondAttribute="bottom" id="bIs-mV-qfB"/>
+                                                                <constraint firstItem="kcE-nb-bjJ" firstAttribute="leading" secondItem="mcw-RI-dLe" secondAttribute="leading" id="e4d-gP-Te6"/>
                                                                 <constraint firstItem="lmL-Vu-RxU" firstAttribute="top" secondItem="mcw-RI-dLe" secondAttribute="top" id="irU-dB-pjY"/>
                                                                 <constraint firstItem="lmL-Vu-RxU" firstAttribute="leading" secondItem="mcw-RI-dLe" secondAttribute="leading" id="lgu-7u-GPU"/>
                                                             </constraints>
                                                             <size key="customSize" width="208" height="208"/>
                                                             <connections>
                                                                 <outlet property="cafeMenuImageView" destination="lmL-Vu-RxU" id="HP5-bd-qks"/>
+                                                                <outlet property="defaultImageView" destination="kcE-nb-bjJ" id="9b6-xt-93o"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

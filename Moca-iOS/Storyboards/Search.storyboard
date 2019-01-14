@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="37" id="fip-Nl-PWh"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mN-GN-TG5">
                                 <rect key="frame" x="0.0" y="87.666666666666671" width="375" height="0.6666666666666714"/>
@@ -330,7 +330,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="226" height="174"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-II-Boc">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-II-Boc">
                                                             <rect key="frame" x="0.0" y="0.0" width="226" height="146"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.91764705879999997" green="0.83921568629999999" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -468,7 +468,7 @@
                                             <constraint firstAttribute="height" constant="37" id="asS-c2-J28"/>
                                         </constraints>
                                         <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4V-UP-JNn">
                                         <rect key="frame" x="0.0" y="43.333333333333329" width="375" height="0.6666666666666643"/>

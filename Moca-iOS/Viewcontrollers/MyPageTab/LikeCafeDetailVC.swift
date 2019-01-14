@@ -12,7 +12,7 @@ class LikeCafeDetailVC: UIViewController {
     
     
     @IBOutlet var likeCafeListTableView: UITableView!
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZmlyc3QiLCJpc3MiOiJEb0lUU09QVCJ9.0wvtXq58-W8xkndwb_3GYiJJEbq8zNEXzm6fnHA6xRM"
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var dataList : [ScrapCafeData]? {
         didSet { likeCafeListTableView.reloadData() }
     }
@@ -55,7 +55,7 @@ extension LikeCafeDetailVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = likeCafeListTableView.dequeueReusableCell(withIdentifier: "LikeCafeDetailTableViewCell", for: indexPath) as! LikeCafeDetailTableViewCell
         
-        var image = dataList?[indexPath.row].cafeImgUrl
+        var image = dataList?[indexPath.row].cafeImgURL
 //        let imageUrl = image?[0].cafeImgUrl
         
 //        cell.cafeBackImageView.imageFromUrl(imageUrl, defaultImgPath: "")

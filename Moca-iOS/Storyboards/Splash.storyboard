@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q0J-Zd-X03">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,27 +10,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SplashVC-->
         <scene sceneID="w7e-vQ-vpq">
             <objects>
-                <viewController id="Q0J-Zd-X03" sceneMemberID="viewController">
+                <viewController id="Q0J-Zd-X03" customClass="SplashVC" customModule="Moca_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ST-LI-7ko">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Llq-Sn-pHu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-81-dbR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Llq-Sn-pHu" firstAttribute="leading" secondItem="ZnP-p0-KPz" secondAttribute="leading" id="KdA-gm-i3s"/>
-                            <constraint firstAttribute="bottom" secondItem="Llq-Sn-pHu" secondAttribute="bottom" id="QaZ-2Q-uoj"/>
-                            <constraint firstItem="Llq-Sn-pHu" firstAttribute="top" secondItem="1ST-LI-7ko" secondAttribute="top" id="s1h-vL-Arp"/>
-                            <constraint firstItem="ZnP-p0-KPz" firstAttribute="trailing" secondItem="Llq-Sn-pHu" secondAttribute="trailing" id="xfS-Xd-fuS"/>
+                            <constraint firstAttribute="trailing" secondItem="d1p-81-dbR" secondAttribute="trailing" id="0KN-6a-Cvm"/>
+                            <constraint firstAttribute="bottom" secondItem="d1p-81-dbR" secondAttribute="bottom" id="4Vo-gh-fDU"/>
+                            <constraint firstItem="d1p-81-dbR" firstAttribute="leading" secondItem="ZnP-p0-KPz" secondAttribute="leading" id="hx2-oI-oyx"/>
+                            <constraint firstItem="d1p-81-dbR" firstAttribute="top" secondItem="1ST-LI-7ko" secondAttribute="top" id="xgn-a9-ENe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZnP-p0-KPz"/>
                     </view>
+                    <connections>
+                        <outlet property="splashView" destination="d1p-81-dbR" id="bDp-pQ-dyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crM-4R-bQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
