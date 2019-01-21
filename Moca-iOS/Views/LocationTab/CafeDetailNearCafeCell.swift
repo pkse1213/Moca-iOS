@@ -14,7 +14,7 @@ class CafeDetailNearCafeCell: UITableViewCell {
     
     @IBOutlet var nearCafeCollectionView: UICollectionView!
     @IBOutlet var moreLookButton: UIButton!
-    var unit: CGFloat = 0
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +37,9 @@ class CafeDetailNearCafeCell: UITableViewCell {
 
 extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:175*unit , height: 238*unit)
+        let width = delegate?.getViewFrameWidth() ?? 375
+        let unit = width / 375
+        return CGSize(width:176*unit , height: 236*unit)
         
     }
     

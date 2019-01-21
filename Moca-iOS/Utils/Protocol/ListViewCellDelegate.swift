@@ -16,6 +16,8 @@ protocol ListViewCellDelegate: class {
     
     func goToViewController(vc: UIViewController)
     
+    func getViewFrameWidth() -> CGFloat
+    
 }
 
 extension ListViewCellDelegate {
@@ -25,4 +27,5 @@ extension ListViewCellDelegate {
     
     func goToViewController(vc: UIViewController) { }
     
+    func getViewFrameWidth() -> CGFloat { return 0 }
 }

@@ -151,7 +151,6 @@ class LocationCafeDetailVC: UIViewController {
         default:
             return
         }
-        
     }
     
     @IBAction func locationActon(_ sender: UIButton) {
@@ -254,7 +253,6 @@ extension LocationCafeDetailVC: UITableViewDelegate, UITableViewDataSource {
         case 3:
             if let cafeCell = cafeDetailTableView.dequeueReusableCell(withIdentifier: "CafeDetailNearCafeCell") as? CafeDetailNearCafeCell {
                 cafeCell.delegate = self
-                cafeCell.unit = (self.cafeDetailTableView.frame.width/2-2)/175
                 cafeCell.nearByCafes = nearCafes
                 cell = cafeCell
             }
@@ -281,6 +279,9 @@ extension LocationCafeDetailVC: ListViewCellDelegate {
         }))
         actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
-        
+    }
+    
+    func getViewFrameWidth() -> CGFloat {
+        return self.view.frame.width
     }
 }

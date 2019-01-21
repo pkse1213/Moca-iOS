@@ -652,9 +652,9 @@
 		CB08316521D0E4C5000F5D67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 				CB2993FB21E93C80009772E3 /* Splash.storyboard */,
 				CB2E784B21E6DDE400619139 /* Tutorial.storyboard */,
-				CB08315C21D0E4B1000F5D67 /* LaunchScreen.storyboard */,
 				CB08315721D0E4B0000F5D67 /* Main.storyboard */,
 				CB8DDB6A21D32FDC001D8191 /* HomeTab.storyboard */,
 				CB00664421E0954000F53D61 /* CategoryTab.storyboard */,

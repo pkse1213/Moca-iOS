@@ -11,11 +11,11 @@ import UIKit
 class HomeRankingListVC: UIViewController {
 
     @IBOutlet weak var rankingCollectionView: UICollectionView!
-    var unit: CGFloat = 0
     var cafes: [RankingCafe]? {
         didSet { rankingCollectionView.reloadData() }
     }
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
@@ -44,7 +44,6 @@ class HomeRankingListVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     private func initData() {
         RankingCafeService.shareInstance.getRankingCafe(length: -1, token: token, completion: { (res) in
             self.cafes = res
@@ -57,17 +56,12 @@ class HomeRankingListVC: UIViewController {
         self.rankingCollectionView.delegate = self
         self.rankingCollectionView.dataSource = self
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        unit = (self.rankingCollectionView.frame.width/2-2)/175
-    }
 }
 
 extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       
-        return CGSize(width:175*unit , height: 238*unit)
+        let unit = self.view.frame.width / 375
+        return CGSize(width:176*unit , height: 236*unit)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
