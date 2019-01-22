@@ -21,12 +21,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-81-dbR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d1p-81-dbR" secondAttribute="height" multiplier="375:812" id="GRm-r2-Cd0"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="d1p-81-dbR" secondAttribute="trailing" id="0KN-6a-Cvm"/>
-                            <constraint firstAttribute="bottom" secondItem="d1p-81-dbR" secondAttribute="bottom" id="4Vo-gh-fDU"/>
                             <constraint firstItem="d1p-81-dbR" firstAttribute="leading" secondItem="ZnP-p0-KPz" secondAttribute="leading" id="hx2-oI-oyx"/>
                             <constraint firstItem="d1p-81-dbR" firstAttribute="top" secondItem="1ST-LI-7ko" secondAttribute="top" id="xgn-a9-ENe"/>
                         </constraints>

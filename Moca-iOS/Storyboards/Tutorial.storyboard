@@ -25,6 +25,9 @@
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial1" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-nb-BFj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h9S-nb-BFj" secondAttribute="height" multiplier="375:812" id="Z7h-uz-iJs"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLs-fa-JST">
                                 <rect key="frame" x="273" y="44" width="79" height="30"/>
@@ -44,7 +47,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="h9S-nb-BFj" secondAttribute="bottom" id="EgC-Oh-5bT"/>
                             <constraint firstItem="h9S-nb-BFj" firstAttribute="leading" secondItem="SGL-I6-uXB" secondAttribute="leading" id="M4V-yF-LqI"/>
                             <constraint firstItem="SGL-I6-uXB" firstAttribute="trailing" secondItem="YLs-fa-JST" secondAttribute="trailing" constant="23" id="T4X-aK-zfs"/>
                             <constraint firstItem="h9S-nb-BFj" firstAttribute="trailing" secondItem="SGL-I6-uXB" secondAttribute="trailing" id="avm-v2-iQ5"/>

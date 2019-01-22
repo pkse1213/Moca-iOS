@@ -31,7 +31,7 @@ struct MyPageCheckService : APIService, RequestService {
                 let data = MyPageData.data
                 completion(data)
             case .successWithNil(_):
-                completion([])
+                break
             case .error(let errCode):
                 error(errCode)
             }
