@@ -263,8 +263,8 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울리즘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q30-0n-PvP">
-                                                                    <rect key="frame" x="10.000000000000004" y="150" width="45.333333333333343" height="13.333333333333343"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="12"/>
+                                                                    <rect key="frame" x="10" y="150" width="49" height="14.333333333333343"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -336,11 +336,11 @@
                                                             <color key="backgroundColor" red="0.91764705879999997" green="0.83921568629999999" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="go5-Uo-iqh">
-                                                            <rect key="frame" x="0.0" y="151" width="53.333333333333336" height="23"/>
+                                                            <rect key="frame" x="0.0" y="149.66666666666666" width="56.666666666666664" height="24.333333333333343"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#연남동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqQ-Mj-dsZ">
-                                                                    <rect key="frame" x="6" y="5" width="41.333333333333336" height="13"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="12"/>
+                                                                    <rect key="frame" x="6" y="5.0000000000000009" width="44.666666666666664" height="14.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -869,8 +869,8 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울리즘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fei-Si-lAz">
-                                                                    <rect key="frame" x="10" y="150" width="41.666666666666664" height="12.333333333333343"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="11"/>
+                                                                    <rect key="frame" x="10.000000000000004" y="150" width="45.333333333333343" height="13.333333333333343"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTFExtraBold" family="NanumGothicOTF" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -948,8 +948,8 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75I-7e-CwB">
-                                                                    <rect key="frame" x="40.666666666666657" y="105" width="55" height="13"/>
-                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="11"/>
+                                                                    <rect key="frame" x="38" y="105" width="60" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="NanumGothicOTF" family="NanumGothicOTF" pointSize="12"/>
                                                                     <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1058,7 +1058,7 @@
         <image name="communityFollower" width="70" height="24"/>
         <image name="communityFollowingSearchField" width="450" height="37"/>
         <image name="communityFollowinglistFollow" width="70" height="24"/>
-        <image name="communityReviewcount" width="13" height="14"/>
+        <image name="communityReviewcount" width="13.333333015441895" height="14.666666984558105"/>
         <image name="icCommunityLocation" width="12" height="13"/>
     </resources>
 </document>
