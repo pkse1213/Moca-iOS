@@ -41,7 +41,7 @@ class CommunityContentVC: UIViewController {
     @IBOutlet weak var textFieldViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var reviewContentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageCntLabel: UILabel!
-    @IBOutlet var cntBackgroundView: UIView!
+    @IBOutlet weak var cntBackgroundView: UIView!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var contentTableView: UITableView!
     
@@ -71,7 +71,6 @@ class CommunityContentVC: UIViewController {
     
     private func setupNaviBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
-        //        self.navigationItem.title = "Ranking"
         let button: UIButton = UIButton()
         button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
         button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)
@@ -86,7 +85,6 @@ class CommunityContentVC: UIViewController {
     
     private func setUpReviewData() {
         guard let review = review else { return }
-        print("setUpReviewData()")
         cafeAddressLabel.text = review.cafeAddress
         cafeNameLabel.text = review.cafeName
         if review.like {
@@ -97,7 +95,6 @@ class CommunityContentVC: UIViewController {
     }
     
     private func initReviewData() {
-        print("initReviewData()")
         CommunityReviewDetailService.shareInstance.getReviewDetail(reviewId: reviewId, token: token , completion: { (res) in
             self.review = res
             self.images = res.image
@@ -111,9 +108,7 @@ class CommunityContentVC: UIViewController {
         guard let review = review else { return }
         CommunityReviewCommentService.shareInstance.getReviewComment(reviewId: review.reviewID, completion: { (res) in
             self.comments = res
-            
         }) { (err) in
-            self.comments = []
             print("리뷰 댓글 실패")
         }
     }
@@ -135,8 +130,6 @@ class CommunityContentVC: UIViewController {
         contentTableView.dataSource = self
         contentTableView.applyRadius(radius: 10)
     }
-    
-    
     
     private func checkVersion() {
         if #available(iOS 11.0, tvOS 11.0, *) {

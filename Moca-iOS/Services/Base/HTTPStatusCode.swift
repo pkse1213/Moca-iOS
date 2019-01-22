@@ -11,7 +11,7 @@ import Foundation
 enum HTTPStatusCode: Int {
     
     case OK = 200
-    case Accepted = 203
+    case Accepted = 204
     case BadRequest = 400
     case Unauthorized = 401
     case Forbidden = 403

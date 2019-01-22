@@ -39,8 +39,8 @@ extension RequestService {
                     }
                 }
             case .Accepted:
-                print("203")
-                completion(.successWithNil(203))
+                print("204")
+                completion(.successWithNil(204))
             case .BadRequest:
                 print("400")
                 completion(.error(400))
@@ -86,7 +86,7 @@ extension RequestService {
                     }
                 }
             case .Accepted:
-                completion(.successWithNil(203))
+                completion(.successWithNil(204))
             case .BadRequest:
                 completion(.error(400))
             case .Unauthorized:
@@ -131,7 +131,7 @@ extension RequestService {
                     }
                 }
             case .Accepted:
-                completion(.successWithNil(203))
+                completion(.successWithNil(204))
             case .BadRequest:
                 completion(.error(400))
             case .Unauthorized:
@@ -176,7 +176,7 @@ extension RequestService {
                     }
                 }
             case .Accepted:
-                completion(.successWithNil(203))
+                completion(.successWithNil(204))
             case .BadRequest:
                 completion(.error(400))
             case .Unauthorized:
@@ -203,4 +203,3 @@ extension RequestService {
         }
     }
 }
-

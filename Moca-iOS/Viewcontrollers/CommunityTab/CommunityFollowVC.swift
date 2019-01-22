@@ -40,7 +40,6 @@ class CommunityFollowVC: UIViewController {
             self.followUsers = res
             print("팔로잉/팔로우 조회 성공")
         }) { (err) in
-            self.followUsers = []
             print("팔로잉/팔로우 조회 실패")
         }
     }

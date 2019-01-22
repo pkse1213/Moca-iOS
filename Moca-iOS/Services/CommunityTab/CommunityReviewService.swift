@@ -29,7 +29,7 @@ struct CommunityReviewService: APIService, RequestService {
                 let data = CommunityReviewData.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }
@@ -49,7 +49,7 @@ struct CommunityReviewService: APIService, RequestService {
                 let data = CommunityReviewData.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

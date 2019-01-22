@@ -45,9 +45,8 @@ extension HomeHotPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate
         guard let hotPlaceName = hotPlaceNames?[indexPath.item] else { return }
         
         if let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HotPlaceVC") as? HotPlaceVC {
-            vc.navigationItem.title = hotPlaceName.hotPlaceName
-            
             vc.placeId = hotPlaceName.hotPlaceID
+            vc.placeName = hotPlaceName.hotPlaceName
             delegate?.goToViewController(vc: vc)
         }
     }

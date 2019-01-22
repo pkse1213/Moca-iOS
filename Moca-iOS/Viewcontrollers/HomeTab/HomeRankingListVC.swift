@@ -61,7 +61,7 @@ class HomeRankingListVC: UIViewController {
 extension HomeRankingListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let unit = self.view.frame.width / 375
-        return CGSize(width:176*unit , height: 236*unit)
+        return CGSize(width:175*unit , height: 236*unit)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

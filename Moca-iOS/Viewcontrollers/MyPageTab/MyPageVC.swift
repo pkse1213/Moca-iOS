@@ -86,6 +86,7 @@ class MyPageVC: UIViewController {
         MyPageCheckService.shared.getMyPageData(token: token, completion: { (myPageData) in
             self.myData = myPageData
         }) { (errCode) in
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("회원 정보 조회에 실패했습니다.")
         }
     }
@@ -95,10 +96,9 @@ class MyPageVC: UIViewController {
         MyPageScrapService.shared.getScrap(token: token, completion: { (scrapCafeList) in
             self.scrapCafeList = scrapCafeList
              print("찜한 카페 조회에 성공\(scrapCafeList.count)")
-          self.myPageTableView.reloadData()
         }) { (errCode) in
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("찜한 카페 조회에 실패 || \(errCode)")
-            self.scrapCafeList = []
         }
     }
     
@@ -107,7 +107,6 @@ class MyPageVC: UIViewController {
         MyPageCouponService.shared.getCouponList(token: token, completion: { (couponList) in
             self.couponList = couponList
         }) { (errCode) in
-            self.couponList = []
             print("음료 쿠폰 조회 실패 || \(errCode)")
         }
     }
@@ -117,7 +116,6 @@ class MyPageVC: UIViewController {
         MyPageMembershipService.shared.getMembership(token: token, completion: { (membershipDataList) in
             self.membershipList = membershipDataList
         }) { (errCode) in
-            self.membershipList = []
             print("멤버쉽 리스트 조회 실패 || \(errCode)")
         }
     }

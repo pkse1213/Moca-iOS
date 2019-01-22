@@ -29,7 +29,7 @@ struct MyPageMembershipService : APIService, RequestService {
                 let data = MembershipData.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

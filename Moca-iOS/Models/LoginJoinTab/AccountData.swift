@@ -11,14 +11,9 @@ import Foundation
 struct AccountData : Codable {
     let status: Int
     let message: String
-    let data: Token?
+    let data: Token
 }
 
 struct Token : Codable {
-    let token : String
-    
-    enum CodingKeys: String, CodingKey {
-        case token = "token"
-    }
+    let token: String
 }
-

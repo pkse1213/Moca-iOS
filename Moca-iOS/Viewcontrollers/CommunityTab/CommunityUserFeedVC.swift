@@ -67,7 +67,6 @@ class CommunityUserFeedVC: UIViewController {
             print("유저 피드 성공")
         }) { (err) in
             print(self.userId)
-            self.reviews = []
             print("유저 피드 실패")
         }
     }

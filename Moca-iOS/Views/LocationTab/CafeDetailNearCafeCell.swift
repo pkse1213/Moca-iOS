@@ -39,7 +39,7 @@ extension CafeDetailNearCafeCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = delegate?.getViewFrameWidth() ?? 375
         let unit = width / 375
-        return CGSize(width:176*unit , height: 236*unit)
+        return CGSize(width:175*unit , height: 236*unit)
         
     }
     

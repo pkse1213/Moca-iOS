@@ -901,7 +901,7 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y6H-7L-Ypq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="336" height="336"/>
                                                                     </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="communityGradation" translatesAutoresizingMaskIntoConstraints="NO" id="lPk-su-09l">
+                                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="communityGradation" translatesAutoresizingMaskIntoConstraints="NO" id="lPk-su-09l">
                                                                         <rect key="frame" x="0.0" y="0.0" width="336" height="336"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -1701,7 +1701,7 @@
         <image name="commonCancelBlack" width="24" height="24"/>
         <image name="commonComment" width="24" height="24"/>
         <image name="commonCommentSmall" width="24" height="24"/>
-        <image name="commonEmptydata" width="39" height="39"/>
+        <image name="commonEmptydata" width="39.666667938232422" height="39.666667938232422"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartBlankSmall" width="24" height="24"/>
         <image name="commonLocation" width="24" height="24"/>

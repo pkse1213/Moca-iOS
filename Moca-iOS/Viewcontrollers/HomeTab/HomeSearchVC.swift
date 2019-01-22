@@ -59,6 +59,7 @@ class HomeSearchVC: UIViewController {
         beforeSearchView.isHidden = true
         guard let keyword = textField.text else { return }
         if keyword == "" {
+            textField.resignFirstResponder()
             beforeSearchView.isHidden = false
             return
         } else {
@@ -76,7 +77,7 @@ class HomeSearchVC: UIViewController {
                 self.searchResults = res
             }
         }) { (err) in
-            self.searchResults = []
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("검색 결과 실패\(err)")
         }
     }

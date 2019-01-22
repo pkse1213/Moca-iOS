@@ -2150,11 +2150,11 @@
     </scenes>
     <resources>
         <image name="category" width="25" height="25"/>
-        <image name="categoryMap" width="346" height="283"/>
+        <image name="categoryMap" width="346.66665649414062" height="283.66665649414062"/>
         <image name="categoryPoint" width="21" height="26"/>
         <image name="commonComment" width="24" height="24"/>
         <image name="commonCommentSmall" width="24" height="24"/>
-        <image name="commonEmptydata" width="39" height="39"/>
+        <image name="commonEmptydata" width="39.666667938232422" height="39.666667938232422"/>
         <image name="commonHeartBlank" width="24" height="24"/>
         <image name="commonHeartBlankSmall" width="24" height="24"/>
         <image name="commonSearch" width="24" height="24"/>
@@ -2176,7 +2176,7 @@
         <image name="icCommunityLocation" width="12" height="13"/>
         <image name="location" width="25" height="25"/>
         <image name="locationGradationWhite" width="377" height="264"/>
-        <image name="locationLocationPink" width="43" height="43"/>
+        <image name="locationLocationPink" width="43" height="43.333332061767578"/>
         <image name="mypage" width="25" height="25"/>
         <image name="mypageArrowRight" width="24" height="24"/>
         <image name="mypageSetting" width="36" height="36"/>

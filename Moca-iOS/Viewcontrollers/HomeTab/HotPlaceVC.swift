@@ -31,7 +31,7 @@ class HotPlaceVC: UIViewController {
     
     private func setupNaviBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
-        self.navigationItem.title = placeName
+        self.navigationItem.title = "#" + placeName
         let button: UIButton = UIButton()
         button.setImage(#imageLiteral(resourceName: "commonBackBlack"), for: .normal)
         button.addTarget(self, action: #selector(backAction(_:)), for: .touchUpInside)

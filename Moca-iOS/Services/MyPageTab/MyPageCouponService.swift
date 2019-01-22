@@ -29,7 +29,7 @@ struct MyPageCouponService : APIService, RequestService {
                 let data = CouponDataResponse.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

@@ -29,7 +29,7 @@ struct MyPageScrapService: APIService, RequestService {
                 let data = ScrapCafeResponse.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

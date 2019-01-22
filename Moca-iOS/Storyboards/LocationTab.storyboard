@@ -603,7 +603,7 @@
                                         <rect key="frame" x="0.0" y="893" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eox-rH-Wnc" id="tDM-iE-L8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WmT-4u-d7L">
@@ -666,7 +666,7 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nee-iv-Obf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="336" height="336"/>
                                                                     </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="communityGradation" translatesAutoresizingMaskIntoConstraints="NO" id="7hc-BL-O6Q">
+                                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="communityGradation" translatesAutoresizingMaskIntoConstraints="NO" id="7hc-BL-O6Q">
                                                                         <rect key="frame" x="0.0" y="0.0" width="336" height="336"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -892,7 +892,7 @@
                                         <rect key="frame" x="0.0" y="1506" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGD-fT-HCB" id="7ad-pn-MlX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gC-hX-cC5">
@@ -924,7 +924,7 @@
                                         <rect key="frame" x="0.0" y="1597" width="375" height="603"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFR-r8-cYR" id="iCs-O4-ZKa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="602.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주변 카페" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peG-0p-cAI">
@@ -1207,6 +1207,7 @@
                     <connections>
                         <outlet property="cafeDetailTableView" destination="9WP-2s-pee" id="hIt-NS-OWp"/>
                         <outlet property="scrapButton" destination="eFc-Qf-jwe" id="BPJ-vZ-gg7"/>
+                        <outlet property="toolBarHeight" destination="3Tx-yI-kCn" id="cbk-Vs-kbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GQ-Ka-xgv" userLabel="First Responder" sceneMemberID="firstResponder"/>

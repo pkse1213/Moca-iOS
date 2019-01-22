@@ -30,7 +30,7 @@ struct HomeSearchResultService: APIService, RequestService {
                 let data = HomeSearchResultData.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

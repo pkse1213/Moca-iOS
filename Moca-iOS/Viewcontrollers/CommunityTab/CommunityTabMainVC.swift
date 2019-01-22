@@ -18,7 +18,6 @@ class CommunityTabMainVC: UIViewController {
     // 피드 테이블 뷰
     let selectMenus = ["소셜 피드", "내 피드"]
     @IBOutlet weak var communityTableView: UITableView!
-    var err = 0
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var selectIndex = 0 {
         didSet {
@@ -90,8 +89,6 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("소셜 피드 성공")
             }) { (err) in
-                self.reviews = []
-                self.err = err
                 print("소셜 피드 실패")
             }
         case 1:
@@ -99,7 +96,6 @@ class CommunityTabMainVC: UIViewController {
                 self.reviews = res
                 print("내 피드 성공")
             }) { (err) in
-                self.reviews = []
                 print("내 피드 실패")
             }
         default:

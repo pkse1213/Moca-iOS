@@ -861,15 +861,14 @@
 		CB2D78E421DCFD720033C2A0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7773213221E669AA006AD209 /* MyPageTab */,
 				CBD4C7E121E35707008BE065 /* Base */,
+				CB7433E221F5B60E00C2EA63 /* Account */,
+				7773213221E669AA006AD209 /* MyPageTab */,
 				CBD4C7AE21E1501A008BE065 /* CafeDetail */,
 				CB2A5F1F21E5DB0C0001E4DA /* HomeTab */,
 				CBD4C7B621E15609008BE065 /* CategoryTab */,
 				CBD4C7E221E3571E008BE065 /* LocationTab */,
 				CBD4C7E321E35731008BE065 /* CommunityTab */,
-				77B2900D21E35FDC00E8677F /* LoginService.swift */,
-				77B2901221E3A48600E8677F /* SignupService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1050,6 +1049,15 @@
 				CB25AC9721D3F01800636DFE /* ContentWrite */,
 			);
 			path = CommunityTab;
+			sourceTree = "<group>";
+		};
+		CB7433E221F5B60E00C2EA63 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				77B2900D21E35FDC00E8677F /* LoginService.swift */,
+				77B2901221E3A48600E8677F /* SignupService.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		CB8DDB6E21D33777001D8191 /* Ranking */ = {
@@ -1742,7 +1750,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N6JH7RBUA4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1767,7 +1775,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N6JH7RBUA4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

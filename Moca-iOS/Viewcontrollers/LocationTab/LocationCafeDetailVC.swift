@@ -12,8 +12,10 @@ import CoreLocation
 class LocationCafeDetailVC: UIViewController {
     @IBOutlet weak var cafeDetailTableView: UITableView!
     @IBOutlet weak var scrapButton: UIButton!
+    @IBOutlet weak var toolBarHeight: NSLayoutConstraint!
+    
     let locationManager = CLLocationManager()
-    var cafeId = 3
+    var cafeId = 0
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var cafeInfo: CafeDetailInfo? {
         didSet {
@@ -48,6 +50,19 @@ class LocationCafeDetailVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        checkVersion()
+    }
+    
+    private func checkVersion() {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+            if let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding < 24 {
+                toolBarHeight.constant = 48
+            }
+        }
+    }
+    
     private func setupNaviBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NanumGothicBold", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.black]
         //        self.navigationItem.title = "Ranking"
@@ -68,6 +83,7 @@ class LocationCafeDetailVC: UIViewController {
             self.navigationItem.title = res.cafeName
             self.cafeInfo = res
         }) { (err) in
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("카페 디테일 info 실패")
         }
     }
@@ -76,19 +92,19 @@ class LocationCafeDetailVC: UIViewController {
         CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeImages = res
         }) { (err) in
-             self.cafeImages = []
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("카페 디테일 imgae 실패 \(err)")
         }
         CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeSignitures = res
         }) { (err) in
-            self.cafeSignitures = []
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("카페 디테일 signiture 실패 \(err)")
         }
         CafeDetailReviewService.shareInstance.getCafeDetailReview(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeReviews = res
         }) { (err) in
-            self.cafeReviews = []
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("카페 디테일 review 실패 \(err)")
         }
         
@@ -99,7 +115,6 @@ class LocationCafeDetailVC: UIViewController {
         NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 1, token: token, cafeId: cafeId, latitude: cafeInfo.cafeLatitude, longitude: cafeInfo.cafeLongitude, completion: { (res) in
             self.nearByCafes = res
         }) { (err) in
-            self.nearByCafes = []
             print("주변 카페 실패 \(err)")
         }
     }

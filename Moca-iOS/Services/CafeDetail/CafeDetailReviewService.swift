@@ -28,7 +28,7 @@ struct CafeDetailReviewService: APIService, RequestService {
                 let data = CommunityReviewData.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

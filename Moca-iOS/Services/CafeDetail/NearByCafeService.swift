@@ -33,7 +33,7 @@ struct NearByCafeService: APIService, RequestService{
                 print(NearByCafeData.message)
                 completion(NearByCafeData.data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }

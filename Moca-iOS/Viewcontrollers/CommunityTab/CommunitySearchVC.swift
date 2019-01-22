@@ -69,7 +69,6 @@ class CommunitySearchVC: UIViewController {
     private func initBeforeData() {
         BestReviewService.shareInstance.getBestReview(flag: 1, token: token, completion: { (res) in
             self.bestCafes = res
-            print("-----\(res.count)")
         }) { (err) in
             print("인기 리뷰 조회 실패 \(err)")
         }
@@ -142,6 +141,7 @@ class CommunitySearchVC: UIViewController {
         guard let keyword = textField.text else { return }
         if keyword == "" {
             beforeSearchView.isHidden = false
+            textField.resignFirstResponder()
             self.initBeforeData()
             return
         } else {

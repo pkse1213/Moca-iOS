@@ -42,7 +42,6 @@ class HotPlaceCafeCell: UITableViewCell {
         CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafe.cafeID, token: token, completion: { (res) in
             self.images = res
         }) { (err) in
-            self.images = []
             print("핫플레이스 카페 이미지 실패 \(err)")
         }
     }

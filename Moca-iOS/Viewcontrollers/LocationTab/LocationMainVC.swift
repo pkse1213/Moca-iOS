@@ -56,11 +56,13 @@ class LocationMainVC: UIViewController{
         print(location.latitude)
         print(location.longitute)
         NearByCafeService.shareInstance.getNearByCafe(isCafeDetail: 0, token: token, cafeId: 1, latitude: location.latitude , longitude: location.longitute, completion: { (res) in
+            if res.count == 0 {
+                self.simpleAlert(title: "알림", message: "1km 반경에 카페가 없습니다")
+            }
             self.nearByCafes = res
             print("주변 카페 성공")
         }) { (err) in
-            self.nearByCafes = []
-            self.simpleAlert(title: "알림", message: "1km 반경에 카페가 없습니다")
+            self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
             print("주변 카페 실패")
         }
     }

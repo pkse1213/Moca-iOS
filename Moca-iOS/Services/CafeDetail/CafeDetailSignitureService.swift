@@ -29,7 +29,7 @@ struct CafeDetailSignitureService: APIService, RequestService {
                 let data = CafeDetailSignitureData.data
                 completion(data)
             case .successWithNil(_):
-                break
+                completion([])
             case .error(let errCode):
                 error(errCode)
             }
