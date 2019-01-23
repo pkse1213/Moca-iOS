@@ -21,9 +21,8 @@ class NetworkFailView: UIView {
         retryButton.applyRadius(radius: 10)
     }
     
-    
-    class func instanceFromXib() -> UIView {
-        return UINib(nibName: "NetworkFailView", bundle: nil).instantiate(withOwner: nil, options: nil).first as! UIView
+    class func instanceFromNib() -> UIView {
+        return UINib(nibName: "NetworkFail", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
     
     @IBAction func retryAction(_ sender: UIButton) {

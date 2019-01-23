@@ -45,9 +45,9 @@ class HomeTabMainVC: UIViewController {
     }
     
     private func setUpView() {
-        networkFailView =  NetworkFailView.instanceFromXib() as? NetworkFailView
+        networkFailView =  NetworkFailView.instanceFromNib() as? NetworkFailView
         networkFailView.delegate = self
-        
+        networkFailView.frame = self.view.frame
         searchBarView.applyRadius(radius: 5)
         searchBarView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1))
     }

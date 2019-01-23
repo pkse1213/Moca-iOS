@@ -21,6 +21,7 @@ extension RequestService {
             
             guard let statusCode = res.response?.statusCode else {
                 print("status")
+                completion(.error(0000))
                 return
             }
             guard let status: HTTPStatusCode = HTTPStatusCode(rawValue: statusCode) else { return }
