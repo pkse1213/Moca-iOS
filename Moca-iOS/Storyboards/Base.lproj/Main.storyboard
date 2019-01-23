@@ -390,7 +390,7 @@
                                         <rect key="frame" x="0.0" y="783" width="375" height="393"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F51-aM-jm6" id="hGA-G1-Wvl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="393"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="392.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moca Plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlH-Cl-9m1">
@@ -410,7 +410,7 @@
                                                             <rect key="frame" x="0.0" y="28" width="329" height="160"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GBK-ge-Qe4" id="V1f-gH-8db">
-                                                                <rect key="frame" x="0.0" y="0.0" width="329" height="160"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="329" height="159.66666666666666"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample5" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-5k-uZw">

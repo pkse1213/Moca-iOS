@@ -12,6 +12,8 @@ class HomeTabMainVC: UIViewController {
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTabTableView: UITableView!
     @IBOutlet weak var noticeImageView: UIImageView!
+    
+    var networkFailView: NetworkFailView!
     var mocaPicks: [MocaPicks]? {
         didSet { homeTabTableView.reloadData() }
     }
@@ -29,7 +31,9 @@ class HomeTabMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        initData()
+        initData {
+            self.failNetwork()
+        }
         setUpTableView()
         registerGesture()
     }
@@ -41,6 +45,9 @@ class HomeTabMainVC: UIViewController {
     }
     
     private func setUpView() {
+        networkFailView =  NetworkFailView.instanceFromXib() as? NetworkFailView
+        networkFailView.delegate = self
+        
         searchBarView.applyRadius(radius: 5)
         searchBarView.applyBorder(width: 1.0, color: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1))
     }
@@ -50,27 +57,35 @@ class HomeTabMainVC: UIViewController {
         self.homeTabTableView.dataSource = self
     }
     
-    private func initData() {
+    private func initData(error : @escaping() -> Void) {
         MocaPicksCafeService.shareInstance.getMocaPicksCafe(length: 3, token: token, completion: { (res) in
             self.mocaPicks = res
         }) { (err) in
             print("홈 모카픽스 실패 \(err)")
+            error()
         }
         HotPlaceNameService.shareInstance.getRankingCafe(token: token, completion: { (res) in
             self.hotPlaceNames = res
         }) { (err) in
             print("홈 핫플레이스 실패 \(err)")
+            error()
         }
         RankingCafeService.shareInstance.getRankingCafe(length: 3, token: token, completion: { (res) in
             self.rankingCafes = res
         }) { (err) in
             print("홈 랭킹 실패 \(err)")
+            error()
         }
         MocaPlusSubjectService.shareInstance.getMocaPlusSubject(length: 3, token: token, completion: { (res) in
             self.mocaPlusSubject = res
         }) { (err) in
             print("홈 모카플러스 실패 \(err)")
+            error()
         }
+    }
+    
+    private func failNetwork() {
+        self.view.addSubview(networkFailView)
     }
     
     private func registerGesture() {
@@ -150,3 +165,9 @@ extension HomeTabMainVC: ListViewCellDelegate {
     }
 }
 
+extension HomeTabMainVC: NetworkFailDelegate {
+    func retryAction() {
+        initData { self.failNetwork() }
+        self.networkFailView.removeFromSuperview()
+    }
+}

@@ -20,10 +20,10 @@ class CommunityFeedCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var reviewContentLabel: UILabel!
     @IBOutlet weak var cntBackgroundView: UIView!
-    
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var imageCntLabel: UILabel!
     weak var delegate: ListViewCellDelegate?
+    
     var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoic2VldW5pIiwiaXNzIjoiRG9JVFNPUFQifQ.56TYkh--ZSO7duJvdVLf-BOgFBPCG9fdDRGUGTmtC68"
     var review: CommunityReview? {
         didSet { setUpData() }
