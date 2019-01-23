@@ -61,7 +61,7 @@ class CategoryResultVC: UIViewController {
             self.cafes = cafeList
             print("카테고리 카페 리스트 성공")
         }) { (err) in
-            print("카테고리 카페 리스트 실패")
+            print("카테고리 카페 리스트 실패\(err)")
         }
     }
     
