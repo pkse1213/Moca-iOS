@@ -16,9 +16,10 @@ struct CommunityReviewCommentService: APIService, RequestService {
     let URL = url("/review")
     typealias NetworkData = CommunityReviewCommentData
     
-    func getReviewComment(reviewId: Int, completion: @escaping ([ReviewComment]) -> Void, error: @escaping (Int) -> Void) {
+    func getReviewComment(reviewId: Int, token: String, completion: @escaping ([ReviewComment]) -> Void, error: @escaping (Int) -> Void) {
         let commentURL = URL + "/\(reviewId)/comment"
         let header: HTTPHeaders = [
+            "Authorization" : token ,
             "Content-Type" : "application/json"
         ]
         gettable(commentURL, body: nil, header: header) { res in

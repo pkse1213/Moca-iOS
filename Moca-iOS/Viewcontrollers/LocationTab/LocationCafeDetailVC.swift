@@ -89,11 +89,13 @@ class LocationCafeDetailVC: UIViewController {
     }
     
     private func initData() {
+        
+        print("카페 -- \(cafeId)")
         CafeDetailImageService.shareInstance.getCafeDetailImage(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeImages = res
         }) { (err) in
             self.simpleAlert(title: "알림", message: "네트워크 연결상태를 확인해주세요!")
-            print("카페 디테일 imgae 실패 \(err)")
+            print("카페 디테일 image 실패 \(err)")
         }
         CafeDetailSignitureService.shareInstance.getCafeDetailSigniture(cafeId: cafeId, token: token, completion: { (res) in
             self.cafeSignitures = res

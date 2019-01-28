@@ -106,7 +106,8 @@ class CommunityContentVC: UIViewController {
     
     private func initCommentData() {
         guard let review = review else { return }
-        CommunityReviewCommentService.shareInstance.getReviewComment(reviewId: review.reviewID, completion: { (res) in
+        print(review.reviewID)
+        CommunityReviewCommentService.shareInstance.getReviewComment(reviewId: review.reviewID, token: token, completion: { (res) in
             self.comments = res
         }) { (err) in
             print("리뷰 댓글 실패")
