@@ -44,7 +44,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jX1-Q5-ARY">
                                 <rect key="frame" x="41" y="402.66666666666669" width="308" height="24"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YS0-ye-V79">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="seeuni" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YS0-ye-V79">
                                         <rect key="frame" x="0.0" y="4.6666666666666288" width="284" height="15"/>
                                         <color key="textColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>
@@ -78,7 +78,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Plm-Dr-YGj">
                                 <rect key="frame" x="41" y="487.66666666666669" width="308" height="24"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kR7-nf-lXp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1111" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kR7-nf-lXp">
                                         <rect key="frame" x="0.0" y="4.6666666666666288" width="284" height="15"/>
                                         <color key="textColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NanumGothicBold" family="NanumGothic" pointSize="13"/>

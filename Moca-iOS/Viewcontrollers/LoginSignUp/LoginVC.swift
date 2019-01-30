@@ -69,23 +69,23 @@ class LoginVC: UIViewController {
     
     // 로그인
     @IBAction func loginAction(_ sender: Any) {
-//        guard let id = idTxt.text , let password = pwTxt.text else {
-//            simpleAlert(title: "알림", message: "아이디와 비밀번호를 입력해주세요!")
-//            return
-//        }
-//
-//        LoginService.shareInstance.postLogin(id: id, password: password, completion: { (token) in
-//
-//            self.ud.set(token.token, forKey: "token")
+        guard let id = idTxt.text , let password = pwTxt.text else {
+            simpleAlert(title: "알림", message: "아이디와 비밀번호를 입력해주세요!")
+            return
+        }
+
+        LoginService.shareInstance.postLogin(id: id, password: password, completion: { (token) in
+
+            self.ud.set(token.token, forKey: "token")
         
             guard let dvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")  as? UITabBarController else { return }
             dvc.hero.isEnabled = true
             dvc.hero.modalAnimationType = HeroDefaultAnimationType.zoom
             self.present(dvc, animated: true)
             
-//        }) { (err) in
-//            self.simpleAlert(title: "알림", message: "아이디와 비밀번호를 확인해주세요!")
-//        }
+        }) { (err) in
+            self.simpleAlert(title: "알림", message: "아이디와 비밀번호를 확인해주세요!")
+        }
     }
     
     // 회원가입 화면으로

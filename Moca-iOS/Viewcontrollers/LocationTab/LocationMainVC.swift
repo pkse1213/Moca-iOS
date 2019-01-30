@@ -262,6 +262,7 @@ extension LocationMainVC: MTMapViewDelegate {
         circle.circleRadius = 2000
         mapView.addCircle(circle)
         self.mapView.setMapCenter(mapPoint, zoomLevel: 4, animated: true)
+        
     }
     
     // 주변 카페들 마커 추가

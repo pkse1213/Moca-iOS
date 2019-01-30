@@ -39,9 +39,12 @@ extension RequestService {
                             print("decoding err")
                             completion(.error(423))
                         }
-                    } else if json["status"] == 204 {
+                    } else if json["status"] == 204 || json["status"] == 404 {
                         print("204")
                         completion(.successWithNil(204))
+                    } else if json["status"] == 400 {
+                        print("400")
+                        completion(.error(400))
                     }
                 }
             case .Accepted:
@@ -82,8 +85,8 @@ extension RequestService {
             switch status {
             case .OK:
                 if let value = res.result.value {
-                    let json = JSON(value)
-                    if json["status"] == 200 {
+                    let statusNum = JSON(value)["status"]
+                    if statusNum == 200 {
                         let decoder = JSONDecoder()
                         do {
                             print("200")
@@ -93,9 +96,12 @@ extension RequestService {
                             print("decoding err")
                             completion(.error(423))
                         }
-                    } else if json["status"] == 204 {
+                    } else if statusNum == 204 || statusNum == 404 {
                         print("204")
                         completion(.successWithNil(204))
+                    } else if statusNum == 400 {
+                        print("400")
+                        completion(.error(400))
                     }
                 }
             case .Accepted:
@@ -145,9 +151,12 @@ extension RequestService {
                             print("decoding err")
                             completion(.error(423))
                         }
-                    } else if json["status"] == 204 {
+                    } else if json["status"] == 204 || json["status"] == 404 {
                         print("204")
                         completion(.successWithNil(204))
+                    } else if json["status"] == 400 {
+                        print("400")
+                        completion(.error(400))
                     }
                 }
             case .Accepted:
@@ -197,9 +206,12 @@ extension RequestService {
                             print("decoding err")
                             completion(.error(423))
                         }
-                    } else if json["status"] == 204 {
+                    } else if json["status"] == 204 || json["status"] == 404 {
                         print("204")
                         completion(.successWithNil(204))
+                    } else if json["status"] == 400 {
+                        print("400")
+                        completion(.error(400))
                     }
                 }
             case .Accepted:
