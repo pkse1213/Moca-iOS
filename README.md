@@ -5,4 +5,4 @@
     *  프로젝트 기간 : 2018년 12월 22일 ~ 2019년 1월 14일
 
 ## Work Flow
-![Workflow](./images/workflow.pdf)
+![Workflow](./images/workflow.png)
