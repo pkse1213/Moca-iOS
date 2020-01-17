@@ -25,7 +25,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>daummaps</string>
+				<string>kakaomap</string>
 			</array>
 		</dict>
 	</array>

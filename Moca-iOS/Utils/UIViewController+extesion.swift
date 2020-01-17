@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     func goToKaKaoMapApp(start: Location, end: Location) {
-        guard let schemeURL = URL(string: "daummaps://route?sp=\(start.latitude),\(start.longitute)&ep=\(end.latitude),\(end.longitute)&by=FOOT")else {
+        guard let schemeURL = URL(string: "kakaomap://route?sp=\(start.latitude),\(start.longitute)&ep=\(end.latitude),\(end.longitute)&by=FOOT")else {
             return
         }
         if UIApplication.shared.canOpenURL(schemeURL) {

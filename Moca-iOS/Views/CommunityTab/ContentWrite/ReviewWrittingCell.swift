@@ -67,6 +67,8 @@ class ReviewWrittingCell: UITableViewCell {
         parentVC.present(actionSheet, animated: true)
     }
     
+    
+    // 카페 이름 찾기 관련
     private func registerGesture() {
         let inputGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(inputCafeNameAction(_:)))
         cafeNameText.addGestureRecognizer(inputGestureRecognizer)
